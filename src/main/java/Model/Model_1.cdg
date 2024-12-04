@@ -2,161 +2,159 @@
 
 <ClassDiagram name="Model_1">
   <ClassDiagramComponents>
-    <Class name="Rubrica" package="" visibility="public" xPosition="932.0" yPosition="241.0">
+    <Class name="Rubrica" package="" visibility="public" xPosition="935.0" yPosition="312.0">
       <Fields>
-        <Field name="contatti" type="ArrayList" visibility="private"/>
-        <Field name="nameFileInput" type="String" visibility="private"/>
-        <Field name="nameFileOutput" type="String" visibility="private"/>
+        <Field name="contatti" type="TreeSet&lt;Contatto&gt;" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="aggiungiContatto" returnType="Contatto" visibility="public">
+        <Method name="aggiungiContatto" returnType="void" visibility="public">
           <Argument type="Contatto" name="c"/>
         </Method>
-        <Method name="ricercaContattoPerNome" returnType="String" visibility="public">
+        <Method name="ricercaContatto" returnType="Rubica" visibility="public">
+          <Argument type="String" name="cognome"/>
           <Argument type="String" name="nome"/>
         </Method>
-        <Method name="sort" returnType="Rubrica" visibility="public"/>
-        <Method name="ricercaContattoPerCognome" returnType="String" visibility="public">
-          <Argument type="String" name="cognome"/>
+        <Method name="eliminaContatto" returnType="Contatto" visibility="public">
+          <Argument type="Contatto" name="c"/>
+        </Method>
+        <Method name="modificaContatto" returnType="Contatto" visibility="public">
+          <Argument type="Contatto" name="c"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="Contatto" package="" visibility="public" xPosition="492.0" yPosition="270.0">
-      <Fields>
-        <Field name="nome" type="String" visibility="private"/>
-        <Field name="cognome" type="String" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="setNome" returnType="String" visibility="public">
-          <Argument type="String" name="n"/>
-        </Method>
-        <Method name="setCognome" returnType="String" visibility="public">
-          <Argument type="String" name="c"/>
-        </Method>
-      </Methods>
-    </Class>
-    <Class name="Email" package="" visibility="public" xPosition="-8.0" yPosition="470.0">
-      <Fields>
-        <Field name="email" type="String[]" visibility="private"/>
-        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="aggiungiEmail" returnType="Email" visibility="public">
-          <Argument type="Email" name="e"/>
-          <Argument type="int" name="indice"/>
-        </Method>
-        <Method name="setEmail" returnType="Email" visibility="public">
-          <Argument type="Email" name="email"/>
-          <Argument type="int" name="indice"/>
-        </Method>
-      </Methods>
-    </Class>
-    <Class name="NumeroTelefono" package="" visibility="public" xPosition="294.0" yPosition="550.0">
+    <Class name="NumeroTelefono" package="" visibility="public" xPosition="313.0" yPosition="622.0">
       <Fields>
         <Field name="prefisso" type="Prefisso" visibility="private"/>
-        <Field name="numero" type="int[]" visibility="private"/>
-        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="numero" type="int" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="aggiungiNumero" returnType="int" visibility="public">
+        <Method name="setNumeroTelefono" returnType="void" visibility="public">
+          <Argument type="Prefisso" name="p"/>
           <Argument type="int" name="numero"/>
-          <Argument type="int" name="indice"/>
         </Method>
-        <Method name="setNumero" returnType="NumeroTelefono" visibility="public">
-          <Argument type="NumeroTelefono" name="t"/>
-          <Argument type="int" name="indice"/>
-        </Method>
+        <Method name="getNumeroTelefono" returnType="NumeroTelefono" visibility="public"/>
       </Methods>
     </Class>
-    <Interface name="CheckNome" package="" visibility="public" xPosition="453.0" yPosition="69.0">
-      <Methods>
-        <Method name="checkLunghezzaNome" returnType="String" visibility="public">
-          <Argument type="String" name="nome"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="CheckCognome" package="" visibility="public" xPosition="12.0" yPosition="304.0">
-      <Methods>
-        <Method name="checkLunghezzaCognome" returnType="String" visibility="public">
-          <Argument type="String" name="cognome"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="Check" package="" visibility="public" xPosition="67.0" yPosition="50.0">
-      <Methods>
-        <Method name="isEmptyNome" returnType="Contatto" visibility="public">
-          <Argument type="Contatto" name="c"/>
-        </Method>
-        <Method name="isEmptyCognome" returnType="Contatto" visibility="public">
-          <Argument type="Contatto" name="c"/>
-        </Method>
-        <Method name="check" returnType="Contatto" visibility="public">
-          <Argument type="Contatto" name="c"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="CheckNumeroTelfono" package="" visibility="public" xPosition="257.0" yPosition="814.0">
-      <Methods>
-        <Method name="checkLunghezza" returnType="NumeroTelefono" visibility="public">
-          <Argument type="Prefisso" name="prefisso"/>
-          <Argument type="NumeroTelefono" name="t"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="CheckEmail" package="" visibility="public" xPosition="28.0" yPosition="723.0">
-      <Methods>
-        <Method name="checkEmail" returnType="Email" visibility="public">
-          <Argument type="Email" name="e"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="FileManager" package="" visibility="public" xPosition="950.0" yPosition="537.0">
-      <Methods>
-        <Method name="importaFile" returnType="String" visibility="public">
-          <Argument type="String" name="nameFileInput"/>
-        </Method>
-        <Method name="esportaRubrica" returnType="String" visibility="public">
-          <Argument type="String" name="nameFileOutput"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="CheckFile" package="" visibility="public" xPosition="932.0" yPosition="747.0">
-      <Methods>
-        <Method name="checkFileNameInput" returnType="String" visibility="public">
-          <Argument type="String" name="nameFileInput"/>
-        </Method>
-        <Method name="checkFileNameOutput" returnType="String" visibility="public">
-          <Argument type="String" name="nameFileOutput"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Class name="Prefisso" package="" visibility="public" xPosition="710.0" yPosition="560.0">
+    <Class name="Prefisso" package="" visibility="public" xPosition="728.0" yPosition="638.0">
       <Fields>
         <Field name="valore" type="int" visibility="private"/>
         <Field name="lunghezzaNumero" type="int" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="getValore" returnType="int" visibility="public"/>
-        <Method name="getLunghezzaNumero" returnType="int" visibility="public"/>
+        <Method name="getValore" returnType="void" visibility="public"/>
+        <Method name="getLunghezzaNumero" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="CheckNumeroTelfono" package="" visibility="public" xPosition="186.0" yPosition="858.0">
+      <Methods>
+        <Method name="checkLunghezza" returnType="boolean" visibility="public">
+          <Argument type="Prefisso" name="prefisso"/>
+          <Argument type="NumeroTelefono" name="t"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="CheckEmail" package="" visibility="public" xPosition="59.0" yPosition="652.0">
+      <Methods>
+        <Method name="checkEmail" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="FileManager" package="" visibility="public" xPosition="981.0" yPosition="619.0">
+      <Methods>
+        <Method name="importaFile" returnType="Rubrica" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+        <Method name="esportaRubrica" returnType="void" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="CheckFile" package="" visibility="public" xPosition="951.0" yPosition="825.0">
+      <Methods>
+        <Method name="checkFileNameInput" returnType="boolean" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+        <Method name="checkFileNameOutput" returnType="boolean" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Email" package="" visibility="public" xPosition="28.0" yPosition="422.0">
+      <Fields>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setEmail" returnType="void" visibility="public"/>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="CheckDescrizione" package="" visibility="public" xPosition="929.0" yPosition="50.0">
+      <Methods>
+        <Method name="checkLunghezzaDescrizione" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="CheckNome" package="" visibility="public" xPosition="479.0" yPosition="50.0">
+      <Methods>
+        <Method name="checkLunghezzaNome" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="CheckCognome" package="" visibility="public" xPosition="23.0" yPosition="282.0">
+      <Methods>
+        <Method name="checkLunghezzaCognome" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="CheckCampiObbligatori" package="" visibility="public" xPosition="23.0" yPosition="50.0">
+      <Methods>
+        <Method name="checkCampiObbligatori" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Contatto" package="" visibility="public" xPosition="460.0" yPosition="213.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="descrizione" type="String" visibility="private"/>
+        <Field name="numero" type="NumeroTelefono[]" visibility="private"/>
+        <Field name="email" type="Email[]" visibility="private"/>
+        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="n"/>
+        </Method>
+        <Method name="setCognome" returnType="void" visibility="public">
+          <Argument type="String" name="c"/>
+        </Method>
+        <Method name="setDescrizione" returnType="void" visibility="public">
+          <Argument type="String" name="d"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="getDescrizione" returnType="String" visibility="public"/>
+        <Method name="aggiungiNumero" returnType="void" visibility="public">
+          <Argument type="NumeroTelfono" name="t"/>
+        </Method>
+        <Method name="aggiungiEmail" returnType="void" visibility="public">
+          <Argument type="Email" name="e"/>
+        </Method>
       </Methods>
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="has" source="Rubrica" target="Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckCognome"/>
-    <HasRelation name="has" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelfono"/>
-    <HasRelation name="has" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <IsRelation name="is" source="FileManager" target="CheckFile"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="Check"/>
     <HasRelation name="has" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
+    <HasRelation name="has" source="Rubrica" target="Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckCampiObbligatori"/>
+    <HasRelation name="has" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="has" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckCognome"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckDescrizione"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckNome"/>
   </ClassDiagramRelations>
 </ClassDiagram>
