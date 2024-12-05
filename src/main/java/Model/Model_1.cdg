@@ -8,10 +8,10 @@
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="aggiungiContatto" returnType="void" visibility="public">
+        <Method name="aggiungiContatto" returnType="Contatto" visibility="public">
           <Argument type="Contatto" name="c"/>
         </Method>
-        <Method name="ricercaContatto" returnType="Rubica" visibility="public">
+        <Method name="ricercaContatto" returnType="String" visibility="public">
           <Argument type="String" name="cognome"/>
           <Argument type="String" name="nome"/>
         </Method>
@@ -30,7 +30,7 @@
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="setNumeroTelefono" returnType="void" visibility="public">
+        <Method name="setNumeroTelefono" returnType="int" visibility="public">
           <Argument type="Prefisso" name="p"/>
           <Argument type="int" name="numero"/>
         </Method>
@@ -48,9 +48,50 @@
         <Method name="getLunghezzaNumero" returnType="void" visibility="public"/>
       </Methods>
     </Class>
+    <Class name="Email" package="" visibility="public" xPosition="28.0" yPosition="422.0">
+      <Fields>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setEmail" returnType="void" visibility="public"/>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Contatto" package="" visibility="public" xPosition="460.0" yPosition="213.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="descrizione" type="String" visibility="private"/>
+        <Field name="numero" type="NumeroTelefono[]" visibility="private"/>
+        <Field name="email" type="Email[]" visibility="private"/>
+        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setNome" returnType="String" visibility="public">
+          <Argument type="String" name="n"/>
+        </Method>
+        <Method name="setCognome" returnType="String" visibility="public">
+          <Argument type="String" name="c"/>
+        </Method>
+        <Method name="setDescrizione" returnType="String" visibility="public">
+          <Argument type="String" name="d"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="getDescrizione" returnType="String" visibility="public"/>
+        <Method name="aggiungiNumero" returnType="NumeroTelfono" visibility="public">
+          <Argument type="NumeroTelfono" name="t"/>
+        </Method>
+        <Method name="aggiungiEmail" returnType="Email" visibility="public">
+          <Argument type="Email" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
     <Interface name="CheckNumeroTelfono" package="" visibility="public" xPosition="186.0" yPosition="858.0">
       <Methods>
-        <Method name="checkLunghezza" returnType="boolean" visibility="public">
+        <Method name="checkLunghezza" returnType="NumeroTelefono" visibility="public">
           <Argument type="Prefisso" name="prefisso"/>
           <Argument type="NumeroTelefono" name="t"/>
         </Method>
@@ -63,34 +104,24 @@
     </Interface>
     <Interface name="FileManager" package="" visibility="public" xPosition="981.0" yPosition="619.0">
       <Methods>
-        <Method name="importaFile" returnType="Rubrica" visibility="public">
+        <Method name="importaFile" returnType="String" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
-        <Method name="esportaRubrica" returnType="void" visibility="public">
+        <Method name="esportaRubrica" returnType="String" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
       </Methods>
     </Interface>
     <Interface name="CheckFile" package="" visibility="public" xPosition="951.0" yPosition="825.0">
       <Methods>
-        <Method name="checkFileNameInput" returnType="boolean" visibility="public">
+        <Method name="checkFileNameInput" returnType="String" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
-        <Method name="checkFileNameOutput" returnType="boolean" visibility="public">
+        <Method name="checkFileNameOutput" returnType="String" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
       </Methods>
     </Interface>
-    <Class name="Email" package="" visibility="public" xPosition="28.0" yPosition="422.0">
-      <Fields>
-        <Field name="email" type="String" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="setEmail" returnType="void" visibility="public"/>
-        <Method name="getEmail" returnType="String" visibility="public"/>
-      </Methods>
-    </Class>
     <Interface name="CheckDescrizione" package="" visibility="public" xPosition="929.0" yPosition="50.0">
       <Methods>
         <Method name="checkLunghezzaDescrizione" returnType="boolean" visibility="public"/>
@@ -111,50 +142,31 @@
         <Method name="checkCampiObbligatori" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
-    <Class name="Contatto" package="" visibility="public" xPosition="460.0" yPosition="213.0">
-      <Fields>
-        <Field name="nome" type="String" visibility="private"/>
-        <Field name="cognome" type="String" visibility="private"/>
-        <Field name="descrizione" type="String" visibility="private"/>
-        <Field name="numero" type="NumeroTelefono[]" visibility="private"/>
-        <Field name="email" type="Email[]" visibility="private"/>
-        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
-      </Fields>
+    <Class name="RubricaController" package="" visibility="public" xPosition="1355.0" yPosition="175.0">
+      <Fields/>
       <Constructors/>
-      <Methods>
-        <Method name="setNome" returnType="void" visibility="public">
-          <Argument type="String" name="n"/>
-        </Method>
-        <Method name="setCognome" returnType="void" visibility="public">
-          <Argument type="String" name="c"/>
-        </Method>
-        <Method name="setDescrizione" returnType="void" visibility="public">
-          <Argument type="String" name="d"/>
-        </Method>
-        <Method name="getNome" returnType="String" visibility="public"/>
-        <Method name="getCognome" returnType="String" visibility="public"/>
-        <Method name="getDescrizione" returnType="String" visibility="public"/>
-        <Method name="aggiungiNumero" returnType="void" visibility="public">
-          <Argument type="NumeroTelfono" name="t"/>
-        </Method>
-        <Method name="aggiungiEmail" returnType="void" visibility="public">
-          <Argument type="Email" name="e"/>
-        </Method>
-      </Methods>
+      <Methods/>
+    </Class>
+    <Class name="RubricavVew" package="" visibility="public" xPosition="1474.0" yPosition="451.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelfono"/>
     <IsRelation name="is" source="FileManager" target="CheckFile"/>
     <HasRelation name="has" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
     <HasRelation name="has" source="Rubrica" target="Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="has" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelfono"/>
+    <HasRelation name="has" source="RubricaController" target="Rubrica" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckCognome"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckDescrizione"/>
+    <HasRelation name="has" source="RubricaController" target="RubricavVew" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckCampiObbligatori"/>
     <HasRelation name="has" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="has" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckCognome"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckDescrizione"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckNome"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
   </ClassDiagramRelations>
 </ClassDiagram>
