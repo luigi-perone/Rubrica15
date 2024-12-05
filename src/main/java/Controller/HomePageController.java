@@ -10,12 +10,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 
 /**
  * FXML Controller class
  *
- * @author luigi
+ * @author scass
  */
 public class HomePageController implements Initializable {
 
@@ -24,7 +25,9 @@ public class HomePageController implements Initializable {
     @FXML
     private Menu esporta;
     @FXML
-    private Menu importa1;
+    private Menu nuovoContatto;
+    @FXML
+    private Button ordina;
 
     /**
      * Initializes the controller class.
@@ -40,6 +43,14 @@ public class HomePageController implements Initializable {
 
     @FXML
     private void esporta_f(ActionEvent event) {
+    }
+
+    @FXML
+    private void nuovo_f(ActionEvent event) {
+    }
+
+    @FXML
+    private void ordina_f(ActionEvent event) {
     }
     
 }

@@ -4,22 +4,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HomePageController">
    <children>
       <MenuBar prefHeight="40.0" prefWidth="800.0">
         <menus>
-          <Menu fx:id="importa" mnemonicParsing="false" onAction="#Importa_f" text="Importa">
+          <Menu id="importa" fx:id="importa" mnemonicParsing="false" onAction="#Importa_f" text="Importa">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu fx:id="esporta" mnemonicParsing="false" onAction="#esporta_f" text="Esporta">
+          <Menu id="esporta" fx:id="esporta" mnemonicParsing="false" onAction="#esporta_f" text="Esporta">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-            <Menu fx:id="importa1" mnemonicParsing="false" onAction="#Importa_f" text="Nuovo contatto">
+            <Menu id="nuovo" fx:id="nuovoContatto" mnemonicParsing="false" onAction="#nuovo_f" text="Nuovo contatto">
                <items>
                   <MenuItem mnemonicParsing="false" text="Close" />
                </items>
@@ -27,7 +26,7 @@
         </menus>
       </MenuBar>
       <TextField layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="520.0" text="Cerca.." />
-      <Button layoutX="650.0" layoutY="100.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Z-A" />
+      <Button fx:id="ordina" layoutX="650.0" layoutY="100.0" mnemonicParsing="false" onAction="#ordina_f" prefHeight="31.0" prefWidth="50.0" text="Z-A" />
       <ListView layoutX="100.0" layoutY="180.0" prefHeight="400.0" prefWidth="600.0" />
    </children>
 </Pane>
