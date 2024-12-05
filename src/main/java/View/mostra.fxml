@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MostraController">
+   <children>
+      <Label layoutX="2.0" layoutY="70.0" prefHeight="21.0" prefWidth="291.0" text="Nome:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <TextField layoutX="298.0" layoutY="65.0" prefHeight="31.0" prefWidth="307.0" />
+      <TextField layoutX="298.0" layoutY="278.0" prefHeight="31.0" prefWidth="307.0" />
+      <Label layoutY="125.0" prefHeight="21.0" prefWidth="222.0" text="Cognome:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <Label layoutX="2.0" layoutY="283.0" text="Numero Telefono 1:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <TextField layoutX="298.0" layoutY="120.0" prefHeight="31.0" prefWidth="307.0" />
+      <Label layoutY="176.0" text="Descrizione:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <TextField layoutX="298.0" layoutY="176.0" prefHeight="80.0" prefWidth="307.0" />
+      <TextField layoutX="298.0" layoutY="333.0" prefHeight="31.0" prefWidth="307.0" />
+      <Label layoutX="2.0" layoutY="382.0" text="Numero Telefono 3:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <TextField layoutX="298.0" layoutY="377.0" prefHeight="31.0" prefWidth="307.0" />
+      <TextField layoutX="298.0" layoutY="517.0" prefHeight="31.0" prefWidth="307.0" />
+      <Label layoutY="522.0" text="Email 3:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <TextField layoutX="298.0" layoutY="473.0" prefHeight="31.0" prefWidth="307.0" />
+      <Label layoutY="478.0" text="Email 2:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <Label layoutY="433.0" text="Email 1:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+      <TextField layoutX="298.0" layoutY="428.0" prefHeight="31.0" prefWidth="307.0" />
+      <Button layoutX="733.0" layoutY="197.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="94.0" text="Modifica" />
+      <Button layoutX="733.0" layoutY="294.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="94.0" text="Indietro" />
+      <Label layoutX="2.0" layoutY="338.0" text="Numero Telefono 2:">
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </Label>
+   </children>
+</Pane>
