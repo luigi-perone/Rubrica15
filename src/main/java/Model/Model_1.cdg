@@ -2,7 +2,7 @@
 
 <ClassDiagram name="Model_1">
   <ClassDiagramComponents>
-    <Class name="Rubrica" package="" visibility="public" xPosition="981.0" yPosition="359.0">
+    <Class name="Rubrica" package="" visibility="public" xPosition="981.0" yPosition="328.0">
       <Fields>
         <Field name="contatti" type="TreeSet&lt;Contatto&gt;" visibility="private"/>
       </Fields>
@@ -12,43 +12,43 @@
           <Argument type="String" name="cognome"/>
           <Argument type="String" name="nome"/>
         </Method>
-        <Method name="eliminaContatto" returnType="Contatto" visibility="public">
-          <Argument type="Contatto" name="c"/>
-        </Method>
-        <Method name="modificaContatto" returnType="Contatto" visibility="public">
+        <Method name="eliminaContatto" returnType="void" visibility="public">
           <Argument type="Contatto" name="c"/>
         </Method>
         <Method name="aggiungiContatto" returnType="void" visibility="public">
           <Argument type="Contatto" name="c"/>
         </Method>
+        <Method name="modificaContatto" returnType="void" visibility="public">
+          <Argument type="Contatto" name="c"/>
+        </Method>
       </Methods>
     </Class>
-    <Class name="NumeroTelefono" package="" visibility="public" xPosition="313.0" yPosition="622.0">
+    <Class name="NumeroTelefono" package="" visibility="public" xPosition="474.0" yPosition="633.0">
       <Fields>
         <Field name="prefisso" type="Prefisso" visibility="private"/>
         <Field name="numero" type="String" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="setNumeroTelefono" returnType="int" visibility="public">
+        <Method name="setNumeroTelefono" returnType="void" visibility="public">
           <Argument type="Prefisso" name="p"/>
           <Argument type="int" name="numero"/>
         </Method>
         <Method name="getNumeroTelefono" returnType="NumeroTelefono" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Prefisso" package="" visibility="public" xPosition="723.0" yPosition="622.0">
+    <Class name="Prefisso" package="" visibility="public" xPosition="817.0" yPosition="633.0">
       <Fields>
-        <Field name="valore" type="int" visibility="private"/>
+        <Field name="valore" type="String" visibility="private"/>
         <Field name="lunghezzaNumero" type="int" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="getValore" returnType="void" visibility="public"/>
-        <Method name="getLunghezzaNumero" returnType="void" visibility="public"/>
+        <Method name="getValore" returnType="String" visibility="public"/>
+        <Method name="getLunghezzaNumero" returnType="int" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Email" package="" visibility="public" xPosition="28.0" yPosition="422.0">
+    <Class name="Email" package="" visibility="public" xPosition="23.0" yPosition="389.0">
       <Fields>
         <Field name="email" type="String" visibility="private"/>
       </Fields>
@@ -58,7 +58,7 @@
         <Method name="getEmail" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Contatto" package="" visibility="public" xPosition="460.0" yPosition="213.0">
+    <Class name="Contatto" package="" visibility="public" xPosition="465.0" yPosition="215.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
         <Field name="cognome" type="String" visibility="private"/>
@@ -69,29 +69,31 @@
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="setNome" returnType="String" visibility="public">
+        <Method name="setNome" returnType="void" visibility="public">
           <Argument type="String" name="n"/>
         </Method>
-        <Method name="setCognome" returnType="String" visibility="public">
+        <Method name="setCognome" returnType="void" visibility="public">
           <Argument type="String" name="c"/>
         </Method>
-        <Method name="setDescrizione" returnType="String" visibility="public">
+        <Method name="setDescrizione" returnType="void" visibility="public">
           <Argument type="String" name="d"/>
         </Method>
         <Method name="getNome" returnType="String" visibility="public"/>
         <Method name="getCognome" returnType="String" visibility="public"/>
         <Method name="getDescrizione" returnType="String" visibility="public"/>
-        <Method name="aggiungiNumero" returnType="NumeroTelfono" visibility="public">
+        <Method name="aggiungiNumero" returnType="void" visibility="public">
           <Argument type="NumeroTelfono" name="t"/>
+          <Argument type="int" name="indice"/>
         </Method>
-        <Method name="aggiungiEmail" returnType="Email" visibility="public">
+        <Method name="aggiungiEmail" returnType="void" visibility="public">
           <Argument type="Email" name="e"/>
+          <Argument type="int" name="indice"/>
         </Method>
       </Methods>
     </Class>
-    <Interface name="FileManager" package="" visibility="public" xPosition="1018.0" yPosition="683.0">
+    <Interface name="FileManager" package="" visibility="public" xPosition="1023.0" yPosition="663.0">
       <Methods>
-        <Method name="importaFile" returnType="Rubrica" visibility="public">
+        <Method name="importaFile" returnType="void" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
         <Method name="esportaRubrica" returnType="void" visibility="public">
@@ -102,35 +104,143 @@
         </Method>
       </Methods>
     </Interface>
-    <Interface name="CheckLunghezza" package="" visibility="public" xPosition="59.0" yPosition="109.0">
+    <Interface name="CheckLunghezza" package="" visibility="public" xPosition="23.0" yPosition="237.0">
       <Methods>
         <Method name="checkLunghezza" returnType="Object" visibility="public">
           <Argument type="Object" name="o"/>
         </Method>
       </Methods>
     </Interface>
-    <Interface name="ContattoValido" package="" visibility="public" xPosition="586.0" yPosition="50.0">
+    <Interface name="ContattoValido" package="" visibility="public" xPosition="535.0" yPosition="50.0">
       <Methods>
         <Method name="contattoValido" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
-    <Interface name="ValidaDati" package="" visibility="public" xPosition="11.0" yPosition="667.0">
+    <Interface name="ValidaDati" package="" visibility="public" xPosition="23.0" yPosition="667.0">
       <Methods>
-        <Method name="checkDato" returnType="boolean" visibility="public">
-          <Argument type="Object" name="o"/>
-        </Method>
+        <Method name="checkDati" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
+    <Class name="HomePageController" package="" visibility="public" xPosition="1034.0" yPosition="7.0">
+      <Fields>
+        <Field name="importa" type="Menu" visibility="private"/>
+        <Field name="esporta" type="Menu" visibility="private"/>
+        <Field name="nuovoContatto" type="Menu" visibility="private"/>
+        <Field name="cerca" type="TextField" visibility="private"/>
+        <Field name="ordine" type="Button" visibility="private"/>
+        <Field name="listview" type="ListView&lt;Contatto&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="importa_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+        <Method name="esporta_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+        <Method name="nuovo_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+        <Method name="ordina_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AggiungiController" package="" visibility="public" xPosition="1337.0" yPosition="632.0">
+      <Fields>
+        <Field name="indietro" type="Menu" visibility="private"/>
+        <Field name="salva" type="Menu" visibility="private"/>
+        <Field name="nome" type="TextField" visibility="private"/>
+        <Field name="cognome" type="TextField" visibility="private"/>
+        <Field name="tel1" type="TextField" visibility="private"/>
+        <Field name="tel2" type="TextField" visibility="private"/>
+        <Field name="tel3" type="TextField" visibility="private"/>
+        <Field name="email1" type="TextField" visibility="private"/>
+        <Field name="email2" type="TextField" visibility="private"/>
+        <Field name="email3" type="TextField" visibility="private"/>
+        <Field name="pref1" type="ChioceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref2" type="ChioceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref3" type="ChioceBox&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="indietro_f" returnType="void" visibility="public"/>
+        <Method name="salva_f" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ModificaController" package="" visibility="public" xPosition="1684.0" yPosition="427.0">
+      <Fields>
+        <Field name="indietro" type="Menu" visibility="private"/>
+        <Field name="salva" type="Menu" visibility="private"/>
+        <Field name="nome" type="TextField" visibility="private"/>
+        <Field name="cognome" type="TextField" visibility="private"/>
+        <Field name="descrizione" type="TextField" visibility="private"/>
+        <Field name="tel1" type="TextField" visibility="private"/>
+        <Field name="tel2" type="TextField" visibility="private"/>
+        <Field name="tel3" type="TextField" visibility="private"/>
+        <Field name="email1" type="TextField" visibility="private"/>
+        <Field name="email2" type="TextField" visibility="private"/>
+        <Field name="email3" type="TextField" visibility="private"/>
+        <Field name="pref1" type="ChioceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref2" type="ChioceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref3" type="ChioceBox&lt;String&gt;" visibility="private"/>
+        <Field name="iniziale" type="Text" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="indietro_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+        <Method name="salva_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VisualizzaController" package="" visibility="public" xPosition="1423.0" yPosition="44.0">
+      <Fields>
+        <Field name="indietro" type="Menu" visibility="private"/>
+        <Field name="modifica" type="Menu" visibility="private"/>
+        <Field name="elmina" type="Menu" visibility="private"/>
+        <Field name="nome" type="Label" visibility="private"/>
+        <Field name="cognome" type="Label" visibility="private"/>
+        <Field name="descrizione" type="Label" visibility="private"/>
+        <Field name="tel1" type="Label" visibility="private"/>
+        <Field name="tel2" type="Label" visibility="private"/>
+        <Field name="telf3" type="Label" visibility="private"/>
+        <Field name="email1" type="Label" visibility="private"/>
+        <Field name="email2" type="Label" visibility="private"/>
+        <Field name="email3" type="Label" visibility="private"/>
+        <Field name="pref1" type="Label" visibility="private"/>
+        <Field name="pref2" type="Label" visibility="private"/>
+        <Field name="pref3" type="Label" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="indietro_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+        <Method name="modifica_f" returnType="Action" visibility="public">
+          <Argument type="Action" name="event"/>
+        </Method>
+        <Method name="elimina_f" returnType="Action" visibility="public">
+          <Argument type="Acition" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
-    <HasRelation name="has" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="has" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
-    <HasRelation name="has" source="Rubrica" target="Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="ValidaDati"/>
-    <HasRelation name="has" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
+    <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="ValidaDati"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="ValidaDati"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
+    <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
+    <HasRelation name="contatto" source="Rubrica" target="Contatto" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
