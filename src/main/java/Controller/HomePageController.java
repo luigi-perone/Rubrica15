@@ -11,12 +11,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
- * @author scass
+ * @author luigi
  */
 public class HomePageController implements Initializable {
 
@@ -27,7 +29,11 @@ public class HomePageController implements Initializable {
     @FXML
     private Menu nuovoContatto;
     @FXML
+    private TextField cerca;
+    @FXML
     private Button ordina;
+    @FXML
+    private ListView<?> listView;
 
     /**
      * Initializes the controller class.
@@ -38,7 +44,7 @@ public class HomePageController implements Initializable {
     }    
 
     @FXML
-    private void Importa_f(ActionEvent event) {
+    private void importa_f(ActionEvent event) {
     }
 
     @FXML

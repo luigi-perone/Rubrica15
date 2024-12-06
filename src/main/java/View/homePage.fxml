@@ -8,25 +8,13 @@
    <children>
       <MenuBar prefHeight="40.0" prefWidth="800.0">
         <menus>
-          <Menu id="importa" fx:id="importa" mnemonicParsing="false" onAction="#Importa_f" text="Importa">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu id="esporta" fx:id="esporta" mnemonicParsing="false" onAction="#esporta_f" text="Esporta">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-            <Menu id="nuovo" fx:id="nuovoContatto" mnemonicParsing="false" onAction="#nuovo_f" text="Nuovo contatto">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Close" />
-               </items>
-            </Menu>
+          <Menu id="importa" fx:id="importa" mnemonicParsing="false" onAction="#importa_f" text="Importa" />
+          <Menu id="esporta" fx:id="esporta" mnemonicParsing="false" onAction="#esporta_f" text="Esporta" />
+            <Menu id="nuovo" fx:id="nuovoContatto" mnemonicParsing="false" onAction="#nuovo_f" text="Nuovo contatto" />
         </menus>
       </MenuBar>
-      <TextField layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="520.0" text="Cerca.." />
+      <TextField fx:id="cerca" layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="520.0" text="Cerca.." />
       <Button fx:id="ordina" layoutX="650.0" layoutY="100.0" mnemonicParsing="false" onAction="#ordina_f" prefHeight="31.0" prefWidth="50.0" text="Z-A" />
-      <ListView layoutX="100.0" layoutY="180.0" prefHeight="400.0" prefWidth="600.0" />
+      <ListView fx:id="listView" layoutX="100.0" layoutY="180.0" prefHeight="400.0" prefWidth="600.0" />
    </children>
 </Pane>

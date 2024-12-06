@@ -8,7 +8,7 @@
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="ricercaContatto" returnType="String" visibility="public">
+        <Method name="ricercaContatto" returnType="Rubrica" visibility="public">
           <Argument type="String" name="cognome"/>
           <Argument type="String" name="nome"/>
         </Method>
@@ -91,13 +91,13 @@
     </Class>
     <Interface name="FileManager" package="" visibility="public" xPosition="1018.0" yPosition="683.0">
       <Methods>
-        <Method name="importaFile" returnType="String" visibility="public">
+        <Method name="importaFile" returnType="Rubrica" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
-        <Method name="esportaRubrica" returnType="String" visibility="public">
+        <Method name="esportaRubrica" returnType="void" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
-        <Method name="checkFileName" returnType="String" visibility="public">
+        <Method name="checkFileName" returnType="boolean" visibility="public">
           <Argument type="String" name="namefile"/>
         </Method>
       </Methods>
@@ -123,14 +123,14 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="has" source="Rubrica" target="Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="ValidaDati"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="ValidaDati"/>
     <HasRelation name="has" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
     <HasRelation name="has" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
+    <HasRelation name="has" source="Rubrica" target="Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="ValidaDati"/>
     <HasRelation name="has" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="ValidaDati"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
   </ClassDiagramRelations>
 </ClassDiagram>
