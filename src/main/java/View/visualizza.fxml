@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="40.0" prefWidth="800.0">
+        <menus>
+          <Menu fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu fx:id="modifica" mnemonicParsing="false" onAction="#modifica_f" text="Modifica">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="elimina" mnemonicParsing="false" onAction="#elimina_f" text="Elimina">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="237.0" layoutY="72.0" prefHeight="35.0" prefWidth="132.0" text="Nome">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="107.0" prefHeight="35.0" prefWidth="132.0" text="Cognome">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="177.0" prefHeight="35.0" prefWidth="142.0" text="Descrizione:">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="406.0" text="E-Mail 1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="272.0" text="Telefono 1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="315.0" text="Telefono 2">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="451.0" text="E-Mail 2">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="360.0" text="Telefono 3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="498.0" text="E-Mail 3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nome" layoutX="388.0" layoutY="72.0" prefHeight="25.0" prefWidth="302.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="cognome" layoutX="388.0" layoutY="107.0" prefHeight="25.0" prefWidth="302.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="descrizione" layoutX="388.0" layoutY="168.0" prefHeight="98.0" prefWidth="302.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="tel1" layoutX="443.0" layoutY="272.0" prefHeight="35.0" prefWidth="239.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="tel2" layoutX="443.0" layoutY="315.0" prefHeight="35.0" prefWidth="239.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="tel3" layoutX="443.0" layoutY="360.0" prefHeight="35.0" prefWidth="239.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="email1" layoutX="388.0" layoutY="406.0" prefHeight="35.0" prefWidth="302.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="email2" layoutX="388.0" layoutY="451.0" prefHeight="35.0" prefWidth="302.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="email3" layoutX="388.0" layoutY="498.0" prefHeight="35.0" prefWidth="302.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Circle fill="#dddee1" layoutX="112.0" layoutY="139.0" radius="75.0" strokeType="INSIDE">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Circle>
+      <Label fx:id="pref1" layoutX="388.0" layoutY="272.0" prefHeight="25.0" prefWidth="46.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="pref2" layoutX="390.0" layoutY="315.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="pref3" layoutX="390.0" layoutY="360.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="214.0" layoutY="38.0" orientation="VERTICAL" prefHeight="564.0" prefWidth="0.0" />
+      <Text fx:id="iniziale" fill="WHITE" layoutX="37.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="150.0">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
