@@ -14,5 +14,6 @@ var searchData=
   ['contatto_2ejava_11',['Contatto.java',['../_contatto_8java.html',1,'']]],
   ['contattovalido_12',['ContattoValido',['../interface_model_1_1_contatto_valido.html',1,'Model']]],
   ['contattovalido_13',['contattoValido',['../class_model_1_1_contatto.html#ad7cb8443ab094ed8b02a9d3be642c6af',1,'Model.Contatto.contattoValido()'],['../interface_model_1_1_contatto_valido.html#ae93bf70bec59b29f0734cc395eb8c660',1,'Model.ContattoValido.contattoValido()']]],
-  ['contattovalido_2ejava_14',['ContattoValido.java',['../_contatto_valido_8java.html',1,'']]]
+  ['contattovalido_2ejava_14',['ContattoValido.java',['../_contatto_valido_8java.html',1,'']]],
+  ['controller_15',['Controller',['../namespace_controller.html',1,'']]]
 ];
