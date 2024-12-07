@@ -63,19 +63,5 @@ public class Email implements CheckEmail {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    /**
-    * @brief Restituisce una rappresentazione in formato stringa dell'oggetto.
-    * 
-    * Questo metodo restituisce l'indirizzo email dell'oggetto come stringa.
-    * Viene utilizzato per fornire una rappresentazione del contenuto dell'oggetto
-    * quando viene chiamato il metodo `toString()`.
-    * 
-    * @return Una stringa che rappresenta l'indirizzo email dell'oggetto.
-    */
-    @Override
-    public String toString() {
-        return email;
-    }
-    
 }
 
