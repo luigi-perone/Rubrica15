@@ -171,9 +171,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Aggiunge un contatto alla rubrica. </p>
 <p>Questo metodo aggiunge un nuovo contatto alla rubrica. Il metodo non è ancora implementato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_contatto.html">Contatto</a> esiste ed è valido </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a> aggiornata con il nuovo contatto</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Il contatto da aggiungere. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Il contatto da aggiungere. </td></tr>
   </table>
   </dd>
 </dl>
@@ -196,10 +198,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifica la validità del nome del file. </p>
-<p>Questo metodo verifica la validità del nome del file (ad esempio, controllando l'estensione o il formato). Il metodo non è ancora implementato.</p>
+<p>Questo metodo verifica la validità del nome del file (ad esempio, controllando l'estensione o il formato). Il metodo non è ancora implementato. </p><dl class="section pre"><dt>Precondition</dt><dd>file esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>verifica nome file </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">namefile</td><td>Il nome del file da verificare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">namefile</td><td>Il nome del file da verificare. </td></tr>
   </table>
   </dd>
 </dl>
@@ -232,9 +235,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Elimina un contatto dalla rubrica. </p>
 <p>Questo metodo elimina un contatto dalla rubrica. Il metodo non è ancora implementato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il contatto selezionato esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a> aggiornata, senza il contatto scelto</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Il contatto da eliminare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Il contatto da eliminare. </td></tr>
   </table>
   </dd>
 </dl>
@@ -258,9 +263,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Esporta la rubrica su un file. </p>
 <p>Questo metodo esporta la rubrica in un file con il nome specificato. Il metodo non è ancora implementato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a> esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>il file che faceva riferimento il namefile contiene la rubrica</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">namefile</td><td>Il nome del file su cui esportare la rubrica. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">namefile</td><td>Il nome del file su cui esportare la rubrica. </td></tr>
   </table>
   </dd>
 </dl>
@@ -292,9 +299,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Importa una rubrica da un file. </p>
 <p>Questo metodo permette di caricare una rubrica da un file specificato dal nome del file. Il metodo non è ancora implementato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il nome del file esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>La rubrica è caricata con i contatti provenienti dal file</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">namefile</td><td>Il nome del file da cui importare la rubrica. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">namefile</td><td>Il nome del file da cui importare la rubrica. </td></tr>
   </table>
   </dd>
 </dl>
@@ -327,9 +336,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Modifica un contatto esistente nella rubrica. </p>
 <p>Questo metodo modifica un contatto già presente nella rubrica. Il metodo non è ancora implementato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il contatto esiste, con modifiche valide </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>I dati del contatto sono modificati</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Il contatto da modificare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Il contatto da modificare. </td></tr>
   </table>
   </dd>
 </dl>
@@ -364,10 +375,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Ricerca un contatto nella rubrica in base al cognome e al nome. </p>
 <p>Questo metodo cerca un contatto all'interno della rubrica usando il cognome e il nome come chiavi di ricerca. Il metodo non è ancora implementato.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>Ritorna una <a class="el" href="class_model_1_1_rubrica.html">Rubrica</a> contenente l'insieme di contatti con cognome e nome inseriti</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cognome</td><td>Cognome del contatto da cercare. </td></tr>
-    <tr><td class="paramname">nome</td><td>Nome del contatto da cercare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cognome</td><td>Cognome del contatto da cercare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome</td><td>Nome del contatto da cercare. </td></tr>
   </table>
   </dd>
 </dl>

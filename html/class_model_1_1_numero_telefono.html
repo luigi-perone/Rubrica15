@@ -151,10 +151,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>. </p>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code> con il prefisso e il numero specificati.</p>
+<p>@per Valori passati diversi da null </p><dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prefisso</td><td><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a> associato al numero di telefono. </td></tr>
-    <tr><td class="paramname">numero</td><td>Numero di telefono da associare al prefisso. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefisso</td><td><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a> associato al numero di telefono. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numero</td><td>Numero di telefono da associare al prefisso. </td></tr>
   </table>
   </dd>
 </dl>
@@ -178,10 +179,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifica la validità di un numero di telefono. </p>
-<p>Questo metodo verifica se un numero di telefono è valido. Attualmente il metodo non è implementato.</p>
+<p>Questo metodo verifica se un numero di telefono è valido. Attualmente il metodo non è implementato. </p><dl class="section pre"><dt>Precondition</dt><dd>il numero passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>verifica se il numero è valido</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>Oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code> da verificare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code> da verificare. </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,6 +216,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce il numero di telefono. </p>
 <p>Questo metodo restituisce il numero di telefono dell'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Numero esiste</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il numero di telefono dell'oggetto. </dd></dl>
 
 </div>
@@ -235,6 +238,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce il prefisso associato al numero di telefono. </p>
 <p>Questo metodo restituisce il prefisso dell'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo prefisso</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il prefisso associato al numero di telefono. </dd></dl>
 
 </div>
@@ -256,9 +260,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Imposta il numero di telefono. </p>
 <p>Questo metodo imposta un nuovo numero di telefono per l'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo numero il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numero</td><td>Il nuovo numero di telefono da impostare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numero</td><td>Il nuovo numero di telefono da impostare. </td></tr>
   </table>
   </dd>
 </dl>
@@ -282,9 +288,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Imposta il prefisso del numero di telefono. </p>
 <p>Questo metodo imposta un nuovo prefisso per il numero di telefono.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo prefisso il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prefisso</td><td>Il nuovo prefisso da associare al numero di telefono. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefisso</td><td>Il nuovo prefisso da associare al numero di telefono. </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,6 +316,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce una rappresentazione in formato stringa del numero di telefono. </p>
 <p>Questo metodo restituisce il numero di telefono completo di prefisso in formato stringa, ad esempio "+39 123456789".</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a> esiste</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La rappresentazione del numero di telefono come stringa. </dd></dl>
 
 </div>

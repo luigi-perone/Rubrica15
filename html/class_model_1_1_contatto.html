@@ -178,9 +178,9 @@ Public Member Functions</h2></td></tr>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_contatto.html">Contatto</a></code> con nome, cognome e descrizione. Gli array di numeri di telefono e email sono inizializzati con dimensione massima pari a <code>MAX</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome del contatto. </td></tr>
-    <tr><td class="paramname">cognome</td><td>Cognome del contatto. </td></tr>
-    <tr><td class="paramname">descrizione</td><td>Descrizione del contatto. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nome</td><td>Nome del contatto. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cognome</td><td>Cognome del contatto. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">descrizione</td><td>Descrizione del contatto. </td></tr>
   </table>
   </dd>
 </dl>
@@ -209,10 +209,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Verifica se una stringa non supera una lunghezza massima specificata. </p>
 <p>Implementazione del metodo definito nell'interfaccia <code><a class="el" href="interface_model_1_1_check_lunghezza.html" title="Interfaccia per verificare la lunghezza di una stringa.">CheckLunghezza</a></code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>lungMax &gt; 0 e s diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>verifica se s ha una dimensione maggiore di quella supportata</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>La stringa da verificare. </td></tr>
-    <tr><td class="paramname">lungMax</td><td>La lunghezza massima consentita. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>La stringa da verificare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lungMax</td><td>La lunghezza massima consentita. </td></tr>
   </table>
   </dd>
 </dl>
@@ -239,6 +241,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Verifica la validità complessiva del contatto. </p>
 <p>Metodo da implementare per determinare la validità del contatto in base a criteri definiti.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>verifica se i campi obbligatori sono compilati</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> se il contatto è valido, <code>false</code> altrimenti. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -267,6 +270,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce il cognome del contatto. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo cognome</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Cognome del contatto. </dd></dl>
 
 </div>
@@ -287,6 +291,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce la descrizione del contatto. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo descrizione</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Descrizione del contatto. </dd></dl>
 
 </div>
@@ -307,9 +312,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce un'email del contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>idx &gt;0 </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo email all'indice passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idx</td><td>Indice dell'email nell'array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Indice dell'email nell'array. </td></tr>
   </table>
   </dd>
 </dl>
@@ -333,6 +340,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce il nome del contatto. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo nome</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Nome del contatto. </dd></dl>
 
 </div>
@@ -353,9 +361,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce un numero di telefono del contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>idx &gt;0 </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo numero all'indice passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idx</td><td>Indice del numero di telefono nell'array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Indice del numero di telefono nell'array. </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,6 +389,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Imposta il cognome del contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo cognome il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cognome</td><td>Nuovo cognome del contatto. </td></tr>
@@ -404,9 +416,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Imposta la descrizione del contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo descrizione il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">descrizione</td><td>Nuova descrizione del contatto. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">descrizione</td><td>Nuova descrizione del contatto. </td></tr>
   </table>
   </dd>
 </dl>
@@ -433,10 +447,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Imposta un'email per il contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>email diverso da null e idx &gt;0 </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo email il valore passato, all'indice dato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">email</td><td>Nuova email. </td></tr>
-    <tr><td class="paramname">idx</td><td>Indice in cui impostare l'email. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">email</td><td>Nuova email. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Indice in cui impostare l'email. </td></tr>
   </table>
   </dd>
 </dl>
@@ -459,6 +475,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Imposta il nome del contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo nome il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nome</td><td>Nuovo nome del contatto. </td></tr>
@@ -488,10 +506,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Imposta un numero di telefono per il contatto. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>numero diverso da null e idx &gt;0 </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo numero il valore passato, all'indice dato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numero</td><td>Nuovo numero di telefono. </td></tr>
-    <tr><td class="paramname">idx</td><td>Indice in cui impostare il numero di telefono. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numero</td><td>Nuovo numero di telefono. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Indice in cui impostare il numero di telefono. </td></tr>
   </table>
   </dd>
 </dl>

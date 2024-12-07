@@ -140,6 +140,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Verifica la validità del nome di un file. </p>
 <p>Questo metodo verifica se il nome del file è valido, ad esempio controllando l'estensione o il formato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>file esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>verifica nome file</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">namefile</td><td>Il nome del file da verificare. </td></tr>
@@ -169,6 +171,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Esporta la rubrica su un file. </p>
 <p>Questo metodo esporta i dati della rubrica in un file con il nome specificato.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a> esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>il file che faceva riferimento il namefile contiene la rubrica</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">namefile</td><td>Il nome del file su cui esportare la rubrica. </td></tr>
@@ -197,6 +201,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Importa una rubrica da un file. </p>
 <p>Questo metodo permette di caricare una rubrica da un file specificato dal nome del file.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>il nome inserito è associato a un file esistente </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a> contenente l'insieme dei contatti presenti nel file</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">namefile</td><td>Il nome del file da cui importare la rubrica. </td></tr>

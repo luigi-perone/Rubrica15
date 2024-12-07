@@ -128,6 +128,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce la lunghezza del numero associato al prefisso. </p>
 <p>Questo metodo restituisce la lunghezza del numero telefonico associato a questo prefisso.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo lunghezzaNumero</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La lunghezza del numero associato al prefisso. </dd></dl>
 
 </div>
@@ -149,6 +150,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce il valore del prefisso. </p>
 <p>Questo metodo restituisce il valore del prefisso telefonico. Il metodo non è ancora implementato.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo valore</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il valore del prefisso. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -176,9 +178,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Imposta il valore del prefisso. </p>
 <p>Questo metodo imposta il valore del prefisso e calcola la lunghezza del numero associato a questo prefisso.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>valore passato in input è diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attrivuto il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">valore</td><td>Il valore del prefisso da impostare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">valore</td><td>Il valore del prefisso da impostare. </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,6 +206,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce una rappresentazione in formato stringa del prefisso. </p>
 <p>Questo metodo restituisce una rappresentazione stringa del prefisso, preceduto dal simbolo "+".</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a> esiste</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La rappresentazione del prefisso come stringa (es. "+39"). </dd></dl>
 
 </div>
