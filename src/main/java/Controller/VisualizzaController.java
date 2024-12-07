@@ -1,7 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file VisualizzaController.java
+ * @brief Controller per la visualizzazione di un contatto.
+ * 
+ * La classe @c VisualizzaController gestisce la visualizzazione di un contatto nell'applicazione.
+ * La vista mostra le informazioni del contatto come nome, cognome, descrizione, numeri di telefono,
+ * email e prefissi. Consente anche di modificare o eliminare il contatto tramite i menu appositi.
+ * 
+ * @package Controller
+ * 
+ * @author scass
  */
 package Controller;
 
@@ -14,64 +21,96 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.text.Text;
 
-/**
- * FXML Controller class
- *
- * @author scass
- */
 public class VisualizzaController implements Initializable {
 
     @FXML
-    private Menu indietro;
+    private Menu indietro; ///< Menu per tornare indietro alla schermata precedente.
+    
     @FXML
-    private Menu modifica;
+    private Menu modifica; ///< Menu per modificare il contatto.
+    
     @FXML
-    private Menu elimina;
+    private Menu elimina; ///< Menu per eliminare il contatto.
+    
     @FXML
-    private Label nome;
+    private Label nome; ///< Etichetta per visualizzare il nome del contatto.
+    
     @FXML
-    private Label cognome;
+    private Label cognome; ///< Etichetta per visualizzare il cognome del contatto.
+    
     @FXML
-    private Label descrizione;
+    private Label descrizione; ///< Etichetta per visualizzare la descrizione del contatto.
+    
     @FXML
-    private Label tel1;
+    private Label tel1; ///< Etichetta per visualizzare il primo numero di telefono.
+    
     @FXML
-    private Label tel2;
+    private Label tel2; ///< Etichetta per visualizzare il secondo numero di telefono.
+    
     @FXML
-    private Label tel3;
+    private Label tel3; ///< Etichetta per visualizzare il terzo numero di telefono.
+    
     @FXML
-    private Label email1;
+    private Label email1; ///< Etichetta per visualizzare la prima email.
+    
     @FXML
-    private Label email2;
+    private Label email2; ///< Etichetta per visualizzare la seconda email.
+    
     @FXML
-    private Label email3;
+    private Label email3; ///< Etichetta per visualizzare la terza email.
+    
     @FXML
-    private Label pref1;
+    private Label pref1; ///< Etichetta per visualizzare il prefisso del primo numero di telefono.
+    
     @FXML
-    private Label pref2;
+    private Label pref2; ///< Etichetta per visualizzare il prefisso del secondo numero di telefono.
+    
     @FXML
-    private Label pref3;
+    private Label pref3; ///< Etichetta per visualizzare il prefisso del terzo numero di telefono.
+    
     @FXML
-    private Text iniziale;
+    private Text iniziale; ///< Testo che può essere usato per mostrare informazioni o istruzioni all'utente.
 
     /**
-     * Initializes the controller class.
+     * Metodo di inizializzazione chiamato all'avvio della vista.
+     * Questo metodo prepara la schermata, configurando i componenti dell'interfaccia utente
+     * prima che l'utente possa interagirvi.
+     * 
+     * @param url URL utilizzato per caricare la vista (non utilizzato in questo caso).
+     * @param rb Risorse per il bundle di lingua (non utilizzato in questo caso).
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        // TODO: aggiungere l'inizializzazione dei componenti, se necessario
+    }
 
+    /**
+     * Gestisce l'azione del menu "Indietro", che permette di tornare alla schermata precedente.
+     * 
+     * @param event L'evento che rappresenta l'azione di tornare indietro.
+     */
     @FXML
     private void indietro_f(ActionEvent event) {
+        // TODO: logica per tornare indietro alla schermata precedente
     }
 
+    /**
+     * Gestisce l'azione del menu "Modifica", che permette di modificare il contatto.
+     * 
+     * @param event L'evento che rappresenta l'azione di modifica del contatto.
+     */
     @FXML
     private void modifica_f(ActionEvent event) {
+        // TODO: logica per modificare il contatto
     }
 
+    /**
+     * Gestisce l'azione del menu "Elimina", che permette di eliminare il contatto.
+     * 
+     * @param event L'evento che rappresenta l'azione di eliminazione del contatto.
+     */
     @FXML
     private void elimina_f(ActionEvent event) {
+        // TODO: logica per eliminare il contatto
     }
-    
 }

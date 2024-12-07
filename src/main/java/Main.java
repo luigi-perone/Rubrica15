@@ -1,16 +1,15 @@
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 /**
- *
+ * @file Main.java
+ * @brief Classe principale dell'applicazione.
+ * 
+ * La classe @c Main è il punto di ingresso dell'applicazione. Attualmente, la classe
+ * non contiene alcun codice, ma potrebbe essere utilizzata per avviare l'applicazione
+ * o eseguire altre operazioni principali, come l'inizializzazione di componenti o
+ * la gestione delle interazioni con l'utente.
+ * 
  * @author luigi
  */
 public class Main {
     
 }
+
