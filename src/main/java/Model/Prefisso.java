@@ -22,6 +22,9 @@ public class Prefisso {
      * Questo metodo restituisce il valore del prefisso telefonico. Il metodo non è 
      * ancora implementato.
      * 
+     * @post restituisce il  contenuto dell'attributo valore
+     * 
+     * 
      * @return Il valore del prefisso.
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
@@ -35,7 +38,10 @@ public class Prefisso {
      * Questo metodo imposta il valore del prefisso e calcola la lunghezza del numero
      * associato a questo prefisso.
      * 
-     * @param valore Il valore del prefisso da impostare.
+     * @pre valore passato in input è diverso da null
+     * @post viene assegnato all'attrivuto il valore passato
+     * 
+     * @param[in] valore Il valore del prefisso da impostare.
      */
     public void setValore(String valore) {
         this.valore = valore;
@@ -48,6 +54,8 @@ public class Prefisso {
      * Questo metodo restituisce la lunghezza del numero telefonico associato a questo
      * prefisso.
      * 
+     * @post restituisce il  contenuto dell'attributo lunghezzaNumero
+     * 
      * @return La lunghezza del numero associato al prefisso.
      */
     public int getLunghezzaNumero() {
@@ -58,6 +66,8 @@ public class Prefisso {
      * @brief Restituisce una rappresentazione in formato stringa del prefisso.
      * 
      * Questo metodo restituisce una rappresentazione stringa del prefisso, preceduto dal simbolo "+".
+     * 
+     * @pre Prefisso esiste
      * 
      * @return La rappresentazione del prefisso come stringa (es. "+39").
      */

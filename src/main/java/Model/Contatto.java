@@ -32,9 +32,9 @@ public class Contatto implements CheckLunghezza, ContattoValido {
      * Inizializza un oggetto @c Contatto con nome, cognome e descrizione. Gli array 
      * di numeri di telefono e email sono inizializzati con dimensione massima pari a @c MAX.
      * 
-     * @param nome Nome del contatto.
-     * @param cognome Cognome del contatto.
-     * @param descrizione Descrizione del contatto.
+     * @param[in] nome Nome del contatto.
+     * @param[in] cognome Cognome del contatto.
+     * @param[in] descrizione Descrizione del contatto.
      */
     public Contatto(String nome, String cognome, String descrizione) {
         this.nome = nome;
@@ -47,6 +47,9 @@ public class Contatto implements CheckLunghezza, ContattoValido {
     // Getter e Setter per gli attributi della classe.
     /**
      * @brief Restituisce il nome del contatto.
+     * 
+     * @post restituisce il contenuto dell'attributo nome
+     * 
      * @return Nome del contatto.
      */
     public String getNome() {
@@ -55,6 +58,10 @@ public class Contatto implements CheckLunghezza, ContattoValido {
 
     /**
      * @brief Imposta il nome del contatto.
+     * 
+     * @pre Il valore passato diverso da null
+     * @post viene assegnato all'attributo nome il valore passato
+     *       
      * @param nome Nuovo nome del contatto.
      */
     public void setNome(String nome) {
@@ -63,6 +70,9 @@ public class Contatto implements CheckLunghezza, ContattoValido {
 
     /**
      * @brief Restituisce il cognome del contatto.
+     * 
+     * @post restituisce il contenuto dell'attributo cognome
+     * 
      * @return Cognome del contatto.
      */
     public String getCognome() {
@@ -71,6 +81,10 @@ public class Contatto implements CheckLunghezza, ContattoValido {
 
     /**
      * @brief Imposta il cognome del contatto.
+     *
+     * @pre Il valore passato diverso da null
+     * @post viene assegnato all'attributo cognome il valore passato
+     *
      * @param cognome Nuovo cognome del contatto.
      */
     public void setCognome(String cognome) {
@@ -79,6 +93,10 @@ public class Contatto implements CheckLunghezza, ContattoValido {
 
     /**
      * @brief Restituisce la descrizione del contatto.
+     * 
+     * @post restituisce il contenuto dell'attributo descrizione
+     * 
+     * 
      * @return Descrizione del contatto.
      */
     public String getDescrizione() {
@@ -87,7 +105,12 @@ public class Contatto implements CheckLunghezza, ContattoValido {
 
     /**
      * @brief Imposta la descrizione del contatto.
-     * @param descrizione Nuova descrizione del contatto.
+     * 
+     * @pre Il valore passato diverso da null
+     * @post viene assegnato all'attributo descrizione il valore passato
+     *
+     * @param[in]  descrizione Nuova descrizione del contatto.
+     * 
      */
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
@@ -96,7 +119,11 @@ public class Contatto implements CheckLunghezza, ContattoValido {
     /**
      * @brief Restituisce un numero di telefono del contatto.
      * 
-     * @param idx Indice del numero di telefono nell'array.
+     * @pre idx >0
+     * @post restituisce il contenuto dell'attributo numero all'indice passato
+     * 
+     * 
+     * @param[in]  idx Indice del numero di telefono nell'array.
      * @return Oggetto @c NumeroTelefono all'indice specificato.
      */
     public NumeroTelefono getNumero(int idx) {
@@ -106,8 +133,12 @@ public class Contatto implements CheckLunghezza, ContattoValido {
     /**
      * @brief Imposta un numero di telefono per il contatto.
      * 
-     * @param numero Nuovo numero di telefono.
-     * @param idx Indice in cui impostare il numero di telefono.
+     * 
+     * @pre numero diverso da null e idx >0
+     * @post viene assegnato all'attributo numero il valore passato, all'indice dato
+     *
+     * @param[in] numero Nuovo numero di telefono.
+     * @param[in]  idx Indice in cui impostare il numero di telefono.
      */
     public void setNumero(NumeroTelefono numero, int idx) {
         this.numero[idx] = numero;
@@ -116,7 +147,10 @@ public class Contatto implements CheckLunghezza, ContattoValido {
     /**
      * @brief Restituisce un'email del contatto.
      * 
-     * @param idx Indice dell'email nell'array.
+     * @pre idx >0
+     * @post restituisce il contenuto dell'attributo email all'indice passato
+     * 
+     * @param[in]  idx Indice dell'email nell'array.
      * @return Oggetto @c Email all'indice specificato.
      */
     public Email getEmail(int idx) {
@@ -126,8 +160,11 @@ public class Contatto implements CheckLunghezza, ContattoValido {
     /**
      * @brief Imposta un'email per il contatto.
      * 
-     * @param email Nuova email.
-     * @param idx Indice in cui impostare l'email.
+     * @pre email diverso da null e idx >0
+     * @post viene assegnato all'attributo email il valore passato, all'indice dato
+     *
+     * @param[in] email Nuova email.
+     * @param[in] idx Indice in cui impostare l'email.
      */
     public void setEmail(Email email, int idx) {
         this.email[idx] = email;
@@ -138,8 +175,11 @@ public class Contatto implements CheckLunghezza, ContattoValido {
      * 
      * Implementazione del metodo definito nell'interfaccia @c CheckLunghezza.
      * 
-     * @param s La stringa da verificare.
-     * @param lungMax La lunghezza massima consentita.
+     * @pre lungMax > 0 e s diverso da null
+     * @post verifica se s ha una dimensione maggiore di quella supportata
+     * 
+     * @param[in] s La stringa da verificare.
+     * @param[in] lungMax La lunghezza massima consentita.
      * @return @c true se la stringa rispetta la lunghezza, @c false altrimenti.
      */
     @Override
@@ -152,6 +192,8 @@ public class Contatto implements CheckLunghezza, ContattoValido {
      * 
      * Metodo da implementare per determinare la validità del contatto in base 
      * a criteri definiti.
+     * 
+     * @post verifica se i campi obbligatori sono compilati
      * 
      * @return @c true se il contatto è valido, @c false altrimenti.
      * @throws UnsupportedOperationException Eccezione lanciata se il metodo non è implementato.

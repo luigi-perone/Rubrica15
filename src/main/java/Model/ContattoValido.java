@@ -24,6 +24,8 @@ public interface ContattoValido {
      * 
      * Questo metodo deve essere implementato per verificare se un contatto è valido.
      * 
+     * @pre Contatto chiamato esiste
+     * @post verifica se i dati obbligatori sono presenti restituendo true
      * @return Un valore booleano: @c true se il contatto è valido, @c false altrimenti.
      */
     public boolean contattoValido();

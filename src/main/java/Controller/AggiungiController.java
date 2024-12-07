@@ -77,8 +77,9 @@ public class AggiungiController implements Initializable {
      * Questo metodo prepara la schermata, ad esempio, impostando valori iniziali
      * o configurando i componenti dell'interfaccia utente.
      * 
-     * @param url URL utilizzato per caricare la vista (non utilizzato in questo caso).
-     * @param rb Risorse per il bundle di lingua (non utilizzato in questo caso).
+     * 
+     * @param[in] url URL utilizzato per caricare la vista (non utilizzato in questo caso).
+     * @param[in] rb Risorse per il bundle di lingua (non utilizzato in questo caso).
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -87,6 +88,7 @@ public class AggiungiController implements Initializable {
 
     /**
      * Gestisce l'azione del pulsante "Indietro", che permette di tornare alla schermata precedente.
+     * 
      * 
      * @param event L'evento che rappresenta il clic sul pulsante "Indietro".
      */

@@ -33,8 +33,11 @@ public class Rubrica implements FileManager {
      * Questo metodo cerca un contatto all'interno della rubrica usando il cognome 
      * e il nome come chiavi di ricerca. Il metodo non è ancora implementato.
      * 
-     * @param cognome Cognome del contatto da cercare.
-     * @param nome Nome del contatto da cercare.
+     *
+     * @post Ritorna una Rubrica contenente l'insieme di contatti con cognome e nome inseriti
+     * 
+     * @param[in] cognome Cognome del contatto da cercare.
+     * @param[in] nome Nome del contatto da cercare.
      * @return Un oggetto @c Rubrica contenente il contatto trovato (non implementato).
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
@@ -47,7 +50,10 @@ public class Rubrica implements FileManager {
      * 
      * Questo metodo elimina un contatto dalla rubrica. Il metodo non è ancora implementato.
      * 
-     * @param c Il contatto da eliminare.
+     *@pre Il contatto selezionato esiste
+     *@post Rubrica aggiornata, senza il contatto scelto
+     * 
+     * @param[in] c Il contatto da eliminare.
      */
     public void eliminaContatto(Contatto c) {
     }
@@ -57,7 +63,10 @@ public class Rubrica implements FileManager {
      * 
      * Questo metodo aggiunge un nuovo contatto alla rubrica. Il metodo non è ancora implementato.
      * 
-     * @param c Il contatto da aggiungere.
+     * @pre Contatto esiste ed è valido
+     * @post Rubrica aggiornata con il nuovo contatto
+     * 
+     * @param[in] c Il contatto da aggiungere.
      */
     public void aggiungiContatto(Contatto c) {
     }
@@ -67,7 +76,10 @@ public class Rubrica implements FileManager {
      * 
      * Questo metodo modifica un contatto già presente nella rubrica. Il metodo non è ancora implementato.
      * 
-     * @param c Il contatto da modificare.
+     * @pre Il contatto esiste, con modifiche valide
+     * @post I dati del contatto sono modificati
+     * 
+     * @param[in] c Il contatto da modificare.
      * @return Il contatto modificato (non implementato).
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
@@ -81,7 +93,10 @@ public class Rubrica implements FileManager {
      * Questo metodo permette di caricare una rubrica da un file specificato dal nome del file.
      * Il metodo non è ancora implementato.
      * 
-     * @param namefile Il nome del file da cui importare la rubrica.
+     * @pre Il nome del file esiste
+     * @post La rubrica è caricata con i contatti provenienti dal file
+     * 
+     * @param[in] namefile Il nome del file da cui importare la rubrica.
      * @return Un oggetto @c Rubrica caricato dal file (non implementato).
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
@@ -95,7 +110,10 @@ public class Rubrica implements FileManager {
      * 
      * Questo metodo esporta la rubrica in un file con il nome specificato. Il metodo non è ancora implementato.
      * 
-     * @param namefile Il nome del file su cui esportare la rubrica.
+     * @pre Rubrica esiste
+     * @post il file che faceva riferimento il namefile contiene la rubrica
+     * 
+     * @param[in] namefile Il nome del file su cui esportare la rubrica.
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     @Override
@@ -108,8 +126,9 @@ public class Rubrica implements FileManager {
      * 
      * Questo metodo verifica la validità del nome del file (ad esempio, controllando l'estensione o il formato).
      * Il metodo non è ancora implementato.
-     * 
-     * @param namefile Il nome del file da verificare.
+     * @pre file esiste
+     * @post verifica nome file
+     * @param[in] namefile Il nome del file da verificare.
      * @return @c true se il nome del file è valido, @c false altrimenti.
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */

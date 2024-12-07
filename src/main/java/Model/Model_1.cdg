@@ -2,7 +2,7 @@
 
 <ClassDiagram name="Model_1">
   <ClassDiagramComponents>
-    <Class name="Rubrica" package="" visibility="public" xPosition="981.0" yPosition="328.0">
+    <Class name="Rubrica" package="" visibility="public" xPosition="889.0" yPosition="319.0">
       <Fields>
         <Field name="contatti" type="TreeSet&lt;Contatto&gt;" visibility="private"/>
       </Fields>
@@ -20,10 +20,15 @@
         </Method>
         <Method name="modificaContatto" returnType="Contatto" visibility="public">
           <Argument type="Contatto" name="c"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="descrizione"/>
+          <Argument type="NumeroTelfono[]" name="n"/>
+          <Argument type="Email[]" name="e"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="NumeroTelefono" package="" visibility="public" xPosition="455.0" yPosition="663.0">
+    <Class name="NumeroTelefono" package="" visibility="public" xPosition="546.0" yPosition="663.0">
       <Fields>
         <Field name="prefisso" type="Prefisso" visibility="private"/>
         <Field name="numero" type="String" visibility="private"/>
@@ -41,7 +46,7 @@
         <Method name="getPrefisso" returnType="Prefisso" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Prefisso" package="" visibility="public" xPosition="817.0" yPosition="633.0">
+    <Class name="Prefisso" package="" visibility="public" xPosition="817.0" yPosition="673.0">
       <Fields>
         <Field name="valore" type="String" visibility="private"/>
         <Field name="lunghezzaNumero" type="int" visibility="private"/>
@@ -56,7 +61,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Email" package="" visibility="public" xPosition="23.0" yPosition="389.0">
+    <Class name="Email" package="" visibility="public" xPosition="23.0" yPosition="391.0">
       <Fields>
         <Field name="email" type="String" visibility="private"/>
       </Fields>
@@ -64,7 +69,6 @@
       <Methods>
         <Method name="setEmail" returnType="void" visibility="public"/>
         <Method name="getEmail" returnType="String" visibility="public"/>
-        <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
     <Class name="Contatto" package="" visibility="public" xPosition="465.0" yPosition="215.0">
@@ -91,11 +95,9 @@
         <Method name="getCognome" returnType="String" visibility="public"/>
         <Method name="getDescrizione" returnType="String" visibility="public"/>
         <Method name="getNumero" returnType="NumeroTelefono" visibility="public">
-          <Argument type="NumeroTelfono" name="numero"/>
           <Argument type="int" name="idx"/>
         </Method>
         <Method name="getEmail" returnType="Email" visibility="public">
-          <Argument type="Email" name="email"/>
           <Argument type="int" name="idx"/>
         </Method>
         <Method name="setEmail" returnType="void" visibility="public">
@@ -133,7 +135,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="AggiungiController" package="" visibility="public" xPosition="1423.0" yPosition="727.0">
+    <Class name="AggiungiController" package="" visibility="public" xPosition="1400.0" yPosition="727.0">
       <Fields>
         <Field name="indietro" type="Menu" visibility="private"/>
         <Field name="salva" type="Menu" visibility="private"/>
@@ -157,7 +159,7 @@
         <Method name="salva_f" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="ModificaController" package="" visibility="public" xPosition="1684.0" yPosition="427.0">
+    <Class name="ModificaController" package="" visibility="public" xPosition="1670.0" yPosition="602.0">
       <Fields>
         <Field name="indietro" type="Menu" visibility="private"/>
         <Field name="salva" type="Menu" visibility="private"/>
@@ -185,7 +187,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="VisualizzaController" package="" visibility="public" xPosition="1500.0" yPosition="21.0">
+    <Class name="VisualizzaController" package="" visibility="public" xPosition="1637.0" yPosition="24.0">
       <Fields>
         <Field name="indietro" type="Menu" visibility="private"/>
         <Field name="modifica" type="Menu" visibility="private"/>
@@ -243,14 +245,14 @@
         <Method name="contattoValido" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
-    <Interface name="CheckEmail" package="" visibility="public" xPosition="33.0" yPosition="633.0">
+    <Interface name="CheckEmail" package="" visibility="public" xPosition="4.0" yPosition="636.0">
       <Methods>
         <Method name="checkEmail" returnType="boolean" visibility="public">
           <Argument type="Email" name="e"/>
         </Method>
       </Methods>
     </Interface>
-    <Interface name="CheckNumeroTelefono" package="" visibility="public" xPosition="384.0" yPosition="938.0">
+    <Interface name="CheckNumeroTelefono" package="" visibility="public" xPosition="490.0" yPosition="948.0">
       <Methods>
         <Method name="checkNumeroTelefono" returnType="boolean" visibility="public">
           <Argument type="NumeroTelefono" name="n"/>
@@ -259,18 +261,18 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
-    <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
+    <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
+    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="contatto" source="Rubrica" target="Contatto" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelefono"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
+    <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
+    <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
   </ClassDiagramRelations>
 </ClassDiagram>

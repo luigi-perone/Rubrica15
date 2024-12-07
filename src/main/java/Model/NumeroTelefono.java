@@ -21,8 +21,11 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * 
      * Inizializza un oggetto @c NumeroTelefono con il prefisso e il numero specificati.
      * 
-     * @param prefisso Prefisso associato al numero di telefono.
-     * @param numero Numero di telefono da associare al prefisso.
+     * @per Valori passati diversi da null
+     * @post Oggetto creato
+     * 
+     * @param[in] prefisso Prefisso associato al numero di telefono.
+     * @param [in] numero Numero di telefono da associare al prefisso.
      */
     public NumeroTelefono(Prefisso prefisso, String numero) {
         this.prefisso = prefisso;
@@ -33,6 +36,8 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * @brief Restituisce il prefisso associato al numero di telefono.
      * 
      * Questo metodo restituisce il prefisso dell'oggetto @c NumeroTelefono.
+     * 
+     * @post restituisce il contenuto dell'attributo prefisso
      * 
      * @return Il prefisso associato al numero di telefono.
      */
@@ -45,7 +50,10 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * 
      * Questo metodo imposta un nuovo prefisso per il numero di telefono.
      * 
-     * @param prefisso Il nuovo prefisso da associare al numero di telefono.
+     * @pre Il valore passato diverso da null
+     * @post viene assegnato all'attributo prefisso il valore passato
+     * 
+     * @param[in] prefisso Il nuovo prefisso da associare al numero di telefono.
      */
     public void setPrefisso(Prefisso prefisso) {
         this.prefisso = prefisso;
@@ -55,6 +63,8 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * @brief Restituisce il numero di telefono.
      * 
      * Questo metodo restituisce il numero di telefono dell'oggetto @c NumeroTelefono.
+     * 
+     * @pre Numero esiste
      * 
      * @return Il numero di telefono dell'oggetto.
      */
@@ -67,7 +77,10 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * 
      * Questo metodo imposta un nuovo numero di telefono per l'oggetto @c NumeroTelefono.
      * 
-     * @param numero Il nuovo numero di telefono da impostare.
+     * @pre Il valore passato diverso da null
+     * @post viene assegnato all'attributo numero il valore passato
+     *
+     * @param[in] numero Il nuovo numero di telefono da impostare.
      */
     public void setNumero(String numero) {
         this.numero = numero;
@@ -78,6 +91,8 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * 
      * Questo metodo restituisce il numero di telefono completo di prefisso in formato 
      * stringa, ad esempio "+39 123456789".
+     * 
+     * @pre NumeroTelefono esiste
      * 
      * @return La rappresentazione del numero di telefono come stringa.
      */
@@ -91,8 +106,10 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * 
      * Questo metodo verifica se un numero di telefono è valido. Attualmente il metodo 
      * non è implementato.
+     * @pre il numero passato diverso da null
+     * @post verifica se il numero è valido
      * 
-     * @param n Oggetto @c NumeroTelefono da verificare.
+     * @param[in] n Oggetto @c NumeroTelefono da verificare.
      * @return @c true se il numero di telefono è valido, @c false altrimenti.
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */

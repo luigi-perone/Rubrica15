@@ -24,7 +24,10 @@ public interface CheckEmail {
      * Questo metodo deve essere implementato per verificare se un oggetto 
      * di tipo @c Email rispetta determinati criteri di validità.
      * 
-     * @param e Oggetto di tipo @c Email da verificare.
+     * @pre email passato diverso da null
+     * @post verifica se email è valida
+     * 
+     * @param[in] e Oggetto di tipo @c Email da verificare.
      * @return Un valore booleano: @c true se l'email è valida, @c false altrimenti.
      */
     public boolean checkEmail(Email e);

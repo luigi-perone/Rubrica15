@@ -21,7 +21,10 @@ public class Email implements CheckEmail {
      * 
      * Inizializza un oggetto @c Email con un indirizzo email specificato.
      * 
-     * @param email L'indirizzo email da associare all'oggetto.
+     * @per Valori passati diversi da null
+     * @post Oggetto creato
+     * 
+     * @param[in] email L'indirizzo email da associare all'oggetto.
      */
     public Email(String email) {
         this.email = email;
@@ -31,7 +34,10 @@ public class Email implements CheckEmail {
      * 
      * Questo metodo imposta l'indirizzo email dell'oggetto.
      * 
-     * @param email L'indirizzo email da impostare.
+     * @pre Il valore passato diverso da null
+     * @post viene assegnato all'attributo email il valore passato
+     * 
+     * @param[in] email L'indirizzo email da impostare.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -41,6 +47,8 @@ public class Email implements CheckEmail {
      * @brief Restituisce l'indirizzo email.
      * 
      * Questo metodo restituisce l'indirizzo email dell'oggetto.
+     * 
+     * @post restituisce il contenuto dell'attributo email
      * 
      * @return L'indirizzo email dell'oggetto.
      */
@@ -54,7 +62,10 @@ public class Email implements CheckEmail {
      * Implementazione del metodo definito nell'interfaccia @c CheckEmail. Questo metodo 
      * non è ancora implementato.
      * 
-     * @param e L'oggetto @c Email da verificare.
+     * @pre email passata diverso da null
+     * @post verifica se email è valida, true se ha la @
+     * 
+     * @param[in] e L'oggetto @c Email da verificare.
      * @return @c true se l'email è valida, @c false altrimenti. (Non supportato al momento)
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */

@@ -25,6 +25,9 @@ public interface FileManager {
      * Questo metodo permette di caricare una rubrica da un file specificato dal 
      * nome del file.
      * 
+     * @pre il nome inserito è associato a un file esistente
+     * @post Rubrica contenente l'insieme dei contatti presenti nel file
+     * 
      * @param namefile Il nome del file da cui importare la rubrica.
      * @return Oggetto @c Rubrica caricato dal file.
      */
@@ -34,6 +37,9 @@ public interface FileManager {
      * @brief Esporta la rubrica su un file.
      * 
      * Questo metodo esporta i dati della rubrica in un file con il nome specificato.
+     *  
+     * @pre Rubrica esiste
+     * @post il file che faceva riferimento il namefile contiene la rubrica
      * 
      * @param namefile Il nome del file su cui esportare la rubrica.
      */
@@ -44,6 +50,9 @@ public interface FileManager {
      * 
      * Questo metodo verifica se il nome del file è valido, ad esempio controllando
      * l'estensione o il formato.
+     * 
+     * @pre file esiste
+     * @post verifica nome file
      * 
      * @param namefile Il nome del file da verificare.
      * @return @c true se il nome del file è valido, @c false altrimenti.

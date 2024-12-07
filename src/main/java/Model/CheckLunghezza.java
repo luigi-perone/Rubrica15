@@ -24,8 +24,11 @@ public interface CheckLunghezza {
      * 
      * Questo metodo verifica se una stringa non supera una lunghezza massima specificata.
      * 
-     * @param s La stringa da verificare.
-     * @param lungMax La lunghezza massima consentita.
+     * @pre s diverso da null e lungMax > 0
+     * @post verifica se la lunghezza di s è maggiore di quella impostata
+     * 
+     * @param[in] s La stringa da verificare.
+     * @param[in] lungMax La lunghezza massima consentita.
      * @return Un valore booleano: @c true se la stringa rispetta il limite, @c false altrimenti.
      */
     public boolean checkLunghezza(String s, int lungMax);
