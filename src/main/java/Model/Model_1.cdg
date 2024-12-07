@@ -23,18 +23,22 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="NumeroTelefono" package="" visibility="public" xPosition="456.0" yPosition="633.0">
+    <Class name="NumeroTelefono" package="" visibility="public" xPosition="455.0" yPosition="663.0">
       <Fields>
         <Field name="prefisso" type="Prefisso" visibility="private"/>
         <Field name="numero" type="String" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="setNumeroTelefono" returnType="void" visibility="public">
-          <Argument type="Prefisso" name="p"/>
+        <Method name="setNumero" returnType="void" visibility="public">
           <Argument type="String" name="numero"/>
         </Method>
-        <Method name="getNumeroTelefono" returnType="NumeroTelefono" visibility="public"/>
+        <Method name="getNumeroTelefono" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setPrefisso" returnType="void" visibility="public">
+          <Argument type="Prefisso" name="p"/>
+        </Method>
+        <Method name="getPrefisso" returnType="Prefisso" visibility="public"/>
       </Methods>
     </Class>
     <Class name="Prefisso" package="" visibility="public" xPosition="817.0" yPosition="633.0">
@@ -46,6 +50,10 @@
       <Methods>
         <Method name="getValore" returnType="String" visibility="public"/>
         <Method name="getLunghezzaNumero" returnType="int" visibility="public"/>
+        <Method name="setValore" returnType="void" visibility="public">
+          <Argument type="String" name="valore"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
     <Class name="Email" package="" visibility="public" xPosition="23.0" yPosition="389.0">
@@ -56,6 +64,7 @@
       <Methods>
         <Method name="setEmail" returnType="void" visibility="public"/>
         <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
     <Class name="Contatto" package="" visibility="public" xPosition="465.0" yPosition="215.0">
@@ -70,24 +79,32 @@
       <Constructors/>
       <Methods>
         <Method name="setNome" returnType="String" visibility="public">
-          <Argument type="String" name="n"/>
+          <Argument type="String" name="nome"/>
         </Method>
         <Method name="setCognome" returnType="String" visibility="public">
-          <Argument type="String" name="c"/>
+          <Argument type="String" name="cognome"/>
         </Method>
         <Method name="setDescrizione" returnType="String" visibility="public">
-          <Argument type="String" name="d"/>
+          <Argument type="String" name="descrizione"/>
         </Method>
         <Method name="getNome" returnType="String" visibility="public"/>
         <Method name="getCognome" returnType="String" visibility="public"/>
         <Method name="getDescrizione" returnType="String" visibility="public"/>
-        <Method name="aggiungiNumero" returnType="int" visibility="public">
-          <Argument type="NumeroTelfono" name="t"/>
-          <Argument type="int" name="indice"/>
+        <Method name="getNumero" returnType="NumeroTelefono" visibility="public">
+          <Argument type="NumeroTelfono" name="numero"/>
+          <Argument type="int" name="idx"/>
         </Method>
-        <Method name="aggiungiEmail" returnType="int" visibility="public">
-          <Argument type="Email" name="e"/>
-          <Argument type="int" name="indice"/>
+        <Method name="getEmail" returnType="Email" visibility="public">
+          <Argument type="Email" name="email"/>
+          <Argument type="int" name="idx"/>
+        </Method>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="Email" name="email"/>
+          <Argument type="int" name="idx"/>
+        </Method>
+        <Method name="setNumeroTelefono" returnType="void" visibility="public">
+          <Argument type="NumeroTelefono" name="numero"/>
+          <Argument type="int" name="idx"/>
         </Method>
       </Methods>
     </Class>
@@ -233,7 +250,7 @@
         </Method>
       </Methods>
     </Interface>
-    <Interface name="CheckNumeroTelefono" package="" visibility="public" xPosition="450.0" yPosition="833.0">
+    <Interface name="CheckNumeroTelefono" package="" visibility="public" xPosition="384.0" yPosition="938.0">
       <Methods>
         <Method name="checkNumeroTelefono" returnType="boolean" visibility="public">
           <Argument type="NumeroTelefono" name="n"/>
@@ -242,18 +259,18 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
-    <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
     <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
-    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelefono"/>
-    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
+    <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
+    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
     <HasRelation name="contatto" source="Rubrica" target="Contatto" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelefono"/>
   </ClassDiagramRelations>
 </ClassDiagram>
