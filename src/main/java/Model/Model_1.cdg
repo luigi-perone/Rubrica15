@@ -71,7 +71,7 @@
         <Method name="getEmail" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Contatto" package="" visibility="public" xPosition="465.0" yPosition="215.0">
+    <Class name="Contatto" package="" visibility="public" xPosition="464.0" yPosition="215.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
         <Field name="cognome" type="String" visibility="private"/>
@@ -261,18 +261,18 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
-    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="contatto" source="Rubrica" target="Contatto" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelefono"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
-    <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
+    <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
     <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contatto" source="Rubrica" target="Contatto" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
+    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
