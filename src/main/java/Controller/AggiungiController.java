@@ -17,6 +17,9 @@ package Controller;
 
 import Main.Main;
 import Model.Contatto;
+import Model.Email;
+import Model.NumeroTelefono;
+import Model.Prefisso;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -73,13 +76,13 @@ public class AggiungiController implements Initializable {
     private TextField email3; ///< Campo di testo per la terza email.
     
     @FXML
-    private ChoiceBox<?> pref1; ///< Scelta per il prefisso del primo numero di telefono.
+    private ChoiceBox<String> pref1; ///< Scelta per il prefisso del primo numero di telefono.
     
     @FXML
-    private ChoiceBox<?> pref2; ///< Scelta per il prefisso del secondo numero di telefono.
+    private ChoiceBox<String> pref2; ///< Scelta per il prefisso del secondo numero di telefono.
     
     @FXML
-    private ChoiceBox<?> pref3; ///< Scelta per il prefisso del terzo numero di telefono.
+    private ChoiceBox<String> pref3; ///< Scelta per il prefisso del terzo numero di telefono.
     
     @FXML
     private Text iniziale; ///< Testo per visualizzare eventuali messaggi iniziali.
@@ -99,6 +102,57 @@ public class AggiungiController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO: aggiungere l'inizializzazione dei componenti, se necessario
+        pref1.getItems().addAll(
+            "+39",  // Italia
+            "+1",   // Stati Uniti
+            "+44",  // Regno Unito
+            "+33",  // Francia
+            "+49",  // Germania
+            "+34",  // Spagna
+            "+55",  // Brasile
+            "+91",  // India
+            "+81",  // Giappone
+            "+61",  // Australia
+            "+7",   // Russia
+            "+52"   // Messico
+        );
+
+        // Imposta un valore di default
+        pref1.setValue("+39");
+        pref2.getItems().addAll(
+            "+39",  // Italia
+            "+1",   // Stati Uniti
+            "+44",  // Regno Unito
+            "+33",  // Francia
+            "+49",  // Germania
+            "+34",  // Spagna
+            "+55",  // Brasile
+            "+91",  // India
+            "+81",  // Giappone
+            "+61",  // Australia
+            "+7",   // Russia
+            "+52"   // Messico
+        );
+
+        // Imposta un valore di default
+        pref2.setValue("+39");
+        pref3.getItems().addAll(
+            "+39",  // Italia
+            "+1",   // Stati Uniti
+            "+44",  // Regno Unito
+            "+33",  // Francia
+            "+49",  // Germania
+            "+34",  // Spagna
+            "+55",  // Brasile
+            "+91",  // India
+            "+81",  // Giappone
+            "+61",  // Australia
+            "+7",   // Russia
+            "+52"   // Messico
+        );
+
+        // Imposta un valore di default
+        pref3.setValue("+39");
     }
 
     /**
@@ -122,6 +176,14 @@ public class AggiungiController implements Initializable {
     private void salva_f(ActionEvent event) {
         // TODO: logica per salvare il contatto
         Contatto c=new Contatto(nome.getText(),cognome.getText(),descrizione.getText());
+        c.setEmail(new Email(email1.getText()), 0);
+        c.setEmail(new Email(email1.getText()), 1);
+        c.setEmail(new Email(email1.getText()), 2);
+        
+        c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText()), 0);
+        c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText()), 1);
+        c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText()), 2);
+
         Main.r.aggiungiContatto(c);
         Main.setRoot("homePage");
     }

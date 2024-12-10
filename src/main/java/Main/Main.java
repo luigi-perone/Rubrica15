@@ -11,7 +11,7 @@ package Main;
  * o eseguire altre operazioni principali, come l'inizializzazione di componenti o
  * la gestione delle interazioni con l'utente.
  * 
- * @author luigi
+ * @author gruppo15
  */
 
 import Controller.HomePageController;
@@ -42,6 +42,11 @@ public class Main extends Application {
 
             // Set the title of the window
             primaryStage.setTitle("Rubrica");
+            
+            primaryStage.setOnCloseRequest(event -> {
+            // Mostra una finestra di dialogo di conferma
+                Main.r.esportaRubrica("src/main/java/Main/default.csv");
+            });
 
             // Create a Scene and set it on the Stage
             scene = new Scene(root);
@@ -69,8 +74,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         r=new Rubrica();
-        Email validEmail = new Email("valid.email@example.com");
-        System.out.println(validEmail.checkEmail());
+        r=r.importaFile("src/main/java/Main/default.csv");
         launch(args);
         
         
