@@ -12,6 +12,11 @@
 
 package Model;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.TreeSet;
 
 public class Rubrica implements FileManager {
@@ -56,6 +61,7 @@ public class Rubrica implements FileManager {
      * @param[in] c Il contatto da eliminare.
      */
     public void eliminaContatto(Contatto c) {
+        contatti.remove(c);
     }
 
     /**
@@ -69,6 +75,7 @@ public class Rubrica implements FileManager {
      * @param[in] c Il contatto da aggiungere.
      */
     public void aggiungiContatto(Contatto c) {
+        contatti.add(c);
     }
 
     /**
@@ -83,8 +90,13 @@ public class Rubrica implements FileManager {
      * @return Il contatto modificato (non implementato).
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
-    public Contatto modificaContatto(Contatto c) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Contatto modificaContatto(Contatto c,String cognome,String nome,String descrizione) {
+        Contatto c1=new Contatto(nome,cognome,descrizione);
+        
+        contatti.remove(c);
+        contatti.add(c1);
+        
+        return c;
     }
 
     /**
@@ -102,7 +114,41 @@ public class Rubrica implements FileManager {
      */
     @Override
     public Rubrica importaFile(String namefile) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    Rubrica rubrica = new Rubrica();
+    
+    try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
+        String line;
+        // Salta la prima riga (intestazione del CSV)
+        reader.readLine();
+        
+        while ((line = reader.readLine()) != null) {
+            // Split della riga usando la virgola come separatore
+            String[] data = line.split(",");
+            
+            // Assicurati che ci siano abbastanza campi nella riga
+            if (data.length >= 6) {
+                String nome = data[0].trim();
+                String cognome = data[1].trim();
+                String descrizione = data[2].trim();
+                String prefisso = data[3].trim();
+                String numero = data[4].trim();
+                String email = data[5].trim();
+                
+                // Crea il NumeroTelefono con prefisso e numero
+                NumeroTelefono numeroTelefono = new NumeroTelefono(new Prefisso(prefisso), numero);
+                
+                // Crea il contatto e aggiungilo alla rubrica
+                Contatto contatto = new Contatto(nome, cognome, descrizione);
+                contatto.setNumero(numeroTelefono,0);
+                contatto.setEmail(new Email(email), 0);
+                rubrica.aggiungiContatto(contatto);
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    
+    return rubrica;
     }
 
     /**
@@ -118,7 +164,27 @@ public class Rubrica implements FileManager {
      */
     @Override
     public void esportaRubrica(String namefile) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(namefile))) {
+        // Scrivi l'intestazione del file CSV
+        writer.write("Nome,Cognome,Indirizzo,Prefisso,Numero,Email");
+        writer.newLine();
+
+        // Scrivi ogni contatto nel file
+        for (Contatto c : contatti) {
+            NumeroTelefono nt = c.getNumero(0);
+            writer.write(String.format("%s,%s,%s,%s,%s,%s",
+                c.getNome(),
+                c.getCognome(),
+                c.getDescrizione(),
+                nt.getPrefisso(),
+                nt.getNumero(),
+                c.getEmail(0).getEmail()));
+            writer.newLine();
+        }
+        System.out.println("Rubrica esportata correttamente in: " + namefile);
+    } catch (IOException e) {
+        throw new RuntimeException("Errore durante l'esportazione del file: " + e.getMessage());
+    }
     }
 
     /**
@@ -136,4 +202,17 @@ public class Rubrica implements FileManager {
     public boolean checkFileName(String namefile) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public String toString() {
+        String s=new String();
+        for(Contatto c:contatti)
+            s=s+c.toString();
+        return s;
+    }
+    
+    public TreeSet<Contatto> getTree(){
+        return contatti;
+    }
+    
 }

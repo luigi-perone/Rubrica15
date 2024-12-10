@@ -15,23 +15,34 @@
  */
 package Controller;
 
+import Main.Main;
+import Model.Contatto;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class AggiungiController implements Initializable {
 
     @FXML
-    private Menu indietro; ///< Menu per il ritorno alla schermata precedente.
+    private MenuItem indietro; ///< Menu per il ritorno alla schermata precedente.
     
     @FXML
-    private Menu salva; ///< Menu per il salvataggio del contatto.
+    private MenuItem salva; ///< Menu per il salvataggio del contatto.
     
     @FXML
     private TextField nome; ///< Campo di testo per il nome del contatto.
@@ -71,6 +82,9 @@ public class AggiungiController implements Initializable {
     
     @FXML
     private Text iniziale; ///< Testo per visualizzare eventuali messaggi iniziali.
+    
+    @FXML
+    private MenuBar menuBar;
 
     /**
      * Metodo di inizializzazione chiamato all'avvio della vista.
@@ -95,6 +109,7 @@ public class AggiungiController implements Initializable {
     @FXML
     private void indietro_f(ActionEvent event) {
         // TODO: logica per tornare indietro alla schermata precedente
+         Main.setRoot("homePage");
     }
 
     /**
@@ -105,5 +120,8 @@ public class AggiungiController implements Initializable {
     @FXML
     private void salva_f(ActionEvent event) {
         // TODO: logica per salvare il contatto
+        Contatto c=new Contatto(nome.getText(),cognome.getText(),descrizione.getText());
+        Main.r.aggiungiContatto(c);
+        Main.setRoot("homePage");
     }
 }

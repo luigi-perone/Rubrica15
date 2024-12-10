@@ -10,23 +10,23 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.VisualizzaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VisualizzaController">
    <children>
       <MenuBar prefHeight="40.0" prefWidth="800.0">
         <menus>
-          <Menu fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro">
+          <Menu mnemonicParsing="false" text="Indietro">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro" />
             </items>
           </Menu>
-          <Menu fx:id="modifica" mnemonicParsing="false" onAction="#modifica_f" text="Modifica">
+          <Menu mnemonicParsing="false" text="Modifica">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="modifica" mnemonicParsing="false" onAction="#modifica_f" text="Modifica" />
             </items>
           </Menu>
-          <Menu fx:id="elimina" mnemonicParsing="false" onAction="#elimina_f" text="Elimina">
+          <Menu mnemonicParsing="false" text="Elimina">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="elimina" mnemonicParsing="false" onAction="#elimina_f" text="Elimina" />
             </items>
           </Menu>
         </menus>
@@ -41,7 +41,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="237.0" layoutY="177.0" prefHeight="35.0" prefWidth="142.0" text="Descrizione:">
+      <Label alignment="TOP_LEFT" layoutX="232.0" layoutY="168.0" prefHeight="35.0" prefWidth="142.0" text="Descrizione:">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -86,7 +86,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="descrizione" layoutX="388.0" layoutY="168.0" prefHeight="98.0" prefWidth="302.0">
+      <Label fx:id="descrizione" alignment="TOP_LEFT" layoutX="388.0" layoutY="168.0" prefHeight="98.0" prefWidth="302.0">
          <font>
             <Font size="24.0" />
          </font>

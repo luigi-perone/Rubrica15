@@ -28,6 +28,8 @@ public class Email implements CheckEmail {
      */
     public Email(String email) {
         this.email = email;
+        
+        
     }
     /**
      * @brief Imposta l'indirizzo email.
@@ -70,8 +72,14 @@ public class Email implements CheckEmail {
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     @Override
-    public boolean checkEmail(Email e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean checkEmail() {
+        if ( this.getEmail() == null) {
+            return false; // Email non valida se l'oggetto o l'indirizzo è null
+        }
+
+        // Espressione regolare per verificare l'email
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return this.getEmail().matches(emailRegex);
     }
 
 }

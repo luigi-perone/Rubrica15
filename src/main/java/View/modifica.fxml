@@ -10,18 +10,18 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ModificaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ModificaController">
    <children>
       <MenuBar prefHeight="40.0" prefWidth="800.0">
         <menus>
-          <Menu fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro">
+          <Menu mnemonicParsing="false" text="Indietro">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro" />
             </items>
           </Menu>
-          <Menu fx:id="salva" mnemonicParsing="false" onAction="#salva_f" text="Salva">
+          <Menu mnemonicParsing="false" text="Salva">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="salva" mnemonicParsing="false" onAction="#salva_f" text="Salva" />
             </items>
           </Menu>
         </menus>

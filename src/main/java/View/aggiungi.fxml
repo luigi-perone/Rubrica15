@@ -10,20 +10,18 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AggiungiController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AggiungiController">
    <children>
-      <MenuBar prefHeight="40.0" prefWidth="800.0">
+      <MenuBar fx:id="menuBar" prefHeight="40.0" prefWidth="800.0">
         <menus>
-          <Menu fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu fx:id="salva" mnemonicParsing="false" onAction="#salva_f" text="Salva">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
+          <Menu mnemonicParsing="false" text="Indietro">
+               <items>
+                  <MenuItem fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Salva">
+               <items>
+                  <MenuItem fx:id="salva" mnemonicParsing="false" onAction="#salva_f" text="Salva" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <Label layoutX="237.0" layoutY="72.0" prefHeight="35.0" prefWidth="132.0" text="Nome">

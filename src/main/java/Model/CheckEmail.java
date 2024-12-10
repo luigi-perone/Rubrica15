@@ -30,6 +30,6 @@ public interface CheckEmail {
      * @param[in] e Oggetto di tipo @c Email da verificare.
      * @return Un valore booleano: @c true se l'email è valida, @c false altrimenti.
      */
-    public boolean checkEmail(Email e);
+    public boolean checkEmail();
 }
 

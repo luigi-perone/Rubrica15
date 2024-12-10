@@ -14,6 +14,9 @@
  */
 package Controller;
 
+import Main.Main;
+import Model.Contatto;
+import Model.Email;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -21,16 +24,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class ModificaController implements Initializable {
 
     @FXML
-    private Menu indietro; ///< Menu per tornare indietro alla schermata precedente.
+    private MenuItem indietro; ///< Menu per tornare indietro alla schermata precedente.
     
     @FXML
-    private Menu salva; ///< Menu per salvare le modifiche al contatto.
+    private MenuItem salva; ///< Menu per salvare le modifiche al contatto.
     
     @FXML
     private TextField nome; ///< Campo di testo per modificare il nome del contatto.
@@ -82,6 +86,13 @@ public class ModificaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO: aggiungere l'inizializzazione dei componenti, se necessario
+        Contatto contatto=Main.getSelectedItem();
+        if(contatto!=null){
+            iniziale.setText(contatto.getCognome().substring(0, 1));
+            nome.setText(contatto.getNome());
+            cognome.setText(contatto.getCognome());
+            descrizione.setText(contatto.getDescrizione());
+        }
     }
 
     /**
@@ -92,6 +103,7 @@ public class ModificaController implements Initializable {
     @FXML
     private void indietro_f(ActionEvent event) {
         // TODO: logica per tornare indietro alla schermata precedente
+        Main.setRoot("visualizza");
     }
 
     /**
@@ -101,6 +113,13 @@ public class ModificaController implements Initializable {
      */
     @FXML
     private void salva_f(ActionEvent event) {
-        // TODO: logica per salvare le modifiche al contatto
+            // Ottieni il contatto attualmente selezionato
+    Contatto c=new Contatto(nome.getText(),cognome.getText(),descrizione.getText());
+    Contatto contattoSelezionato = Main.getSelectedItem();
+    
+    Main.r.eliminaContatto(contattoSelezionato);
+    Main.r.aggiungiContatto(c);
+        Main.setRoot("homePage");
+   
     }
 }

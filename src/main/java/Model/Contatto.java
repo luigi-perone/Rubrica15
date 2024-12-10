@@ -12,7 +12,7 @@
 
 package Model;
 
-public class Contatto implements CheckLunghezza, ContattoValido {
+public class Contatto implements CheckLunghezza, ContattoValido,Comparable<Contatto> {
 
     private String nome; ///< Nome del contatto.
     private String cognome; ///< Cognome del contatto.
@@ -202,4 +202,16 @@ public class Contatto implements CheckLunghezza, ContattoValido {
     public boolean contattoValido() {
         throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public int compareTo(Contatto o) {
+        String cognomeNome=new String(this.cognome+" "+this.nome);
+        return cognomeNome.compareTo(o.cognome+" "+o.nome);
+    }
+
+    @Override
+    public String toString() {
+        return nome + " " + cognome;
+    }
+    
 }

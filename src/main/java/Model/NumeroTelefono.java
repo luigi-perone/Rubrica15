@@ -32,6 +32,10 @@ public class NumeroTelefono implements CheckNumeroTelefono {
         this.numero = numero;
     }
 
+    NumeroTelefono(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * @brief Restituisce il prefisso associato al numero di telefono.
      * 

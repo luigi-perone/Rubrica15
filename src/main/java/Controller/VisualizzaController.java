@@ -12,6 +12,8 @@
  */
 package Controller;
 
+import Main.Main;
+import Model.Contatto;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,18 +21,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.text.Text;
 
 public class VisualizzaController implements Initializable {
 
     @FXML
-    private Menu indietro; ///< Menu per tornare indietro alla schermata precedente.
+    private MenuItem indietro; ///< Menu per tornare indietro alla schermata precedente.
     
     @FXML
-    private Menu modifica; ///< Menu per modificare il contatto.
+    private MenuItem modifica; ///< Menu per modificare il contatto.
     
     @FXML
-    private Menu elimina; ///< Menu per eliminare il contatto.
+    private MenuItem elimina; ///< Menu per eliminare il contatto.
     
     @FXML
     private Label nome; ///< Etichetta per visualizzare il nome del contatto.
@@ -82,6 +85,13 @@ public class VisualizzaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO: aggiungere l'inizializzazione dei componenti, se necessario
+        Contatto contatto=Main.getSelectedItem();
+        if(contatto!=null){
+            iniziale.setText(contatto.getCognome().substring(0, 1).toUpperCase());
+            nome.setText(contatto.getNome());
+            cognome.setText(contatto.getCognome());
+            descrizione.setText(contatto.getDescrizione());
+        }
     }
 
     /**
@@ -92,6 +102,7 @@ public class VisualizzaController implements Initializable {
     @FXML
     private void indietro_f(ActionEvent event) {
         // TODO: logica per tornare indietro alla schermata precedente
+        Main.setRoot("homePage");
     }
 
     /**
@@ -102,6 +113,7 @@ public class VisualizzaController implements Initializable {
     @FXML
     private void modifica_f(ActionEvent event) {
         // TODO: logica per modificare il contatto
+        Main.setRoot("modifica");
     }
 
     /**
@@ -112,5 +124,9 @@ public class VisualizzaController implements Initializable {
     @FXML
     private void elimina_f(ActionEvent event) {
         // TODO: logica per eliminare il contatto
+        
+        //eliminazione
+        Main.r.eliminaContatto(Main.getSelectedItem());
+        Main.setRoot("homePage");
     }
 }

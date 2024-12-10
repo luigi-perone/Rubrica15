@@ -16,6 +16,12 @@ public class Prefisso {
     private String valore; ///< Valore del prefisso telefonico.
     private int lunghezzaNumero; ///< Lunghezza del numero associato al prefisso.
 
+    public Prefisso(String valore) {
+        this.valore = valore;
+        //this.lunghezzaNumero = lunghezzaNumero;
+    }
+
+    
     /**
      * @brief Restituisce il valore del prefisso.
      * 
