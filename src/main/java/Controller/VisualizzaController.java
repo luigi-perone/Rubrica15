@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -27,13 +28,13 @@ import javafx.scene.text.Text;
 public class VisualizzaController implements Initializable {
 
     @FXML
-    private MenuItem indietro; ///< Menu per tornare indietro alla schermata precedente.
+    private Button indietro; ///< Menu per tornare indietro alla schermata precedente.
     
     @FXML
-    private MenuItem modifica; ///< Menu per modificare il contatto.
+    private Button modifica; ///< Menu per modificare il contatto.
     
     @FXML
-    private MenuItem elimina; ///< Menu per eliminare il contatto.
+    private Button elimina; ///< Menu per eliminare il contatto.
     
     @FXML
     private Label nome; ///< Etichetta per visualizzare il nome del contatto.

@@ -27,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -39,10 +40,10 @@ import javafx.stage.Stage;
 public class AggiungiController implements Initializable {
 
     @FXML
-    private MenuItem indietro; ///< Menu per il ritorno alla schermata precedente.
+    private Button indietro; ///< Menu per il ritorno alla schermata precedente.
     
     @FXML
-    private MenuItem salva; ///< Menu per il salvataggio del contatto.
+    private Button salva; ///< Menu per il salvataggio del contatto.
     
     @FXML
     private TextField nome; ///< Campo di testo per il nome del contatto.

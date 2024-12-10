@@ -6,24 +6,15 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
    <children>
-      <MenuBar prefHeight="40.0" prefWidth="800.0">
-        <menus>
-          <Menu id="importa" mnemonicParsing="false" text="Importa">
-               <items>
-                  <MenuItem fx:id="importa" mnemonicParsing="false" onAction="#importa_f" text="Importa" />
-               </items></Menu>
-          <Menu id="esporta" mnemonicParsing="false" text="Esporta">
-               <items>
-                  <MenuItem fx:id="esporta" mnemonicParsing="false" onAction="#esporta_f" text="esporta" />
-               </items></Menu>
-            <Menu id="nuovo" mnemonicParsing="false" text="Nuovo contatto">
-               <items>
-                  <MenuItem fx:id="nuovoContatto" mnemonicParsing="false" onAction="#nuovo_f" text="Nuovo Contatto" />
-               </items></Menu>
-        </menus>
-      </MenuBar>
       <TextField fx:id="cerca" layoutX="100.0" layoutY="100.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="520.0" promptText="Cerca..." />
       <Button fx:id="ordina" layoutX="650.0" layoutY="100.0" mnemonicParsing="false" onAction="#ordina_f" prefHeight="31.0" prefWidth="50.0" text="Z-A" />
       <ListView fx:id="listView" layoutX="100.0" layoutY="180.0" prefHeight="400.0" prefWidth="600.0" />
+      <ToolBar prefHeight="40.0" prefWidth="800.0">
+        <items>
+          <Button fx:id="importa" mnemonicParsing="false" onAction="#importa_f" style="-fx-border-color: transparent; -fx-border-width: 0; -fx-background-color: #f1f1f1;" text="Importa" />
+            <Button fx:id="esporta" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#esporta_f" style="-fx-border-color: transparent; -fx-border-width: 0; -fx-background-color: #f1f1f1;" text="Esporta" />
+            <Button fx:id="nuovoContatto" layoutX="88.0" layoutY="10.0" mnemonicParsing="false" onAction="#nuovo_f" style="-fx-border-color: transparent; -fx-border-width: 0; -fx-background-color: #f1f1f1;" text="Nuovo contatto" />
+        </items>
+      </ToolBar>
    </children>
 </Pane>

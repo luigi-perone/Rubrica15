@@ -18,11 +18,13 @@ import Main.Main;
 import Model.Contatto;
 import Model.Email;
 import Model.NumeroTelefono;
+import Model.Prefisso;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -32,10 +34,10 @@ import javafx.scene.text.Text;
 public class ModificaController implements Initializable {
 
     @FXML
-    private MenuItem indietro; ///< Menu per tornare indietro alla schermata precedente.
+    private Button indietro; ///< Menu per tornare indietro alla schermata precedente.
     
     @FXML
-    private MenuItem salva; ///< Menu per salvare le modifiche al contatto.
+    private Button salva; ///< Menu per salvare le modifiche al contatto.
     
     @FXML
     private TextField nome; ///< Campo di testo per modificare il nome del contatto.
@@ -65,13 +67,13 @@ public class ModificaController implements Initializable {
     private TextField email3; ///< Campo di testo per modificare la terza email.
     
     @FXML
-    private ChoiceBox<?> pref1; ///< Scelta del prefisso per il primo numero di telefono.
+    private ChoiceBox<String> pref1; ///< Scelta del prefisso per il primo numero di telefono.
     
     @FXML
-    private ChoiceBox<?> pref2; ///< Scelta del prefisso per il secondo numero di telefono.
+    private ChoiceBox<String> pref2; ///< Scelta del prefisso per il secondo numero di telefono.
     
     @FXML
-    private ChoiceBox<?> pref3; ///< Scelta del prefisso per il terzo numero di telefono.
+    private ChoiceBox<String> pref3; ///< Scelta del prefisso per il terzo numero di telefono.
     
     @FXML
     private Text iniziale; ///< Testo che può essere usato per mostrare informazioni o istruzioni all'utente.
@@ -87,6 +89,58 @@ public class ModificaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO: aggiungere l'inizializzazione dei componenti, se necessario
+        // Aggiungi i prefissi comuni
+        pref1.getItems().addAll(
+            "+39",  // Italia
+            "+1",   // Stati Uniti
+            "+44",  // Regno Unito
+            "+33",  // Francia
+            "+49",  // Germania
+            "+34",  // Spagna
+            "+55",  // Brasile
+            "+91",  // India
+            "+81",  // Giappone
+            "+61",  // Australia
+            "+7",   // Russia
+            "+52"   // Messico
+        );
+
+        // Imposta un valore di default
+        pref1.setValue("+39");
+        pref2.getItems().addAll(
+            "+39",  // Italia
+            "+1",   // Stati Uniti
+            "+44",  // Regno Unito
+            "+33",  // Francia
+            "+49",  // Germania
+            "+34",  // Spagna
+            "+55",  // Brasile
+            "+91",  // India
+            "+81",  // Giappone
+            "+61",  // Australia
+            "+7",   // Russia
+            "+52"   // Messico
+        );
+
+        // Imposta un valore di default
+        pref2.setValue("+39");
+        pref3.getItems().addAll(
+            "+39",  // Italia
+            "+1",   // Stati Uniti
+            "+44",  // Regno Unito
+            "+33",  // Francia
+            "+49",  // Germania
+            "+34",  // Spagna
+            "+55",  // Brasile
+            "+91",  // India
+            "+81",  // Giappone
+            "+61",  // Australia
+            "+7",   // Russia
+            "+52"   // Messico
+        );
+
+        // Imposta un valore di default
+        pref3.setValue("+39");
         Contatto contatto=Main.getSelectedItem();
         if(contatto!=null){
             iniziale.setText(contatto.getCognome().substring(0, 1));
@@ -99,6 +153,18 @@ public class ModificaController implements Initializable {
                 email2.setText(contatto.getEmail(1).getEmail());
             if(contatto.getEmail(2)!=null&&contatto.getEmail(2).checkEmail())
                 email3.setText(contatto.getEmail(2).getEmail());
+            if(contatto.getNumero(0)!=null&&contatto.getNumero(0).checkNumeroTelefono()){
+                tel1.setText(contatto.getNumero(0).getNumero());
+                pref1.setValue(contatto.getNumero(0).getPrefisso().toString());
+            }
+            if(contatto.getNumero(1)!=null&&contatto.getNumero(1).checkNumeroTelefono()){
+                tel2.setText(contatto.getNumero(1).getNumero());
+                pref2.setValue(contatto.getNumero(1).getPrefisso().toString());
+            }
+            if(contatto.getNumero(2)!=null&&contatto.getNumero(2).checkNumeroTelefono()){
+                tel3.setText(contatto.getNumero(2).getNumero());
+                pref3.setValue(contatto.getNumero(2).getPrefisso().toString());
+            }   
         }
     }
 
@@ -121,11 +187,19 @@ public class ModificaController implements Initializable {
     @FXML
     private void salva_f(ActionEvent event) {
         // Ottieni il contatto attualmente selezionato
-        Contatto c= Main.getSelectedItem();
+        Contatto contatto=Main.getSelectedItem();
         Email[] e=new Email[3];
         NumeroTelefono[] num=new NumeroTelefono[3];
-  
-        Main.r.modificaContatto(c, cognome.getText(), nome.getText(),descrizione.getText(),e,num );
+        
+        e[0]=new Email(email1.getText());
+        e[1]=new Email(email2.getText());
+        e[2]=new Email(email3.getText());
+        
+        num[0]=new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText());
+        num[1]=new NumeroTelefono(new Prefisso(pref2.getValue().substring(1)),tel2.getText());
+        num[2]=new NumeroTelefono(new Prefisso(pref3.getValue().substring(1)),tel3.getText());
+        
+        Main.r.modificaContatto(contatto, cognome.getText(), nome.getText(),descrizione.getText(),e,num );
         Main.setRoot("homePage");
    
     }

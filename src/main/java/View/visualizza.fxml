@@ -12,25 +12,6 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VisualizzaController">
    <children>
-      <MenuBar prefHeight="40.0" prefWidth="800.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Indietro">
-            <items>
-              <MenuItem fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" text="Indietro" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Modifica">
-            <items>
-              <MenuItem fx:id="modifica" mnemonicParsing="false" onAction="#modifica_f" text="Modifica" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Elimina">
-            <items>
-              <MenuItem fx:id="elimina" mnemonicParsing="false" onAction="#elimina_f" text="Elimina" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <Label layoutX="237.0" layoutY="72.0" prefHeight="35.0" prefWidth="132.0" text="Nome">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -152,5 +133,12 @@
             <Font size="96.0" />
          </font>
       </Text>
+      <ToolBar prefHeight="40.0" prefWidth="800.0">
+        <items>
+          <Button fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" style="-fx-background-color: #f1f1f1;" text="Indietro" />
+            <Button fx:id="modifica" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modifica_f" style="-fx-background-color: #f1f1f1;" text="Modifica" />
+            <Button fx:id="elimina" layoutX="80.0" layoutY="10.0" mnemonicParsing="false" onAction="#elimina_f" style="-fx-background-color: #f1f1f1;" text="Elimina" />
+        </items>
+      </ToolBar>
    </children>
 </Pane>

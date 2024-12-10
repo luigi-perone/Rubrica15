@@ -36,13 +36,13 @@ import javafx.stage.Stage;
 public class HomePageController implements Initializable {
 
     @FXML
-    private MenuItem importa; ///< Menu per l'importazione di una rubrica.
+    private Button importa; ///< Menu per l'importazione di una rubrica.
     
     @FXML
-    private MenuItem esporta; ///< Menu per l'esportazione della rubrica.
+    private Button esporta; ///< Menu per l'esportazione della rubrica.
     
     @FXML
-    private MenuItem nuovoContatto; ///< Menu per aggiungere un nuovo contatto.
+    private Button nuovoContatto; ///< Menu per aggiungere un nuovo contatto.
     
     @FXML
     private TextField cerca; ///< Campo di testo per la ricerca di contatti.

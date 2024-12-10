@@ -74,13 +74,13 @@ public class Rubrica implements FileManager {
      */
     public Contatto modificaContatto(Contatto c,String cognome,String nome,String descrizione,Email[] email, NumeroTelefono[] num) {
         Contatto c1=new Contatto(nome,cognome,descrizione);
+        int i=0;
         for(Email e:email){
-            int i=0;
             c1.setEmail(e, i);
             i++;
         }
+        i=0;
         for(NumeroTelefono n:num){
-            int i=0;
             c1.setNumero(n, i);
             i++;
         }
