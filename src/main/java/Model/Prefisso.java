@@ -18,7 +18,11 @@ public class Prefisso {
 
     public Prefisso(String valore) {
         this.valore = valore;
-        //this.lunghezzaNumero = lunghezzaNumero;
+        switch(valore){
+            case "39":
+                lunghezzaNumero=10;
+            break;
+        }
     }
 
     
@@ -35,7 +39,7 @@ public class Prefisso {
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     public String getValore() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return valore;
     }
 
     /**

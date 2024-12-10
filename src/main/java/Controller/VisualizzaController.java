@@ -91,6 +91,26 @@ public class VisualizzaController implements Initializable {
             nome.setText(contatto.getNome());
             cognome.setText(contatto.getCognome());
             descrizione.setText(contatto.getDescrizione());
+            if(contatto.getEmail(0)!=null&&contatto.getEmail(0).checkEmail())
+                email1.setText(contatto.getEmail(0).getEmail());
+            if(contatto.getEmail(1)!=null&&contatto.getEmail(1).checkEmail())
+                email2.setText(contatto.getEmail(1).getEmail());
+            if(contatto.getEmail(2)!=null&&contatto.getEmail(2).checkEmail())
+                email3.setText(contatto.getEmail(2).getEmail());
+            
+            if(contatto.getNumero(0)!=null&&contatto.getNumero(0).checkNumeroTelefono()){
+                tel1.setText(contatto.getNumero(0).getNumero());
+                pref1.setText(contatto.getNumero(0).getPrefisso().toString());
+            }
+            if(contatto.getNumero(1)!=null&&contatto.getNumero(1).checkNumeroTelefono()){
+                tel2.setText(contatto.getNumero(1).getNumero());
+                pref2.setText(contatto.getNumero(1).getPrefisso().toString());
+            }
+            if(contatto.getNumero(2)!=null&&contatto.getNumero(2).checkNumeroTelefono()){
+                tel3.setText(contatto.getNumero(2).getNumero());
+                pref3.setText(contatto.getNumero(2).getPrefisso().toString());
+            }    
+            
         }
     }
 

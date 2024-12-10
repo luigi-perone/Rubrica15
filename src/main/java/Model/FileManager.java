@@ -45,18 +45,6 @@ public interface FileManager {
      */
     public void esportaRubrica(String namefile);
 
-    /**
-     * @brief Verifica la validità del nome di un file.
-     * 
-     * Questo metodo verifica se il nome del file è valido, ad esempio controllando
-     * l'estensione o il formato.
-     * 
-     * @pre file esiste
-     * @post verifica nome file
-     * 
-     * @param namefile Il nome del file da verificare.
-     * @return @c true se il nome del file è valido, @c false altrimenti.
-     */
-    public boolean checkFileName(String namefile);
+    public boolean checkFileFormat(String content);
 }
 

@@ -30,5 +30,5 @@ public interface CheckNumeroTelefono {
      * @param[in] n Oggetto di tipo @c NumeroTelefono da verificare.
      * @return Un valore booleano: @c true se il numero è valido, @c false altrimenti.
      */
-    public boolean checkNumeroTelefono(NumeroTelefono n);
+    public boolean checkNumeroTelefono();
 }

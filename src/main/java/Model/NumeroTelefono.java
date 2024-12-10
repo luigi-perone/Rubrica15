@@ -31,11 +31,7 @@ public class NumeroTelefono implements CheckNumeroTelefono {
         this.prefisso = prefisso;
         this.numero = numero;
     }
-
-    NumeroTelefono(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     /**
      * @brief Restituisce il prefisso associato al numero di telefono.
      * 
@@ -118,7 +114,27 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     @Override
-    public boolean checkNumeroTelefono(NumeroTelefono n) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean checkNumeroTelefono() {
+        if ( this == null || this.getPrefisso() == null) {
+            return false; // L'oggetto o i suoi attributi non devono essere null
+        }
+        if(this.getNumero().length()<=0)
+            return false;
+        String numero = this.getNumero();
+
+        // Controlla che il numero contenga solo cifre e spazi/trattini opzionali
+        if (!numero.matches("[0-9\\- ]+")) {
+            return false;
+        }
+
+        // Rimuove spazi e trattini per verificare la lunghezza effettiva
+        String numeroPulito = numero.replaceAll("[\\- ]", "");
+
+        // Controlla la lunghezza minima e massima
+        if (numeroPulito.length()!=prefisso.getLunghezzaNumero()) {
+            return false;
+        }
+
+        return true; // Tutti i controlli superati
     }
 }

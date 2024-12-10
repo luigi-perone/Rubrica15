@@ -17,6 +17,7 @@ package Controller;
 import Main.Main;
 import Model.Contatto;
 import Model.Email;
+import Model.NumeroTelefono;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -92,6 +93,12 @@ public class ModificaController implements Initializable {
             nome.setText(contatto.getNome());
             cognome.setText(contatto.getCognome());
             descrizione.setText(contatto.getDescrizione());
+            if(contatto.getEmail(0)!=null&&contatto.getEmail(0).checkEmail())
+                email1.setText(contatto.getEmail(0).getEmail());
+            if(contatto.getEmail(1)!=null&&contatto.getEmail(1).checkEmail())
+                email2.setText(contatto.getEmail(1).getEmail());
+            if(contatto.getEmail(2)!=null&&contatto.getEmail(2).checkEmail())
+                email3.setText(contatto.getEmail(2).getEmail());
         }
     }
 
@@ -113,12 +120,12 @@ public class ModificaController implements Initializable {
      */
     @FXML
     private void salva_f(ActionEvent event) {
-            // Ottieni il contatto attualmente selezionato
-    Contatto c=new Contatto(nome.getText(),cognome.getText(),descrizione.getText());
-    Contatto contattoSelezionato = Main.getSelectedItem();
-    
-    Main.r.eliminaContatto(contattoSelezionato);
-    Main.r.aggiungiContatto(c);
+        // Ottieni il contatto attualmente selezionato
+        Contatto c= Main.getSelectedItem();
+        Email[] e=new Email[3];
+        NumeroTelefono[] num=new NumeroTelefono[3];
+  
+        Main.r.modificaContatto(c, cognome.getText(), nome.getText(),descrizione.getText(),e,num );
         Main.setRoot("homePage");
    
     }

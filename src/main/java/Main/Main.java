@@ -69,6 +69,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         r=new Rubrica();
+        Email validEmail = new Email("valid.email@example.com");
+        System.out.println(validEmail.checkEmail());
         launch(args);
         
         

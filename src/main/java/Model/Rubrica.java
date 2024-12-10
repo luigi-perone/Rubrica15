@@ -33,24 +33,6 @@ public class Rubrica implements FileManager {
     }
 
     /**
-     * @brief Ricerca un contatto nella rubrica in base al cognome e al nome.
-     * 
-     * Questo metodo cerca un contatto all'interno della rubrica usando il cognome 
-     * e il nome come chiavi di ricerca. Il metodo non è ancora implementato.
-     * 
-     *
-     * @post Ritorna una Rubrica contenente l'insieme di contatti con cognome e nome inseriti
-     * 
-     * @param[in] cognome Cognome del contatto da cercare.
-     * @param[in] nome Nome del contatto da cercare.
-     * @return Un oggetto @c Rubrica contenente il contatto trovato (non implementato).
-     * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
-     */
-    public Rubrica ricercaContatto(String cognome, String nome) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /**
      * @brief Elimina un contatto dalla rubrica.
      * 
      * Questo metodo elimina un contatto dalla rubrica. Il metodo non è ancora implementato.
@@ -90,11 +72,20 @@ public class Rubrica implements FileManager {
      * @return Il contatto modificato (non implementato).
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
-    public Contatto modificaContatto(Contatto c,String cognome,String nome,String descrizione) {
+    public Contatto modificaContatto(Contatto c,String cognome,String nome,String descrizione,Email[] email, NumeroTelefono[] num) {
         Contatto c1=new Contatto(nome,cognome,descrizione);
-        
-        contatti.remove(c);
-        contatti.add(c1);
+        for(Email e:email){
+            int i=0;
+            c1.setEmail(e, i);
+            i++;
+        }
+        for(NumeroTelefono n:num){
+            int i=0;
+            c1.setNumero(n, i);
+            i++;
+        }
+        this.eliminaContatto(c);
+        this.aggiungiContatto(c1);
         
         return c;
     }
@@ -113,7 +104,7 @@ public class Rubrica implements FileManager {
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     @Override
-    public Rubrica importaFile(String namefile) {
+public Rubrica importaFile(String namefile) {
     Rubrica rubrica = new Rubrica();
     
     try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
@@ -126,21 +117,43 @@ public class Rubrica implements FileManager {
             String[] data = line.split(",");
             
             // Assicurati che ci siano abbastanza campi nella riga
-            if (data.length >= 6) {
+            if (data.length >= 12) { // Ora controlliamo che ci siano almeno 12 campi (3 prefissi, 3 numeri, 3 email)
                 String nome = data[0].trim();
                 String cognome = data[1].trim();
                 String descrizione = data[2].trim();
-                String prefisso = data[3].trim();
-                String numero = data[4].trim();
-                String email = data[5].trim();
                 
-                // Crea il NumeroTelefono con prefisso e numero
-                NumeroTelefono numeroTelefono = new NumeroTelefono(new Prefisso(prefisso), numero);
+                // Prefissi, numeri ed email
+                String prefisso1 = data[3].trim();
+                String numero1 = data[4].trim();
+                String email1 = data[5].trim();
+                
+                String prefisso2 = data[6].trim();
+                String numero2 = data[7].trim();
+                String email2 = data[8].trim();
+                
+                String prefisso3 = data[9].trim();
+                String numero3 = data[10].trim();
+                String email3 = data[11].trim();
+                
+                // Crea i numeri di telefono con i prefissi e numeri
+                NumeroTelefono numeroTelefono1 = new NumeroTelefono(new Prefisso(prefisso1), numero1);
+                NumeroTelefono numeroTelefono2 = new NumeroTelefono(new Prefisso(prefisso2), numero2);
+                NumeroTelefono numeroTelefono3 = new NumeroTelefono(new Prefisso(prefisso3), numero3);
+                
+                // Crea l'email
+                Email emailObj1 = new Email(email1);
+                Email emailObj2 = new Email(email2);
+                Email emailObj3 = new Email(email3);
                 
                 // Crea il contatto e aggiungilo alla rubrica
                 Contatto contatto = new Contatto(nome, cognome, descrizione);
-                contatto.setNumero(numeroTelefono,0);
-                contatto.setEmail(new Email(email), 0);
+                contatto.setNumero(numeroTelefono1, 0);
+                contatto.setNumero(numeroTelefono2, 1);
+                contatto.setNumero(numeroTelefono3, 2);
+                contatto.setEmail(emailObj1, 0);
+                contatto.setEmail(emailObj2, 1);
+                contatto.setEmail(emailObj3, 2);
+                
                 rubrica.aggiungiContatto(contatto);
             }
         }
@@ -149,7 +162,8 @@ public class Rubrica implements FileManager {
     }
     
     return rubrica;
-    }
+}
+
 
     /**
      * @brief Esporta la rubrica su un file.
@@ -163,45 +177,45 @@ public class Rubrica implements FileManager {
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     @Override
-    public void esportaRubrica(String namefile) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(namefile))) {
+public void esportaRubrica(String namefile) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(namefile))) {
         // Scrivi l'intestazione del file CSV
-        writer.write("Nome,Cognome,Indirizzo,Prefisso,Numero,Email");
+        writer.write("Nome,Cognome,Indirizzo,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3");
         writer.newLine();
 
         // Scrivi ogni contatto nel file
         for (Contatto c : contatti) {
-            NumeroTelefono nt = c.getNumero(0);
-            writer.write(String.format("%s,%s,%s,%s,%s,%s",
+            // Estrai i numeri, prefissi e email
+            NumeroTelefono nt1 = c.getNumero(0);
+            NumeroTelefono nt2 = c.getNumero(1);
+            NumeroTelefono nt3 = c.getNumero(2);
+            
+            Email e1 = c.getEmail(0);
+            Email e2 = c.getEmail(1);
+            Email e3 = c.getEmail(2);
+
+            // Scrivi i dettagli del contatto nel formato CSV
+            writer.write(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
                 c.getNome(),
                 c.getCognome(),
                 c.getDescrizione(),
-                nt.getPrefisso(),
-                nt.getNumero(),
-                c.getEmail(0).getEmail()));
+                nt1.getPrefisso(),
+                nt1.getNumero(),
+                e1.getEmail(),
+                nt2.getPrefisso(),
+                nt2.getNumero(),
+                e2.getEmail(),
+                nt3.getPrefisso(),
+                nt3.getNumero(),
+                e3.getEmail()));
             writer.newLine();
         }
         System.out.println("Rubrica esportata correttamente in: " + namefile);
     } catch (IOException e) {
         throw new RuntimeException("Errore durante l'esportazione del file: " + e.getMessage());
     }
-    }
+}
 
-    /**
-     * @brief Verifica la validità del nome del file.
-     * 
-     * Questo metodo verifica la validità del nome del file (ad esempio, controllando l'estensione o il formato).
-     * Il metodo non è ancora implementato.
-     * @pre file esiste
-     * @post verifica nome file
-     * @param[in] namefile Il nome del file da verificare.
-     * @return @c true se il nome del file è valido, @c false altrimenti.
-     * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
-     */
-    @Override
-    public boolean checkFileName(String namefile) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     @Override
     public String toString() {
@@ -213,6 +227,11 @@ public class Rubrica implements FileManager {
     
     public TreeSet<Contatto> getTree(){
         return contatti;
+    }
+
+    @Override
+    public boolean checkFileFormat(String content) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

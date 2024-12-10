@@ -11,7 +11,7 @@
 
 package Model;
 
-public class Email implements CheckEmail {
+public class Email implements CheckEmail,CheckLunghezza {
 
     private String email; ///< Indirizzo email dell'oggetto.
 
@@ -76,10 +76,17 @@ public class Email implements CheckEmail {
         if ( this.getEmail() == null) {
             return false; // Email non valida se l'oggetto o l'indirizzo è null
         }
+        if(this.getEmail().length()<=0)
+            return false;
 
         // Espressione regolare per verificare l'email
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return this.getEmail().matches(emailRegex);
+    }
+
+    @Override
+    public boolean checkLunghezza(String s, int lungMax) {
+        return s.length()<=0||s.length()>lungMax;
     }
 
 }

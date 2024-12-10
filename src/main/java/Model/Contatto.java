@@ -12,7 +12,7 @@
 
 package Model;
 
-public class Contatto implements CheckLunghezza, ContattoValido,Comparable<Contatto> {
+public class Contatto implements CheckLunghezza,Comparable<Contatto> {
 
     private String nome; ///< Nome del contatto.
     private String cognome; ///< Cognome del contatto.
@@ -185,22 +185,6 @@ public class Contatto implements CheckLunghezza, ContattoValido,Comparable<Conta
     @Override
     public boolean checkLunghezza(String s, int lungMax) {
         return s.length() <= lungMax && lungMax > 0;
-    }
-
-    /**
-     * @brief Verifica la validità complessiva del contatto.
-     * 
-     * Metodo da implementare per determinare la validità del contatto in base 
-     * a criteri definiti.
-     * 
-     * @post verifica se i campi obbligatori sono compilati
-     * 
-     * @return @c true se il contatto è valido, @c false altrimenti.
-     * @throws UnsupportedOperationException Eccezione lanciata se il metodo non è implementato.
-     */
-    @Override
-    public boolean contattoValido() {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
