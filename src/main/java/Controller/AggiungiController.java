@@ -177,12 +177,12 @@ public class AggiungiController implements Initializable {
         // TODO: logica per salvare il contatto
         Contatto c=new Contatto(nome.getText(),cognome.getText(),descrizione.getText());
         c.setEmail(new Email(email1.getText()), 0);
-        c.setEmail(new Email(email1.getText()), 1);
-        c.setEmail(new Email(email1.getText()), 2);
+        c.setEmail(new Email(email2.getText()), 1);
+        c.setEmail(new Email(email3.getText()), 2);
         
         c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText()), 0);
-        c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText()), 1);
-        c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)),tel1.getText()), 2);
+        c.setNumero(new NumeroTelefono(new Prefisso(pref2.getValue().substring(1)),tel2.getText()), 1);
+        c.setNumero(new NumeroTelefono(new Prefisso(pref3.getValue().substring(1)),tel3.getText()), 2);
 
         Main.r.aggiungiContatto(c);
         Main.setRoot("homePage");
