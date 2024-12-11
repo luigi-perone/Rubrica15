@@ -24,11 +24,9 @@ public class EmailTest {
     }
 
     @BeforeEach
-public void setUp() {
-    System.out.println("Inizializzo l'oggetto Email");
-    e = new Email("test@example.com");
-    System.out.println("Oggetto Email inizializzato: " + e);
-}
+    public void setUp() {
+        e = new Email("");
+    }
 
 
     @AfterEach
@@ -40,36 +38,23 @@ public void setUp() {
      * Test del metodo setEmail della classe Email.
      */
     @Test
-    public void testSetEmail() {
-        System.out.println("setEmail");
-        String newEmail = "new@example.com";
-        e.setEmail(newEmail); // Usa l'oggetto `e` condiviso
-        assertEquals(newEmail, e.getEmail(), "L'email non è stata impostata correttamente");
+    public void testSetGetEmail() {
+        String e1 = "c.panico16@studenti.unisa.it";
+        e.setEmail(e1);
+        assertEquals(e1, e.getEmail(), "L'email non è stata impostata correttamente");
     }
-
-    /**
-     * Test del metodo getEmail della classe Email.
-     */
-    @Test
-    public void testGetEmail() {
-        System.out.println("getEmail");
-        String expResult = "test@example.com"; // Valore iniziale impostato in setUp
-        String result = e.getEmail(); // Usa l'oggetto `e` condiviso
-        assertEquals(expResult, result, "L'email non è stata restituita correttamente");
-    }
-
+    
     /**
      * Test del metodo checkEmail della classe Email.
      */
     @Test
-    public void testCheckEmail() {
-        System.out.println("checkEmail");
-
-        // Verifica con un'email valida
-        assertTrue(e.checkEmail(), "L'email valida non è stata riconosciuta");
-
-        // Verifica con un'email non valida
-        e.setEmail("invalid-email");
-        assertFalse(e.checkEmail(), "L'email non valida è stata erroneamente accettata");
+    public void testValid() {
+        e.setEmail("u.scassillo1@stduenti.unsia.it");
+        assertTrue(e.checkEmail());
+    }
+    @Test
+    public void testInvalid() {
+        e.setEmail("u.scassillo1.stduenti.unsia.it");
+        assertFalse(e.checkEmail());
     }
 }
