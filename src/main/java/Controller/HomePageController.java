@@ -25,6 +25,8 @@ import java.util.TreeSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
@@ -146,9 +148,25 @@ public class HomePageController implements Initializable {
         if (selectedFile != null) {
             System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
             // Aggiungi qui la logica per importare il file
+            Rubrica temp=null;
+            try{
+                temp=Main.r.importaFile(selectedFile.getPath());
+            }catch(RuntimeException e){
+            }
+            
+            if(temp.getTree().size()>0){
+                Main.r=temp;
+                Main.setRoot("homePage");
+            }else{
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Errore");
+                alert.setHeaderText("Si è verificato un errore");
+                alert.setContentText("Il formato del file non è valido");
 
-            Main.r=Main.r.importaFile(selectedFile.getPath());
-            Main.setRoot("homePage");
+                // Mostra l'alert
+                alert.showAndWait();
+            }    
+            
         }
     }
 

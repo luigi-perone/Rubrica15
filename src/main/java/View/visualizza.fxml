@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VisualizzaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VisualizzaController">
    <children>
       <Label layoutX="237.0" layoutY="72.0" prefHeight="35.0" prefWidth="132.0" text="Nome">
          <font>
@@ -57,47 +57,47 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="nome" layoutX="388.0" layoutY="72.0" prefHeight="25.0" prefWidth="302.0">
+      <Label fx:id="nome" layoutX="388.0" layoutY="72.0" prefHeight="25.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="cognome" layoutX="388.0" layoutY="107.0" prefHeight="25.0" prefWidth="302.0">
+      <Label fx:id="cognome" layoutX="388.0" layoutY="107.0" prefHeight="25.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="descrizione" alignment="TOP_LEFT" layoutX="388.0" layoutY="168.0" prefHeight="98.0" prefWidth="302.0">
+      <Label fx:id="descrizione" alignment="TOP_LEFT" layoutX="388.0" layoutY="168.0" prefHeight="98.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="tel1" layoutX="443.0" layoutY="272.0" prefHeight="35.0" prefWidth="239.0">
+      <Label fx:id="tel1" layoutX="443.0" layoutY="272.0" prefHeight="35.0" prefWidth="444.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="tel2" layoutX="443.0" layoutY="315.0" prefHeight="35.0" prefWidth="239.0">
+      <Label fx:id="tel2" layoutX="443.0" layoutY="315.0" prefHeight="35.0" prefWidth="444.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="tel3" layoutX="443.0" layoutY="360.0" prefHeight="35.0" prefWidth="239.0">
+      <Label fx:id="tel3" layoutX="443.0" layoutY="360.0" prefHeight="35.0" prefWidth="444.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="email1" layoutX="388.0" layoutY="406.0" prefHeight="35.0" prefWidth="302.0">
+      <Label fx:id="email1" layoutX="388.0" layoutY="406.0" prefHeight="35.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="email2" layoutX="388.0" layoutY="451.0" prefHeight="35.0" prefWidth="302.0">
+      <Label fx:id="email2" layoutX="388.0" layoutY="451.0" prefHeight="35.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="email3" layoutX="388.0" layoutY="498.0" prefHeight="35.0" prefWidth="302.0">
+      <Label fx:id="email3" layoutX="388.0" layoutY="498.0" prefHeight="35.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -127,13 +127,13 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Separator layoutX="214.0" layoutY="38.0" orientation="VERTICAL" prefHeight="564.0" prefWidth="0.0" />
+      <Separator layoutX="217.0" layoutY="38.0" orientation="VERTICAL" prefHeight="592.0" prefWidth="5.0" />
       <Text fx:id="iniziale" fill="WHITE" layoutX="37.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="150.0">
          <font>
             <Font size="96.0" />
          </font>
       </Text>
-      <ToolBar prefHeight="40.0" prefWidth="800.0">
+      <ToolBar prefHeight="45.0" prefWidth="930.0">
         <items>
           <Button fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" style="-fx-background-color: #f1f1f1;" text="Indietro" />
             <Button fx:id="modifica" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modifica_f" style="-fx-background-color: #f1f1f1;" text="Modifica" />

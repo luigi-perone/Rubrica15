@@ -100,7 +100,8 @@ Inheritance diagram for Model.Email:</div>
  <div class="center">
   <img src="class_model_1_1_email.png" usemap="#Model.Email_map" alt=""/>
   <map id="Model.Email_map" name="Model.Email_map">
-<area href="interface_model_1_1_check_email.html" title="Interfaccia per verificare la validità di un&#39;email." alt="Model.CheckEmail" shape="rect" coords="0,0,117,24"/>
+<area href="interface_model_1_1_check_email.html" title="Interfaccia per verificare la validità di un&#39;email." alt="Model.CheckEmail" shape="rect" coords="0,0,148,24"/>
+<area href="interface_model_1_1_check_lunghezza.html" title="Interfaccia per verificare la lunghezza di una stringa." alt="Model.CheckLunghezza" shape="rect" coords="158,0,306,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,10 +116,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a68b386e2d30706e8a41dbdd9c66aac49" id="r_a68b386e2d30706e8a41dbdd9c66aac49"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68b386e2d30706e8a41dbdd9c66aac49">getEmail</a> ()</td></tr>
 <tr class="memdesc:a68b386e2d30706e8a41dbdd9c66aac49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'indirizzo email.  <br /></td></tr>
 <tr class="separator:a68b386e2d30706e8a41dbdd9c66aac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c01ae94ae1082b5568db7ff02e3f8af" id="r_a7c01ae94ae1082b5568db7ff02e3f8af"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c01ae94ae1082b5568db7ff02e3f8af">checkEmail</a> (<a class="el" href="class_model_1_1_email.html">Email</a> e)</td></tr>
-<tr class="memdesc:a7c01ae94ae1082b5568db7ff02e3f8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la validità di un'email.  <br /></td></tr>
-<tr class="separator:a7c01ae94ae1082b5568db7ff02e3f8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdfcd5dbfee5a39a48a1e1244b0d2820" id="r_afdfcd5dbfee5a39a48a1e1244b0d2820"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdfcd5dbfee5a39a48a1e1244b0d2820">checkEmail</a> ()</td></tr>
+<tr class="memdesc:afdfcd5dbfee5a39a48a1e1244b0d2820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la validità di un'email.  <br /></td></tr>
+<tr class="separator:afdfcd5dbfee5a39a48a1e1244b0d2820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53be6607bd9f507fbe424e7cf171c39b" id="r_a53be6607bd9f507fbe424e7cf171c39b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53be6607bd9f507fbe424e7cf171c39b">checkLunghezza</a> (String s, int lungMax)</td></tr>
+<tr class="memdesc:a53be6607bd9f507fbe424e7cf171c39b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la lunghezza di una stringa.  <br /></td></tr>
+<tr class="separator:a53be6607bd9f507fbe424e7cf171c39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_model_1_1_check_email"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_model_1_1_check_email')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_model_1_1_check_email.html">Model.CheckEmail</a></td></tr>
+<tr class="inherit_header pub_methods_interface_model_1_1_check_lunghezza"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_model_1_1_check_lunghezza')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_model_1_1_check_lunghezza.html">Model.CheckLunghezza</a></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aceedd50dd9cc59298e3f08acc3cb6dc4" name="aceedd50dd9cc59298e3f08acc3cb6dc4"></a>
@@ -138,7 +143,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_email.html">Email</a></code>. </p>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_email.html">Email</a></code> con un indirizzo email specificato.</p>
-<p>@per Valori passati diversi da null </p><dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Valori passati diversi da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">email</td><td>L'indirizzo email da associare all'oggetto. </td></tr>
@@ -149,8 +155,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7c01ae94ae1082b5568db7ff02e3f8af" name="a7c01ae94ae1082b5568db7ff02e3f8af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c01ae94ae1082b5568db7ff02e3f8af">&#9670;&#160;</a></span>checkEmail()</h2>
+<a id="afdfcd5dbfee5a39a48a1e1244b0d2820" name="afdfcd5dbfee5a39a48a1e1244b0d2820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfcd5dbfee5a39a48a1e1244b0d2820">&#9670;&#160;</a></span>checkEmail()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,23 +164,23 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">boolean Model.Email.checkEmail </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_model_1_1_email.html">Email</a></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Verifica la validità di un'email. </p>
-<p>Implementazione del metodo definito nell'interfaccia <code><a class="el" href="interface_model_1_1_check_email.html" title="Interfaccia per verificare la validità di un&#39;email.">CheckEmail</a></code>. Questo metodo non è ancora implementato.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>email passata diverso da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>verifica se email è valida, true se ha la @</dd></dl>
+<p>Implementazione del metodo definito nell'interfaccia <code><a class="el" href="interface_model_1_1_check_email.html" title="Interfaccia per verificare la validità di un&#39;email.">CheckEmail</a></code>. Questo metodo verifica se l'email è valida seguendo una semplice espressione regolare per controllare la presenza di una "@" nell'indirizzo email.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>email passata diversa da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Verifica se l'email è valida.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">e</td><td>L'oggetto <code><a class="el" href="class_model_1_1_email.html">Email</a></code> da verificare. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> se l'email è valida, <code>false</code> altrimenti. (Non supportato al momento) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> se l'email è valida, <code>false</code> altrimenti. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">UnsupportedOperationException</td><td>Eccezione lanciata poiché il metodo non è ancora implementato. </td></tr>
@@ -182,7 +188,43 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_model_1_1_check_email.html#a3b51f59b3a714c6470ff840a0d9eb744">Model.CheckEmail</a>.</p>
+<p>Implements <a class="el" href="interface_model_1_1_check_email.html#af5c764fc7df15a35de27b12a3b921fea">Model.CheckEmail</a>.</p>
+
+</div>
+</div>
+<a id="a53be6607bd9f507fbe424e7cf171c39b" name="a53be6607bd9f507fbe424e7cf171c39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53be6607bd9f507fbe424e7cf171c39b">&#9670;&#160;</a></span>checkLunghezza()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean Model.Email.checkLunghezza </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lungMax</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica la lunghezza di una stringa. </p>
+<p>Questo metodo implementa l'interfaccia <code><a class="el" href="interface_model_1_1_check_lunghezza.html" title="Interfaccia per verificare la lunghezza di una stringa.">CheckLunghezza</a></code>. Verifica se la lunghezza della stringa fornita è maggiore della lunghezza massima consentita.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>La stringa passata come parametro deve essere non null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Verifica se la lunghezza della stringa è superiore al limite specificato.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>La stringa da verificare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lungMax</td><td>La lunghezza massima consentita. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> se la lunghezza della stringa è maggiore di 0 e supera il limite massimo, <code>false</code> altrimenti. </dd></dl>
+
+<p>Implements <a class="el" href="interface_model_1_1_check_lunghezza.html#a8e7e97c2256028c2eba42336dc1b93b2">Model.CheckLunghezza</a>.</p>
 
 </div>
 </div>
@@ -203,7 +245,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce l'indirizzo email. </p>
 <p>Questo metodo restituisce l'indirizzo email dell'oggetto.</p>
-<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo email</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce il contenuto dell'attributo email.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>L'indirizzo email dell'oggetto. </dd></dl>
 
 </div>
@@ -226,7 +268,7 @@ Public Member Functions</h2></td></tr>
 <p>Imposta l'indirizzo email. </p>
 <p>Questo metodo imposta l'indirizzo email dell'oggetto.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo email il valore passato</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Viene assegnato all'attributo email il valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">email</td><td>L'indirizzo email da impostare. </td></tr>

@@ -1,18 +1,18 @@
 /**
  * @file Contatto.java
- * @brief Classe che rappresenta un contatto e verifica la sua validità.
+ * @brief Classe che rappresenta un contatto e ne verifica la validità.
  * 
  * La classe @c Contatto modella un contatto con attributi come nome, cognome, 
  * descrizione, numeri di telefono e email. Implementa le interfacce @c CheckLunghezza 
- * e @c ContattoValido per verificare la lunghezza delle stringhe e la validità 
- * complessiva del contatto.
+ * e @c Comparable<Contatto> per verificare la lunghezza delle stringhe e fornire un ordinamento.
  * 
+ * @author gruppo15
  * @package Model
  */
 
 package Model;
 
-public class Contatto implements CheckLunghezza,Comparable<Contatto> {
+public class Contatto implements CheckLunghezza, Comparable<Contatto> {
 
     private String nome; ///< Nome del contatto.
     private String cognome; ///< Cognome del contatto.
@@ -45,10 +45,9 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
     }
 
     // Getter e Setter per gli attributi della classe.
+    
     /**
      * @brief Restituisce il nome del contatto.
-     * 
-     * @post restituisce il contenuto dell'attributo nome
      * 
      * @return Nome del contatto.
      */
@@ -59,10 +58,7 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
     /**
      * @brief Imposta il nome del contatto.
      * 
-     * @pre Il valore passato diverso da null
-     * @post viene assegnato all'attributo nome il valore passato
-     *       
-     * @param nome Nuovo nome del contatto.
+     * @param[in] nome Nuovo nome del contatto.
      */
     public void setNome(String nome) {
         this.nome = nome;
@@ -70,8 +66,6 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
 
     /**
      * @brief Restituisce il cognome del contatto.
-     * 
-     * @post restituisce il contenuto dell'attributo cognome
      * 
      * @return Cognome del contatto.
      */
@@ -81,11 +75,8 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
 
     /**
      * @brief Imposta il cognome del contatto.
-     *
-     * @pre Il valore passato diverso da null
-     * @post viene assegnato all'attributo cognome il valore passato
-     *
-     * @param cognome Nuovo cognome del contatto.
+     * 
+     * @param[in] cognome Nuovo cognome del contatto.
      */
     public void setCognome(String cognome) {
         this.cognome = cognome;
@@ -93,9 +84,6 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
 
     /**
      * @brief Restituisce la descrizione del contatto.
-     * 
-     * @post restituisce il contenuto dell'attributo descrizione
-     * 
      * 
      * @return Descrizione del contatto.
      */
@@ -106,24 +94,16 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
     /**
      * @brief Imposta la descrizione del contatto.
      * 
-     * @pre Il valore passato diverso da null
-     * @post viene assegnato all'attributo descrizione il valore passato
-     *
-     * @param[in]  descrizione Nuova descrizione del contatto.
-     * 
+     * @param[in] descrizione Nuova descrizione del contatto.
      */
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
 
     /**
-     * @brief Restituisce un numero di telefono del contatto.
+     * @brief Restituisce un numero di telefono del contatto all'indice specificato.
      * 
-     * @pre idx >0
-     * @post restituisce il contenuto dell'attributo numero all'indice passato
-     * 
-     * 
-     * @param[in]  idx Indice del numero di telefono nell'array.
+     * @param[in] idx Indice del numero di telefono nell'array.
      * @return Oggetto @c NumeroTelefono all'indice specificato.
      */
     public NumeroTelefono getNumero(int idx) {
@@ -131,26 +111,19 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
     }
 
     /**
-     * @brief Imposta un numero di telefono per il contatto.
+     * @brief Imposta un numero di telefono per il contatto all'indice specificato.
      * 
-     * 
-     * @pre numero diverso da null e idx >0
-     * @post viene assegnato all'attributo numero il valore passato, all'indice dato
-     *
-     * @param[in] numero Nuovo numero di telefono.
-     * @param[in]  idx Indice in cui impostare il numero di telefono.
+     * @param numero Nuovo numero di telefono.
+     * @param idx Indice in cui impostare il numero di telefono.
      */
     public void setNumero(NumeroTelefono numero, int idx) {
         this.numero[idx] = numero;
     }
 
     /**
-     * @brief Restituisce un'email del contatto.
+     * @brief Restituisce un'email del contatto all'indice specificato.
      * 
-     * @pre idx >0
-     * @post restituisce il contenuto dell'attributo email all'indice passato
-     * 
-     * @param[in]  idx Indice dell'email nell'array.
+     * @param[in] idx Indice dell'email nell'array.
      * @return Oggetto @c Email all'indice specificato.
      */
     public Email getEmail(int idx) {
@@ -158,11 +131,8 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
     }
 
     /**
-     * @brief Imposta un'email per il contatto.
+     * @brief Imposta un'email per il contatto all'indice specificato.
      * 
-     * @pre email diverso da null e idx >0
-     * @post viene assegnato all'attributo email il valore passato, all'indice dato
-     *
      * @param[in] email Nuova email.
      * @param[in] idx Indice in cui impostare l'email.
      */
@@ -175,9 +145,6 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
      * 
      * Implementazione del metodo definito nell'interfaccia @c CheckLunghezza.
      * 
-     * @pre lungMax > 0 e s diverso da null
-     * @post verifica se s ha una dimensione maggiore di quella supportata
-     * 
      * @param[in] s La stringa da verificare.
      * @param[in] lungMax La lunghezza massima consentita.
      * @return @c true se la stringa rispetta la lunghezza, @c false altrimenti.
@@ -187,15 +154,26 @@ public class Contatto implements CheckLunghezza,Comparable<Contatto> {
         return s.length() <= lungMax && lungMax > 0;
     }
 
+    /**
+     * @brief Confronta il contatto corrente con un altro in base a cognome e nome.
+     * 
+     * @param[in] o Oggetto @c Contatto da confrontare.
+     * @return Un valore negativo, zero o positivo in base all'ordine lessicografico.
+     */
     @Override
     public int compareTo(Contatto o) {
-        String cognomeNome=new String(this.cognome+" "+this.nome);
-        return cognomeNome.compareTo(o.cognome+" "+o.nome);
+        String cognomeNome = this.cognome + " " + this.nome;
+        return cognomeNome.compareTo(o.cognome + " " + o.nome);
     }
 
+    /**
+     * @brief Restituisce una rappresentazione testuale del contatto.
+     * 
+     * @return Stringa contenente cognome e nome del contatto.
+     */
     @Override
     public String toString() {
-        return nome + " " + cognome;
+        return cognome + " " + nome;
     }
-    
 }
+

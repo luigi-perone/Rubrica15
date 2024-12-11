@@ -6,6 +6,7 @@
  * associato. Permette di impostare e ottenere il valore del prefisso e la lunghezza
  * del numero di telefono.
  * 
+ * @author gruppo15
  * @package Model
  */
 
@@ -16,6 +17,17 @@ public class Prefisso {
     private String valore; ///< Valore del prefisso telefonico.
     private int lunghezzaNumero; ///< Lunghezza del numero associato al prefisso.
 
+    /**
+     * @brief Costruttore della classe @c Prefisso.
+     * 
+     * Inizializza un oggetto @c Prefisso con il valore del prefisso e calcola
+     * la lunghezza del numero associato in base al prefisso.
+     * 
+     * @pre Il valore del prefisso passato è valido.
+     * @post Oggetto creato con il prefisso e la lunghezza del numero associato.
+     * 
+     * @param[in] valore Il valore del prefisso telefonico da associare.
+     */
     public Prefisso(String valore) {
         this.valore = valore;
         switch (valore) {
@@ -41,20 +53,14 @@ public class Prefisso {
             lunghezzaNumero = -1; // Valore di default per prefissi sconosciuti
             break;
         }
-
-        
-        
     }
 
-    
     /**
      * @brief Restituisce il valore del prefisso.
      * 
-     * Questo metodo restituisce il valore del prefisso telefonico. Il metodo non è 
-     * ancora implementato.
+     * Questo metodo restituisce il valore del prefisso telefonico.
      * 
-     * @post restituisce il  contenuto dell'attributo valore
-     * 
+     * @post Restituisce il contenuto dell'attributo valore.
      * 
      * @return Il valore del prefisso.
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
@@ -69,14 +75,15 @@ public class Prefisso {
      * Questo metodo imposta il valore del prefisso e calcola la lunghezza del numero
      * associato a questo prefisso.
      * 
-     * @pre valore passato in input è diverso da null
-     * @post viene assegnato all'attrivuto il valore passato
+     * @pre Il valore passato in input è diverso da null.
+     * @post Viene assegnato all'attributo valore il valore passato e, se necessario, 
+     *       aggiorna la lunghezza del numero associato.
      * 
      * @param[in] valore Il valore del prefisso da impostare.
      */
     public void setValore(String valore) {
         this.valore = valore;
-        //calcolo lunghezza numero (da implementare)
+        // Calcolo lunghezza numero (da implementare, se necessario)
     }
 
     /**
@@ -85,7 +92,7 @@ public class Prefisso {
      * Questo metodo restituisce la lunghezza del numero telefonico associato a questo
      * prefisso.
      * 
-     * @post restituisce il  contenuto dell'attributo lunghezzaNumero
+     * @post Restituisce il contenuto dell'attributo lunghezzaNumero.
      * 
      * @return La lunghezza del numero associato al prefisso.
      */
@@ -98,7 +105,7 @@ public class Prefisso {
      * 
      * Questo metodo restituisce una rappresentazione stringa del prefisso, preceduto dal simbolo "+".
      * 
-     * @pre Prefisso esiste
+     * @pre Prefisso esiste.
      * 
      * @return La rappresentazione del prefisso come stringa (es. "+39").
      */
@@ -107,4 +114,3 @@ public class Prefisso {
         return "+" + valore;
     }
 }
-

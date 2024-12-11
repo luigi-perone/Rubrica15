@@ -5,6 +5,7 @@
  * Questa interfaccia definisce un metodo per controllare se un oggetto di tipo 
  * @c NumeroTelefono rappresenta un numero valido.
  * 
+ * @author gruppo15
  * @package Model
  */
 
@@ -24,11 +25,7 @@ public interface CheckNumeroTelefono {
      * 
      * Questo metodo verifica se un oggetto di tipo @c NumeroTelefono rappresenta 
      * un numero di telefono valido.
-     * @pre n diverso da null
-     * @post verifica se la lunghezza del numero rispetta quella impostata dal prefisso
      * 
-     * @param[in] n Oggetto di tipo @c NumeroTelefono da verificare.
-     * @return Un valore booleano: @c true se il numero è valido, @c false altrimenti.
      */
     public boolean checkNumeroTelefono();
 }

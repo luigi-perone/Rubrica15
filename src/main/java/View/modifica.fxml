@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ModificaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ModificaController">
    <children>
       <Label layoutX="237.0" layoutY="72.0" prefHeight="35.0" prefWidth="132.0" text="Nome">
          <font>
@@ -67,61 +67,61 @@
             </LinearGradient>
          </stroke>
       </Circle>
-      <TextField fx:id="nome" layoutX="390.0" layoutY="64.0" prefHeight="37.0" prefWidth="305.0">
+      <TextField fx:id="nome" layoutX="390.0" layoutY="64.0" prefHeight="51.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="cognome" layoutX="390.0" layoutY="121.0" prefHeight="37.0" prefWidth="305.0">
+      <TextField fx:id="cognome" layoutX="390.0" layoutY="121.0" prefHeight="37.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="descrizione" layoutX="390.0" layoutY="176.0" prefHeight="75.0" prefWidth="305.0">
+      <TextField fx:id="descrizione" alignment="TOP_LEFT" layoutX="390.0" layoutY="176.0" prefHeight="75.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="tel1" layoutX="444.0" layoutY="256.0" prefHeight="51.0" prefWidth="251.0">
+      <TextField fx:id="tel1" layoutX="469.0" layoutY="256.0" prefHeight="51.0" prefWidth="422.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="tel2" layoutX="444.0" layoutY="314.0" prefHeight="51.0" prefWidth="251.0">
+      <TextField fx:id="tel2" layoutX="469.0" layoutY="314.0" prefHeight="51.0" prefWidth="422.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="tel3" layoutX="444.0" layoutY="370.0" prefHeight="51.0" prefWidth="251.0">
+      <TextField fx:id="tel3" layoutX="469.0" layoutY="370.0" prefHeight="51.0" prefWidth="422.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="email1" layoutX="390.0" layoutY="424.0" prefHeight="37.0" prefWidth="305.0">
+      <TextField fx:id="email1" layoutX="390.0" layoutY="424.0" prefHeight="37.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="email2" layoutX="390.0" layoutY="481.0" prefHeight="37.0" prefWidth="305.0">
+      <TextField fx:id="email2" layoutX="390.0" layoutY="481.0" prefHeight="37.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="email3" layoutX="390.0" layoutY="541.0" prefHeight="37.0" prefWidth="305.0">
+      <TextField fx:id="email3" layoutX="390.0" layoutY="541.0" prefHeight="37.0" prefWidth="500.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <ChoiceBox fx:id="pref1" layoutX="390.0" layoutY="256.0" prefHeight="51.0" prefWidth="44.0" />
-      <ChoiceBox fx:id="pref2" layoutX="390.0" layoutY="314.0" prefHeight="51.0" prefWidth="44.0" />
-      <ChoiceBox fx:id="pref3" layoutX="390.0" layoutY="370.0" prefHeight="51.0" prefWidth="44.0" />
-      <Separator layoutX="210.0" layoutY="39.0" orientation="VERTICAL" prefHeight="562.0" prefWidth="5.0" />
+      <ChoiceBox fx:id="pref1" layoutX="390.0" layoutY="256.0" prefHeight="51.0" prefWidth="70.0" />
+      <ChoiceBox fx:id="pref2" layoutX="390.0" layoutY="314.0" prefHeight="51.0" prefWidth="70.0" />
+      <ChoiceBox fx:id="pref3" layoutX="390.0" layoutY="370.0" prefHeight="51.0" prefWidth="70.0" />
+      <Separator layoutX="212.0" layoutY="39.0" orientation="VERTICAL" prefHeight="589.0" prefWidth="4.0" />
       <Text fx:id="iniziale" fill="WHITE" layoutX="37.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="150.0">
          <font>
             <Font size="96.0" />
          </font>
       </Text>
-      <ToolBar prefHeight="40.0" prefWidth="800.0">
+      <ToolBar prefHeight="45.0" prefWidth="930.0">
         <items>
           <Button fx:id="indietro" mnemonicParsing="false" onAction="#indietro_f" style="-fx-background-color: #f1f1f1;" text="Indietro" />
             <Button fx:id="salva" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#salva_f" style="-fx-background-color: #f1f1f1;" text="Salva" />

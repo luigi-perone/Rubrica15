@@ -5,6 +5,7 @@
  * Questa interfaccia definisce un metodo per controllare se una stringa non supera 
  * una lunghezza massima specificata.
  * 
+ * @author gruppo15
  * @package Model
  */
 
@@ -23,13 +24,9 @@ public interface CheckLunghezza {
      * @brief Controlla la lunghezza di una stringa.
      * 
      * Questo metodo verifica se una stringa non supera una lunghezza massima specificata.
-     * 
-     * @pre s diverso da null e lungMax > 0
-     * @post verifica se la lunghezza di s è maggiore di quella impostata
-     * 
-     * @param[in] s La stringa da verificare.
-     * @param[in] lungMax La lunghezza massima consentita.
-     * @return Un valore booleano: @c true se la stringa rispetta il limite, @c false altrimenti.
+     *
+     * @param s La stringa da verificare.
+     * @param lungMax La lunghezza massima consentita per la stringa.
      */
     public boolean checkLunghezza(String s, int lungMax);
 }

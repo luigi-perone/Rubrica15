@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a98dba079980f26dca4e2037cdbd13e95" id="r_a98dba079980f26dca4e2037cdbd13e95"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98dba079980f26dca4e2037cdbd13e95">toString</a> ()</td></tr>
 <tr class="memdesc:a98dba079980f26dca4e2037cdbd13e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una rappresentazione in formato stringa del numero di telefono.  <br /></td></tr>
 <tr class="separator:a98dba079980f26dca4e2037cdbd13e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa326283912ccd91745a9ffd41332cd9a" id="r_aa326283912ccd91745a9ffd41332cd9a"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa326283912ccd91745a9ffd41332cd9a">checkNumeroTelefono</a> (<a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a> n)</td></tr>
-<tr class="memdesc:aa326283912ccd91745a9ffd41332cd9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la validità di un numero di telefono.  <br /></td></tr>
-<tr class="separator:aa326283912ccd91745a9ffd41332cd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0b66196f2ae9101603bbd0176221bf" id="r_ade0b66196f2ae9101603bbd0176221bf"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade0b66196f2ae9101603bbd0176221bf">checkNumeroTelefono</a> ()</td></tr>
+<tr class="memdesc:ade0b66196f2ae9101603bbd0176221bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la validità di un numero di telefono.  <br /></td></tr>
+<tr class="separator:ade0b66196f2ae9101603bbd0176221bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_model_1_1_check_numero_telefono"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_model_1_1_check_numero_telefono')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_model_1_1_check_numero_telefono.html">Model.CheckNumeroTelefono</a></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -151,7 +151,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>. </p>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code> con il prefisso e il numero specificati.</p>
-<p>@per Valori passati diversi da null </p><dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>I valori passati devono essere diversi da null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con successo.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">prefisso</td><td><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a> associato al numero di telefono. </td></tr>
@@ -163,8 +164,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa326283912ccd91745a9ffd41332cd9a" name="aa326283912ccd91745a9ffd41332cd9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa326283912ccd91745a9ffd41332cd9a">&#9670;&#160;</a></span>checkNumeroTelefono()</h2>
+<a id="ade0b66196f2ae9101603bbd0176221bf" name="ade0b66196f2ae9101603bbd0176221bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0b66196f2ae9101603bbd0176221bf">&#9670;&#160;</a></span>checkNumeroTelefono()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,15 +173,16 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">boolean Model.NumeroTelefono.checkNumeroTelefono </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Verifica la validità di un numero di telefono. </p>
-<p>Questo metodo verifica se un numero di telefono è valido. Attualmente il metodo non è implementato. </p><dl class="section pre"><dt>Precondition</dt><dd>il numero passato diverso da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>verifica se il numero è valido</dd></dl>
+<p>Questo metodo verifica se un numero di telefono è valido. La validità dipende dal fatto che il numero contenga solo cifre e segua il formato corretto.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il numero e il prefisso non devono essere null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Verifica se il numero è valido in base alla lunghezza e al formato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code> da verificare. </td></tr>
@@ -190,12 +192,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> se il numero di telefono è valido, <code>false</code> altrimenti. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">UnsupportedOperationException</td><td>Eccezione lanciata poiché il metodo non è ancora implementato. </td></tr>
+    <tr><td class="paramname">UnsupportedOperationException</td><td>Se il metodo non è ancora implementato. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_model_1_1_check_numero_telefono.html#a7c08f6e6ed62245b4e2e9c3c22620af8">Model.CheckNumeroTelefono</a>.</p>
+<p>Implements <a class="el" href="interface_model_1_1_check_numero_telefono.html#a8937bc82245b3366e082dafd6d451d6e">Model.CheckNumeroTelefono</a>.</p>
 
 </div>
 </div>
@@ -216,7 +218,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce il numero di telefono. </p>
 <p>Questo metodo restituisce il numero di telefono dell'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Numero esiste</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Il numero deve esistere.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il numero di telefono dell'oggetto. </dd></dl>
 
 </div>
@@ -238,7 +240,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce il prefisso associato al numero di telefono. </p>
 <p>Questo metodo restituisce il prefisso dell'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>.</p>
-<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo prefisso</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce il contenuto dell'attributo prefisso.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il prefisso associato al numero di telefono. </dd></dl>
 
 </div>
@@ -260,8 +262,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Imposta il numero di telefono. </p>
 <p>Questo metodo imposta un nuovo numero di telefono per l'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a></code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo numero il valore passato</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato deve essere diverso da null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Il numero è aggiornato con il valore passato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">numero</td><td>Il nuovo numero di telefono da impostare. </td></tr>
@@ -288,8 +290,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Imposta il prefisso del numero di telefono. </p>
 <p>Questo metodo imposta un nuovo prefisso per il numero di telefono.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato diverso da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attributo prefisso il valore passato</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato deve essere diverso da null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Il prefisso è aggiornato con il valore passato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">prefisso</td><td>Il nuovo prefisso da associare al numero di telefono. </td></tr>
@@ -316,7 +318,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce una rappresentazione in formato stringa del numero di telefono. </p>
 <p>Questo metodo restituisce il numero di telefono completo di prefisso in formato stringa, ad esempio "+39 123456789".</p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a> esiste</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>L'oggetto <a class="el" href="class_model_1_1_numero_telefono.html">NumeroTelefono</a> deve esistere.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La rappresentazione del numero di telefono come stringa. </dd></dl>
 
 </div>

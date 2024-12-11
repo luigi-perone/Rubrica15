@@ -5,6 +5,7 @@
  * Questa interfaccia definisce i metodi per importare ed esportare file contenenti
  * i dati di una rubrica. Include anche un metodo per verificare il nome di un file.
  * 
+ * @author gruppo15
  * @package Model
  */
 
@@ -25,8 +26,8 @@ public interface FileManager {
      * Questo metodo permette di caricare una rubrica da un file specificato dal 
      * nome del file.
      * 
-     * @pre il nome inserito è associato a un file esistente
-     * @post Rubrica contenente l'insieme dei contatti presenti nel file
+     * @pre Il nome del file inserito deve essere associato a un file esistente.
+     * @post Restituisce un oggetto @c Rubrica contenente l'insieme dei contatti presenti nel file.
      * 
      * @param namefile Il nome del file da cui importare la rubrica.
      * @return Oggetto @c Rubrica caricato dal file.
@@ -37,14 +38,25 @@ public interface FileManager {
      * @brief Esporta la rubrica su un file.
      * 
      * Questo metodo esporta i dati della rubrica in un file con il nome specificato.
-     *  
-     * @pre Rubrica esiste
-     * @post il file che faceva riferimento il namefile contiene la rubrica
      * 
-     * @param namefile Il nome del file su cui esportare la rubrica.
+     * @pre La rubrica deve esistere e contenere dei dati.
+     * @post Il file specificato dal parametro @c namefile contiene la rubrica.
+     * 
+     * @param[in] namefile Il nome del file su cui esportare la rubrica.
      */
     public void esportaRubrica(String namefile);
 
+    /**
+     * @brief Verifica il formato del contenuto di un file.
+     * 
+     * Questo metodo consente di verificare se il contenuto di un file è conforme 
+     * a un formato valido per la rubrica.
+     * 
+     * @pre Il contenuto del file non deve essere null.
+     * @post Restituisce @c true se il formato del file è valido, @c false altrimenti.
+     * 
+     * @param[in] content Il contenuto del file da verificare.
+     * @return @c true se il formato del contenuto è valido, @c false altrimenti.
+     */
     public boolean checkFileFormat(String content);
 }
-

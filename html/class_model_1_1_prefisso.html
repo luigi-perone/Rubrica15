@@ -97,6 +97,9 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:acd92acf645fa9e677702be75feefb86c" id="r_acd92acf645fa9e677702be75feefb86c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd92acf645fa9e677702be75feefb86c">Prefisso</a> (String valore)</td></tr>
+<tr class="memdesc:acd92acf645fa9e677702be75feefb86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <code><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a></code>.  <br /></td></tr>
+<tr class="separator:acd92acf645fa9e677702be75feefb86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcebdb2cabbb267253652022463723b7" id="r_afcebdb2cabbb267253652022463723b7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcebdb2cabbb267253652022463723b7">getValore</a> ()</td></tr>
 <tr class="memdesc:afcebdb2cabbb267253652022463723b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il valore del prefisso.  <br /></td></tr>
 <tr class="separator:afcebdb2cabbb267253652022463723b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,6 +113,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4b9f31cf87bace120882023248592fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una rappresentazione in formato stringa del prefisso.  <br /></td></tr>
 <tr class="separator:a4b9f31cf87bace120882023248592fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acd92acf645fa9e677702be75feefb86c" name="acd92acf645fa9e677702be75feefb86c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd92acf645fa9e677702be75feefb86c">&#9670;&#160;</a></span>Prefisso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model.Prefisso.Prefisso </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>valore</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Costruttore della classe <code><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a></code>. </p>
+<p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a></code> con il valore del prefisso e calcola la lunghezza del numero associato in base al prefisso.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore del prefisso passato è valido. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con il prefisso e la lunghezza del numero associato.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">valore</td><td>Il valore del prefisso telefonico da associare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="adae83357edf2ef015a3f6e3d672ef587" name="adae83357edf2ef015a3f6e3d672ef587"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adae83357edf2ef015a3f6e3d672ef587">&#9670;&#160;</a></span>getLunghezzaNumero()</h2>
@@ -128,7 +160,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce la lunghezza del numero associato al prefisso. </p>
 <p>Questo metodo restituisce la lunghezza del numero telefonico associato a questo prefisso.</p>
-<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo lunghezzaNumero</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce il contenuto dell'attributo lunghezzaNumero.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La lunghezza del numero associato al prefisso. </dd></dl>
 
 </div>
@@ -149,8 +181,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restituisce il valore del prefisso. </p>
-<p>Questo metodo restituisce il valore del prefisso telefonico. Il metodo non è ancora implementato.</p>
-<dl class="section post"><dt>Postcondition</dt><dd>restituisce il contenuto dell'attributo valore</dd></dl>
+<p>Questo metodo restituisce il valore del prefisso telefonico.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce il contenuto dell'attributo valore.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il valore del prefisso. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -178,8 +210,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Imposta il valore del prefisso. </p>
 <p>Questo metodo imposta il valore del prefisso e calcola la lunghezza del numero associato a questo prefisso.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>valore passato in input è diverso da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>viene assegnato all'attrivuto il valore passato</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore passato in input è diverso da null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Viene assegnato all'attributo valore il valore passato e, se necessario, aggiorna la lunghezza del numero associato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">valore</td><td>Il valore del prefisso da impostare. </td></tr>
@@ -206,7 +238,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce una rappresentazione in formato stringa del prefisso. </p>
 <p>Questo metodo restituisce una rappresentazione stringa del prefisso, preceduto dal simbolo "+".</p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a> esiste</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_prefisso.html">Prefisso</a> esiste.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La rappresentazione del prefisso come stringa (es. "+39"). </dd></dl>
 
 </div>

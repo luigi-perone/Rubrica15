@@ -47,6 +47,7 @@ public class Main extends Application {
             // Mostra una finestra di dialogo di conferma
                 Main.r.esportaRubrica("src/main/java/Main/default.csv");
             });
+            primaryStage.setResizable(false);
 
             // Create a Scene and set it on the Stage
             scene = new Scene(root);
