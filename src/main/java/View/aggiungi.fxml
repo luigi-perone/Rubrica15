@@ -77,11 +77,6 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="descrizione" alignment="TOP_LEFT" layoutX="390.0" layoutY="176.0" prefHeight="75.0" prefWidth="500.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </TextField>
       <TextField fx:id="tel1" layoutX="468.0" layoutY="256.0" prefHeight="51.0" prefWidth="422.0">
          <font>
             <Font size="24.0" />
@@ -127,5 +122,6 @@
             <Button fx:id="salva" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#salva_f" style="-fx-background-color: #f1f1f1;" text="Salva" />
         </items>
       </ToolBar>
+      <TextField fx:id="descrizione" alignment="TOP_LEFT" layoutX="390.0" layoutY="177.0" prefHeight="75.0" prefWidth="500.0" />
    </children>
 </Pane>

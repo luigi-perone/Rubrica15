@@ -29,8 +29,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -38,29 +36,28 @@ import javafx.stage.Stage;
 public class HomePageController implements Initializable {
 
     @FXML
-    private Button importa; ///< Menu per l'importazione di una rubrica.
-    
+    private Button importa; ///< Pulsante per l'importazione di una rubrica.
+
     @FXML
-    private Button esporta; ///< Menu per l'esportazione della rubrica.
-    
+    private Button esporta; ///< Pulsante per l'esportazione della rubrica.
+
     @FXML
-    private Button nuovoContatto; ///< Menu per aggiungere un nuovo contatto.
-    
+    private Button nuovoContatto; ///< Pulsante per aggiungere un nuovo contatto.
+
     @FXML
     private TextField cerca; ///< Campo di testo per la ricerca di contatti.
-    
+
     @FXML
     private Button ordina; ///< Pulsante per ordinare i contatti.
-    
+
     @FXML
     private ListView<Contatto> listView; ///< Lista visualizzabile per i contatti.
 
-    // Aggiungi un riferimento alla Stage principale
-    private Stage stage;
+    private Stage stage; ///< Riferimento allo stage principale per l'utilizzo di dialoghi.
 
     /**
-     * Imposta lo stage per il file chooser
-     * @param stage Lo stage principale dell'applicazione
+     * Imposta lo stage principale per il file chooser.
+     * @param stage Lo stage principale dell'applicazione.
      */
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -68,167 +65,145 @@ public class HomePageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // Aggiunge un listener per limitare il campo di testo della ricerca a 10 caratteri
         cerca.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.length() > 10) {
                 cerca.setText(newValue.substring(0, 10)); // Troncamento
             }
         });
-        if(Main.alfabetico){
+
+        // Inizializza la vista in base alla modalità di ordinamento (A-Z o Z-A)
+        if (Main.alfabetico) {
             ordina.setText("Z-A");
             listView.getItems().clear();
             listView.getItems().addAll(r.getTree());
-        }else{
+        } else {
             ordina.setText("A-Z");
             TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
             reversedSet.addAll(Main.r.getTree());
             listView.getItems().clear();
             listView.getItems().addAll(reversedSet);
         }
-        
-    // Aggiunta del listener per la ricerca
-    cerca.textProperty().addListener((observable, oldValue, newValue) -> {
-        // Recupera l'intera rubrica originale
-        TreeSet<Contatto> tuttiContatti = Main.r.getTree();
-        
-        // Filtra i contatti in base al testo inserito
-        TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
-        for (Contatto contatto : tuttiContatti) {
-            // Ricerca case-insensitive su nome, cognome, telefono, email
-            if (contatto.getNome().toLowerCase().contains(newValue.toLowerCase()) ||
-                contatto.getCognome().toLowerCase().contains(newValue.toLowerCase())) {
-                contattiFiltrati.add(contatto);
-            }
-        }
-        
-        // Aggiorna la ListView con i contatti filtrati
-        if(Main.alfabetico){
-            ordina.setText("Z-A");
-            listView.getItems().clear();
-            listView.getItems().addAll(contattiFiltrati);
-        }else{
-            ordina.setText("A-Z");
-            TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
-            reversedSet.addAll(contattiFiltrati);
-            listView.getItems().clear();
-            listView.getItems().addAll(reversedSet);
-        }
-    });
 
-    // Listener per il doppio click come prima
-    listView.setOnMouseClicked(event -> {
-        if (event.getClickCount() == 2) { // Doppio click
-            Contatto selectedItem = listView.getSelectionModel().getSelectedItem();
-            if (selectedItem != null) {
-                Main.setSelectedItem(selectedItem);
-                Main.setRoot("visualizza");
+        // Aggiunge un listener per filtrare i contatti durante la ricerca
+        cerca.textProperty().addListener((observable, oldValue, newValue) -> {
+            TreeSet<Contatto> tuttiContatti = Main.r.getTree();
+            TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
+
+            // Filtra i contatti per nome o cognome
+            for (Contatto contatto : tuttiContatti) {
+                if (contatto.getNome().toLowerCase().contains(newValue.toLowerCase()) ||
+                    contatto.getCognome().toLowerCase().contains(newValue.toLowerCase())) {
+                    contattiFiltrati.add(contatto);
+                }
             }
-        }
-    });
+
+            // Aggiorna la vista con i contatti filtrati
+            if (Main.alfabetico) {
+                listView.getItems().clear();
+                listView.getItems().addAll(contattiFiltrati);
+            } else {
+                TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
+                reversedSet.addAll(contattiFiltrati);
+                listView.getItems().clear();
+                listView.getItems().addAll(reversedSet);
+            }
+        });
+
+        // Gestisce il doppio clic su un contatto nella lista per visualizzarlo
+        listView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Contatto selectedItem = listView.getSelectionModel().getSelectedItem();
+                if (selectedItem != null) {
+                    Main.setSelectedItem(selectedItem);
+                    Main.setRoot("visualizza");
+                }
+            }
+        });
     }
 
     /**
-     * Gestisce l'azione del menu "Importa", che permette di importare una rubrica.
-     * 
-     * @param event L'evento che rappresenta l'azione di importazione.
+     * Gestisce l'importazione di una rubrica da un file CSV.
+     * @param event L'evento associato al pulsante "Importa".
      */
     @FXML
     private void importa_f(ActionEvent event) {
-        // Verifica che lo stage sia stato impostato
-        
-        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleziona un file");
-        
-        fileChooser.getExtensionFilters().addAll(
-            new FileChooser.ExtensionFilter("File CSV", "*.csv")
-        );
-        
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("File CSV", "*.csv"));
         File selectedFile = fileChooser.showOpenDialog(stage);
-        
+
         if (selectedFile != null) {
-            System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
-            // Aggiungi qui la logica per importare il file
-            Rubrica temp=null;
-            try{
-                temp=Main.r.importaFile(selectedFile.getPath());
-            }catch(RuntimeException e){
-            }
-            
-            if(temp.getTree().size()>0){
-                Main.r=temp;
+            Rubrica temp = Main.r.importaFile(selectedFile.getPath());
+            if (temp != null && !temp.getTree().isEmpty()) {
+                Main.r = temp;
                 Main.setRoot("homePage");
-            }else{
+            } else {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Errore");
-                alert.setHeaderText("Si è verificato un errore");
-                alert.setContentText("Il formato del file non è valido");
-
-                // Mostra l'alert
+                alert.setHeaderText("Importazione fallita");
+                alert.setContentText("Il formato del file non è valido.");
                 alert.showAndWait();
-            }    
-            
+            }
         }
     }
 
+    /**
+     * Gestisce l'esportazione della rubrica in un file CSV.
+     * @param event L'evento associato al pulsante "Esporta".
+     */
     @FXML
     private void esporta_f(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Salva rubrica");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("File CSV", "*.csv"));
+        File selectedFile = fileChooser.showSaveDialog(stage);
 
-    // Crea il FileChooser per selezionare il file di destinazione
-    FileChooser fileChooser = new FileChooser();
-    fileChooser.setTitle("Salva rubrica");
-    
-    // Imposta un'estensione di file predefinita per il salvataggio
-    fileChooser.getExtensionFilters().add(
-        new FileChooser.ExtensionFilter("File CSV", "*.csv")
-    );
-
-    // Mostra la finestra di dialogo per il salvataggio
-    File selectedFile = fileChooser.showSaveDialog(stage);
-    
-    if (selectedFile != null) {
-        System.out.println("File selezionato per esportazione: " + selectedFile.getAbsolutePath());
-        
-        // Esegui l'esportazione
-        try {
-            Main.r.esportaRubrica(selectedFile.getAbsolutePath());
-            System.out.println("Rubrica esportata con successo!");
-        } catch (Exception e) {
-            System.err.println("Errore durante l'esportazione della rubrica: " + e.getMessage());
+        if (selectedFile != null) {
+            try {
+                Main.r.esportaRubrica(selectedFile.getAbsolutePath());
+                System.out.println("Rubrica esportata con successo!");
+            } catch (Exception e) {
+                System.err.println("Errore durante l'esportazione: " + e.getMessage());
+            }
         }
     }
-    }
 
+    /**
+     * Gestisce l'azione per creare un nuovo contatto.
+     * @param event L'evento associato al pulsante "Nuovo Contatto".
+     */
     @FXML
     private void nuovo_f(ActionEvent event) {
         Main.setRoot("aggiungi");
     }
 
+    /**
+     * Alterna l'ordinamento tra A-Z e Z-A per la lista dei contatti.
+     * @param event L'evento associato al pulsante "Ordina".
+     */
     @FXML
     private void ordina_f(ActionEvent event) {
-        // TODO: logica per ordinare la lista di contatti
-        Main.alfabetico=!Main.alfabetico;
-        
+        Main.alfabetico = !Main.alfabetico;
+
         TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
         for (Contatto contatto : Main.r.getTree()) {
-            // Ricerca case-insensitive su nome, cognome, telefono, email
             if (contatto.getNome().toLowerCase().contains(cerca.getText().toLowerCase()) ||
                 contatto.getCognome().toLowerCase().contains(cerca.getText().toLowerCase())) {
                 contattiFiltrati.add(contatto);
             }
         }
-        
-        // Aggiorna la ListView con i contatti filtrati
-        if(Main.alfabetico){
+
+        if (Main.alfabetico) {
             ordina.setText("Z-A");
             listView.getItems().clear();
             listView.getItems().addAll(contattiFiltrati);
-        }else{
+        } else {
             ordina.setText("A-Z");
             TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
             reversedSet.addAll(contattiFiltrati);
             listView.getItems().clear();
             listView.getItems().addAll(reversedSet);
         }
-            
     }
 }

@@ -155,6 +155,35 @@ public class Contatto implements CheckLunghezza, Comparable<Contatto> {
     }
 
     /**
+     * @brief Verifica se il contatto è valido.
+     * 
+     * Un contatto è considerato valido se ha un nome e un cognome obbligatoriamente,
+     * e se ogni email e numero di telefono associato è valido. La lunghezza massima
+     * consentita per nome, cognome, descrizione è 100 caratteri.
+     * 
+     * @return @c true se il contatto è valido, @c false altrimenti.
+     */
+    public boolean contattoValido() {
+        if (!checkLunghezza(nome, 100) || !checkLunghezza(cognome, 100)||!checkLunghezza(descrizione, 100)) {
+            return false;
+        }
+
+        for (NumeroTelefono n : numero) {
+            if (n != null &&!n.checkNumeroTelefono()) {
+                return false;
+            }
+        }
+
+        for (Email e : email) {
+            if (e != null &&!e.checkEmail()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * @brief Confronta il contatto corrente con un altro in base a cognome e nome.
      * 
      * @param[in] o Oggetto @c Contatto da confrontare.

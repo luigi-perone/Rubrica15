@@ -45,18 +45,4 @@ public interface FileManager {
      * @param[in] namefile Il nome del file su cui esportare la rubrica.
      */
     public void esportaRubrica(String namefile);
-
-    /**
-     * @brief Verifica il formato del contenuto di un file.
-     * 
-     * Questo metodo consente di verificare se il contenuto di un file è conforme 
-     * a un formato valido per la rubrica.
-     * 
-     * @pre Il contenuto del file non deve essere null.
-     * @post Restituisce @c true se il formato del file è valido, @c false altrimenti.
-     * 
-     * @param[in] content Il contenuto del file da verificare.
-     * @return @c true se il formato del contenuto è valido, @c false altrimenti.
-     */
-    public boolean checkFileFormat(String content);
 }

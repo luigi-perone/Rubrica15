@@ -158,7 +158,8 @@ public class Rubrica implements FileManager {
                     contatto.setEmail(emailObj1, 0);
                     contatto.setEmail(emailObj2, 1);
                     contatto.setEmail(emailObj3, 2);
-                    
+                    if(!contatto.contattoValido())
+                        continue;
                     rubrica.aggiungiContatto(contatto);
                     
                 }
@@ -203,13 +204,13 @@ public class Rubrica implements FileManager {
                     c.getNome(),
                     c.getCognome(),
                     c.getDescrizione(),
-                    nt1.getPrefisso(),
+                    nt1.getPrefisso().getValore(),
                     nt1.getNumero(),
                     e1.getEmail(),
-                    nt2.getPrefisso(),
+                    nt2.getPrefisso().getValore(),
                     nt2.getNumero(),
                     e2.getEmail(),
-                    nt3.getPrefisso(),
+                    nt3.getPrefisso().getValore(),
                     nt3.getNumero(),
                     e3.getEmail()));
                 writer.newLine();
@@ -246,20 +247,5 @@ public class Rubrica implements FileManager {
      */
     public TreeSet<Contatto> getTree() {
         return contatti;
-    }
-
-    /**
-     * @brief Verifica il formato di un file.
-     * 
-     * Questo metodo non è implementato, ma dovrebbe verificare se il contenuto 
-     * di un file rispetta un formato specifico.
-     * 
-     * @param[in] content Il contenuto del file da verificare.
-     * @return False se non è implementato.
-     * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
-     */
-    @Override
-    public boolean checkFileFormat(String content) {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose Tools | Templates.
     }
 }
