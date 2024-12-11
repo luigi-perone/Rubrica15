@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import org.junit.jupiter.api.AfterEach;
@@ -12,189 +7,69 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author scass
- */
 public class EmailTest {
     private Email e;
-    
+
     public EmailTest() {
     }
 
-    @org.junit.jupiter.api.BeforeAll
-    public static void setUpClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterAll
-    public static void tearDownClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.BeforeEach
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterEach
-    public void tearDown() throws Exception {
-    }
-    
     @BeforeAll
     public static void setUpEmail() {
-        e = new Email();
+        System.out.println("Inizio dei test per la classe Email");
     }
-    
+
     @AfterAll
     public static void tearDownClass() {
+        System.out.println("Fine dei test per la classe Email");
     }
-    
+
     @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
-
-    /**
-     * Test of setEmail method, of class Email.
-     */
-    @org.junit.jupiter.api.Test
-    public void testSetEmail() {
-        System.out.println("setEmail");
-        String email = "";
-        Email instance = null;
-        instance.setEmail(email);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getEmail method, of class Email.
-     */
-    @org.junit.jupiter.api.Test
-    public void testGetEmail() {
-        System.out.println("getEmail");
-        Email instance = null;
-        String expResult = "";
-        String result = instance.getEmail();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of checkEmail method, of class Email.
-     */
-    @org.junit.jupiter.api.Test
-    public void testCheckEmail() {
-        System.out.println("checkEmail");
-        Email e = null;
-        Email instance = null;
-        boolean expResult = false;
-        boolean result = instance.checkEmail(e);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+public void setUp() {
+    System.out.println("Inizializzo l'oggetto Email");
+    e = new Email("test@example.com");
+    System.out.println("Oggetto Email inizializzato: " + e);
 }
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Model;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author scass
- */
-public class EmailTest {
-    private Email e;
-    
-    public EmailTest() {
-    }
-
-    @org.junit.jupiter.api.BeforeAll
-    public static void setUpClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterAll
-    public static void tearDownClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.BeforeEach
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterEach
-    public void tearDown() throws Exception {
-    }
-    
-    @BeforeAll
-    public static void setUpEmail() {
-        e = new Email();
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
     @AfterEach
     public void tearDown() {
+        e = null; // Pulisce l'istanza dopo ogni test
     }
 
     /**
-     * Test of setEmail method, of class Email.
+     * Test del metodo setEmail della classe Email.
      */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testSetEmail() {
         System.out.println("setEmail");
-        String email = "";
-        Email instance = null;
-        instance.setEmail(email);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String newEmail = "new@example.com";
+        e.setEmail(newEmail); // Usa l'oggetto `e` condiviso
+        assertEquals(newEmail, e.getEmail(), "L'email non è stata impostata correttamente");
     }
 
     /**
-     * Test of getEmail method, of class Email.
+     * Test del metodo getEmail della classe Email.
      */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testGetEmail() {
         System.out.println("getEmail");
-        Email instance = null;
-        String expResult = "";
-        String result = instance.getEmail();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String expResult = "test@example.com"; // Valore iniziale impostato in setUp
+        String result = e.getEmail(); // Usa l'oggetto `e` condiviso
+        assertEquals(expResult, result, "L'email non è stata restituita correttamente");
     }
 
     /**
-     * Test of checkEmail method, of class Email.
+     * Test del metodo checkEmail della classe Email.
      */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testCheckEmail() {
         System.out.println("checkEmail");
-        Email e = null;
-        Email instance = null;
-        boolean expResult = false;
-        boolean result = instance.checkEmail(e);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        // Verifica con un'email valida
+        assertTrue(e.checkEmail(), "L'email valida non è stata riconosciuta");
+
+        // Verifica con un'email non valida
+        e.setEmail("invalid-email");
+        assertFalse(e.checkEmail(), "L'email non valida è stata erroneamente accettata");
     }
-    
 }

@@ -1,7 +1,4 @@
 Nome,Cognome,Indirizzo,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3
-Carlo,F,Viale Dante,++++39,,carlo.ferrari@email.com,++++39,,carlo.ferrari2@email.com,++++39,,carlo.ferrari3@email.com
-Elena,Giordano,Via Roma,+++++++++39,7788990011,elena.giordano@email.com,+++++++++39,8899001122,elena.giordano2@email.com,+++++++++39,9900112233,elena.giordano3@email.com
-Anna,Lombardi,Via Milano,+++++++++39,6677889900,anna.lombardi@email.com,+++++++++39,7788990011,anna.lombardi2@email.com,+++++++++39,8899001122,anna.lombardi3@email.com
-Francesco,Martini,Via Torino,+++++++++39,1122334455,francesco.martini@email.com,+++++++++39,2233445566,francesco.martini2@email.com,+++++++++39,3344556677,francesco.martini3@email.com
-Mario,Rossi,Via Roma,+++++++++39,1234567111,mario.rossi@email.com,+++++++++39,9876543222,mario.rossi2@email.com,+++++++++39,1122334455,mario.rossi3@email.com
-Giulia,Verdi,Piazza Duomo,+++++++++39,5566778899,giulia.verdi@email.com,+++++++++39,6677889900,giulia.verdi2@email.com,+++++++++39,7788990011,giulia.verdi3@email.com
+Francesco,Martini,Via Torino,+++++++++++++++++39,1122334455,francesco.martini@email.com,+++++++++++++++++39,2233445566,francesco.martini2@email.com,+++++++++++++++++39,3344556677,francesco.martini3@email.com
+Mario,Rossi,Via Roma,+++++++++++++++++39,1234567111,mario.rossi@email.com,+++++++++++++++++39,9876543222,mario.rossi2@email.com,+++++++++++++++++39,1122334455,mario.rossi3@email.com
+Giulia,Verdi,Piazza Duomo,+++++++++++++++++39,5566778899,giulia.verdi@email.com,+++++++++++++++++39,6677889900,giulia.verdi2@email.com,+++++++++++++++++39,7788990011,giulia.verdi3@email.com
