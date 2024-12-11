@@ -82,11 +82,13 @@ public class Rubrica implements FileManager {
         Contatto c1 = new Contatto(nome, cognome, descrizione);
         int i = 0;
         for (Email e : email) {
+            if(e != null)
             c1.setEmail(e, i);
             i++;
         }
         i = 0;
         for (NumeroTelefono n : num) {
+            if(n != null)
             c1.setNumero(n, i);
             i++;
         }

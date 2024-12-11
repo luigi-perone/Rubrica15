@@ -164,10 +164,17 @@ public class Contatto implements CheckLunghezza, Comparable<Contatto> {
      * @return @c true se il contatto è valido, @c false altrimenti.
      */
     public boolean contattoValido() {
+        if(this.getNome()== null && this.getCognome()== null)
+            return false;
+
+        if(this.getNome().length() == 0 && this.getCognome().length() == 0)
+            return false;
+
+        
         if (!checkLunghezza(nome, 100) || !checkLunghezza(cognome, 100)||!checkLunghezza(descrizione, 100)) {
             return false;
         }
-
+        
         for (NumeroTelefono n : numero) {
             if (n != null &&!n.checkNumeroTelefono()) {
                 return false;
