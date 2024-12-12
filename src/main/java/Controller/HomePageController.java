@@ -86,29 +86,29 @@ public class HomePageController implements Initializable {
         }
 
         // Aggiunge un listener per filtrare i contatti durante la ricerca
-        cerca.textProperty().addListener((observable, oldValue, newValue) -> {
-            TreeSet<Contatto> tuttiContatti = Main.r.getTree();
-            TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
+cerca.textProperty().addListener((observable, oldValue, newValue) -> {
+    TreeSet<Contatto> tuttiContatti = Main.r.getTree();
+    TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
 
-            // Filtra i contatti per nome o cognome
-            for (Contatto contatto : tuttiContatti) {
-                if (contatto.getNome().toLowerCase().contains(newValue.toLowerCase()) ||
-                    contatto.getCognome().toLowerCase().contains(newValue.toLowerCase())) {
-                    contattiFiltrati.add(contatto);
-                }
-            }
+    // Filtra i contatti per nome o cognome, considerando solo le sottostringhe iniziali
+    for (Contatto contatto : tuttiContatti) {
+        if (contatto.getNome().toLowerCase().startsWith(newValue.toLowerCase()) ||
+            contatto.getCognome().toLowerCase().startsWith(newValue.toLowerCase())) {
+            contattiFiltrati.add(contatto);
+        }
+    }
 
-            // Aggiorna la vista con i contatti filtrati
-            if (Main.alfabetico) {
-                listView.getItems().clear();
-                listView.getItems().addAll(contattiFiltrati);
-            } else {
-                TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
-                reversedSet.addAll(contattiFiltrati);
-                listView.getItems().clear();
-                listView.getItems().addAll(reversedSet);
-            }
-        });
+    // Aggiorna la vista con i contatti filtrati
+    listView.getItems().clear();
+    if (Main.alfabetico) {
+        listView.getItems().addAll(contattiFiltrati);
+    } else {
+        TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
+        reversedSet.addAll(contattiFiltrati);
+        listView.getItems().addAll(reversedSet);
+    }
+});
+
 
         // Gestisce il doppio clic su un contatto nella lista per visualizzarlo
         listView.setOnMouseClicked(event -> {
