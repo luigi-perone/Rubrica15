@@ -7,6 +7,7 @@ var searchData=
   ['getnome_4',['getNome',['../class_model_1_1_contatto.html#a7d25dc15a893178eaa917f21ca536547',1,'Model::Contatto']]],
   ['getnumero_5',['getNumero',['../class_model_1_1_contatto.html#a09ee809c541c15bf9b9531ce9c858241',1,'Model.Contatto.getNumero()'],['../class_model_1_1_numero_telefono.html#aeef1b8f2cdd471b8f8ba4810dae4a663',1,'Model.NumeroTelefono.getNumero()']]],
   ['getprefisso_6',['getPrefisso',['../class_model_1_1_numero_telefono.html#a7ee90c97e490faf1282c02d040ceb7bd',1,'Model::NumeroTelefono']]],
-  ['gettree_7',['getTree',['../class_model_1_1_rubrica.html#a9787d46ace3007573ad6dd9d077a24ad',1,'Model::Rubrica']]],
-  ['getvalore_8',['getValore',['../class_model_1_1_prefisso.html#afcebdb2cabbb267253652022463723b7',1,'Model::Prefisso']]]
+  ['getselecteditem_7',['getSelectedItem',['../class_main_1_1_main.html#aa2d5fe5645f7efae33258a720fa7319f',1,'Main::Main']]],
+  ['gettree_8',['getTree',['../class_model_1_1_rubrica.html#a9787d46ace3007573ad6dd9d077a24ad',1,'Model::Rubrica']]],
+  ['getvalore_9',['getValore',['../class_model_1_1_prefisso.html#afcebdb2cabbb267253652022463723b7',1,'Model::Prefisso']]]
 ];

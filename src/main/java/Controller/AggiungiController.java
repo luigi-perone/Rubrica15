@@ -157,7 +157,11 @@ public class AggiungiController implements Initializable {
         c.setNumero(new NumeroTelefono(new Prefisso(pref1.getValue().substring(1)), tel1.getText().trim()), 0);
         c.setNumero(new NumeroTelefono(new Prefisso(pref2.getValue().substring(1)), tel2.getText().trim()), 1);
         c.setNumero(new NumeroTelefono(new Prefisso(pref3.getValue().substring(1)), tel3.getText().trim()), 2);
-
+        
+        if(Main.r.getTree().contains(c)){
+            showDuplicateAlert();
+            return;
+        }
         // Salva il contatto e torna alla home
         Main.r.aggiungiContatto(c);
         Main.setRoot("homePage");
@@ -223,24 +227,6 @@ public class AggiungiController implements Initializable {
     }
 
     /**
-     * @brief Valida l'input finale prima del salvataggio.
-     * 
-     * @return true se tutti i campi sono validi, false altrimenti.
-     */
-    private boolean validateFinalInput() {
-        return 
-            isValidInput(nome, NOME_PATTERN, true) &&
-            isValidInput(cognome, NOME_PATTERN, true) &&
-            isValidInput(descrizione, null, false) &&
-            isValidInput(email1, EMAIL_PATTERN, false) &&
-            isValidInput(email2, EMAIL_PATTERN, false) &&
-            isValidInput(email3, EMAIL_PATTERN, false) &&
-            isValidInput(tel1, TELEFONO_PATTERN, false) &&
-            isValidInput(tel2, TELEFONO_PATTERN, false) &&
-            isValidInput(tel3, TELEFONO_PATTERN, false);
-    }
-
-    /**
      * @brief Convalida un singolo campo di input.
      * 
      * @param textField Campo di testo da validare.
@@ -263,14 +249,54 @@ public class AggiungiController implements Initializable {
     }
 
     /**
+     * @brief Valida l'input finale prima del salvataggio.
+     * 
+     * @return true se tutti i campi sono validi, false altrimenti.
+     */
+    private boolean validateFinalInput() {
+        boolean isNameOrSurnameFilled =
+            !nome.getText().trim().isEmpty() || !cognome.getText().trim().isEmpty();
+
+        return 
+            isNameOrSurnameFilled &&
+            isValidInput(nome, NOME_PATTERN, false) &&
+            isValidInput(cognome, NOME_PATTERN, false) &&
+            isValidInput(descrizione, null, false) &&
+            isValidInput(email1, EMAIL_PATTERN, false) &&
+            isValidInput(email2, EMAIL_PATTERN, false) &&
+            isValidInput(email3, EMAIL_PATTERN, false) &&
+            isValidInput(tel1, TELEFONO_PATTERN, false) &&
+            isValidInput(tel2, TELEFONO_PATTERN, false) &&
+            isValidInput(tel3, TELEFONO_PATTERN, false);
+    }
+
+    /**
      * @brief Mostra un avviso in caso di errori di validazione.
      */
     private void showValidationAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore di Validazione");
         alert.setHeaderText("Campi non validi");
-        alert.setContentText("Assicurati di aver compilato correttamente nome e cognome. " +
-                             "Controlla che i campi rispettino i formati richiesti");
+
+        StringBuilder message = new StringBuilder("Assicurati di aver compilato almeno uno tra Nome o Cognome.\n");
+        message.append("Controlla che i campi rispettino i formati richiesti.");
+
+        alert.setContentText(message.toString());
         alert.showAndWait();
     }
+    
+     /**
+     * @brief Mostra un avviso in caso di contatto gia presente.
+     */
+    private void showDuplicateAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Errore di Validazione");
+        alert.setHeaderText("Contatto già presente");
+
+        StringBuilder message = new StringBuilder("Questo nome e cognome sono già in uso");
+
+        alert.setContentText(message.toString());
+        alert.showAndWait();
+    }   
+
 }

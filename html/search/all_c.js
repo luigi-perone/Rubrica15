@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['testcheckemail_0',['testCheckEmail',['../class_model_1_1_email_test.html#acf848a5344c7a24e0a210a0c801c23e4',1,'Model::EmailTest']]],
-  ['testgetemail_1',['testGetEmail',['../class_model_1_1_email_test.html#a4ba413d8486d89a6a3116b6eb2a638e0',1,'Model::EmailTest']]],
-  ['testsetemail_2',['testSetEmail',['../class_model_1_1_email_test.html#adf08eac9c5fafba82f833bde8bd73808',1,'Model::EmailTest']]],
-  ['tostring_3',['toString',['../class_model_1_1_contatto.html#a6827180b269884b54b38c1d570498950',1,'Model.Contatto.toString()'],['../class_model_1_1_numero_telefono.html#a98dba079980f26dca4e2037cdbd13e95',1,'Model.NumeroTelefono.toString()'],['../class_model_1_1_prefisso.html#a4b9f31cf87bace120882023248592fa3',1,'Model.Prefisso.toString()'],['../class_model_1_1_rubrica.html#ab06fee8c7883b004d2544fbe18fb9039',1,'Model.Rubrica.toString()']]]
+  ['tessetgetnumero_0',['tesSetGetNumero',['../class_model_1_1_numero_telefono_test.html#a8c849a41f73d826debc473031c3de09b',1,'Model::NumeroTelefonoTest']]],
+  ['testchecklunghezza_1',['testCheckLunghezza',['../class_model_1_1_contatto_test.html#a8edfbd0adadae015e2bb30c94978d2b4',1,'Model::ContattoTest']]],
+  ['testchecknumerotelefonovalid_2',['testCheckNumeroTelefonoValid',['../class_model_1_1_numero_telefono_test.html#a54e9a1a65ec0a9f2a7b6224a1959d218',1,'Model::NumeroTelefonoTest']]],
+  ['testcompareto_3',['testCompareTo',['../class_model_1_1_contatto_test.html#a7ef0d5db4093aee26e12017e91c03b4a',1,'Model::ContattoTest']]],
+  ['testconstructor_4',['testConstructor',['../class_model_1_1_prefisso_test.html#a4cbbd2e0302139d2d84e50c0bbc3cddc',1,'Model::PrefissoTest']]],
+  ['testgetemail_5',['testGetEmail',['../class_model_1_1_contatto_test.html#ac3fcfb753665ad5d01429303d657e616',1,'Model::ContattoTest']]],
+  ['testgetlunghezzanumero_6',['testGetLunghezzaNumero',['../class_model_1_1_prefisso_test.html#ac7c452195d769e5b1429d48ad7332e5b',1,'Model::PrefissoTest']]],
+  ['testinitialize_7',['testInitialize',['../class_controller_1_1_home_page_controller_test.html#a41f711dcc6c51b6c2bced27d61a142ae',1,'Controller::HomePageControllerTest']]],
+  ['testsetemail_8',['testSetEmail',['../class_model_1_1_contatto_test.html#a110b3524e23c19c9ca228842d0d89691',1,'Model::ContattoTest']]],
+  ['testsetgetcognome_9',['testSetGetCognome',['../class_model_1_1_contatto_test.html#a8c761f7a68f1f8968c1ca49d318cca5e',1,'Model::ContattoTest']]],
+  ['testsetgetdescrizione_10',['testSetGetDescrizione',['../class_model_1_1_contatto_test.html#a708c3ce8034eb93238df280b853debd7',1,'Model::ContattoTest']]],
+  ['testsetgetemail_11',['testSetGetEmail',['../class_model_1_1_email_test.html#a49a89ee5d5dd8d4e74404046e5edc41d',1,'Model::EmailTest']]],
+  ['testsetgetnome_12',['testSetGetNome',['../class_model_1_1_contatto_test.html#aab173b15b2ca9dfb9d4cdc3c726a2000',1,'Model::ContattoTest']]],
+  ['testsetgetnumero1_13',['testSetGetNumero1',['../class_model_1_1_contatto_test.html#a56a1b2acfbf1d88965bc332303d8b3d3',1,'Model::ContattoTest']]],
+  ['testsetgetprefisso_14',['testSetGetPrefisso',['../class_model_1_1_numero_telefono_test.html#afb15ae2ebeb3940da6c756ef20f1d1eb',1,'Model::NumeroTelefonoTest']]],
+  ['testsetgetvalore_15',['testSetGetValore',['../class_model_1_1_prefisso_test.html#a84cce195232d2fd13696e5fb7e25156f',1,'Model::PrefissoTest']]],
+  ['testsetstage_16',['testSetStage',['../class_controller_1_1_home_page_controller_test.html#a96ec3a9d1b322e74706190972bf6400d',1,'Controller::HomePageControllerTest']]],
+  ['testtostring_17',['testToString',['../class_model_1_1_contatto_test.html#af73a587e33ce1a5ee221ed25650708c1',1,'Model.ContattoTest.testToString()'],['../class_model_1_1_numero_telefono_test.html#a62aaa27b8eb5cb8dcf671c088468ca9a',1,'Model.NumeroTelefonoTest.testToString()'],['../class_model_1_1_prefisso_test.html#a23eeaa38c22a773bb25f2f0c7f1982db',1,'Model.PrefissoTest.testToString()']]],
+  ['testvalid_18',['testValid',['../class_model_1_1_email_test.html#aeb91ad59dfa1090964fb5caaef041817',1,'Model::EmailTest']]],
+  ['tostring_19',['toString',['../class_model_1_1_contatto.html#a6827180b269884b54b38c1d570498950',1,'Model.Contatto.toString()'],['../class_model_1_1_numero_telefono.html#a98dba079980f26dca4e2037cdbd13e95',1,'Model.NumeroTelefono.toString()'],['../class_model_1_1_prefisso.html#a4b9f31cf87bace120882023248592fa3',1,'Model.Prefisso.toString()'],['../class_model_1_1_rubrica.html#ab06fee8c7883b004d2544fbe18fb9039',1,'Model.Rubrica.toString()']]]
 ];

@@ -9,8 +9,6 @@
  * della vista.
  *
  * @package Controller
- * @date 2024
- * @version 1.0
  * @authors gruppo15
  */
 package Controller;
@@ -101,7 +99,6 @@ public class ModificaController implements Initializable {
         initializePrefissi(pref1);
         initializePrefissi(pref2);
         initializePrefissi(pref3);
-        addValidationListeners();
 
         Contatto contatto = Main.getSelectedItem();
         if (contatto != null) {
@@ -121,142 +118,7 @@ public class ModificaController implements Initializable {
         prefBox.setValue("+39");
     }
 
-    /**
-     * Aggiunge listener per la validazione dei campi di input.
-     */
-    private void addValidationListeners() {
-        nome.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateNomeCognome(nome, newValue);
-            limitLength(nome, newValue);
-        });
-        cognome.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateNomeCognome(cognome, newValue);
-            limitLength(cognome, newValue);
-        });
-        descrizione.textProperty().addListener((observable, oldValue, newValue) -> {
-            limitLength(descrizione, newValue);
-        });
-        email1.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateEmail(email1, newValue);
-            limitLength(email1, newValue);
-        });
-        email2.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateEmail(email2, newValue);
-            limitLength(email2, newValue);
-        });
-        email3.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateEmail(email3, newValue);
-            limitLength(email3, newValue);
-        });
-        tel1.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateTelefono(tel1, newValue);
-        });
-        tel2.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateTelefono(tel2, newValue);
-        });
-        tel3.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateTelefono(tel3, newValue);
-        });
-    }
 
-    /**
-     * Limita la lunghezza del campo di testo a MAX_LENGTH.
-     *
-     * @param textField Campo di testo da limitare.
-     * @param newValue Nuovo valore del campo.
-     */
-    private void limitLength(TextField textField, String newValue) {
-        if (newValue != null && newValue.length() > MAX_LENGTH) {
-            textField.setText(newValue.substring(0, MAX_LENGTH));
-        }
-    }
-
-    /**
-     * Valida il campo nome o cognome.
-     *
-     * @param textField Campo di testo da validare.
-     * @param value Valore del campo.
-     */
-    private void validateNomeCognome(TextField textField, String value) {
-        if (value == null || value.trim().isEmpty()) {
-            textField.setStyle("-fx-border-color: red;");
-        } else if (!NOME_COGNOME_PATTERN.matcher(value.trim()).matches()) {
-            textField.setStyle("-fx-border-color: red;");
-        } else {
-            textField.setStyle("");
-        }
-    }
-
-    /**
-     * Valida il campo email.
-     *
-     * @param textField Campo di testo da validare.
-     * @param value Valore del campo.
-     */
-    private void validateEmail(TextField textField, String value) {
-        if (value == null || value.trim().isEmpty()) {
-            textField.setStyle("");
-            return;
-        }
-        if (!EMAIL_PATTERN.matcher(value.trim()).matches()) {
-            textField.setStyle("-fx-border-color: red;");
-        } else {
-            textField.setStyle("");
-        }
-    }
-
-    /**
-     * Valida il campo numero di telefono.
-     *
-     * @param textField Campo di testo da validare.
-     * @param value Valore del campo.
-     */
-    private void validateTelefono(TextField textField, String value) {
-        if (value == null || value.trim().isEmpty()) {
-            textField.setStyle("");
-            return;
-        }
-        if (!TELEFONO_PATTERN.matcher(value.trim()).matches()) {
-            textField.setStyle("-fx-border-color: red;");
-        } else {
-            textField.setStyle("");
-        }
-    }
-
-    /**
-     * Carica i dati del contatto selezionato.
-     *
-     * @param contatto Contatto da caricare.
-     */
-    private void loadContactData(Contatto contatto) {
-        iniziale.setText(contatto.getCognome().substring(0, 1));
-        nome.setText(contatto.getNome());
-        cognome.setText(contatto.getCognome());
-        descrizione.setText(contatto.getDescrizione());
-
-        if (contatto.getEmail(0) != null && contatto.getEmail(0).checkEmail()) {
-            email1.setText(contatto.getEmail(0).getEmail());
-        }
-        if (contatto.getEmail(1) != null && contatto.getEmail(1).checkEmail()) {
-            email2.setText(contatto.getEmail(1).getEmail());
-        }
-        if (contatto.getEmail(2) != null && contatto.getEmail(2).checkEmail()) {
-            email3.setText(contatto.getEmail(2).getEmail());
-        }
-
-        if (contatto.getNumero(0) != null && contatto.getNumero(0).checkNumeroTelefono()) {
-            tel1.setText(contatto.getNumero(0).getNumero());
-            pref1.setValue(contatto.getNumero(0).getPrefisso().toString());
-        }
-        if (contatto.getNumero(1) != null && contatto.getNumero(1).checkNumeroTelefono()) {
-            tel2.setText(contatto.getNumero(1).getNumero());
-            pref2.setValue(contatto.getNumero(1).getPrefisso().toString());
-        }
-        if (contatto.getNumero(2) != null && contatto.getNumero(2).checkNumeroTelefono()) {
-            tel3.setText(contatto.getNumero(2).getNumero());
-            pref3.setValue(contatto.getNumero(2).getPrefisso().toString());
-        }
-    }
 
     /**
      * Gestisce l'azione del pulsante "Indietro".
@@ -294,49 +156,127 @@ public class ModificaController implements Initializable {
         Main.setRoot("homePage");
     }
 
-    /**
-     * Esegue una validazione finale prima del salvataggio.
-     *
-     * @return true se tutti i campi sono validi, altrimenti false.
-     */
-    private boolean validateFinalInput() {
-        boolean isValid = true;
+/**
+ * Esegue una validazione finale prima del salvataggio.
+ *
+ * @return true se tutti i campi sono validi, altrimenti false.
+ */
+private boolean validateFinalInput() {
+    boolean isValid = true;
 
-        if (nome.getText().trim().isEmpty() || !NOME_COGNOME_PATTERN.matcher(nome.getText().trim()).matches()) {
+    // Controllo obbligatorio: almeno uno tra nome e cognome deve essere inserito
+    if (nome.getText().trim().isEmpty() && cognome.getText().trim().isEmpty()) {
+        nome.setStyle("-fx-border-color: red;");
+        cognome.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        // Validazione individuale per nome
+        if (!nome.getText().trim().isEmpty() && !NOME_COGNOME_PATTERN.matcher(nome.getText().trim()).matches()) {
             nome.setStyle("-fx-border-color: red;");
             isValid = false;
+        } else {
+            nome.setStyle(""); // Rimuovi stile rosso se valido o vuoto
         }
-        if (cognome.getText().trim().isEmpty() || !NOME_COGNOME_PATTERN.matcher(cognome.getText().trim()).matches()) {
+
+        // Validazione individuale per cognome
+        if (!cognome.getText().trim().isEmpty() && !NOME_COGNOME_PATTERN.matcher(cognome.getText().trim()).matches()) {
             cognome.setStyle("-fx-border-color: red;");
             isValid = false;
+        } else {
+            cognome.setStyle(""); // Rimuovi stile rosso se valido o vuoto
         }
-
-        if (!email1.getText().trim().isEmpty() && !EMAIL_PATTERN.matcher(email1.getText().trim()).matches()) {
-            email1.setStyle("-fx-border-color: red;");
-            isValid = false;
-        }
-        if (!email2.getText().trim().isEmpty() && !EMAIL_PATTERN.matcher(email2.getText().trim()).matches()) {
-            email2.setStyle("-fx-border-color: red;");
-            isValid = false;
-        }
-        if (!email3.getText().trim().isEmpty() && !EMAIL_PATTERN.matcher(email3.getText().trim()).matches()) {
-            email3.setStyle("-fx-border-color: red;");
-            isValid = false;
-        }
-
-        if (!tel1.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel1.getText().trim()).matches()) {
-            tel1.setStyle("-fx-border-color: red;");
-            isValid = false;
-        }
-        if (!tel2.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel2.getText().trim()).matches()) {
-            tel2.setStyle("-fx-border-color: red;");
-            isValid = false;
-        }
-        if (!tel3.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel3.getText().trim()).matches()) {
-            tel3.setStyle("-fx-border-color: red;");
-            isValid = false;
-        }
-
-        return isValid;
     }
+
+    // Validazione delle email
+    if (!email1.getText().trim().isEmpty() && !EMAIL_PATTERN.matcher(email1.getText().trim()).matches()) {
+        email1.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        email1.setStyle("");
+    }
+
+    if (!email2.getText().trim().isEmpty() && !EMAIL_PATTERN.matcher(email2.getText().trim()).matches()) {
+        email2.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        email2.setStyle("");
+    }
+
+    if (!email3.getText().trim().isEmpty() && !EMAIL_PATTERN.matcher(email3.getText().trim()).matches()) {
+        email3.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        email3.setStyle("");
+    }
+
+    // Validazione dei numeri di telefono
+    if (!tel1.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel1.getText().trim()).matches()) {
+        tel1.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        tel1.setStyle("");
+    }
+
+    if (!tel2.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel2.getText().trim()).matches()) {
+        tel2.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        tel2.setStyle("");
+    }
+
+    if (!tel3.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel3.getText().trim()).matches()) {
+        tel3.setStyle("-fx-border-color: red;");
+        isValid = false;
+    } else {
+        tel3.setStyle("");
+    }
+
+    return isValid;
+}
+    /**
+ * Carica i dati del contatto selezionato.
+ *
+ * @param contatto Contatto da caricare.
+ */
+private void loadContactData(Contatto contatto) {
+    iniziale.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() 
+                    ? contatto.getCognome().substring(0, 1) 
+                    : "");
+
+    nome.setText(contatto.getNome() != null && !contatto.getNome().isEmpty() 
+                 ? contatto.getNome() 
+                 : "");
+
+    cognome.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() 
+                    ? contatto.getCognome() 
+                    : "");
+
+    descrizione.setText(contatto.getDescrizione() != null && !contatto.getDescrizione().isEmpty() 
+                        ? contatto.getDescrizione() 
+                        : "");
+
+    if (contatto.getEmail(0) != null && contatto.getEmail(0).checkEmail()) {
+        email1.setText(contatto.getEmail(0).getEmail());
+    }
+    if (contatto.getEmail(1) != null && contatto.getEmail(1).checkEmail()) {
+        email2.setText(contatto.getEmail(1).getEmail());
+    }
+    if (contatto.getEmail(2) != null && contatto.getEmail(2).checkEmail()) {
+        email3.setText(contatto.getEmail(2).getEmail());
+    }
+
+    if (contatto.getNumero(0) != null && contatto.getNumero(0).checkNumeroTelefono()) {
+        tel1.setText(contatto.getNumero(0).getNumero());
+        pref1.setValue(contatto.getNumero(0).getPrefisso().toString());
+    }
+    if (contatto.getNumero(1) != null && contatto.getNumero(1).checkNumeroTelefono()) {
+        tel2.setText(contatto.getNumero(1).getNumero());
+        pref2.setValue(contatto.getNumero(1).getPrefisso().toString());
+    }
+    if (contatto.getNumero(2) != null && contatto.getNumero(2).checkNumeroTelefono()) {
+        tel3.setText(contatto.getNumero(2).getNumero());
+        pref3.setValue(contatto.getNumero(2).getPrefisso().toString());
+    }
+}
+
 }

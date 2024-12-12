@@ -142,6 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ace3a3c837caf307b28a08c128e79f11c" id="r_ace3a3c837caf307b28a08c128e79f11c"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace3a3c837caf307b28a08c128e79f11c">checkLunghezza</a> (String s, int lungMax)</td></tr>
 <tr class="memdesc:ace3a3c837caf307b28a08c128e79f11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se una stringa non supera una lunghezza massima specificata.  <br /></td></tr>
 <tr class="separator:ace3a3c837caf307b28a08c128e79f11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7cb8443ab094ed8b02a9d3be642c6af" id="r_ad7cb8443ab094ed8b02a9d3be642c6af"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7cb8443ab094ed8b02a9d3be642c6af">contattoValido</a> ()</td></tr>
+<tr class="memdesc:ad7cb8443ab094ed8b02a9d3be642c6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se il contatto è valido.  <br /></td></tr>
+<tr class="separator:ad7cb8443ab094ed8b02a9d3be642c6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89c37f7fd4a33a69d771c4d8cd2c831f" id="r_a89c37f7fd4a33a69d771c4d8cd2c831f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89c37f7fd4a33a69d771c4d8cd2c831f">compareTo</a> (<a class="el" href="class_model_1_1_contatto.html">Contatto</a> o)</td></tr>
 <tr class="memdesc:a89c37f7fd4a33a69d771c4d8cd2c831f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confronta il contatto corrente con un altro in base a cognome e nome.  <br /></td></tr>
 <tr class="separator:a89c37f7fd4a33a69d771c4d8cd2c831f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,6 +249,27 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Un valore negativo, zero o positivo in base all'ordine lessicografico. </dd></dl>
+
+</div>
+</div>
+<a id="ad7cb8443ab094ed8b02a9d3be642c6af" name="ad7cb8443ab094ed8b02a9d3be642c6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7cb8443ab094ed8b02a9d3be642c6af">&#9670;&#160;</a></span>contattoValido()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean Model.Contatto.contattoValido </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se il contatto è valido. </p>
+<p>Un contatto è considerato valido se ha un nome e un cognome obbligatoriamente, e se ogni email e numero di telefono associato è valido. La lunghezza massima consentita per nome, cognome, descrizione è 100 caratteri.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> se il contatto è valido, <code>false</code> altrimenti. </dd></dl>
 
 </div>
 </div>

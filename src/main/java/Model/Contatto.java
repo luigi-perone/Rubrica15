@@ -191,8 +191,28 @@ public class Contatto implements CheckLunghezza, Comparable<Contatto> {
      */
     @Override
     public int compareTo(Contatto o) {
-        String cognomeNome = this.cognome + " " + this.nome;
-        return cognomeNome.compareTo(o.cognome + " " + o.nome);
+        // Gestione dei contatti senza cognome
+        if (this.cognome == null || this.cognome.isEmpty()) {
+            if (o.cognome == null || o.cognome.isEmpty()) {
+                // Se entrambi i cognomi sono vuoti, confronta i nomi
+                return this.nome.compareToIgnoreCase(o.nome);
+            }
+            // Questo contatto senza cognome va in fondo
+            return 1;
+        }
+        if (o.cognome == null || o.cognome.isEmpty()) {
+            // L'altro contatto senza cognome va in fondo
+            return -1;
+        }
+
+        // Ordinamento normale per cognome
+        int compareCognome = this.cognome.compareToIgnoreCase(o.cognome);
+        if (compareCognome != 0) {
+            return compareCognome;
+        }
+
+        // Ordinamento per nome se i cognomi sono uguali
+        return this.nome.compareToIgnoreCase(o.nome);
     }
 
     /**

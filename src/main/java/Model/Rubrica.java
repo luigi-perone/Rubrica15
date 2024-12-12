@@ -20,6 +20,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeSet;
 
+
 public class Rubrica implements FileManager {
 
     private TreeSet<Contatto> contatti; ///< Set di contatti memorizzato nella rubrica.
@@ -95,7 +96,6 @@ public class Rubrica implements FileManager {
         
         return c;
     }
-
     /**
      * @brief Importa una rubrica da un file.
      * 
@@ -157,7 +157,7 @@ public class Rubrica implements FileManager {
                     contatto.setNumero(numeroTelefono3, 2);
                     contatto.setEmail(emailObj1, 0);
                     contatto.setEmail(emailObj2, 1);
-                    contatto.setEmail(emailObj3, 2);
+                    contatto.setEmail(emailObj3, 2);                                    
                     if(!contatto.contattoValido())
                         continue;
                     rubrica.aggiungiContatto(contatto);
@@ -169,7 +169,6 @@ public class Rubrica implements FileManager {
         }
         return rubrica;
     }
-
     /**
      * @brief Esporta la rubrica su un file.
      * 
@@ -198,7 +197,6 @@ public class Rubrica implements FileManager {
                 Email e1 = c.getEmail(0);
                 Email e2 = c.getEmail(1);
                 Email e3 = c.getEmail(2);
-
                 // Scrivi i dettagli del contatto nel formato CSV
                 writer.write(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
                     c.getNome(),

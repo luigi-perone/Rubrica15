@@ -143,10 +143,14 @@ public class VisualizzaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Contatto contatto = Main.getSelectedItem();
         if (contatto != null) {
-            iniziale.setText(contatto.getCognome().substring(0, 1).toUpperCase());
-            nome.setText(contatto.getNome());
-            cognome.setText(contatto.getCognome());
-            descrizione.setText(contatto.getDescrizione());
+            if(!contatto.getCognome().isEmpty()){
+                iniziale.setText(contatto.getCognome().substring(0, 1).toUpperCase());
+                cognome.setText(contatto.getCognome());
+            }
+            if(!contatto.getNome().isEmpty())
+                        nome.setText(contatto.getNome());
+            if(!contatto.getDescrizione().isEmpty())
+                descrizione.setText(contatto.getDescrizione());
             if (contatto.getEmail(0) != null && contatto.getEmail(0).checkEmail())
                 email1.setText(contatto.getEmail(0).getEmail());
             if (contatto.getEmail(1) != null && contatto.getEmail(1).checkEmail())
