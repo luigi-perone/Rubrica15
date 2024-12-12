@@ -84,7 +84,8 @@ public class ModificaController implements Initializable {
 
     private static final int MAX_LENGTH = 100; ///< Lunghezza massima dei campi di testo.
     private static final Pattern NOME_COGNOME_PATTERN = Pattern.compile("^[\\p{L} '-]+$"); ///< Pattern per validare nome e cognome.
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$"); ///< Pattern per validare email.
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(\\.[A-Za-z]{2,})*$");
+
     private static final Pattern TELEFONO_PATTERN = Pattern.compile("^\\d{9,10}$"); ///< Pattern per validare numeri di telefono.
 
     /**
