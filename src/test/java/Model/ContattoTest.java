@@ -18,11 +18,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ContattoTest {
     private Contatto c;
-    private NumeroTelefono[] n;
-    private Prefisso p;
-    private Prefisso p1;
-    private Prefisso p2;
-    private Email[] e;
             
     public ContattoTest() {
     }
@@ -37,17 +32,7 @@ public class ContattoTest {
     
     @BeforeEach
     public void setUp() {
-        e = new Email[3];
-        e[0] = new Email("u.scassillo1@studenti.unisa.it");
-        e[1] = new Email("l.perone3@studenti.unisa.it");
-        e[2] = new Email("c.panico16@studenti.unisa.it");
-        p = new Prefisso("39");
-        p1 = new Prefisso("44");
-        p2 = new Prefisso("33");
-        n = new NumeroTelefono[3];
-        n[0] = new NumeroTelefono(p, "0123456789");
-        n[1] = new NumeroTelefono(p1, "1234567890");
-        n[2] = new NumeroTelefono(p2, "123456789");
+        c = new Contatto(null, null, null);
     }
     
     @AfterEach
@@ -59,7 +44,7 @@ public class ContattoTest {
      */
     @Test
     public void testSetGetNome() {
-        String nome="Umberto";
+        String nome="Luigi";
         c.setNome(nome);
         assertEquals(nome,c.getNome());
     }
@@ -69,7 +54,7 @@ public class ContattoTest {
      */
     @Test
     public void testSetGetCognome() {
-        String cognome="Scassillo";
+        String cognome="Panico";
         c.setCognome(cognome);
         assertEquals(cognome,c.getCognome());
     }
@@ -80,7 +65,7 @@ public class ContattoTest {
     @Test
     public void testSetGetDescrizione() {
         String descrizione="studente universitario";
-        c.setCognome(descrizione);
+        c.setDescrizione(descrizione);
         assertEquals(descrizione,c.getDescrizione());
     }
 
@@ -89,88 +74,186 @@ public class ContattoTest {
      */
     @Test
     public void testSetGetNumero1() {
+        Prefisso p1 = new Prefisso("39");
+        NumeroTelefono n1 = new NumeroTelefono(p1,"3333333333");
+        c.setNumero(n1, 0);
+        assertEquals(n1, c.getNumero(0));
     }
     @Test
     public void testSetGetNumero2() {
+        Prefisso p2 = new Prefisso("33");
+        NumeroTelefono n2 = new NumeroTelefono(p2,"444444444");
+        c.setNumero(n2, 1);
+        assertEquals(n2, c.getNumero(1));
         
     }
     @Test
     public void testSetGetNumero3() {
+        Prefisso p3 = new Prefisso("44");
+        NumeroTelefono n3 = new NumeroTelefono(p3,"1111111111");
+        c.setNumero(n3, 2);
+        assertEquals(n3, c.getNumero(2));
         
+    }
+    @Test
+    public void testSetGetNumero4() {
+        NumeroTelefono[] n = new NumeroTelefono[3];
+        Prefisso p1 = new Prefisso("39");
+        n[0] = new NumeroTelefono(p1,"3333333333");
+        Prefisso p2 = new Prefisso("33");
+        n[1] = new NumeroTelefono(p2,"444444444");
+        Prefisso p3 = new Prefisso("44");
+        n[2] = new NumeroTelefono(p1,"1111111111");
+        c.setNumero(n[0], 0);
+        c.setNumero(n[1], 1);
+        c.setNumero(n[2], 2);
+        NumeroTelefono[] a ={c.getNumero(0),c.getNumero(1),c.getNumero(2)};
+        assertArrayEquals(n, a);
+
     }
 
     /**
      * Test of getEmail method, of class Contatto.
      */
     @Test
-    public void testGetEmail() {
-        System.out.println("getEmail");
-        int idx = 0;
-        Contatto instance = null;
-        Email expResult = null;
-        Email result = instance.getEmail(idx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSetGetEmail1() {
+        Email e = new Email("xyz@xyz.com");
+        c.setEmail(e, 0);
+        assertEquals(e,c.getEmail(0));
+    }
+    @Test
+    public void testSetGetEmail2() {
+        Email e2 = new Email("xyz@xyz.com");
+        c.setEmail(e2, 1);
+        assertEquals(e2,c.getEmail(1));
+    }
+    @Test
+    public void testSetGetEmail3() {
+        Email e3 = new Email("xyz@xyz.com");
+        c.setEmail(e3, 2);
+        assertEquals(e3,c.getEmail(2));
     }
 
     /**
      * Test of setEmail method, of class Contatto.
      */
     @Test
-    public void testSetEmail() {
-        System.out.println("setEmail");
-        Email email = null;
-        int idx = 0;
-        Contatto instance = null;
-        instance.setEmail(email, idx);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSetGetEmail4() {
+        Email [] e = new Email[3];
+        e[0] = new Email("xyz@x");
+        e[1] = new Email("zxy@z");
+        e[2] = new Email("eee@r");
+        c.setEmail(e[0], 0);
+        c.setEmail(e[1], 1);
+        c.setEmail(e[2], 2);
+        Email[] a ={c.getEmail(0),c.getEmail(1),c.getEmail(2)};
+        assertArrayEquals(e, a);
+
     }
 
     /**
      * Test of checkLunghezza method, of class Contatto.
      */
     @Test
-    public void testCheckLunghezza() {
-        System.out.println("checkLunghezza");
-        String s = "";
-        int lungMax = 0;
-        Contatto instance = null;
-        boolean expResult = false;
-        boolean result = instance.checkLunghezza(s, lungMax);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testCheckLunghezza1() {
+        String s ="Umberto";
+        c.setNome(s);
+        int lunghezzaMax = 100;
+        assertTrue(c.checkLunghezza(c.getNome(), lunghezzaMax));
     }
-
+    @Test
+    public void testCheckLunghezza2() {
+        String s ="Umberto";
+        c.setNome(s);
+        int lunghezzaMax = 3;
+        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax));
+    }
+    @Test
+    public void testCheckLunghezza3() {
+        String s ="Umberto";
+        c.setNome(s);
+        int lunghezzaMax = 0;
+        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax));
+    }
+    
+    @Test
+    public void testContattoValido(){
+        String nome = "Luigi";
+        String cognome ="Perone";
+        String descrizione ="studente";
+        c.setNome(nome);
+        c.setCognome(cognome);
+        c.setDescrizione(descrizione);
+        NumeroTelefono[] n = new NumeroTelefono[3];
+        Prefisso p1 = new Prefisso("39");
+        n[0] = new NumeroTelefono(p1,"3333333333");
+        Prefisso p2 = new Prefisso("33");
+        n[1] = new NumeroTelefono(p2,"444444444");
+        Prefisso p3 = new Prefisso("44");
+        n[2] = new NumeroTelefono(p3,"1111111111");
+        c.setNumero(n[0], 0);
+        c.setNumero(n[1], 1);
+        c.setNumero(n[2], 2);
+        Email [] e = new Email[3];
+        e[0] = new Email("xyz@x");
+        e[1] = new Email("zxy@z");
+        e[2] = new Email("eee@r");
+        c.setEmail(e[0], 0);
+        c.setEmail(e[1], 1);
+        c.setEmail(e[2], 2);        
+        assertTrue(c.contattoValido());
+    }
+    @Test
+    public void testContattoValido2(){
+        String descrizione ="studente";
+        c.setDescrizione(descrizione);
+        NumeroTelefono[] n = new NumeroTelefono[3];
+        Prefisso p1 = new Prefisso("39");
+        n[0] = new NumeroTelefono(p1,"3333333333");
+        Prefisso p2 = new Prefisso("33");
+        n[1] = new NumeroTelefono(p2,"444444444");
+        Prefisso p3 = new Prefisso("44");
+        n[2] = new NumeroTelefono(p3,"1111111111");
+        c.setNumero(n[0], 0);
+        c.setNumero(n[1], 1);
+        c.setNumero(n[2], 2);
+        Email [] e = new Email[3];
+        e[0] = new Email("xyz@x");
+        e[1] = new Email("zxy@z");
+        e[2] = new Email("eee@r");
+        c.setEmail(e[0], 0);
+        c.setEmail(e[1], 1);
+        c.setEmail(e[2], 2);  
+        assertFalse(c.contattoValido());
+    }
     /**
      * Test of compareTo method, of class Contatto.
      */
     @Test
     public void testCompareTo() {
-        System.out.println("compareTo");
-        Contatto o = null;
-        Contatto instance = null;
-        int expResult = 0;
-        int result = instance.compareTo(o);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        c.setCognome("Scassillo");
+        c.setNome("Umberto");
+        Contatto altroContatto = new Contatto("Claudio", "Panico", "Collega");
+        assertTrue(c.compareTo(altroContatto) > 0); 
 
+    }
+    @Test
+    public void testCompareTo1() {
+        c.setCognome("Scassillo");
+        c.setNome("Umberto");
+        Contatto altroContatto = new Contatto("Claudio", "Panico", "Collega");
+        assertFalse(c.compareTo(altroContatto) < 0); 
+
+    }
     /**
      * Test of toString method, of class Contatto.
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        c.setCognome("Perone");
+        c.setNome("Luigi");
+        String s = "Perone Luigi";
+        assertEquals(s,c.toString());
     }
     
 }
