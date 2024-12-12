@@ -110,67 +110,78 @@ public class Rubrica implements FileManager {
      * @return Un oggetto @c Rubrica caricato dal file.
      * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
-    @Override
-    public Rubrica importaFile(String namefile) {
-        Rubrica rubrica = new Rubrica();
-        
-        try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
-            String line;
-            // Salta la prima riga (intestazione del CSV)
-            reader.readLine();
-            
-            while ((line = reader.readLine()) != null) {
-                // Split della riga usando la virgola come separatore
-                String[] data = line.split(",");
-                
-                // Assicurati che ci siano abbastanza campi nella riga
-                if (data.length >= 12) { // Ora controlliamo che ci siano almeno 12 campi (3 prefissi, 3 numeri, 3 email)
-                    String nome = data[0].trim();
-                    String cognome = data[1].trim();
-                    String descrizione = data[2].trim();
-                    
-                    // Prefissi, numeri ed email
-                    String prefisso1 = data[3].trim();
-                    String numero1 = data[4].trim();
-                    String email1 = data[5].trim();
-                    
-                    String prefisso2 = data[6].trim();
-                    String numero2 = data[7].trim();
-                    String email2 = data[8].trim();
-                    
-                    String prefisso3 = data[9].trim();
-                    String numero3 = data[10].trim();
-                    String email3 = data[11].trim();
-                    
-                    // Crea i numeri di telefono con i prefissi e numeri
-                    NumeroTelefono numeroTelefono1 = new NumeroTelefono(new Prefisso(prefisso1), numero1);
-                    NumeroTelefono numeroTelefono2 = new NumeroTelefono(new Prefisso(prefisso2), numero2);
-                    NumeroTelefono numeroTelefono3 = new NumeroTelefono(new Prefisso(prefisso3), numero3);
-                    
-                    // Crea l'email
-                    Email emailObj1 = new Email(email1);
-                    Email emailObj2 = new Email(email2);
-                    Email emailObj3 = new Email(email3);
-                    
-                    // Crea il contatto e aggiungilo alla rubrica
-                    Contatto contatto = new Contatto(nome, cognome, descrizione);
-                    contatto.setNumero(numeroTelefono1, 0);
-                    contatto.setNumero(numeroTelefono2, 1);
-                    contatto.setNumero(numeroTelefono3, 2);
-                    contatto.setEmail(emailObj1, 0);
-                    contatto.setEmail(emailObj2, 1);
-                    contatto.setEmail(emailObj3, 2);                                    
-                    if(!contatto.contattoValido())
-                        continue;
-                    rubrica.aggiungiContatto(contatto);
-                    
-                }
+@Override
+public Rubrica importaFile(String namefile) {
+    Rubrica rubrica = new Rubrica();
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
+        String line;
+
+        // Salta la prima riga (intestazione del CSV)
+        reader.readLine();
+
+        while ((line = reader.readLine()) != null) {
+            // Split della riga usando la virgola come separatore
+            String[] data = line.split(",");
+
+            // Estrai i campi con valori predefiniti per i mancanti
+            String nome = data.length > 0 ? data[0].trim() : "";
+            String cognome = data.length > 1 ? data[1].trim() : "";
+            String descrizione = data.length > 2 ? data[2].trim() : "";
+
+            String prefisso1 = data.length > 3 ? data[3].trim() : "";
+            String numero1 = data.length > 4 ? data[4].trim() : "";
+            String email1 = data.length > 5 ? data[5].trim() : "";
+
+            String prefisso2 = data.length > 6 ? data[6].trim() : "";
+            String numero2 = data.length > 7 ? data[7].trim() : "";
+            String email2 = data.length > 8 ? data[8].trim() : "";
+
+            String prefisso3 = data.length > 9 ? data[9].trim() : "";
+            String numero3 = data.length > 10 ? data[10].trim() : "";
+            String email3 = data.length > 11 ? data[11].trim() : "";
+
+            // Crea i numeri di telefono con i prefissi e numeri
+            NumeroTelefono numeroTelefono1 = (!prefisso1.isEmpty() && !numero1.isEmpty())
+                ? new NumeroTelefono(new Prefisso(prefisso1), numero1)
+                : null;
+            NumeroTelefono numeroTelefono2 = (!prefisso2.isEmpty() && !numero2.isEmpty())
+                ? new NumeroTelefono(new Prefisso(prefisso2), numero2)
+                : null;
+            NumeroTelefono numeroTelefono3 = (!prefisso3.isEmpty() && !numero3.isEmpty())
+                ? new NumeroTelefono(new Prefisso(prefisso3), numero3)
+                : null;
+
+            // Crea le email
+            Email emailObj1 = !email1.isEmpty() ? new Email(email1) : null;
+            Email emailObj2 = !email2.isEmpty() ? new Email(email2) : null;
+            Email emailObj3 = !email3.isEmpty() ? new Email(email3) : null;
+
+            // Verifica che almeno il campo Nome sia presente
+            if (!(nome.isEmpty()&&cognome.isEmpty())) {
+                // Crea il contatto
+                Contatto contatto = new Contatto(nome, cognome, descrizione);
+
+                // Assegna i numeri di telefono e le email
+                if (numeroTelefono1 != null) contatto.setNumero(numeroTelefono1, 0);
+                if (numeroTelefono2 != null) contatto.setNumero(numeroTelefono2, 1);
+                if (numeroTelefono3 != null) contatto.setNumero(numeroTelefono3, 2);
+
+                if (emailObj1 != null) contatto.setEmail(emailObj1, 0);
+                if (emailObj2 != null) contatto.setEmail(emailObj2, 1);
+                if (emailObj3 != null) contatto.setEmail(emailObj3, 2);
+
+                // Aggiungi il contatto alla rubrica
+                rubrica.aggiungiContatto(contatto);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return rubrica;
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+
+    return rubrica;
+}
+
     /**
      * @brief Esporta la rubrica su un file.
      * 
@@ -201,19 +212,21 @@ public class Rubrica implements FileManager {
                 Email e3 = c.getEmail(2);
                 // Scrivi i dettagli del contatto nel formato CSV
                 writer.write(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
-                    c.getNome(),
-                    c.getCognome(),
-                    c.getDescrizione(),
-                    nt1.getPrefisso().getValore(),
-                    nt1.getNumero(),
-                    e1.getEmail(),
-                    nt2.getPrefisso().getValore(),
-                    nt2.getNumero(),
-                    e2.getEmail(),
-                    nt3.getPrefisso().getValore(),
-                    nt3.getNumero(),
-                    e3.getEmail()));
+                c.getNome() != null ? c.getNome() : "",
+                c.getCognome() != null ? c.getCognome() : "",
+                c.getDescrizione() != null ? c.getDescrizione() : "",
+                nt1 != null && nt1.getPrefisso() != null ? nt1.getPrefisso().getValore() : "",
+                nt1 != null ? nt1.getNumero() : "",
+                e1 != null ? e1.getEmail() : "",
+                nt2 != null && nt2.getPrefisso() != null ? nt2.getPrefisso().getValore() : "",
+                nt2 != null ? nt2.getNumero() : "",
+                e2 != null ? e2.getEmail() : "",
+                nt3 != null && nt3.getPrefisso() != null ? nt3.getPrefisso().getValore() : "",
+                nt3 != null ? nt3.getNumero() : "",
+                e3 != null ? e3.getEmail() : ""
+                ));
                 writer.newLine();
+
             }
             System.out.println("Rubrica esportata correttamente in: " + namefile);
         } catch (IOException e) {

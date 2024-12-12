@@ -183,6 +183,7 @@ public class Contatto implements CheckLunghezza, Comparable<Contatto> {
 
         for (Email e : email) {
             if (e != null &&!e.checkEmail()) {
+                
                 return false;
             }
         }

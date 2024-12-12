@@ -120,7 +120,7 @@ public class NumeroTelefono implements CheckNumeroTelefono {
         if (this == null || this.getPrefisso() == null) {
             return false; // L'oggetto o i suoi attributi non devono essere null.
         }
-        if (this.getNumero().length() <= 0)
+        if (this.getNumero().length() < 0)
             return false;
 
         String numero = this.getNumero();

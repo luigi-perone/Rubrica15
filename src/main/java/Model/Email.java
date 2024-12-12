@@ -77,7 +77,7 @@ public class Email implements CheckEmail, CheckLunghezza {
         if (this.getEmail() == null) {
             return false; // Email non valida se l'oggetto o l'indirizzo è null
         }
-        if (this.getEmail().length() <= 0)
+        if (this.getEmail().length() < 0)
             return false;
 
         // Espressione regolare per verificare l'email
