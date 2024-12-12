@@ -96,7 +96,7 @@ public class Rubrica implements FileManager {
         this.eliminaContatto(c);
         this.aggiungiContatto(c1);
         
-        return c;
+        return c1;
     }
     /**
      * @brief Importa una rubrica da un file.

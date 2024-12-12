@@ -42,16 +42,17 @@ public class NumeroTelefonoTest {
     }
 
     /**
-     * Test of getPrefisso method, of class NumeroTelefono.
+     * Test of getPrefisso and setPrefisso method, of class NumeroTelefono.
      */
     @Test
     public void testSetGetPrefisso() {
+        p.setValore("44");
         n.setPrefisso(p);
         assertEquals(n.getPrefisso(),p);
     }
 
     /**
-     * Test of getNumero method, of class NumeroTelefono.
+     * Test of getNumero and setNumero method, of class NumeroTelefono.
      */
     @Test
     public void tesSetGetNumero() {
@@ -69,7 +70,7 @@ public class NumeroTelefonoTest {
     }
 
     /**
-     * Test of checkNumeroTelefono method, of class NumeroTelefono.
+     * Tests of checkNumeroTelefono method, of class NumeroTelefono.
      */
     @Test
     public void testCheckNumeroTelefonoValid() {

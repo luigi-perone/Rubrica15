@@ -39,7 +39,7 @@ public class PrefissoTest {
     }
 
     /**
-     * Test of getValore method, of class Prefisso.
+     * Test of constructor, of class Prefisso.
      */
     @Test
     public void testConstructor() {
@@ -47,7 +47,7 @@ public class PrefissoTest {
     }
 
     /**
-     * Test of setValore method, of class Prefisso.
+     * Test of setValore and getValore method, of class Prefisso.
      */
     @Test
     public void testSetGetValore() {

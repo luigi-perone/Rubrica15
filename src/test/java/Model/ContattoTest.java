@@ -32,7 +32,7 @@ public class ContattoTest {
     
     @BeforeEach
     public void setUp() {
-        c = new Contatto(null, null, null);
+        c = new Contatto("nome", "cognome", "descrizione");
     }
     
     @AfterEach
@@ -40,7 +40,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getNome method, of class Contatto.
+     * Test of getNome and setNome method, of class Contatto.
      */
     @Test
     public void testSetGetNome() {
@@ -50,7 +50,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getCognome method, of class Contatto.
+     * Test of getCognome and setCognome method, of class Contatto.
      */
     @Test
     public void testSetGetCognome() {
@@ -60,7 +60,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getDescrizione method, of class Contatto.
+     * Test of getDescrizione and setDescrizione method, of class Contatto.
      */
     @Test
     public void testSetGetDescrizione() {
@@ -70,7 +70,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getNumero method, of class Contatto.
+     * Tests of getNumero method, of class Contatto.
      */
     @Test
     public void testSetGetNumero1() {
@@ -113,7 +113,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getEmail method, of class Contatto.
+     * Test of getEmail and setEmail method, of class Contatto.
      */
     @Test
     public void testSetGetEmail1() {
@@ -134,9 +134,6 @@ public class ContattoTest {
         assertEquals(e3,c.getEmail(2));
     }
 
-    /**
-     * Test of setEmail method, of class Contatto.
-     */
     @Test
     public void testSetGetEmail4() {
         Email [] e = new Email[3];
@@ -206,6 +203,8 @@ public class ContattoTest {
     @Test
     public void testContattoValido2(){
         String descrizione ="studente";
+        c.setCognome("");
+        c.setNome("");
         c.setDescrizione(descrizione);
         NumeroTelefono[] n = new NumeroTelefono[3];
         Prefisso p1 = new Prefisso("39");
@@ -226,6 +225,63 @@ public class ContattoTest {
         c.setEmail(e[2], 2);  
         assertFalse(c.contattoValido());
     }
+    
+    @Test
+    public void testContattoValido3(){
+        String nome = "Luigi";
+        String descrizione ="studente";
+        c.setNome(nome);
+        c.setDescrizione(descrizione);
+        NumeroTelefono[] n = new NumeroTelefono[3];
+        Prefisso p1 = new Prefisso("39");
+        n[0] = new NumeroTelefono(p1,"3333333333");
+        Prefisso p2 = new Prefisso("33");
+        n[1] = new NumeroTelefono(p2,"444444444");
+        Prefisso p3 = new Prefisso("44");
+        n[2] = new NumeroTelefono(p3,"1111111111");
+        c.setNumero(n[0], 0);
+        c.setNumero(n[1], 1);
+        c.setNumero(n[2], 2);
+        Email [] e = new Email[3];
+        e[0] = new Email("xyz@x");
+        e[1] = new Email("zxy@z");
+        e[2] = new Email("eee@r");
+        c.setEmail(e[0], 0);
+        c.setEmail(e[1], 1);
+        c.setEmail(e[2], 2);        
+        assertTrue(c.contattoValido());
+    }
+
+
+    @Test
+    public void testContattoValido4(){
+        String cognome ="Perone";
+        String descrizione ="studente";
+        c.setCognome(cognome);
+        c.setDescrizione(descrizione);
+        NumeroTelefono[] n = new NumeroTelefono[3];
+        Prefisso p1 = new Prefisso("39");
+        n[0] = new NumeroTelefono(p1,"3333333333");
+        Prefisso p2 = new Prefisso("33");
+        n[1] = new NumeroTelefono(p2,"444444444");
+        Prefisso p3 = new Prefisso("44");
+        n[2] = new NumeroTelefono(p3,"1111111111");
+        c.setNumero(n[0], 0);
+        c.setNumero(n[1], 1);
+        c.setNumero(n[2], 2);
+        Email [] e = new Email[3];
+        e[0] = new Email("xyz@x");
+        e[1] = new Email("zxy@z");
+        e[2] = new Email("eee@r");
+        c.setEmail(e[0], 0);
+        c.setEmail(e[1], 1);
+        c.setEmail(e[2], 2);        
+        assertTrue(c.contattoValido());
+    }
+
+    
+    
+    
     /**
      * Test of compareTo method, of class Contatto.
      */

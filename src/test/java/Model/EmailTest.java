@@ -15,12 +15,10 @@ public class EmailTest {
 
     @BeforeAll
     public static void setUpEmail() {
-        System.out.println("Inizio dei test per la classe Email");
     }
 
     @AfterAll
     public static void tearDownClass() {
-        System.out.println("Fine dei test per la classe Email");
     }
 
     @BeforeEach
@@ -35,7 +33,7 @@ public class EmailTest {
     }
 
     /**
-     * Test del metodo setEmail della classe Email.
+     * Test of setEmail and getEmail method, of class Email.
      */
     @Test
     public void testSetGetEmail() {
@@ -45,7 +43,7 @@ public class EmailTest {
     }
     
     /**
-     * Test del metodo checkEmail della classe Email.
+     * Tests of checkEmail method, of class Email.
      */
     @Test
     public void testValid() {
