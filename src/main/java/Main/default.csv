@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on origin/master
 Nome,Cognome,Indirizzo,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3
 Sara,Conti,Corso Vercelli,39,4455667788,sara.conti@email.com,39,5566778899,sara.conti2@email.com,39,6677889900,sara.conti3@email.com
 Giovanni,Esposito,Via Napoli,39,8899001122,giovanni.esposito@email.com,39,9900112233,giovanni.esposito2@email.com,39,1010101010,giovanni.esposito3@email.com
@@ -5,3 +6,14 @@ Carlo,Ferrari,Viale Dante,39,9988776655,carlo.ferrari@email.com,39,1231231231,ca
 Anna,Lombardi,Via Milano,39,6677889900,anna.lombardi@email.com,39,7788990011,anna.lombardi2@email.com,39,8899001122,anna.lombardi3@email.com
 Marco,Moretti,Via San Giovanni,39,5566778899,marco.moretti@email.com,39,6677889900,marco.moretti2@email.com,39,7788990011,marco.moretti3@email.com
 Giulia,Verdi,Piazza Duomo,39,5566778899,giulia.verdi@email.com,39,6677889900,giulia.verdi2@email.com,39,7788990011,giulia.verdi3@email.com
+=======
+Nome,Cognome,Indirizzo,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3
+Luigi,Bianchi,Corso Italia,39,2233445566,luigi.bianchi@email.com,39,3344556677,luigi.bianchi2@email.com,39,4455667788,luigi.bianchi3@email.com
+Sara,Conti,Corso Vercelli,39,4455667788,sara.conti@email.com,39,5566778899,sara.conti2@email.com,39,6677889900,sara.conti3@email.com
+Giovanni,Esposito,Via Napoli,39,8899001122,giovanni.esposito@email.com,39,9900112233,giovanni.esposito2@email.com,39,1010101010,giovanni.esposito3@email.com
+Carlo,Ferrari,Viale Dante,39,9988776655,carlo.ferrari@email.com,39,1231231231,carlo.ferrari2@email.com,39,4564564564,carlo.ferrari3@email.com
+,Giordano,Via Roma,39,7788990011,elena.giordano@email.com,39,8899001122,elena.giordano2@email.com,39,9900112233,elena.giordano3@email.com
+Anna,Lombardi,Via Milano,39,6677889900,anna.lombardi@email.com,39,7788990011,anna.lombardi2@email.com,39,8899001122,anna.lombardi3@email.com
+Marco,Moretti,Via San Giovanni,39,5566778899,marco.moretti@email.com,39,6677889900,marco.moretti2@email.com,39,7788990011,marco.moretti3@email.com
+Giulia,Verdi,Piazza Duomo,39,5566778899,giulia.verdi@email.com,39,6677889900,giulia.verdi2@email.com,39,7788990011,giulia.verdi3@email.com
+>>>>>>> c467f4d 
