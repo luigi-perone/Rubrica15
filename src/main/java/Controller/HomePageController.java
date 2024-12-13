@@ -67,8 +67,8 @@ public class HomePageController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // Aggiunge un listener per limitare il campo di testo della ricerca a 10 caratteri
         cerca.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.length() > 10) {
-                cerca.setText(newValue.substring(0, 10)); // Troncamento
+            if (newValue.length() > 201) {
+                cerca.setText(newValue.substring(0, 201)); // Troncamento
             }
         });
 

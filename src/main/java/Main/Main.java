@@ -75,7 +75,6 @@ public class Main extends Application {
             primaryStage.show();
         } catch (IOException e) {
             // Gestisce eventuali errori durante il caricamento dell'interfaccia
-            e.printStackTrace();
         }
     }
 

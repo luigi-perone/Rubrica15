@@ -101,7 +101,11 @@ public class ModificaController implements Initializable {
         initializePrefissi(pref1);
         initializePrefissi(pref2);
         initializePrefissi(pref3);
-        iniziale.setText(Main.getSelectedItem().getCognome().substring(0, 1).toUpperCase());
+        iniziale.setText(
+        (Main.getSelectedItem().getCognome() != null && !Main.getSelectedItem().getCognome().isEmpty()) 
+        ? Main.getSelectedItem().getCognome().substring(0, 1).toUpperCase() 
+        : Main.getSelectedItem().getCognome()
+        );
         // Aggiunge listener per validare i campi di input
         addValidationListeners();
 
