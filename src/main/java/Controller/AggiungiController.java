@@ -216,7 +216,7 @@ public class AggiungiController implements Initializable {
             textField.setText(newValue.substring(0, maxLength));
             return;
         }
-        if(newValue.length() != maxLength&&newValue.length()!=0){
+        if(newValue.length() != maxLength&&newValue.length()!=0&&pattern==TELEFONO_PATTERN){
             salva.setDisable(true);
             return;
         }                                      

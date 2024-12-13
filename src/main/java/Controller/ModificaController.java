@@ -101,7 +101,7 @@ public class ModificaController implements Initializable {
         initializePrefissi(pref1);
         initializePrefissi(pref2);
         initializePrefissi(pref3);
-        
+        iniziale.setText(Main.getSelectedItem().getCognome().substring(0, 1).toUpperCase());
         // Aggiunge listener per validare i campi di input
         addValidationListeners();
 
@@ -143,6 +143,7 @@ public class ModificaController implements Initializable {
     @FXML
     private void salva_f(ActionEvent event) {
         if (!validateFinalInput()) {
+            showValidationAlert();
             return;
         }
         Contatto contatto = Main.getSelectedItem();
@@ -328,16 +329,17 @@ private void loadContactData(Contatto contatto) {
     private void validateTextField(TextField textField, String newValue, 
                                     Pattern pattern, int maxLength, boolean isRequired) {
         salva.setDisable(false);
+        
         if (newValue.length() > maxLength) {
             textField.setText(newValue.substring(0, maxLength));
             return;
         }
-        if(newValue.length() != maxLength&&newValue.length()!=0){
+        if(newValue.length() != maxLength&&newValue.length()!=0&&pattern==TELEFONO_PATTERN){
             salva.setDisable(true);
             return;
         }                                      
                                     
-        if (isRequired && (newValue == null || newValue.trim().isEmpty())) {
+        if (isRequired && (newValue == null || newValue.trim().isEmpty())&&(nome.getText().trim().isEmpty()&&cognome.getText().trim().isEmpty())) {
             textField.setStyle("-fx-border-color: red;");
             salva.setDisable(true);
             return;
@@ -348,6 +350,21 @@ private void loadContactData(Contatto contatto) {
             return;
         }
         textField.setStyle("");
+    }
+    
+        /**
+     * @brief Mostra un avviso in caso di errori di validazione.
+     */
+    private void showValidationAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Errore di Validazione");
+        alert.setHeaderText("Campi non validi");
+
+        StringBuilder message = new StringBuilder("Assicurati di aver compilato almeno uno tra Nome o Cognome.\n");
+        message.append("Controlla che i campi rispettino i formati richiesti.");
+
+        alert.setContentText(message.toString());
+        alert.showAndWait();
     }
 
 }
