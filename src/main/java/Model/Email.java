@@ -12,7 +12,7 @@
 
 package Model;
 
-public class Email implements CheckEmail, CheckLunghezza {
+public class Email implements CheckEmail {
 
     private String email; ///< Indirizzo email dell'oggetto.
 
@@ -99,9 +99,5 @@ public class Email implements CheckEmail, CheckLunghezza {
      * @return @c true se la lunghezza della stringa è maggiore di 0 e supera il limite massimo, 
      *         @c false altrimenti.
      */
-    @Override
-    public boolean checkLunghezza(String s, int lungMax) {
-        return s.length() <= 0 || s.length() > lungMax;
-    }
 }
 
