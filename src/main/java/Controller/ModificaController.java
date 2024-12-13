@@ -211,21 +211,21 @@ private boolean validateFinalInput() {
     }
 
     // Validazione dei numeri di telefono
-    if (!tel1.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel1.getText().trim()).matches()) {
+    if (tel1.getText().length() > new Prefisso(pref1.getValue().substring(1)).getLunghezzaNumero()&&!tel1.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel1.getText().trim()).matches()) {
         tel1.setStyle("-fx-border-color: red;");
         isValid = false;
     } else {
         tel1.setStyle("");
     }
 
-    if (!tel2.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel2.getText().trim()).matches()) {
+    if (tel2.getText().length() > new Prefisso(pref2.getValue().substring(1)).getLunghezzaNumero()&&!tel2.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel2.getText().trim()).matches()) {
         tel2.setStyle("-fx-border-color: red;");
         isValid = false;
     } else {
         tel2.setStyle("");
     }
 
-    if (!tel3.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel3.getText().trim()).matches()) {
+    if (tel3.getText().length() > new Prefisso(pref3.getValue().substring(1)).getLunghezzaNumero()&&!tel3.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel3.getText().trim()).matches()) {
         tel3.setStyle("-fx-border-color: red;");
         isValid = false;
     } else {

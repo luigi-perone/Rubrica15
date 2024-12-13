@@ -190,13 +190,13 @@ public class AggiungiController implements Initializable {
             validateTextField(email3, newValue, EMAIL_PATTERN, 100, false);
         });
         tel1.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateTextField(tel1, newValue, TELEFONO_PATTERN, 100, false);
+            validateTextField(tel1, newValue, TELEFONO_PATTERN, new Prefisso(pref1.getValue().substring(1)).getLunghezzaNumero(), false);
         });
         tel2.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateTextField(tel2, newValue, TELEFONO_PATTERN, 100, false);
+            validateTextField(tel2, newValue, TELEFONO_PATTERN, new Prefisso(pref2.getValue().substring(1)).getLunghezzaNumero(), false);
         });
         tel3.textProperty().addListener((observable, oldValue, newValue) -> {
-            validateTextField(tel3, newValue, TELEFONO_PATTERN, 100, false);
+            validateTextField(tel3, newValue, TELEFONO_PATTERN, new Prefisso(pref3.getValue().substring(1)).getLunghezzaNumero(), false);
         });
     }
 
@@ -215,6 +215,7 @@ public class AggiungiController implements Initializable {
             textField.setText(newValue.substring(0, maxLength));
             return;
         }
+        System.out.println(maxLength);
         if (isRequired && (newValue == null || newValue.trim().isEmpty())) {
             textField.setStyle("-fx-border-color: red;");
             return;
