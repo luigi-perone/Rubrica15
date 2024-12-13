@@ -85,6 +85,7 @@ public class ModificaController implements Initializable {
     private static final int MAX_LENGTH = 100; ///< Lunghezza massima dei campi di testo.
     private static final Pattern NOME_COGNOME_PATTERN = Pattern.compile("^[\\p{L} '-]+$"); ///< Pattern per validare nome e cognome.
     private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(\\.[A-Za-z]{2,})*$");
+    private static final Pattern NOME_PATTERN = Pattern.compile("^[\\p{L}\\s'-]+$"); ///< Pattern regex per il nome.
 
     private static final Pattern TELEFONO_PATTERN = Pattern.compile("^\\d{9,10}$"); ///< Pattern per validare numeri di telefono.
 
@@ -100,6 +101,9 @@ public class ModificaController implements Initializable {
         initializePrefissi(pref1);
         initializePrefissi(pref2);
         initializePrefissi(pref3);
+        
+        // Aggiunge listener per validare i campi di input
+        addValidationListeners();
 
         Contatto contatto = Main.getSelectedItem();
         if (contatto != null) {
@@ -211,21 +215,21 @@ private boolean validateFinalInput() {
     }
 
     // Validazione dei numeri di telefono
-    if (tel1.getText().length() > new Prefisso(pref1.getValue().substring(1)).getLunghezzaNumero()&&!tel1.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel1.getText().trim()).matches()) {
+    if (tel1.getText().length() != (new Prefisso(pref1.getValue().substring(1))).getLunghezzaNumero()&&!tel1.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel1.getText().trim()).matches()) {
         tel1.setStyle("-fx-border-color: red;");
         isValid = false;
     } else {
         tel1.setStyle("");
     }
 
-    if (tel2.getText().length() > new Prefisso(pref2.getValue().substring(1)).getLunghezzaNumero()&&!tel2.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel2.getText().trim()).matches()) {
+    if (tel2.getText().length() != new Prefisso(pref2.getValue().substring(1)).getLunghezzaNumero()&&!tel2.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel2.getText().trim()).matches()) {
         tel2.setStyle("-fx-border-color: red;");
         isValid = false;
     } else {
         tel2.setStyle("");
     }
 
-    if (tel3.getText().length() > new Prefisso(pref3.getValue().substring(1)).getLunghezzaNumero()&&!tel3.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel3.getText().trim()).matches()) {
+    if (tel3.getText().length() != new Prefisso(pref3.getValue().substring(1)).getLunghezzaNumero()&&!tel3.getText().trim().isEmpty() && !TELEFONO_PATTERN.matcher(tel3.getText().trim()).matches()) {
         tel3.setStyle("-fx-border-color: red;");
         isValid = false;
     } else {
@@ -279,5 +283,71 @@ private void loadContactData(Contatto contatto) {
         pref3.setValue(contatto.getNumero(2).getPrefisso().toString());
     }
 }
+    /**
+     * @brief Aggiunge listener per la validazione dei campi di input.
+     */
+    private void addValidationListeners() {
+        nome.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(nome, newValue, NOME_PATTERN, 100, true);
+        });
+        cognome.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(cognome, newValue, NOME_PATTERN, 100, true);
+        });
+        descrizione.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(descrizione, newValue, null, 100, false);
+        });
+        email1.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(email1, newValue, EMAIL_PATTERN, 100, false);
+        });
+        email2.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(email2, newValue, EMAIL_PATTERN, 100, false);
+        });
+        email3.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(email3, newValue, EMAIL_PATTERN, 100, false);
+        });
+        tel1.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(tel1, newValue, TELEFONO_PATTERN, new Prefisso(pref1.getValue().substring(1)).getLunghezzaNumero(), false);
+        });
+        tel2.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(tel2, newValue, TELEFONO_PATTERN, new Prefisso(pref2.getValue().substring(1)).getLunghezzaNumero(), false);
+        });
+        tel3.textProperty().addListener((observable, oldValue, newValue) -> {
+            validateTextField(tel3, newValue, TELEFONO_PATTERN, new Prefisso(pref3.getValue().substring(1)).getLunghezzaNumero(), false);
+        });
+    }
+    
+        /**
+     * @brief Valida un campo di testo.
+     * 
+     * @param textField Campo di testo da validare.
+     * @param newValue Nuovo valore del campo.
+     * @param pattern Pattern regex per la validazione.
+     * @param maxLength Lunghezza massima consentita.
+     * @param isRequired Indica se il campo è obbligatorio.
+     */
+    private void validateTextField(TextField textField, String newValue, 
+                                    Pattern pattern, int maxLength, boolean isRequired) {
+        salva.setDisable(false);
+        if (newValue.length() > maxLength) {
+            textField.setText(newValue.substring(0, maxLength));
+            return;
+        }
+        if(newValue.length() != maxLength&&newValue.length()!=0){
+            salva.setDisable(true);
+            return;
+        }                                      
+                                    
+        if (isRequired && (newValue == null || newValue.trim().isEmpty())) {
+            textField.setStyle("-fx-border-color: red;");
+            salva.setDisable(true);
+            return;
+        }
+        if (pattern != null && !newValue.isEmpty() && !pattern.matcher(newValue).matches()) {
+            textField.setStyle("-fx-border-color: red;");
+            salva.setDisable(true);
+            return;
+        }
+        textField.setStyle("");
+    }
 
 }

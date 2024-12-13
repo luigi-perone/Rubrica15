@@ -215,7 +215,6 @@ public class AggiungiController implements Initializable {
             textField.setText(newValue.substring(0, maxLength));
             return;
         }
-        System.out.println(maxLength);
         if (isRequired && (newValue == null || newValue.trim().isEmpty())) {
             textField.setStyle("-fx-border-color: red;");
             return;
