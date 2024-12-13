@@ -211,16 +211,24 @@ public class AggiungiController implements Initializable {
      */
     private void validateTextField(TextField textField, String newValue, 
                                     Pattern pattern, int maxLength, boolean isRequired) {
+        salva.setDisable(false);
         if (newValue.length() > maxLength) {
             textField.setText(newValue.substring(0, maxLength));
             return;
         }
+        if(newValue.length() != maxLength&&newValue.length()!=0){
+            salva.setDisable(true);
+            return;
+        }                                      
+                                    
         if (isRequired && (newValue == null || newValue.trim().isEmpty())) {
             textField.setStyle("-fx-border-color: red;");
+            salva.setDisable(true);
             return;
         }
         if (pattern != null && !newValue.isEmpty() && !pattern.matcher(newValue).matches()) {
             textField.setStyle("-fx-border-color: red;");
+            salva.setDisable(true);
             return;
         }
         textField.setStyle("");
