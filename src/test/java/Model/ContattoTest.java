@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author scass
+ * @author Gruppo 15
  */
 public class ContattoTest {
     private Contatto c;
@@ -39,9 +39,7 @@ public class ContattoTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getNome and setNome method, of class Contatto.
-     */
+    //Test per verificare che il nome impostato sia lo stesso che ritorna
     @Test
     public void testSetGetNome() {
         String nome="Luigi";
@@ -49,9 +47,7 @@ public class ContattoTest {
         assertEquals(nome,c.getNome());
     }
 
-    /**
-     * Test of getCognome and setCognome method, of class Contatto.
-     */
+    //Test per verificare che il cognome impostato sia lo stesso che ritorna
     @Test
     public void testSetGetCognome() {
         String cognome="Panico";
@@ -59,9 +55,7 @@ public class ContattoTest {
         assertEquals(cognome,c.getCognome());
     }
 
-    /**
-     * Test of getDescrizione and setDescrizione method, of class Contatto.
-     */
+    //Test per verificare che la descrizione impostata sia la stessa che ritorna
     @Test
     public void testSetGetDescrizione() {
         String descrizione="studente universitario";
@@ -69,9 +63,7 @@ public class ContattoTest {
         assertEquals(descrizione,c.getDescrizione());
     }
 
-    /**
-     * Tests of getNumero method, of class Contatto.
-     */
+    //Test per verificare che il primo numero impostato sia lo stesso che ritorna
     @Test
     public void testSetGetNumero1() {
         Prefisso p1 = new Prefisso("39");
@@ -79,14 +71,15 @@ public class ContattoTest {
         c.setNumero(n1, 0);
         assertEquals(n1, c.getNumero(0));
     }
+    //Test per verificare che il secondo numero impostato sia lo stesso che ritorna
     @Test
     public void testSetGetNumero2() {
         Prefisso p2 = new Prefisso("33");
         NumeroTelefono n2 = new NumeroTelefono(p2,"444444444");
         c.setNumero(n2, 1);
         assertEquals(n2, c.getNumero(1));
-        
     }
+    //Test per verificare che il terzo numero impostato sia lo stesso che ritorna
     @Test
     public void testSetGetNumero3() {
         Prefisso p3 = new Prefisso("44");
@@ -95,6 +88,7 @@ public class ContattoTest {
         assertEquals(n3, c.getNumero(2));
         
     }
+    //Test per verificare che i 3 numeri di telefono impostati siano gli stessi che ritornano
     @Test
     public void testSetGetNumero4() {
         NumeroTelefono[] n = new NumeroTelefono[3];
@@ -112,28 +106,28 @@ public class ContattoTest {
 
     }
 
-    /**
-     * Test of getEmail and setEmail method, of class Contatto.
-     */
+    //Test per verificare che la prima email impostata sia la stessa che ritorna
     @Test
     public void testSetGetEmail1() {
         Email e = new Email("xyz@xyz.com");
         c.setEmail(e, 0);
         assertEquals(e,c.getEmail(0));
     }
+    //Test per verificare che la seconda email impostata sia la stessa che ritorna
     @Test
     public void testSetGetEmail2() {
         Email e2 = new Email("xyz@xyz.com");
         c.setEmail(e2, 1);
         assertEquals(e2,c.getEmail(1));
     }
+    //Test per verificare che la terza email impostata sia la stessa che ritorna
     @Test
     public void testSetGetEmail3() {
         Email e3 = new Email("xyz@xyz.com");
         c.setEmail(e3, 2);
         assertEquals(e3,c.getEmail(2));
     }
-
+    //Test per verificare che le 3 email impostate siano le stesse che ritornano
     @Test
     public void testSetGetEmail4() {
         Email [] e = new Email[3];
@@ -148,31 +142,34 @@ public class ContattoTest {
 
     }
 
-    /**
-     * Test of checkLunghezza method, of class Contatto.
-     */
+    //Test per verificare che la lunghezza del nome è nei limiti
+    //Testiamo il programma inserendo una lunghezzaMax superiore a quella del nome effettivo
     @Test
     public void testCheckLunghezza1() {
         String s ="Umberto";
         c.setNome(s);
         int lunghezzaMax = 100;
-        assertTrue(c.checkLunghezza(c.getNome(), lunghezzaMax));
+        assertTrue(c.checkLunghezza(c.getNome(), lunghezzaMax));    //se c.checkLunghezza() ritorna true il test è riuscito
     }
+    //Testiamo il programma inserendo una lunghezzaMax inferiore a quella del nome effettivo
     @Test
     public void testCheckLunghezza2() {
         String s ="Umberto";
         c.setNome(s);
         int lunghezzaMax = 3;
-        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax));
+        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax));   //se c.checkLunghezza() ritorna false il test è riuscito
     }
+    //Testiamo il programma inserendo una lunghezzaMax inferiore a quella del nome effettivo
     @Test
     public void testCheckLunghezza3() {
         String s ="Umberto";
         c.setNome(s);
         int lunghezzaMax = 0;
-        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax));
+        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax));   ////se c.checkLunghezza() ritorna false il test è riuscito
     }
     
+    //Test per verificare che un contatto è valido ovvero è stato inserito almeno uno tra nome e cognome
+    //Testiamo il programma inserendo sia nome che cognome
     @Test
     public void testContattoValido(){
         String nome = "Luigi";
@@ -198,8 +195,9 @@ public class ContattoTest {
         c.setEmail(e[0], 0);
         c.setEmail(e[1], 1);
         c.setEmail(e[2], 2);        
-        assertTrue(c.contattoValido());
+        assertTrue(c.contattoValido()); //se c.contattoValido() ritorna false il test è fallito
     }
+    //Testiamo il programma non inserendo nome e cognome
     @Test
     public void testContattoValido2(){
         String descrizione ="studente";
@@ -223,9 +221,9 @@ public class ContattoTest {
         c.setEmail(e[0], 0);
         c.setEmail(e[1], 1);
         c.setEmail(e[2], 2);  
-        assertFalse(c.contattoValido());
+        assertFalse(c.contattoValido());    //se c.contattoValido() ritorna true il test è fallito
     }
-    
+    //Testiamo il programma inserendo solo nome
     @Test
     public void testContattoValido3(){
         String nome = "Luigi";
@@ -249,10 +247,9 @@ public class ContattoTest {
         c.setEmail(e[0], 0);
         c.setEmail(e[1], 1);
         c.setEmail(e[2], 2);        
-        assertTrue(c.contattoValido());
+        assertTrue(c.contattoValido()); //se c.contattoValido() ritorna false il test è fallito 
     }
-
-
+    //Testiamo il programma inserendo solo cognome
     @Test
     public void testContattoValido4(){
         String cognome ="Perone";
@@ -276,7 +273,7 @@ public class ContattoTest {
         c.setEmail(e[0], 0);
         c.setEmail(e[1], 1);
         c.setEmail(e[2], 2);        
-        assertTrue(c.contattoValido());
+        assertTrue(c.contattoValido()); //se c.contattoValido() ritorna false il test è fallito
     }
 
     
