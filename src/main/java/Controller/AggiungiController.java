@@ -99,7 +99,7 @@ public class AggiungiController implements Initializable {
     private MenuBar menuBar; ///< MenuBar per opzioni aggiuntive.
 
     private static final Pattern NOME_PATTERN = Pattern.compile("^[\\p{L}\\s'-]+$"); ///< Pattern regex per il nome.
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"); ///< Pattern regex per l'email.
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(\\.[A-Za-z]{2,})*$");
     private static final Pattern TELEFONO_PATTERN = Pattern.compile("^\\d+$"); ///< Pattern regex per il numero di telefono.
 
     /**

@@ -187,12 +187,13 @@ cerca.textProperty().addListener((observable, oldValue, newValue) -> {
         Main.alfabetico = !Main.alfabetico;
 
         TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
-        for (Contatto contatto : Main.r.getTree()) {
-            if (contatto.getNome().toLowerCase().contains(cerca.getText().toLowerCase()) ||
-                contatto.getCognome().toLowerCase().contains(cerca.getText().toLowerCase())) {
-                contattiFiltrati.add(contatto);
-            }
+        TreeSet<Contatto> tuttiContatti = new TreeSet<>(Main.r.getTree());
+        for (Contatto contatto : tuttiContatti) {
+        if (contatto.getNome().toLowerCase().startsWith(cerca.getText().toLowerCase()) ||
+            contatto.getCognome().toLowerCase().startsWith(cerca.getText().toLowerCase())) {
+            contattiFiltrati.add(contatto);
         }
+    }
 
         if (Main.alfabetico) {
             ordina.setText("Z-A");

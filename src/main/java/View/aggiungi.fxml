@@ -122,6 +122,9 @@
             <Button fx:id="salva" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#salva_f" style="-fx-background-color: #f1f1f1;" text="Salva" />
         </items>
       </ToolBar>
-      <TextField fx:id="descrizione" alignment="TOP_LEFT" layoutX="390.0" layoutY="177.0" prefHeight="75.0" prefWidth="500.0" />
+      <TextField fx:id="descrizione" alignment="TOP_LEFT" layoutX="390.0" layoutY="177.0" prefHeight="75.0" prefWidth="500.0">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
    </children>
 </Pane>
