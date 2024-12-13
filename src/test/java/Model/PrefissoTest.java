@@ -51,8 +51,9 @@ public class PrefissoTest {
      */
     @Test
     public void testSetGetValore() {
-        p.setValore("49");
-        assertEquals("49", p.getValore());
+        String valore="49";
+        p.setValore(valore);
+        assertEquals(valore, p.getValore(), "Il valore del prefisso non è stato impostato correttamente");
     }
 
     /**
@@ -60,8 +61,9 @@ public class PrefissoTest {
      */
     @Test
     public void testGetLunghezzaNumero() {
-      p.setValore("44");
-      assertEquals(p.getLunghezzaNumero(), 10);
+      String valore="44";  
+      p.setValore(valore);
+      assertEquals(p.getLunghezzaNumero(), 10, "La lunghezza impostata dal prefisso non è corretta");
     }
 
     /**

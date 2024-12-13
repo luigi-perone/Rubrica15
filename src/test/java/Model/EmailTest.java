@@ -47,18 +47,18 @@ public class EmailTest {
     @Test
     public void testValid() {
         e.setEmail("u.scassillo1@stduenti.unsia.it");
-        assertTrue(e.checkEmail()); //se e.checkEmail() ritorna true il test è riuscito
+        assertTrue(e.checkEmail(), "L'email inserita non è valida"); //se e.checkEmail() ritorna true il test è riuscito
     }
     //Testiamo il programma inserendo un email priva di chiocciola
     @Test
     public void testInvalid() {
         e.setEmail("u.scassillo1.stduenti.unsia.it");
-        assertFalse(e.checkEmail());    //se e.checkEmail() ritorna false il test è riuscito
+        assertFalse(e.checkEmail(), "L'email inserita è valida");    //se e.checkEmail() ritorna false il test è riuscito
     }
     //Testiamo il programma inserendo un email priva di punto nella parte successiva alla chiocchiola
     @Test
     public void testInvalid2() {
         e.setEmail("u.scassillo1@stduenti");
-        assertFalse(e.checkEmail());    //se e.checkEmail() ritorna false il test è riuscito
+        assertFalse(e.checkEmail(), "L'email inserita è valida");    //se e.checkEmail() ritorna false il test è riuscito
     }
 }

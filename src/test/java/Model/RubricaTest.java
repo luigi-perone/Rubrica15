@@ -52,7 +52,7 @@ public class RubricaTest {
         Contatto c = new Contatto("Mario", "Rossi", "Collega");
         r.aggiungiContatto(c);
         r.eliminaContatto(c);
-        assertFalse(r.getTree().contains(c));
+        assertFalse(r.getTree().contains(c), "Contatto non eliminato");
     }
 
     /**
@@ -62,7 +62,7 @@ public class RubricaTest {
     public void testAggiungiContatto() {
         Contatto c = new Contatto("Mario", "Rossi", "Collega");
         r.aggiungiContatto(c);
-        assertTrue(r.getTree().contains(c));
+        assertTrue(r.getTree().contains(c), "Contatto non aggiunto");
     }
 
     /**
@@ -75,7 +75,7 @@ public class RubricaTest {
         NumeroTelefono[] n = new NumeroTelefono[3];
         r.aggiungiContatto(c);
         Contatto modificato = r.modificaContatto(c, "Matteo", "Matteo", "amico", e, n);
-        assertTrue( r.getTree().contains(modificato));
+        assertTrue( r.getTree().contains(modificato), "Contatto non modificato");
         
     }
 
@@ -93,7 +93,7 @@ public class RubricaTest {
         Rubrica importata = r.importaFile(file.getAbsolutePath());
         
         Contatto contatto = importata.getTree().first();
-        assertEquals("Mario", contatto.getNome());
+        assertEquals("Mario", contatto.getNome(), "Rubrica non importata");
         
         // Elimina il file temporaneo
         file.delete();
@@ -118,7 +118,7 @@ public class RubricaTest {
 
         // Verifica il contenuto del file
         String contenuto = new String(java.nio.file.Files.readAllBytes(file.toPath()));
-        assertTrue(contenuto.contains("Mario,Rossi,Amico di famiglia,39,1234567890,mario.rossi@studenti.unsia.it"));
+        assertTrue(contenuto.contains("Mario,Rossi,Amico di famiglia,39,1234567890,mario.rossi@studenti.unsia.it"),"Rubrica non esportata");
 
         // Elimina il file temporaneo
         file.delete();

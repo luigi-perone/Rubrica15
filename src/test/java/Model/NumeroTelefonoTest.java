@@ -48,7 +48,7 @@ public class NumeroTelefonoTest {
     public void testSetGetPrefisso() {
         p.setValore("44");
         n.setPrefisso(p);
-        assertEquals(n.getPrefisso(),p);
+        assertEquals(n.getPrefisso(),p, "Prefisso non impostato correttamente");
     }
 
     /**
@@ -58,7 +58,7 @@ public class NumeroTelefonoTest {
     public void tesSetGetNumero() {
         String numero ="1234567890";
         n.setNumero(numero);
-        assertEquals(n.getNumero(),numero);
+        assertEquals(n.getNumero(),numero, "Numero non impostato correttamente");
     }
 
     /**
@@ -77,14 +77,14 @@ public class NumeroTelefonoTest {
         n.setNumero("1234567890");
         p.setValore("44");
         n.setPrefisso(p);
-        assertTrue(n.checkNumeroTelefono());
+        assertTrue(n.checkNumeroTelefono(), "Numero di telefono non valido");
     }
     @Test
     public void testCheckNumeroTelefonoInvalid() {
         n.setNumero("123456");
         p.setValore("44");
         n.setPrefisso(p);
-        assertFalse(n.checkNumeroTelefono());
+        assertFalse(n.checkNumeroTelefono(), "Numero di telefono valido");
 
     }
     @Test
@@ -92,7 +92,7 @@ public class NumeroTelefonoTest {
         n.setNumero("");
         p.setValore("44");
         n.setPrefisso(p);
-        assertFalse(n.checkNumeroTelefono());
+        assertFalse(n.checkNumeroTelefono(),"Numero di telefono valido");
 
     }
     @Test
@@ -100,7 +100,7 @@ public class NumeroTelefonoTest {
         n.setNumero("012a456789");
         p.setValore("44");
         n.setPrefisso(p);
-        assertFalse(n.checkNumeroTelefono());
+        assertFalse(n.checkNumeroTelefono(), "Numero di telefono valido");
 
     }
     
