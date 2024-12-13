@@ -81,7 +81,7 @@ public class Email implements CheckEmail, CheckLunghezza {
             return false;
 
         // Espressione regolare per verificare l'email
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         return this.getEmail().matches(emailRegex);
     }
 

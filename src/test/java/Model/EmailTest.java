@@ -42,17 +42,23 @@ public class EmailTest {
         assertEquals(e1, e.getEmail(), "L'email non è stata impostata correttamente");
     }
     
-    /**
-     * Tests of checkEmail method, of class Email.
-     */
+    //Test per verificare che un'email sia valida 
+    //Testiamo il programma inserendo un email con la chiocciola e col punto successivo alla chiocciola
     @Test
     public void testValid() {
         e.setEmail("u.scassillo1@stduenti.unsia.it");
-        assertTrue(e.checkEmail());
+        assertTrue(e.checkEmail()); //se e.checkEmail() ritorna true il test è riuscito
     }
+    //Testiamo il programma inserendo un email priva di chiocciola
     @Test
     public void testInvalid() {
         e.setEmail("u.scassillo1.stduenti.unsia.it");
-        assertFalse(e.checkEmail());
+        assertFalse(e.checkEmail());    //se e.checkEmail() ritorna false il test è riuscito
+    }
+    //Testiamo il programma inserendo un email priva di punto nella parte successiva alla chiocchiola
+    @Test
+    public void testInvalid2() {
+        e.setEmail("u.scassillo1@stduenti");
+        assertFalse(e.checkEmail());    //se e.checkEmail() ritorna false il test è riuscito
     }
 }
