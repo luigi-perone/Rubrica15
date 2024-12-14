@@ -33,6 +33,21 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+/**
+ * @class HomePageController
+ * @brief Controller per la schermata principale dell'applicazione di gestione rubrica.
+ *
+ * La classe gestisce la schermata principale, fornendo funzionalità come
+ * l'importazione, l'esportazione, l'aggiunta, la ricerca e l'ordinamento dei contatti.
+ * Implementa l'interfaccia `Initializable` per configurare l'interfaccia utente 
+ * al momento dell'avvio.
+ *
+ * La classe utilizza il pattern MVC per separare la logica della vista dalla logica
+ * del modello e comunica con il modello tramite il pacchetto `Model`.
+ * .
+ * @warning L'applicazione non supporta file di rubrica in formati diversi dal CSV.
+ */
+
 public class HomePageController implements Initializable {
 
     @FXML
@@ -56,16 +71,25 @@ public class HomePageController implements Initializable {
     private Stage stage; ///< Riferimento allo stage principale per l'utilizzo di dialoghi.
 
     /**
-     * Imposta lo stage principale per il file chooser.
+     * @brief Imposta lo stage principale per il file chooser.
+     * 
      * @param stage Lo stage principale dell'applicazione.
      */
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-
+    
+    /**
+    * @brief Metodo initialize eseguito all'inizializzazione del controller.
+    * Imposta i listener per la ricerca, la gestione del doppio clic e 
+    * inizializza la vista basandosi sull'ordinamento alfabetico.
+    *
+    * @param[in] url URL utilizzato per risolvere percorsi relativi del file FXML
+    * @param[in] rb ResourceBundle contenente le risorse localizzate per il controller
+    */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Aggiunge un listener per limitare il campo di testo della ricerca a 10 caratteri
+        // Aggiunge un listener per limitare il campo di testo della ricerca a 201 caratteri
         cerca.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.length() > 201) {
                 cerca.setText(newValue.substring(0, 201)); // Troncamento
@@ -86,28 +110,28 @@ public class HomePageController implements Initializable {
         }
 
         // Aggiunge un listener per filtrare i contatti durante la ricerca
-cerca.textProperty().addListener((observable, oldValue, newValue) -> {
-    TreeSet<Contatto> tuttiContatti = Main.r.getTree();
-    TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
+        cerca.textProperty().addListener((observable, oldValue, newValue) -> {
+            TreeSet<Contatto> tuttiContatti = Main.r.getTree();
+            TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
 
-    // Filtra i contatti per nome o cognome, considerando solo le sottostringhe iniziali
-    for (Contatto contatto : tuttiContatti) {
-        if (contatto.getNome().toLowerCase().startsWith(newValue.toLowerCase()) ||
-            contatto.getCognome().toLowerCase().startsWith(newValue.toLowerCase())) {
-            contattiFiltrati.add(contatto);
-        }
-    }
+            // Filtra i contatti per nome o cognome, considerando solo le sottostringhe iniziali
+            for (Contatto contatto : tuttiContatti) {
+                if (contatto.getNome().toLowerCase().startsWith(newValue.toLowerCase()) ||
+                    contatto.getCognome().toLowerCase().startsWith(newValue.toLowerCase())) {
+                    contattiFiltrati.add(contatto);
+                }
+            }
 
-    // Aggiorna la vista con i contatti filtrati
-    listView.getItems().clear();
-    if (Main.alfabetico) {
-        listView.getItems().addAll(contattiFiltrati);
-    } else {
-        TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
-        reversedSet.addAll(contattiFiltrati);
-        listView.getItems().addAll(reversedSet);
-    }
-});
+            // Aggiorna la vista con i contatti filtrati dalla ricerca
+            listView.getItems().clear();
+            if (Main.alfabetico) {
+                listView.getItems().addAll(contattiFiltrati);
+            } else {
+                TreeSet<Contatto> reversedSet = new TreeSet<>(Collections.reverseOrder());
+                reversedSet.addAll(contattiFiltrati);
+                listView.getItems().addAll(reversedSet);
+            }
+        });
 
 
         // Gestisce il doppio clic su un contatto nella lista per visualizzarlo
@@ -123,8 +147,8 @@ cerca.textProperty().addListener((observable, oldValue, newValue) -> {
     }
 
     /**
-     * Gestisce l'importazione di una rubrica da un file CSV.
-     * @param event L'evento associato al pulsante "Importa".
+     * @brief Gestisce l'importazione di una rubrica da un file CSV.
+     * @param[in] event L'evento associato al pulsante "Importa".
      */
     @FXML
     private void importa_f(ActionEvent event) {
@@ -149,8 +173,8 @@ cerca.textProperty().addListener((observable, oldValue, newValue) -> {
     }
 
     /**
-     * Gestisce l'esportazione della rubrica in un file CSV.
-     * @param event L'evento associato al pulsante "Esporta".
+     * @brief Gestisce l'esportazione della rubrica in un file CSV.
+     * @param[in] event L'evento associato al pulsante "Esporta".
      */
     @FXML
     private void esporta_f(ActionEvent event) {
@@ -170,8 +194,8 @@ cerca.textProperty().addListener((observable, oldValue, newValue) -> {
     }
 
     /**
-     * Gestisce l'azione per creare un nuovo contatto.
-     * @param event L'evento associato al pulsante "Nuovo Contatto".
+     * @brief Gestisce l'azione per creare un nuovo contatto.
+     * @param[in] event L'evento associato al pulsante "Nuovo Contatto".
      */
     @FXML
     private void nuovo_f(ActionEvent event) {
@@ -179,8 +203,8 @@ cerca.textProperty().addListener((observable, oldValue, newValue) -> {
     }
 
     /**
-     * Alterna l'ordinamento tra A-Z e Z-A per la lista dei contatti.
-     * @param event L'evento associato al pulsante "Ordina".
+     * @brief Alterna l'ordinamento tra A-Z e Z-A per la lista dei contatti.
+     * @param[in] event L'evento associato al pulsante "Ordina".
      */
     @FXML
     private void ordina_f(ActionEvent event) {
@@ -189,11 +213,11 @@ cerca.textProperty().addListener((observable, oldValue, newValue) -> {
         TreeSet<Contatto> contattiFiltrati = new TreeSet<>();
         TreeSet<Contatto> tuttiContatti = new TreeSet<>(Main.r.getTree());
         for (Contatto contatto : tuttiContatti) {
-        if (contatto.getNome().toLowerCase().startsWith(cerca.getText().toLowerCase()) ||
-            contatto.getCognome().toLowerCase().startsWith(cerca.getText().toLowerCase())) {
-            contattiFiltrati.add(contatto);
+            if (contatto.getNome().toLowerCase().startsWith(cerca.getText().toLowerCase()) ||
+                contatto.getCognome().toLowerCase().startsWith(cerca.getText().toLowerCase())) {
+                contattiFiltrati.add(contatto);
+            }
         }
-    }
 
         if (Main.alfabetico) {
             ordina.setText("Z-A");

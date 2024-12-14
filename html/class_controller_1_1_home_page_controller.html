@@ -94,6 +94,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Controller.HomePageController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="namespace_controller.html">Controller</a> per la schermata principale dell'applicazione di gestione rubrica.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Controller.HomePageController:</div>
 <div class="dyncontent">
@@ -104,12 +107,47 @@ Inheritance diagram for Controller.HomePageController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1bfc3941282f824f3bb2adb35c9bdead" id="r_a1bfc3941282f824f3bb2adb35c9bdead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bfc3941282f824f3bb2adb35c9bdead">setStage</a> (Stage stage)</td></tr>
+<tr class="memdesc:a1bfc3941282f824f3bb2adb35c9bdead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta lo stage principale per il file chooser.  <br /></td></tr>
 <tr class="separator:a1bfc3941282f824f3bb2adb35c9bdead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ffaf6dc393dc6edc0bb0af146dcbde2" id="r_a2ffaf6dc393dc6edc0bb0af146dcbde2"><td class="memItemLeft" align="right" valign="top"><a id="a2ffaf6dc393dc6edc0bb0af146dcbde2" name="a2ffaf6dc393dc6edc0bb0af146dcbde2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (URL url, ResourceBundle rb)</td></tr>
+<tr class="memitem:a2ffaf6dc393dc6edc0bb0af146dcbde2" id="r_a2ffaf6dc393dc6edc0bb0af146dcbde2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ffaf6dc393dc6edc0bb0af146dcbde2">initialize</a> (URL url, ResourceBundle rb)</td></tr>
+<tr class="memdesc:a2ffaf6dc393dc6edc0bb0af146dcbde2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo initialize eseguito all'inizializzazione del controller. Imposta i listener per la ricerca, la gestione del doppio clic e inizializza la vista basandosi sull'ordinamento alfabetico.  <br /></td></tr>
 <tr class="separator:a2ffaf6dc393dc6edc0bb0af146dcbde2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="namespace_controller.html">Controller</a> per la schermata principale dell'applicazione di gestione rubrica. </p>
+<p>La classe gestisce la schermata principale, fornendo funzionalità come l'importazione, l'esportazione, l'aggiunta, la ricerca e l'ordinamento dei contatti. Implementa l'interfaccia <code>Initializable</code> per configurare l'interfaccia utente al momento dell'avvio.</p>
+<p>La classe utilizza il pattern MVC per separare la logica della vista dalla logica del modello e comunica con il modello tramite il pacchetto <code>Model</code>.</p><dl class="section warning"><dt>Warning</dt><dd>L'applicazione non supporta file di rubrica in formati diversi dal CSV. </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2ffaf6dc393dc6edc0bb0af146dcbde2" name="a2ffaf6dc393dc6edc0bb0af146dcbde2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ffaf6dc393dc6edc0bb0af146dcbde2">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller.HomePageController.initialize </td>
+          <td>(</td>
+          <td class="paramtype">URL</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResourceBundle</td>          <td class="paramname"><span class="paramname"><em>rb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metodo initialize eseguito all'inizializzazione del controller. Imposta i listener per la ricerca, la gestione del doppio clic e inizializza la vista basandosi sull'ordinamento alfabetico. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>URL utilizzato per risolvere percorsi relativi del file FXML </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rb</td><td>ResourceBundle contenente le risorse localizzate per il controller </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1bfc3941282f824f3bb2adb35c9bdead" name="a1bfc3941282f824f3bb2adb35c9bdead"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1bfc3941282f824f3bb2adb35c9bdead">&#9670;&#160;</a></span>setStage()</h2>
 
@@ -124,7 +162,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (URL u
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Imposta lo stage principale per il file chooser. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Imposta lo stage principale per il file chooser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stage</td><td>Lo stage principale dell'applicazione. </td></tr>
   </table>

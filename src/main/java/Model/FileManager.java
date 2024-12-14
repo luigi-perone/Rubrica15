@@ -29,7 +29,7 @@ public interface FileManager {
      * @pre Il nome del file inserito deve essere associato a un file esistente.
      * @post Restituisce un oggetto @c Rubrica contenente l'insieme dei contatti presenti nel file.
      * 
-     * @param namefile Il nome del file da cui importare la rubrica.
+     * @param[in] namefile Il nome del file da cui importare la rubrica.
      * @return Oggetto @c Rubrica caricato dal file.
      */
     public Rubrica importaFile(String namefile);

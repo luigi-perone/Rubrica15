@@ -17,37 +17,32 @@ import Model.Contatto;
 import Model.Email;
 import Model.NumeroTelefono;
 import Model.Prefisso;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
-import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * @class AggiungiController
  * @brief Controller per gestire la schermata di aggiunta di contatti.
+ *
+ * Questa classe rappresenta il controller della schermata di aggiunta di contatti
+ * nell'applicazione. Si occupa di:
+ * - Inizializzare i componenti dell'interfaccia utente.
+ * - Validare i dati inseriti dall'utente.
+ * - Creare e salvare il contatto nella struttura dati.
  * 
- * La classe si occupa di inizializzare i componenti dell'interfaccia, 
- * validare i dati inseriti e salvare il nuovo contatto.
+ * La classe utilizza il pattern MVC e comunica con il modello per salvare i contatti.
  */
+
 public class AggiungiController implements Initializable {
 
     @FXML
@@ -95,8 +90,6 @@ public class AggiungiController implements Initializable {
     @FXML
     private Text iniziale; ///< Testo per visualizzare eventuali messaggi iniziali.
 
-    @FXML
-    private MenuBar menuBar; ///< MenuBar per opzioni aggiuntive.
 
     private static final Pattern NOME_PATTERN = Pattern.compile("^[\\p{L}\\s'-]+$"); ///< Pattern regex per il nome.
     private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(\\.[A-Za-z]{2,})*$");
@@ -105,8 +98,8 @@ public class AggiungiController implements Initializable {
     /**
      * @brief Inizializza la vista impostando i valori iniziali dei componenti.
      * 
-     * @param url URL utilizzato per caricare la vista.
-     * @param rb Risorse per il bundle di lingua.
+     * @param[in] url URL utilizzato per caricare la vista.
+     * @param[in] rb Risorse per il bundle di lingua.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -124,7 +117,7 @@ public class AggiungiController implements Initializable {
     /**
      * @brief Torna alla schermata precedente.
      * 
-     * @param event Evento associato al pulsante "Indietro".
+     * @param[in] event Evento associato al pulsante "Indietro".
      */
     @FXML
     private void indietro_f(ActionEvent event) {
@@ -134,7 +127,7 @@ public class AggiungiController implements Initializable {
     /**
      * @brief Salva il contatto inserito dopo aver effettuato la validazione.
      * 
-     * @param event Evento associato al pulsante "Salva".
+     * @param[in] event Evento associato al pulsante "Salva".
      */
     @FXML
     private void salva_f(ActionEvent event) {
@@ -203,11 +196,11 @@ public class AggiungiController implements Initializable {
     /**
      * @brief Valida un campo di testo.
      * 
-     * @param textField Campo di testo da validare.
-     * @param newValue Nuovo valore del campo.
-     * @param pattern Pattern regex per la validazione.
-     * @param maxLength Lunghezza massima consentita.
-     * @param isRequired Indica se il campo è obbligatorio.
+     * @param[in] textField Campo di testo da validare.
+     * @param[in] newValue Nuovo valore del campo.
+     * @param[in] pattern Pattern regex per la validazione.
+     * @param[in] maxLength Lunghezza massima consentita.
+     * @param[in] isRequired Indica se il campo è obbligatorio.
      */
     private void validateTextField(TextField textField, String newValue, 
                                     Pattern pattern, int maxLength, boolean isRequired) {
@@ -237,9 +230,9 @@ public class AggiungiController implements Initializable {
     /**
      * @brief Convalida un singolo campo di input.
      * 
-     * @param textField Campo di testo da validare.
-     * @param pattern Pattern regex per la validazione.
-     * @param isRequired Indica se il campo è obbligatorio.
+     * @param[in] textField Campo di testo da validare.
+     * @param[in] pattern Pattern regex per la validazione.
+     * @param[in] isRequired Indica se il campo è obbligatorio.
      * @return true se il campo è valido, false altrimenti.
      */
     private boolean isValidInput(TextField textField, Pattern pattern, boolean isRequired) {

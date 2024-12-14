@@ -20,7 +20,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeSet;
 
-
+/**
+ * @brief gestisce un insieme di contatti
+ */
 public class Rubrica implements FileManager {
 
     private TreeSet<Contatto> contatti; ///< Set di contatti memorizzato nella rubrica.
@@ -77,7 +79,6 @@ public class Rubrica implements FileManager {
      * @param[in] email Un array di email da associare al contatto.
      * @param[in] num Un array di numeri di telefono da associare al contatto.
      * @return Il contatto modificato.
-     * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     public Contatto modificaContatto(Contatto c, String cognome, String nome, String descrizione, Email[] email, NumeroTelefono[] num) {
         Contatto c1 = new Contatto(nome, cognome, descrizione);
@@ -101,86 +102,92 @@ public class Rubrica implements FileManager {
     /**
      * @brief Importa una rubrica da un file.
      * 
-     * Questo metodo permette di caricare una rubrica da un file specificato dal nome del file.
+     * Questo metodo permette di caricare una rubrica da un file csv specificato dal nome del file.
      * 
      * @pre Il nome del file esiste.
      * @post La rubrica è caricata con i contatti provenienti dal file.
      * 
      * @param[in] namefile Il nome del file da cui importare la rubrica.
      * @return Un oggetto @c Rubrica caricato dal file.
-     * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
-@Override
-public Rubrica importaFile(String namefile) {
-    Rubrica rubrica = new Rubrica();
+    @Override
+    public Rubrica importaFile(String namefile) {
+        Rubrica rubrica = new Rubrica();
 
-    try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
-        String line;
+        try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
+            String line;
 
-        // Salta la prima riga (intestazione del CSV)
-        reader.readLine();
+            // Salta la prima riga (intestazione del CSV)
+            String[] controllo = reader.readLine().split(",");
+            //controlla il formato
+            if(controllo.length!=12||!controllo[0].equals("Nome")||!controllo[1].equals("Cognome")
+                    ||!controllo[2].equals("Descrizione")||!controllo[3].equals("Prefisso1")||!controllo[4].equals("Numero1")
+                    ||!controllo[5].equals("Email1")||!controllo[6].equals("Prefisso2")||!controllo[7].equals("Numero2")
+                    ||!controllo[8].equals("Email2")||!controllo[9].equals("Prefisso3")||!controllo[10].equals("Numero3")
+                    ||!controllo[11].equals("Email3"))
+                    return rubrica;
 
-        while ((line = reader.readLine()) != null) {
-            // Split della riga usando la virgola come separatore
-            String[] data = line.split(",");
+            while ((line = reader.readLine()) != null) {
+                // Split della riga usando la virgola come separatore
+                String[] data = line.split(",");
 
-            // Estrai i campi con valori predefiniti per i mancanti
-            String nome = data.length > 0 ? data[0].trim() : "";
-            String cognome = data.length > 1 ? data[1].trim() : "";
-            String descrizione = data.length > 2 ? data[2].trim() : "";
+                // Estrai i campi con valori predefiniti per i mancanti
+                String nome = data.length > 0 ? data[0].trim() : "";
+                String cognome = data.length > 1 ? data[1].trim() : "";
+                String descrizione = data.length > 2 ? data[2].trim() : "";
 
-            String prefisso1 = data.length > 3 ? data[3].trim() : "";
-            String numero1 = data.length > 4 ? data[4].trim() : "";
-            String email1 = data.length > 5 ? data[5].trim() : "";
+                String prefisso1 = data.length > 3 ? data[3].trim() : "";
+                String numero1 = data.length > 4 ? data[4].trim() : "";
+                String email1 = data.length > 5 ? data[5].trim() : "";
 
-            String prefisso2 = data.length > 6 ? data[6].trim() : "";
-            String numero2 = data.length > 7 ? data[7].trim() : "";
-            String email2 = data.length > 8 ? data[8].trim() : "";
+                String prefisso2 = data.length > 6 ? data[6].trim() : "";
+                String numero2 = data.length > 7 ? data[7].trim() : "";
+                String email2 = data.length > 8 ? data[8].trim() : "";
 
-            String prefisso3 = data.length > 9 ? data[9].trim() : "";
-            String numero3 = data.length > 10 ? data[10].trim() : "";
-            String email3 = data.length > 11 ? data[11].trim() : "";
+                String prefisso3 = data.length > 9 ? data[9].trim() : "";
+                String numero3 = data.length > 10 ? data[10].trim() : "";
+                String email3 = data.length > 11 ? data[11].trim() : "";
 
-            // Crea i numeri di telefono con i prefissi e numeri
-            NumeroTelefono numeroTelefono1 = (!prefisso1.isEmpty() && !numero1.isEmpty())
-                ? new NumeroTelefono(new Prefisso(prefisso1), numero1)
-                : null;
-            NumeroTelefono numeroTelefono2 = (!prefisso2.isEmpty() && !numero2.isEmpty())
-                ? new NumeroTelefono(new Prefisso(prefisso2), numero2)
-                : null;
-            NumeroTelefono numeroTelefono3 = (!prefisso3.isEmpty() && !numero3.isEmpty())
-                ? new NumeroTelefono(new Prefisso(prefisso3), numero3)
-                : null;
+                // Crea i numeri di telefono con i prefissi e numeri
+                NumeroTelefono numeroTelefono1 = (!prefisso1.isEmpty() && !numero1.isEmpty())
+                    ? new NumeroTelefono(new Prefisso(prefisso1), numero1)
+                    : null;
+                NumeroTelefono numeroTelefono2 = (!prefisso2.isEmpty() && !numero2.isEmpty())
+                    ? new NumeroTelefono(new Prefisso(prefisso2), numero2)
+                    : null;
+                NumeroTelefono numeroTelefono3 = (!prefisso3.isEmpty() && !numero3.isEmpty())
+                    ? new NumeroTelefono(new Prefisso(prefisso3), numero3)
+                    : null;
 
-            // Crea le email
-            Email emailObj1 = !email1.isEmpty() ? new Email(email1) : null;
-            Email emailObj2 = !email2.isEmpty() ? new Email(email2) : null;
-            Email emailObj3 = !email3.isEmpty() ? new Email(email3) : null;
+                // Crea le email
+                Email emailObj1 = !email1.isEmpty() ? new Email(email1) : null;
+                Email emailObj2 = !email2.isEmpty() ? new Email(email2) : null;
+                Email emailObj3 = !email3.isEmpty() ? new Email(email3) : null;
 
-            // Verifica che almeno il campo Nome sia presente
-            if (!(nome.isEmpty()&&cognome.isEmpty())) {
-                // Crea il contatto
-                Contatto contatto = new Contatto(nome, cognome, descrizione);
+                // Verifica che almeno il campo Nome sia presente
+                if (!(nome.isEmpty()&&cognome.isEmpty())) {
+                    // Crea il contatto
+                    Contatto contatto = new Contatto(nome, cognome, descrizione);
 
-                // Assegna i numeri di telefono e le email
-                if (numeroTelefono1 != null) contatto.setNumero(numeroTelefono1, 0);
-                if (numeroTelefono2 != null) contatto.setNumero(numeroTelefono2, 1);
-                if (numeroTelefono3 != null) contatto.setNumero(numeroTelefono3, 2);
+                    // Assegna i numeri di telefono e le email
+                    if (numeroTelefono1 != null) contatto.setNumero(numeroTelefono1, 0);
+                    if (numeroTelefono2 != null) contatto.setNumero(numeroTelefono2, 1);
+                    if (numeroTelefono3 != null) contatto.setNumero(numeroTelefono3, 2);
 
-                if (emailObj1 != null) contatto.setEmail(emailObj1, 0);
-                if (emailObj2 != null) contatto.setEmail(emailObj2, 1);
-                if (emailObj3 != null) contatto.setEmail(emailObj3, 2);
+                    if (emailObj1 != null) contatto.setEmail(emailObj1, 0);
+                    if (emailObj2 != null) contatto.setEmail(emailObj2, 1);
+                    if (emailObj3 != null) contatto.setEmail(emailObj3, 2);
 
-                // Aggiungi il contatto alla rubrica
-                rubrica.aggiungiContatto(contatto);
+                    // Aggiungi il contatto alla rubrica
+                    rubrica.aggiungiContatto(contatto);
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
 
-    return rubrica;
-}
+        return rubrica;
+    }
 
     /**
      * @brief Esporta la rubrica su un file.
@@ -197,7 +204,7 @@ public Rubrica importaFile(String namefile) {
     public void esportaRubrica(String namefile) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(namefile))) {
             // Scrivi l'intestazione del file CSV
-            writer.write("Nome,Cognome,Indirizzo,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3");
+            writer.write("Nome,Cognome,Descrizione,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3");
             writer.newLine();
 
             // Scrivi ogni contatto nel file

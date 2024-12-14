@@ -11,6 +11,10 @@
  */
 
 package Model;
+/**
+ * @brief Contatto modella un contatto con attributi come nome, cognome, descrizione, numeri di telefono e email.
+ * 
+ */
 
 public class Contatto implements CheckLunghezza, Comparable<Contatto> {
 
@@ -113,8 +117,8 @@ public class Contatto implements CheckLunghezza, Comparable<Contatto> {
     /**
      * @brief Imposta un numero di telefono per il contatto all'indice specificato.
      * 
-     * @param numero Nuovo numero di telefono.
-     * @param idx Indice in cui impostare il numero di telefono.
+     * @param[in] numero Nuovo numero di telefono.
+     * @param[in] idx Indice in cui impostare il numero di telefono.
      */
     public void setNumero(NumeroTelefono numero, int idx) {
         this.numero[idx] = numero;

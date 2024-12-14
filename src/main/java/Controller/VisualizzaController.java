@@ -135,10 +135,10 @@ public class VisualizzaController implements Initializable {
     private Text iniziale;
 
     /**
-     * Metodo di inizializzazione chiamato all'avvio della vista.
+     * @brief Metodo di inizializzazione chiamato all'avvio della vista.
      * 
-     * @param url URL utilizzato per caricare la vista (non utilizzato in questo caso).
-     * @param rb Risorse per il bundle di lingua (non utilizzato in questo caso).
+     * @param[in] url URL utilizzato per caricare la vista (non utilizzato in questo caso).
+     * @param[in] rb Risorse per il bundle di lingua (non utilizzato in questo caso).
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -175,9 +175,9 @@ public class VisualizzaController implements Initializable {
     }
 
     /**
-     * Gestisce l'azione del bottone "Indietro" per tornare alla schermata precedente.
+     * @brief Gestisce l'azione del bottone "Indietro" per tornare alla schermata precedente.
      * 
-     * @param event Evento che rappresenta l'azione del bottone.
+     * @param[in] event Evento che rappresenta l'azione del bottone.
      */
     @FXML
     private void indietro_f(ActionEvent event) {
@@ -185,9 +185,9 @@ public class VisualizzaController implements Initializable {
     }
 
     /**
-     * Gestisce l'azione del bottone "Modifica" per modificare il contatto visualizzato.
+     * @brief Gestisce l'azione del bottone "Modifica" per modificare il contatto visualizzato.
      * 
-     * @param event Evento che rappresenta l'azione del bottone.
+     * @param[in] event Evento che rappresenta l'azione del bottone.
      */
     @FXML
     private void modifica_f(ActionEvent event) {
@@ -195,11 +195,11 @@ public class VisualizzaController implements Initializable {
     }
 
     /**
-     * Gestisce l'azione del bottone "Elimina" per eliminare il contatto visualizzato.
+     * @brief Gestisce l'azione del bottone "Elimina" per eliminare il contatto visualizzato.
      * 
      * Mostra un'alert di conferma prima di procedere con l'eliminazione.
      * 
-     * @param event Evento che rappresenta l'azione del bottone.
+     * @param[in] event Evento che rappresenta l'azione del bottone.
      */
     @FXML
     private void elimina_f(ActionEvent event) {

@@ -8,13 +8,10 @@
  * 
  * @author gruppo15
  * @package Main
- * 
  */
 
 package Main;
 
-
-import Controller.HomePageController;
 import Model.*;
 import java.io.File;
 import javafx.application.Application;
@@ -24,6 +21,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * @brief Main rappresenta il punto di ingresso dell'applicazione. 
+ * Si occupa di avviare l'interfaccia grafica, inizializzare i dati della rubrica 
+ * e gestire il ciclo di vita dell'applicazione.
+ */
 public class Main extends Application {
 
     // Variabile per gestire la scena principale dell'applicazione
@@ -46,7 +48,7 @@ public class Main extends Application {
     /**
      * Metodo principale per avviare l'applicazione.
      * 
-     * @param primaryStage la finestra principale dell'applicazione
+     * @param[in] primaryStage la finestra principale dell'applicazione
      */
     @Override
     public void start(Stage primaryStage) {
@@ -81,7 +83,7 @@ public class Main extends Application {
     /**
      * Imposta la radice della scena principale.
      * 
-     * @param fxml il nome del file FXML da caricare
+     * @param[in] fxml il nome del file FXML da caricare
      */
     public static void setRoot(String fxml) {
         try {
@@ -94,7 +96,7 @@ public class Main extends Application {
     /**
      * Carica un file FXML specificato.
      * 
-     * @param fxml il nome del file FXML da caricare
+     * @param[in] fxml il nome del file FXML da caricare
      * @return il nodo radice del file FXML caricato
      * @throws IOException in caso di errore durante il caricamento
      */
@@ -106,7 +108,7 @@ public class Main extends Application {
     /**
      * Metodo main, punto di ingresso dell'applicazione.
      * 
-     * @param args argomenti della riga di comando
+     * @param[in] args argomenti della riga di comando
      */
     public static void main(String[] args) {
         // Inizializza una nuova istanza della rubrica

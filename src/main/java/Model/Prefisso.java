@@ -11,7 +11,9 @@
  */
 
 package Model;
-
+/**
+ * @brief Modella un prefisso telefonico
+ */
 public class Prefisso {
 
     private String valore; ///< Valore del prefisso telefonico.
@@ -31,27 +33,27 @@ public class Prefisso {
     public Prefisso(String valore) {
         this.valore = valore;
         switch (valore) {
-        case "39": // Italia
-            lunghezzaNumero = 10;
-            break;
-        case "1": // Stati Uniti
-            lunghezzaNumero = 10;
-            break;
-        case "44": // Regno Unito
-            lunghezzaNumero = 10;
-            break;
-        case "33": // Francia
-            lunghezzaNumero = 9;
-            break;
-        case "49": // Germania
-            lunghezzaNumero = 10;
-            break;
-        case "34": // Spagna
-            lunghezzaNumero = 9;
-            break;
-        default: // Prefisso non riconosciuto
-            lunghezzaNumero = -1; // Valore di default per prefissi sconosciuti
-            break;
+            case "39": // Italia
+                lunghezzaNumero = 10;
+                break;
+            case "1": // Stati Uniti
+                lunghezzaNumero = 10;
+                break;
+            case "44": // Regno Unito
+                lunghezzaNumero = 10;
+                break;
+            case "33": // Francia
+                lunghezzaNumero = 9;
+                break;
+            case "49": // Germania
+                lunghezzaNumero = 10;
+                break;
+            case "34": // Spagna
+                lunghezzaNumero = 9;
+                break;
+            default: // Prefisso non riconosciuto
+                lunghezzaNumero = -1; // Valore di default per prefissi sconosciuti
+                break;
         }
     }
 
@@ -63,7 +65,6 @@ public class Prefisso {
      * @post Restituisce il contenuto dell'attributo valore.
      * 
      * @return Il valore del prefisso.
-     * @throws UnsupportedOperationException Eccezione lanciata poiché il metodo non è ancora implementato.
      */
     public String getValore() {
         return valore;
@@ -83,30 +84,30 @@ public class Prefisso {
      */
     public void setValore(String valore) {
         this.valore = valore;
-    switch (valore) {
-        case "39": // Italia
-            lunghezzaNumero = 10;
-            break;
-        case "1": // Stati Uniti
-            lunghezzaNumero = 10;
-            break;
-        case "44": // Regno Unito
-            lunghezzaNumero = 10;
-            break;
-        case "33": // Francia
-            lunghezzaNumero = 9;
-            break;
-        case "49": // Germania
-            lunghezzaNumero = 10;
-            break;
-        case "34": // Spagna
-            lunghezzaNumero = 9;
-            break;
-        default: // Prefisso non riconosciuto
-            lunghezzaNumero = -1; // Valore di default per prefissi sconosciuti
-            break;
+        switch (valore) {
+            case "39": // Italia
+                lunghezzaNumero = 10;
+                break;
+            case "1": // Stati Uniti
+                lunghezzaNumero = 10;
+                break;
+            case "44": // Regno Unito
+                lunghezzaNumero = 10;
+                break;
+            case "33": // Francia
+                lunghezzaNumero = 9;
+                break;
+            case "49": // Germania
+                lunghezzaNumero = 10;
+                break;
+            case "34": // Spagna
+                lunghezzaNumero = 9;
+                break;
+            default: // Prefisso non riconosciuto
+                lunghezzaNumero = -1; // Valore di default per prefissi sconosciuti
+                break;
         }
-        }
+       }
 
     /**
      * @brief Restituisce la lunghezza del numero associato al prefisso.

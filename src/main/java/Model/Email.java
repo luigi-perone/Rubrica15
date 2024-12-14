@@ -11,8 +11,12 @@
  */
 
 package Model;
+/**
+ * @brief modella un'email
+ * 
+ */
 
-public class Email implements CheckEmail, CheckLunghezza {
+public class Email implements CheckEmail {
 
     private String email; ///< Indirizzo email dell'oggetto.
 
@@ -74,34 +78,14 @@ public class Email implements CheckEmail, CheckLunghezza {
      */
     @Override
     public boolean checkEmail() {
-        if (this.getEmail() == null) {
-            return false; // Email non valida se l'oggetto o l'indirizzo è null
+        if (this.getEmail() == null||this.getEmail().length() == 0) {
+            return false; // Email non valida se l'oggetto o l'indirizzo è null o vuoto
         }
-        if (this.getEmail().length() < 0)
-            return false;
-
+        
         // Espressione regolare per verificare l'email
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         return this.getEmail().matches(emailRegex);
     }
-
-    /**
-     * @brief Verifica la lunghezza di una stringa.
-     * 
-     * Questo metodo implementa l'interfaccia @c CheckLunghezza. Verifica se la lunghezza 
-     * della stringa fornita è maggiore della lunghezza massima consentita.
-     * 
-     * @pre La stringa passata come parametro deve essere non null.
-     * @post Verifica se la lunghezza della stringa è superiore al limite specificato.
-     * 
-     * @param[in] s La stringa da verificare.
-     * @param[in] lungMax La lunghezza massima consentita.
-     * @return @c true se la lunghezza della stringa è maggiore di 0 e supera il limite massimo, 
-     *         @c false altrimenti.
-     */
-    @Override
-    public boolean checkLunghezza(String s, int lungMax) {
-        return s.length() <= 0 || s.length() > lungMax;
-    }
+    
 }
 

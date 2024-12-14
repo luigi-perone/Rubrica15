@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['rubrica_0',['Rubrica',['../class_model_1_1_rubrica.html',1,'Model.Rubrica'],['../class_model_1_1_rubrica.html#a738ffd6f19590b15c4e8415e7559f6eb',1,'Model.Rubrica.Rubrica()']]],
-  ['rubrica_2ejava_1',['Rubrica.java',['../_rubrica_8java.html',1,'']]]
+  ['prefisso_0',['Prefisso',['../class_model_1_1_prefisso.html',1,'Model.Prefisso'],['../class_model_1_1_prefisso.html#acd92acf645fa9e677702be75feefb86c',1,'Model.Prefisso.Prefisso()']]],
+  ['prefisso_2ejava_1',['Prefisso.java',['../_prefisso_8java.html',1,'']]],
+  ['prefissotest_2',['PrefissoTest',['../class_model_1_1_prefisso_test.html',1,'Model.PrefissoTest'],['../class_model_1_1_prefisso_test.html#a72cbd238e69fe71182e410d3b5e0707d',1,'Model.PrefissoTest.PrefissoTest()']]],
+  ['prefissotest_2ejava_3',['PrefissoTest.java',['../_prefisso_test_8java.html',1,'']]]
 ];

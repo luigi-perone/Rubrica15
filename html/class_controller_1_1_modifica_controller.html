@@ -95,7 +95,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Gestisce la schermata di modifica di un contatto.  
+<p>Gestisce la schermata di modifica di un contatto nell'applicazione.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Controller.ModificaController:</div>
@@ -107,10 +107,12 @@ Inheritance diagram for Controller.ModificaController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2066e4cb3e51067498e30bac7c7a4822" id="r_a2066e4cb3e51067498e30bac7c7a4822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2066e4cb3e51067498e30bac7c7a4822">initialize</a> (URL url, ResourceBundle rb)</td></tr>
+<tr class="memdesc:a2066e4cb3e51067498e30bac7c7a4822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di inizializzazione chiamato all'avvio della vista. Configura i componenti dell'interfaccia utente e carica i dati del contatto selezionato.  <br /></td></tr>
 <tr class="separator:a2066e4cb3e51067498e30bac7c7a4822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Gestisce la schermata di modifica di un contatto. </p>
+<div class="textblock"><p>Gestisce la schermata di modifica di un contatto nell'applicazione. </p>
+<p>La classe <a class="el" href="class_controller_1_1_modifica_controller.html" title="Gestisce la schermata di modifica di un contatto nell&#39;applicazione.">ModificaController</a> si occupa di fornire la logica di controllo per la schermata di modifica dei dettagli di un contatto selezionato. Permette all'utente di aggiornare i campi relativi al nome, cognome, descrizione, numeri di telefono (con prefisso) e indirizzi email del contatto. La classe utilizza il pattern MVC (Model-View-Controller) e sfrutta JavaFX per la gestione della GUI. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2066e4cb3e51067498e30bac7c7a4822" name="a2066e4cb3e51067498e30bac7c7a4822"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2066e4cb3e51067498e30bac7c7a4822">&#9670;&#160;</a></span>initialize()</h2>
@@ -130,11 +132,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Metodo di inizializzazione chiamato all'avvio della vista. Configura i componenti dell'interfaccia utente e carica i dati del contatto selezionato.</p>
+
+<p>Metodo di inizializzazione chiamato all'avvio della vista. Configura i componenti dell'interfaccia utente e carica i dati del contatto selezionato. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">url</td><td>URL utilizzato per caricare la vista (non utilizzato in questo caso). </td></tr>
-    <tr><td class="paramname">rb</td><td>Risorse per il bundle di lingua (non utilizzato in questo caso). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>URL utilizzato per caricare la vista (non utilizzato in questo caso). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">rb[in]</td><td>Risorse per il bundle di lingua (non utilizzato in questo caso). </td></tr>
   </table>
   </dd>
 </dl>

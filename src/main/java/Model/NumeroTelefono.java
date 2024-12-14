@@ -11,7 +11,9 @@
  */
 
 package Model;
-
+/**
+ * @brief Modella un numero di telefono completo di prefisso
+ */
 public class NumeroTelefono implements CheckNumeroTelefono {
 
     private Prefisso prefisso; ///< Prefisso associato al numero di telefono.
@@ -117,12 +119,10 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      */
     @Override
     public boolean checkNumeroTelefono() {
-        if (this == null || this.getPrefisso() == null) {
-            return false; // L'oggetto o i suoi attributi non devono essere null.
+        if (this == null || this.getPrefisso() == null||this.getNumero().length() == 0||this.getPrefisso().getValore().length() == 0) {
+            return false; // L'oggetto o i suoi attributi non devono essere null o vuoti.
         }
-        if (this.getNumero().length() < 0)
-            return false;
-
+        
         String numero = this.getNumero();
 
         // Controlla che il numero contenga solo cifre, spazi o trattini opzionali.

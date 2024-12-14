@@ -9,6 +9,9 @@ var searchData=
   ['setroot_6',['setRoot',['../class_main_1_1_main.html#a9720dedbc3acda15b843cb6ef71085a4',1,'Main::Main']]],
   ['setselecteditem_7',['setSelectedItem',['../class_main_1_1_main.html#a1f46a7ad00750203c714c32964260951',1,'Main::Main']]],
   ['setstage_8',['setStage',['../class_controller_1_1_home_page_controller.html#a1bfc3941282f824f3bb2adb35c9bdead',1,'Controller::HomePageController']]],
-  ['setvalore_9',['setValore',['../class_model_1_1_prefisso.html#a696ce3bd5f9544444f0472ad0f825986',1,'Model::Prefisso']]],
-  ['start_10',['start',['../class_main_1_1_main.html#a6c13a376561a4ff1a172529aa1532419',1,'Main::Main']]]
+  ['setup_9',['setUp',['../class_model_1_1_contatto_test.html#a60b01b046b2604a4ac46c5e54bd6a03a',1,'Model.ContattoTest.setUp()'],['../class_model_1_1_email_test.html#a258caa2d4bb56e6a9f8e7d5472f1e388',1,'Model.EmailTest.setUp()'],['../class_model_1_1_numero_telefono_test.html#a86cff617d71ece4411b337b259692c83',1,'Model.NumeroTelefonoTest.setUp()'],['../class_model_1_1_prefisso_test.html#a43a0b164ac774dc02778b79e58c4a02b',1,'Model.PrefissoTest.setUp()'],['../class_model_1_1_rubrica_test.html#ab28d0a429df19c60df668d2a986c62a6',1,'Model.RubricaTest.setUp()']]],
+  ['setupclass_10',['setUpClass',['../class_model_1_1_contatto_test.html#a81b569c5eb0fe34bdf30ed4710eac65f',1,'Model.ContattoTest.setUpClass()'],['../class_model_1_1_numero_telefono_test.html#a6c8c78f08e6ced097e5821006ed9efdd',1,'Model.NumeroTelefonoTest.setUpClass()'],['../class_model_1_1_prefisso_test.html#a57f73532a34fe31650d7384eb34f9423',1,'Model.PrefissoTest.setUpClass()'],['../class_model_1_1_rubrica_test.html#a713ab16508e95eca74573a93b4faa8e2',1,'Model.RubricaTest.setUpClass()']]],
+  ['setupemail_11',['setUpEmail',['../class_model_1_1_email_test.html#a2ad29b8cde88c76250c4bf97f2d40347',1,'Model::EmailTest']]],
+  ['setvalore_12',['setValore',['../class_model_1_1_prefisso.html#a696ce3bd5f9544444f0472ad0f825986',1,'Model::Prefisso']]],
+  ['start_13',['start',['../class_main_1_1_main.html#a6c13a376561a4ff1a172529aa1532419',1,'Main::Main']]]
 ];

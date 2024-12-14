@@ -94,6 +94,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Model.Rubrica Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>gestisce un insieme di contatti  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Model.Rubrica:</div>
 <div class="dyncontent">
@@ -107,7 +110,7 @@ Inheritance diagram for Model.Rubrica:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a738ffd6f19590b15c4e8415e7559f6eb" id="r_a738ffd6f19590b15c4e8415e7559f6eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a738ffd6f19590b15c4e8415e7559f6eb">Rubrica</a> ()</td></tr>
-<tr class="memdesc:a738ffd6f19590b15c4e8415e7559f6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <code><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a></code>.  <br /></td></tr>
+<tr class="memdesc:a738ffd6f19590b15c4e8415e7559f6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <code><a class="el" href="class_model_1_1_rubrica.html" title="gestisce un insieme di contatti">Rubrica</a></code>.  <br /></td></tr>
 <tr class="separator:a738ffd6f19590b15c4e8415e7559f6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05c6af4f2f5d1af9d619615463d831ad" id="r_a05c6af4f2f5d1af9d619615463d831ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05c6af4f2f5d1af9d619615463d831ad">eliminaContatto</a> (<a class="el" href="class_model_1_1_contatto.html">Contatto</a> c)</td></tr>
 <tr class="memdesc:a05c6af4f2f5d1af9d619615463d831ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un contatto dalla rubrica.  <br /></td></tr>
@@ -132,7 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9787d46ace3007573ad6dd9d077a24ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_model_1_1_file_manager"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_model_1_1_file_manager')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_model_1_1_file_manager.html">Model.FileManager</a></td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>gestisce un insieme di contatti </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a738ffd6f19590b15c4e8415e7559f6eb" name="a738ffd6f19590b15c4e8415e7559f6eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a738ffd6f19590b15c4e8415e7559f6eb">&#9670;&#160;</a></span>Rubrica()</h2>
 
@@ -148,7 +153,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Costruttore della classe <code><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a></code>. </p>
+<p>Costruttore della classe <code><a class="el" href="class_model_1_1_rubrica.html" title="gestisce un insieme di contatti">Rubrica</a></code>. </p>
 <p>Inizializza la rubrica con un <code>TreeSet</code> vuoto di contatti. </p>
 
 </div>
@@ -283,7 +288,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Importa una rubrica da un file. </p>
-<p>Questo metodo permette di caricare una rubrica da un file specificato dal nome del file.</p>
+<p>Questo metodo permette di caricare una rubrica da un file csv specificato dal nome del file.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Il nome del file esiste. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>La rubrica è caricata con i contatti provenienti dal file.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -292,13 +297,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Un oggetto <code><a class="el" href="class_model_1_1_rubrica.html">Rubrica</a></code> caricato dal file. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">UnsupportedOperationException</td><td>Eccezione lanciata poiché il metodo non è ancora implementato. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Un oggetto <code><a class="el" href="class_model_1_1_rubrica.html" title="gestisce un insieme di contatti">Rubrica</a></code> caricato dal file. </dd></dl>
 
 <p>Implements <a class="el" href="interface_model_1_1_file_manager.html#a0f69d876c92570f08313e39f65d89c67">Model.FileManager</a>.</p>
 
@@ -359,12 +358,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Il contatto modificato. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">UnsupportedOperationException</td><td>Eccezione lanciata poiché il metodo non è ancora implementato. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
