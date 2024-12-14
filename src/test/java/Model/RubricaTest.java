@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
   * @brief Classe di test per la classe {@link Rubrica}.
+  * 
  */
 public class RubricaTest {
     
