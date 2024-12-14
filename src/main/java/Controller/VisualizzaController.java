@@ -149,7 +149,7 @@ public class VisualizzaController implements Initializable {
                 cognome.setText(contatto.getCognome());
             }
             if(!contatto.getNome().isEmpty())
-                        nome.setText(contatto.getNome());
+                nome.setText(contatto.getNome());
             if(!contatto.getDescrizione().isEmpty())
                 descrizione.setText(contatto.getDescrizione());
             if (contatto.getEmail(0) != null && contatto.getEmail(0).checkEmail())
