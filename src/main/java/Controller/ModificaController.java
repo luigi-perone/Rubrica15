@@ -268,23 +268,24 @@ public class ModificaController implements Initializable {
 
         return isValid;
     }
-     /**
-     * Carica i dati del contatto selezionato.
-     *
-     * @param[in] contatto Contatto da caricare.
-     */
-    private void loadContactData(Contatto contatto) {
+
+    /**
+    * Carica i dati del contatto selezionato.
+    *
+    * @param contatto Contatto da caricare.
+    */
+   private void loadContactData(Contatto contatto) {
         iniziale.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() 
-                        ? contatto.getCognome().substring(0, 1) 
-                        : "");
+                       ? contatto.getCognome().substring(0, 1) 
+                       : "");
 
-        nome.setText(contatto.getNome() != null && !contatto.getNome().isEmpty() 
-                     ? contatto.getNome() 
-                     : "");
+        nome.setText(contatto.getNome() != null && !contatto.getNome().isEmpty() && contatto.checkLunghezza(contatto.getNome(), 100)
+                    ? contatto.getNome() 
+                    : "");
 
-        cognome.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() 
-                        ? contatto.getCognome() 
-                        : "");
+        cognome.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() && contatto.checkLunghezza(contatto.getCognome(), 100)
+                       ? contatto.getCognome() 
+                       : "");
 
         descrizione.setText(contatto.getDescrizione() != null && !contatto.getDescrizione().isEmpty() 
                             ? contatto.getDescrizione() 

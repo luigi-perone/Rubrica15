@@ -80,6 +80,7 @@ public class NumeroTelefonoTest {
         p.setValore("44");
         n.setPrefisso(p);
         assertEquals(n.getPrefisso(), p, "Il prefisso non è stato impostato correttamente");
+
     }
 
     /**
@@ -93,6 +94,7 @@ public class NumeroTelefonoTest {
         String numero = "1234567890";
         n.setNumero(numero);
         assertEquals(n.getNumero(), numero, "Il numero di telefono non è stato impostato correttamente");
+
     }
 
     /**
@@ -117,6 +119,7 @@ public class NumeroTelefonoTest {
         p.setValore("44");
         n.setPrefisso(p);
         assertTrue(n.checkNumeroTelefono(), "Il numero di telefono dovrebbe essere valido");
+
     }
 
     /**
@@ -131,6 +134,7 @@ public class NumeroTelefonoTest {
         p.setValore("44");
         n.setPrefisso(p);
         assertFalse(n.checkNumeroTelefono(), "Il numero di telefono non dovrebbe essere valido (troppo corto)");
+
     }
 
     /**
@@ -145,6 +149,7 @@ public class NumeroTelefonoTest {
         p.setValore("44");
         n.setPrefisso(p);
         assertFalse(n.checkNumeroTelefono(), "Il numero di telefono non dovrebbe essere valido (vuoto)");
+
     }
 
     /**
@@ -159,5 +164,6 @@ public class NumeroTelefonoTest {
         p.setValore("44");
         n.setPrefisso(p);
         assertFalse(n.checkNumeroTelefono(), "Il numero di telefono non dovrebbe essere valido (contiene caratteri non numerici)");
+
     }
 }

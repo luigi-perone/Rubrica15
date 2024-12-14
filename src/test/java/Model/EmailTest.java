@@ -93,8 +93,10 @@ public class EmailTest {
      */
     @Test
     public void testValid() {
+
         e.setEmail("u.scassillo1@studenti.unisa.it");
         assertTrue(e.checkEmail(), "L'email dovrebbe essere valida");
+
     }
 
     /**
@@ -107,6 +109,7 @@ public class EmailTest {
     public void testInvalid() {
         e.setEmail("u.scassillo1.stduenti.unisa.it");
         assertFalse(e.checkEmail(), "L'email non dovrebbe essere valida (manca '@')");
+
     }
 
     /**
@@ -121,4 +124,6 @@ public class EmailTest {
         e.setEmail("u.scassillo1@studenti");
         assertFalse(e.checkEmail(), "L'email non dovrebbe essere valida (manca '.' dopo '@')");
     }
+
+    
 }
