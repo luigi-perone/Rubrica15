@@ -253,25 +253,25 @@ private void loadContactData(Contatto contatto) {
                     ? contatto.getCognome().substring(0, 1) 
                     : "");
 
-    nome.setText(contatto.getNome() != null && !contatto.getNome().isEmpty() 
+    nome.setText(contatto.getNome() != null && !contatto.getNome().isEmpty() && contatto.checkLunghezza(contatto.getNome(), MAX_LENGTH)
                  ? contatto.getNome() 
                  : "");
 
-    cognome.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() 
+    cognome.setText(contatto.getCognome() != null && !contatto.getCognome().isEmpty() && contatto.checkLunghezza(contatto.getCognome(), MAX_LENGTH)
                     ? contatto.getCognome() 
                     : "");
 
-    descrizione.setText(contatto.getDescrizione() != null && !contatto.getDescrizione().isEmpty() 
+    descrizione.setText(contatto.getDescrizione() != null && !contatto.getDescrizione().isEmpty() && contatto.checkLunghezza(contatto.getDescrizione(), MAX_LENGTH) 
                         ? contatto.getDescrizione() 
                         : "");
 
-    if (contatto.getEmail(0) != null && contatto.getEmail(0).checkEmail()) {
+    if (contatto.getEmail(0) != null && contatto.getEmail(0).checkEmail() && contatto.checkLunghezza(contatto.getEmail(0).toString(), MAX_LENGTH)) {
         email1.setText(contatto.getEmail(0).getEmail());
     }
-    if (contatto.getEmail(1) != null && contatto.getEmail(1).checkEmail()) {
+    if (contatto.getEmail(1) != null && contatto.getEmail(1).checkEmail() && contatto.checkLunghezza(contatto.getEmail(1).toString(), MAX_LENGTH)) {
         email2.setText(contatto.getEmail(1).getEmail());
     }
-    if (contatto.getEmail(2) != null && contatto.getEmail(2).checkEmail()) {
+    if (contatto.getEmail(2) != null && contatto.getEmail(2).checkEmail() && contatto.checkLunghezza(contatto.getEmail(2).toString(), MAX_LENGTH)) {
         email3.setText(contatto.getEmail(2).getEmail());
     }
 

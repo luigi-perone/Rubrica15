@@ -61,4 +61,10 @@ public class EmailTest {
         e.setEmail("u.scassillo1@stduenti");
         assertFalse(e.checkEmail(), "L'email inserita è valida");    //se e.checkEmail() ritorna false il test è riuscito
     }
+    @Test
+    public void testLunghezza(){
+        e.setEmail("m.pep@studenti.unisa.it");
+        assertTrue(e.checkLunghezza(e.getEmail(), 100), "L'email inserita è troppo lunga");
+    }
+    
 }

@@ -12,7 +12,7 @@
 
 package Model;
 
-public class Email implements CheckEmail {
+public class Email implements CheckEmail, CheckLunghezza{
 
     private String email; ///< Indirizzo email dell'oggetto.
 
@@ -83,6 +83,11 @@ public class Email implements CheckEmail {
         // Espressione regolare per verificare l'email
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         return this.getEmail().matches(emailRegex);
+    }
+
+    @Override
+    public boolean checkLunghezza(String s, int lungMax) {
+        return s.length() <= lungMax && lungMax > 0;
     }
 
     /**
