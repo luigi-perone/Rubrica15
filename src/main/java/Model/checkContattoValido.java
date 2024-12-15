@@ -28,3 +28,5 @@ public interface checkContattoValido {
      */
     boolean contattoValido();
 }
+
+
