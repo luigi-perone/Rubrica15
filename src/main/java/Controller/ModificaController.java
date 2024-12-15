@@ -190,8 +190,9 @@ public class ModificaController implements Initializable, CheckAlert {
         c.setNumero(new NumeroTelefono(new Prefisso(pref2.getValue().substring(1)), tel2.getText().trim()), 1);
         c.setNumero(new NumeroTelefono(new Prefisso(pref3.getValue().substring(1)), tel3.getText().trim()), 2);
         
-        //controllo duplicati
-        if(Main.r.getTree().contains(c)){
+        // Controllo duplicati, escludendo se stesso
+        if (Main.r.getTree().stream().anyMatch(existingContact -> 
+            existingContact != contatto && existingContact.equals(c))) {
             showDuplicateAlert();
             return;
         }
