@@ -133,7 +133,7 @@ public class Prefisso {
      * 
      * @pre Prefisso esiste.
      * @post Restituisce un formato stringa del prefisso
-     * 
+     *  
      * @return La rappresentazione del prefisso come stringa (es. "+39").
      */
     @Override
