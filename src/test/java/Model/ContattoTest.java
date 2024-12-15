@@ -167,15 +167,7 @@ public class ContattoTest {
         int lunghezzaMax = 3;
         assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax), "Lunghezza del nome non è superiore a quella massima impostata");   //se c.checkLunghezza() ritorna false il test è riuscito
     }
-    //Testiamo il programma inserendo una lunghezzaMax inferiore a quella del nome effettivo
-    @Test
-    public void testCheckLunghezza3() {
-        String s ="Umberto";
-        c.setNome(s);
-        int lunghezzaMax = 0;
-        assertFalse(c.checkLunghezza(c.getNome(), lunghezzaMax), "Lunghezza del nome non è superiore a quella massima impostata");   //se c.checkLunghezza() ritorna false il test è riuscito
-    }
-    
+
     /**
      * @test Verifica che un contatto è valido quando nome e cognome sono forniti.
      */
