@@ -157,7 +157,7 @@ Public Member Functions</h2></td></tr>
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_numero_telefono.html" title="Modella un numero di telefono completo di prefisso.">NumeroTelefono</a></code>. </p>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html" title="Modella un numero di telefono completo di prefisso.">NumeroTelefono</a></code> con il prefisso e il numero specificati.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>I valori passati devono essere diversi da null. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con successo.</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con gli attributi inizializzati ai valori passati.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">prefisso</td><td><a class="el" href="class_model_1_1_prefisso.html" title="Modella un prefisso telefonico.">Prefisso</a> associato al numero di telefono. </td></tr>
@@ -186,7 +186,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Verifica la validità di un numero di telefono. </p>
 <p>Questo metodo verifica se un numero di telefono è valido. La validità dipende dal fatto che il numero contenga solo cifre e segua il formato corretto.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Il numero e il prefisso non devono essere null. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Verifica se il numero è valido in base alla lunghezza e al formato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -223,7 +222,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce il numero di telefono. </p>
 <p>Questo metodo restituisce il numero di telefono dell'oggetto <code><a class="el" href="class_model_1_1_numero_telefono.html" title="Modella un numero di telefono completo di prefisso.">NumeroTelefono</a></code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Il numero deve esistere.</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce il contenuto dell'attributo numero.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il numero di telefono dell'oggetto. </dd></dl>
 
 </div>

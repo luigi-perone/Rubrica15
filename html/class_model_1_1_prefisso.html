@@ -136,8 +136,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_prefisso.html" title="Modella un prefisso telefonico.">Prefisso</a></code>. </p>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_prefisso.html" title="Modella un prefisso telefonico.">Prefisso</a></code> con il valore del prefisso e calcola la lunghezza del numero associato in base al prefisso.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Il valore del prefisso passato è valido. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con il prefisso e la lunghezza del numero associato.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Il valore del prefisso passato diverso da null. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con il prefisso associato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">valore</td><td>Il valore del prefisso telefonico da associare. </td></tr>
@@ -210,7 +210,7 @@ Public Member Functions</h2></td></tr>
 <p>Imposta il valore del prefisso. </p>
 <p>Questo metodo imposta il valore del prefisso e calcola la lunghezza del numero associato a questo prefisso.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Il valore passato in input è diverso da null. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Viene assegnato all'attributo valore il valore passato e, se necessario, aggiorna la lunghezza del numero associato.</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Viene assegnato all'attributo valore il valore passato.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">valore</td><td>Il valore del prefisso da impostare. </td></tr>
@@ -237,7 +237,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce una rappresentazione in formato stringa del prefisso. </p>
 <p>Questo metodo restituisce una rappresentazione stringa del prefisso, preceduto dal simbolo "+".</p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_prefisso.html" title="Modella un prefisso telefonico.">Prefisso</a> esiste.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_prefisso.html" title="Modella un prefisso telefonico.">Prefisso</a> esiste. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Restituisce un formato stringa del prefisso</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La rappresentazione del prefisso come stringa (es. "+39"). </dd></dl>
 
 </div>

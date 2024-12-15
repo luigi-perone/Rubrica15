@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Rubrica15: Model.CheckLunghezza Interface Reference</title>
+<title>Rubrica15: Controller.CheckAlert Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,78 +83,86 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>Model</b></li><li class="navelem"><a class="el" href="interface_model_1_1_check_lunghezza.html">CheckLunghezza</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_controller.html">Controller</a></li><li class="navelem"><a class="el" href="interface_controller_1_1_check_alert.html">CheckAlert</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="interface_model_1_1_check_lunghezza-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Model.CheckLunghezza Interface Reference</div></div>
+<a href="interface_controller_1_1_check_alert-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Controller.CheckAlert Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Interfaccia per verificare la lunghezza di una stringa.  
- <a href="#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for Model.CheckLunghezza:</div>
+Inheritance diagram for Controller.CheckAlert:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="interface_model_1_1_check_lunghezza.png" usemap="#Model.CheckLunghezza_map" alt=""/>
-  <map id="Model.CheckLunghezza_map" name="Model.CheckLunghezza_map">
-<area href="class_model_1_1_contatto.html" title="Contatto modella un contatto con attributi come nome, cognome, descrizione, numeri di telefono e emai..." alt="Model.Contatto" shape="rect" coords="0,56,148,80"/>
+  <img src="interface_controller_1_1_check_alert.png" usemap="#Controller.CheckAlert_map" alt=""/>
+  <map id="Controller.CheckAlert_map" name="Controller.CheckAlert_map">
+<area href="class_controller_1_1_aggiungi_controller.html" title="Controller per gestire la schermata di aggiunta di contatti." alt="Controller.AggiungiController" shape="rect" coords="0,56,178,80"/>
+<area href="class_controller_1_1_modifica_controller.html" title="Gestisce la schermata di modifica di un contatto nell&#39;applicazione." alt="Controller.ModificaController" shape="rect" coords="188,56,366,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e7e97c2256028c2eba42336dc1b93b2" id="r_a8e7e97c2256028c2eba42336dc1b93b2"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e7e97c2256028c2eba42336dc1b93b2">checkLunghezza</a> (String s, int lungMax)</td></tr>
-<tr class="memdesc:a8e7e97c2256028c2eba42336dc1b93b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla la lunghezza di una stringa.  <br /></td></tr>
-<tr class="separator:a8e7e97c2256028c2eba42336dc1b93b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2724d53a96729950cdc6eebc56d377a3" id="r_a2724d53a96729950cdc6eebc56d377a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2724d53a96729950cdc6eebc56d377a3">showValidationAlert</a> ()</td></tr>
+<tr class="memdesc:a2724d53a96729950cdc6eebc56d377a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra un avviso in caso di errori di validazione.  <br /></td></tr>
+<tr class="separator:a2724d53a96729950cdc6eebc56d377a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d8983dfbe6cd03516bd6c5fcdd7203" id="r_ad6d8983dfbe6cd03516bd6c5fcdd7203"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6d8983dfbe6cd03516bd6c5fcdd7203">showDuplicateAlert</a> ()</td></tr>
+<tr class="memdesc:ad6d8983dfbe6cd03516bd6c5fcdd7203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra un avviso in caso di errori di validazione.  <br /></td></tr>
+<tr class="separator:ad6d8983dfbe6cd03516bd6c5fcdd7203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interfaccia per verificare la lunghezza di una stringa. </p>
-<p>Fornisce il metodo <code>checkLunghezza</code> per determinare se una stringa rispetta un limite massimo di lunghezza. </p>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>scass </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e7e97c2256028c2eba42336dc1b93b2" name="a8e7e97c2256028c2eba42336dc1b93b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e7e97c2256028c2eba42336dc1b93b2">&#9670;&#160;</a></span>checkLunghezza()</h2>
+<a id="ad6d8983dfbe6cd03516bd6c5fcdd7203" name="ad6d8983dfbe6cd03516bd6c5fcdd7203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d8983dfbe6cd03516bd6c5fcdd7203">&#9670;&#160;</a></span>showDuplicateAlert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">boolean Model.CheckLunghezza.checkLunghezza </td>
+          <td class="memname">void Controller.CheckAlert.showDuplicateAlert </td>
           <td>(</td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lungMax</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Controlla la lunghezza di una stringa. </p>
-<p>Questo metodo verifica se una stringa non supera una lunghezza massima specificata.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>stringa passata diversa da null e lungMax &gt;= 0 </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>verifica se la lunghezza della stringa passata è minore della lunghezza massima consentita</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">s[in]</td><td>La stringa da verificare. </td></tr>
-    <tr><td class="paramname">lungMax[in]</td><td>La lunghezza massima consentita per la stringa. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true se s ha una lunghezza minore di lungMax </dd></dl>
+<p>Mostra un avviso in caso di errori di validazione. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>Viene mostrato un Alert </dd></dl>
 
-<p>Implemented in <a class="el" href="class_model_1_1_contatto.html#ace3a3c837caf307b28a08c128e79f11c">Model.Contatto</a>.</p>
+<p>Implemented in <a class="el" href="class_controller_1_1_aggiungi_controller.html#a9bd8ae86bf8a49ff3d70d9bd0f7c1e55">Controller.AggiungiController</a>, and <a class="el" href="class_controller_1_1_modifica_controller.html#a7deaa0dfb368fd1c794db0d4db02cf04">Controller.ModificaController</a>.</p>
+
+</div>
+</div>
+<a id="a2724d53a96729950cdc6eebc56d377a3" name="a2724d53a96729950cdc6eebc56d377a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2724d53a96729950cdc6eebc56d377a3">&#9670;&#160;</a></span>showValidationAlert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller.CheckAlert.showValidationAlert </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra un avviso in caso di errori di validazione. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>Viene mostrato un Alert </dd></dl>
+
+<p>Implemented in <a class="el" href="class_controller_1_1_aggiungi_controller.html#a6a0466c105738f684e7d4a53e2705f21">Controller.AggiungiController</a>, and <a class="el" href="class_controller_1_1_modifica_controller.html#a3ac0cd9edfc9597b108ade6665e31c23">Controller.ModificaController</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>src/main/java/Model/<a class="el" href="_check_lunghezza_8java.html">CheckLunghezza.java</a></li>
+<li>src/main/java/Controller/<b>CheckAlert.java</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

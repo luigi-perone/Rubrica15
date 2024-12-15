@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Rubrica15: Controller.VisualizzaController Class Reference</title>
+<title>Rubrica15: Model.checkContattoValido Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,71 +83,67 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespace_controller.html">Controller</a></li><li class="navelem"><a class="el" href="class_controller_1_1_visualizza_controller.html">VisualizzaController</a></li>  </ul>
+<li class="navelem"><b>Model</b></li><li class="navelem"><a class="el" href="interface_model_1_1check_contatto_valido.html">checkContattoValido</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_controller_1_1_visualizza_controller-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Controller.VisualizzaController Class Reference</div></div>
+<a href="interface_model_1_1check_contatto_valido-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Model.checkContattoValido Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="namespace_controller.html">Controller</a> per gestire la visualizzazione dei dettagli di un contatto.  
+<p>Interfaccia per verificare la validità di un contatto.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for Controller.VisualizzaController:</div>
+Inheritance diagram for Model.checkContattoValido:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_controller_1_1_visualizza_controller.png" alt=""/>
- </div></div>
+  <img src="interface_model_1_1check_contatto_valido.png" usemap="#Model.checkContattoValido_map" alt=""/>
+  <map id="Model.checkContattoValido_map" name="Model.checkContattoValido_map">
+<area href="class_model_1_1_contatto.html" title="Contatto modella un contatto con attributi come nome, cognome, descrizione, numeri di telefono e emai..." alt="Model.Contatto" shape="rect" coords="0,56,167,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4bedeaf03e8e7ed69e63e90f881494a3" id="r_a4bedeaf03e8e7ed69e63e90f881494a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bedeaf03e8e7ed69e63e90f881494a3">initialize</a> (URL url, ResourceBundle rb)</td></tr>
-<tr class="memdesc:a4bedeaf03e8e7ed69e63e90f881494a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di inizializzazione chiamato all'avvio della vista.  <br /></td></tr>
-<tr class="separator:a4bedeaf03e8e7ed69e63e90f881494a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0fe35f985fc2a2b00e9d091362d61cd" id="r_aa0fe35f985fc2a2b00e9d091362d61cd"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0fe35f985fc2a2b00e9d091362d61cd">contattoValido</a> ()</td></tr>
+<tr class="memdesc:aa0fe35f985fc2a2b00e9d091362d61cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se il contatto è valido.  <br /></td></tr>
+<tr class="separator:aa0fe35f985fc2a2b00e9d091362d61cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="namespace_controller.html">Controller</a> per gestire la visualizzazione dei dettagli di un contatto. </p>
-<p>Questa classe consente di visualizzare le informazioni del contatto selezionato, come nome, cognome, descrizione, numeri di telefono, email e prefissi. Inoltre, permette di modificare o eliminare il contatto. </p>
+<div class="textblock"><p>Interfaccia per verificare la validità di un contatto. </p>
+<p>Fornisce il metodo <code><a class="el" href="interface_model_1_1check_contatto_valido.html" title="Interfaccia per verificare la validità di un contatto.">checkContattoValido</a></code> per validare un contatto secondo se contiene almeno nome o cognome e se ogni email e numero di telefono associato è valido. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4bedeaf03e8e7ed69e63e90f881494a3" name="a4bedeaf03e8e7ed69e63e90f881494a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bedeaf03e8e7ed69e63e90f881494a3">&#9670;&#160;</a></span>initialize()</h2>
+<a id="aa0fe35f985fc2a2b00e9d091362d61cd" name="aa0fe35f985fc2a2b00e9d091362d61cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0fe35f985fc2a2b00e9d091362d61cd">&#9670;&#160;</a></span>contattoValido()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Controller.VisualizzaController.initialize </td>
+          <td class="memname">boolean Model.checkContattoValido.contattoValido </td>
           <td>(</td>
-          <td class="paramtype">URL</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">ResourceBundle</td>          <td class="paramname"><span class="paramname"><em>rb</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo di inizializzazione chiamato all'avvio della vista. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>La vista è stata caricata correttamente. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Le etichette vengono aggiornate con i dati del contatto selezionato.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>URL utilizzato per caricare la vista (non utilizzato in questo caso). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rb</td><td>Risorse per il bundle di lingua (non utilizzato in questo caso). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Verifica se il contatto è valido. </p>
+<p>Implementazione del metodo definito nell'interfaccia <code><a class="el" href="interface_model_1_1check_contatto_valido.html" title="Interfaccia per verificare la validità di un contatto.">checkContattoValido</a></code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_model_1_1_contatto.html" title="Contatto modella un contatto con attributi come nome, cognome, descrizione, numeri di telefono e emai...">Contatto</a> esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>verifica se il contatto ha almeno uno tra nome e cognome</dd></dl>
+<p>Un contatto è considerato valido se ha un nome o un cognome obbligatoriamente, e se ogni email e numero di telefono associato è valido. La lunghezza massima consentita per nome, cognome, descrizione è 100 caratteri. </p>
+
+<p>Implemented in <a class="el" href="class_model_1_1_contatto.html#ad7cb8443ab094ed8b02a9d3be642c6af">Model.Contatto</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/main/java/Controller/<a class="el" href="_visualizza_controller_8java.html">VisualizzaController.java</a></li>
+<hr/>The documentation for this interface was generated from the following file:<ul>
+<li>src/main/java/Model/<b>checkContattoValido.java</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

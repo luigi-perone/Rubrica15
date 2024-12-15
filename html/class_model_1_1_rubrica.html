@@ -154,6 +154,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_rubrica.html" title="gestisce un insieme di contatti">Rubrica</a></code>. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>creato un albero di contatti</dd></dl>
 <p>Inizializza la rubrica con un <code>TreeSet</code> vuoto di contatti. </p>
 
 </div>
@@ -268,6 +269,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce l'insieme di contatti contenuto nella rubrica. </p>
 <p>Questo metodo restituisce la struttura dati che contiene tutti i contatti della rubrica.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>rubrica esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>restituisce il riferimento alla radice dell'albero</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Il set di contatti nella rubrica. </dd></dl>
 
 </div>
@@ -289,7 +292,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Importa una rubrica da un file. </p>
 <p>Questo metodo permette di caricare una rubrica da un file csv specificato dal nome del file.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Il nome del file esiste. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Il nome del file esiste ed è un file csv. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>La rubrica è caricata con i contatti provenienti dal file.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -378,6 +381,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Restituisce una rappresentazione in formato stringa della rubrica. </p>
 <p>Questo metodo restituisce una rappresentazione stringa della rubrica, concatenando tutte le informazioni sui contatti.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>rubrica esiste </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>resituisce un formato stringa dell'insieme dei contatti</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>La rappresentazione della rubrica come stringa. </dd></dl>
 
 </div>

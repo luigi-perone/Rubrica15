@@ -143,8 +143,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Costruttore della classe <code><a class="el" href="class_model_1_1_email.html" title="modella un&#39;email">Email</a></code>. </p>
 <p>Inizializza un oggetto <code><a class="el" href="class_model_1_1_email.html" title="modella un&#39;email">Email</a></code> con un indirizzo email specificato.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Valori passati diversi da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Valore passato diverso da null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Oggetto creato con attributo inizializzato al valore passato</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">email</td><td>L'indirizzo email da associare all'oggetto. </td></tr>
@@ -171,9 +171,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifica la validità di un'email. </p>
-<p>Implementazione del metodo definito nell'interfaccia <code><a class="el" href="interface_model_1_1_check_email.html" title="Interfaccia per verificare la validità di un&#39;email.">CheckEmail</a></code>. Questo metodo verifica se l'email è valida seguendo una semplice espressione regolare per controllare la presenza di una "@" nell'indirizzo email.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>email passata diversa da null </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Verifica se l'email è valida.</dd></dl>
+<p>Implementazione del metodo definito nell'interfaccia <code><a class="el" href="interface_model_1_1_check_email.html" title="Interfaccia per verificare la validità di un&#39;email.">CheckEmail</a></code>. Questo metodo verifica se l'email è valida seguendo una semplice espressione regolare per controllare la presenza di una "@" nell'indirizzo email e dalla successiva presenza di un dominio, ossia un punto seguito da almeno 2 caratteri.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>Verifica se l'email è valida in base alla presenza della @ seguito da un dominio, punto seguito da almeno 2 caratteri.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">e</td><td>L'oggetto <code><a class="el" href="class_model_1_1_email.html" title="modella un&#39;email">Email</a></code> da verificare. </td></tr>

@@ -26,7 +26,7 @@ var searchData=
   ['testsetgetemail_23',['testSetGetEmail',['../class_model_1_1_email_test.html#a49a89ee5d5dd8d4e74404046e5edc41d',1,'Model::EmailTest']]],
   ['testsetgetnome_24',['testSetGetNome',['../class_model_1_1_contatto_test.html#aab173b15b2ca9dfb9d4cdc3c726a2000',1,'Model::ContattoTest']]],
   ['testsetgetnumero1_25',['testSetGetNumero1',['../class_model_1_1_contatto_test.html#a56a1b2acfbf1d88965bc332303d8b3d3',1,'Model::ContattoTest']]],
-  ['testsetgetnumero4_26',['testSetGetNumero4',['../class_model_1_1_contatto_test.html#a1651f1e20e3da57a3f9c16137d5ac16e',1,'Model::ContattoTest']]],
+  ['testsetgetnumero2_26',['testSetGetNumero2',['../class_model_1_1_contatto_test.html#a2f2e0fde2f1f3df8a9b75964411c4853',1,'Model::ContattoTest']]],
   ['testsetgetprefisso_27',['testSetGetPrefisso',['../class_model_1_1_numero_telefono_test.html#afb15ae2ebeb3940da6c756ef20f1d1eb',1,'Model::NumeroTelefonoTest']]],
   ['testsetgetvalore_28',['testSetGetValore',['../class_model_1_1_prefisso_test.html#a84cce195232d2fd13696e5fb7e25156f',1,'Model::PrefissoTest']]],
   ['testtostring_29',['testToString',['../class_model_1_1_contatto_test.html#af73a587e33ce1a5ee221ed25650708c1',1,'Model.ContattoTest.testToString()'],['../class_model_1_1_numero_telefono_test.html#a62aaa27b8eb5cb8dcf671c088468ca9a',1,'Model.NumeroTelefonoTest.testToString()'],['../class_model_1_1_prefisso_test.html#a23eeaa38c22a773bb25f2f0c7f1982db',1,'Model.PrefissoTest.testToString()'],['../class_model_1_1_rubrica_test.html#a1bee2de0c16b3881f055a4ffa9ad4f4e',1,'Model.RubricaTest.testToString()']]],
