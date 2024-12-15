@@ -28,7 +28,7 @@ public interface CheckEmail {
      * 
      * Questo metodo deve essere implementato per verificare se un oggetto 
      * di tipo @c Email rispetta determinati criteri di validità.
-     * 
+     *  
      */
     public boolean checkEmail();
 }
