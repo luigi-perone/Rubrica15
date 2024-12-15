@@ -145,7 +145,7 @@ public class Contatto implements CheckLunghezza, checkContattoValido, Comparable
      * @return Oggetto @c NumeroTelefono all'indice specificato.
      */
     public NumeroTelefono getNumero(int idx) {
-        assert(idx>0);
+        assert(idx>=0);
         assert(idx <=2);
         return numero[idx];
     }
@@ -160,7 +160,7 @@ public class Contatto implements CheckLunghezza, checkContattoValido, Comparable
      * @param[in] idx Indice in cui impostare il numero di telefono.
      */
     public void setNumero(NumeroTelefono numero, int idx) {
-        assert(idx>0);
+        assert(idx>=0);
         assert(idx <=2);
         this.numero[idx] = numero;
         assert(this.numero[idx].getNumero().equals(numero.getNumero()));
@@ -177,7 +177,7 @@ public class Contatto implements CheckLunghezza, checkContattoValido, Comparable
      * @return Oggetto @c Email all'indice specificato.
      */
     public Email getEmail(int idx) {
-        assert(idx>0);
+        assert(idx>=0);
         assert(idx <=2);
         return email[idx];
     }
@@ -192,7 +192,7 @@ public class Contatto implements CheckLunghezza, checkContattoValido, Comparable
      * @param[in] idx Indice in cui impostare l'email.
      */
     public void setEmail(Email email, int idx) {
-        assert(idx>0);
+        assert(idx>=0);
         assert(idx <=2);
         this.email[idx] = email;
         assert(this.email[idx].getEmail().equals(email.getEmail()));
@@ -203,7 +203,7 @@ public class Contatto implements CheckLunghezza, checkContattoValido, Comparable
      * 
      * Implementazione del metodo definito nell'interfaccia @c CheckLunghezza.
      * 
-     * @pre stringa passata diversa da null e lungMax >= 0
+     * @pre lungMax > 0
      * @post verifica se la lunghezza della stringa passata è minore 
      * della lunghezza massima consentita
      * 
@@ -213,8 +213,7 @@ public class Contatto implements CheckLunghezza, checkContattoValido, Comparable
      */
     @Override
     public boolean checkLunghezza(String s, int lungMax) {
-        assert(s != null);
-        assert( lungMax >=0);
+        assert( lungMax >0);
         return s.length() <= lungMax && lungMax > 0;
     }
 

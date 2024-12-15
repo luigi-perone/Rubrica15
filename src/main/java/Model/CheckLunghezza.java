@@ -21,6 +21,7 @@ package Model;
 public interface CheckLunghezza {
 
     /**
+     * 
      * @brief Controlla la lunghezza di una stringa.
      * 
      * Questo metodo verifica se una stringa non supera una lunghezza massima specificata.
@@ -31,6 +32,7 @@ public interface CheckLunghezza {
      
      * @param s[in] La stringa da verificare.
      * @param lungMax[in] La lunghezza massima consentita per la stringa.
+     * @return true se s ha una lunghezza minore di lungMax
      */
     public boolean checkLunghezza(String s, int lungMax);
 }

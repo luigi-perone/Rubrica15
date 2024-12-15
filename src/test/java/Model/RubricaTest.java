@@ -128,7 +128,7 @@ public class RubricaTest {
         File file = File.createTempFile("rubrica_test", ".csv");
         try (FileWriter writer = new FileWriter(file)) {
             writer.write("Nome,Cognome,Descrizione,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3\n");
-            writer.write("Mario,Rossi,Amico,39,1234567890,mario.rossi@example.com,33,9876543210,mario.backup@example.com,44,1122334455,mario.altro@example.com\n");
+            writer.write("Mario,Rossi,Amico,39,1234567890,mario.rossi@studenti.it,33,987654321,mario.backup@example.com,44,1122334455,mario.altro@example.com\n");
         }
 
         Rubrica importata = r.importaFile(file.getAbsolutePath());

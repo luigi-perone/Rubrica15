@@ -74,7 +74,6 @@ public class Email implements CheckEmail {
      * la presenza di una "@" nell'indirizzo email e dalla successiva presenza di un dominio,
      * ossia un punto seguito da almeno 2 caratteri.
      * 
-     * @pre Email esiste
      * @post Verifica se l'email è valida in base alla presenza della @ seguito da un dominio, 
      * punto seguito da almeno 2 caratteri.
      * 
@@ -84,7 +83,6 @@ public class Email implements CheckEmail {
      */
     @Override
     public boolean checkEmail() {
-        assert(this != null);
         if (this.getEmail() == null||this.getEmail().length() == 0) {
             return false; // Email non valida se l'oggetto o l'indirizzo è null o vuoto
         }

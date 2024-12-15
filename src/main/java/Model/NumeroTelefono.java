@@ -117,7 +117,6 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * Questo metodo verifica se un numero di telefono è valido. La validità dipende 
      * dal fatto che il numero contenga solo cifre e segua il formato corretto.
      * 
-     * @pre l'oggetto numero deve esistere.
      * @post Verifica se il numero è valido in base alla lunghezza e al formato.
      * 
      * @param[in] n Oggetto @c NumeroTelefono da verificare.
@@ -126,7 +125,6 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      */
     @Override
     public boolean checkNumeroTelefono() {
-        assert(this != null);
         if (this.getPrefisso() == null||this.getNumero().length() == 0||this.getPrefisso().getValore().length() == 0) {
             return false; // I suoi attributi non devono essere null o vuoti.
         }

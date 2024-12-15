@@ -2,7 +2,7 @@
 
 <ClassDiagram name="diagrammaumlrubrica">
   <ClassDiagramComponents>
-    <Class name="AggiungiController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="38.0" yPosition="33.0">
+    <Class name="AggiungiController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="2325.0" yPosition="1187.0">
       <Fields>
         <Field name="indietro" type="Button" visibility="private"/>
         <Field name="salva" type="Button" visibility="private"/>
@@ -53,7 +53,7 @@
         <Method name="showDuplicateAlert" returnType="void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="HomePageController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="1919.0" yPosition="11.0">
+    <Class name="HomePageController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="1919.0" yPosition="36.0">
       <Fields>
         <Field name="importa" type="Button" visibility="private"/>
         <Field name="esporta" type="Button" visibility="private"/>
@@ -86,7 +86,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="ModificaController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="17.0" yPosition="715.0">
+    <Class name="ModificaController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="1111.0" yPosition="1329.0">
       <Fields>
         <Field name="indietro" type="Button" visibility="private"/>
         <Field name="salva" type="Button" visibility="private"/>
@@ -138,7 +138,7 @@
         <Method name="showValidationAlert" returnType="void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="VisualizzaController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="2059.0" yPosition="1219.0">
+    <Class name="VisualizzaController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="2514.0" yPosition="662.0">
       <Fields>
         <Field name="indietro" type="Button" visibility="private"/>
         <Field name="modifica" type="Button" visibility="private"/>
@@ -174,7 +174,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Contatto" package="diagrammaumlrubrica.Model" visibility="public" xPosition="868.0" yPosition="705.0">
+    <Class name="Contatto" package="diagrammaumlrubrica.Model" visibility="public" xPosition="868.0" yPosition="548.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
         <Field name="cognome" type="String" visibility="private"/>
@@ -228,7 +228,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Email" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1768.0" yPosition="528.0">
+    <Class name="Email" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1704.0" yPosition="548.0">
       <Fields>
         <Field name="email" type="String" visibility="private"/>
       </Fields>
@@ -249,7 +249,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="NumeroTelefono" package="diagrammaumlrubrica.Model" visibility="public" xPosition="926.0" yPosition="1304.0">
+    <Class name="NumeroTelefono" package="diagrammaumlrubrica.Model" visibility="public" xPosition="624.0" yPosition="1175.0">
       <Fields>
         <Field name="prefisso" type="Prefisso" visibility="private"/>
         <Field name="numero" type="String" visibility="private"/>
@@ -273,7 +273,7 @@
         <Method name="checkNumeroTelefono" returnType="boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Prefisso" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1511.0" yPosition="1342.0">
+    <Class name="Prefisso" package="diagrammaumlrubrica.Model" visibility="public" xPosition="263.0" yPosition="1194.0">
       <Fields>
         <Field name="valore" type="String" visibility="private"/>
         <Field name="lunghezzaNumero" type="int" visibility="private"/>
@@ -292,7 +292,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Rubrica" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1511.0" yPosition="797.0">
+    <Class name="Rubrica" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1616.0" yPosition="808.0">
       <Fields>
         <Field name="contatti" type="TreeSet&lt;Contatto&gt;" visibility="private"/>
       </Fields>
@@ -324,12 +324,12 @@
         <Method name="getTree" returnType="TreeSet&lt;Contatto&gt;" visibility="public"/>
       </Methods>
     </Class>
-    <Interface name="CheckEmail" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1818.0" yPosition="366.0">
+    <Interface name="CheckEmail" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1754.0" yPosition="401.0">
       <Methods>
         <Method name="checkEmail" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
-    <Interface name="CheckLunghezza" package="diagrammaumlrubrica.Model" visibility="public" xPosition="790.0" yPosition="457.0">
+    <Interface name="CheckLunghezza" package="diagrammaumlrubrica.Model" visibility="public" xPosition="899.0" yPosition="243.0">
       <Methods>
         <Method name="checkLunghezza" returnType="boolean" visibility="public">
           <Argument type="String" name="s"/>
@@ -337,12 +337,12 @@
         </Method>
       </Methods>
     </Interface>
-    <Interface name="CheckNumeroTelefono" package="diagrammaumlrubrica.Model" visibility="public" xPosition="975.0" yPosition="1609.0">
+    <Interface name="CheckNumeroTelefono" package="diagrammaumlrubrica.Model" visibility="public" xPosition="673.0" yPosition="1591.0">
       <Methods>
         <Method name="checkNumeroTelefono" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
-    <Interface name="FileManager" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1691.0" yPosition="1159.0">
+    <Interface name="FileManager" package="diagrammaumlrubrica.Model" visibility="public" xPosition="2346.0" yPosition="211.0">
       <Methods>
         <Method name="importaFile" returnType="String" visibility="public">
           <Argument type="String" name="namefile"/>
@@ -352,29 +352,31 @@
         </Method>
       </Methods>
     </Interface>
-    <Interface name="checkContattoValido" package="" visibility="public" xPosition="1135.0" yPosition="457.0">
+    <Interface name="checkContattoValido" package="" visibility="public" xPosition="489.0" yPosition="744.0">
       <Methods>
         <Method name="contattoValido" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="checkContattoValido"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Email" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.FileManager"/>
+    <HasRelation name="numeroTelefono" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <HasRelation name="prefisso" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Controller.HomePageController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.CheckLunghezza"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.NumeroTelefono" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Email" target="diagrammaumlrubrica.Model.CheckEmail"/>
     <HasRelation name="contatto" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <HasRelation name="email" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="numeroTelefono" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.NumeroTelefono" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Controller.AggiungiController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.CheckLunghezza"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.CheckNumeroTelefono"/>
-    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation name="" source="diagrammaumlrubrica.Controller.VisualizzaController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Email" target="diagrammaumlrubrica.Model.CheckEmail"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.FileManager"/>
     <HasRelation name="listView" source="diagrammaumlrubrica.Controller.HomePageController" target="diagrammaumlrubrica.Model.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListView&lt;Contatto&gt;"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Email" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.CheckNumeroTelefono"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="checkContattoValido"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.AggiungiController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.HomePageController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.AggiungiController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

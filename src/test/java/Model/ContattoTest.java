@@ -102,7 +102,7 @@ public class ContattoTest {
     @Test
     public void testSetGetNumero1() {
         Prefisso p1 = new Prefisso("39");
-        NumeroTelefono n1 = new NumeroTelefono(p1, "3333333333");
+        NumeroTelefono n1 = new NumeroTelefono(p1, "1111111111");
         c.setNumero(n1, 0);
         assertEquals(n1, c.getNumero(0), "Primo numero non inserito correttamente");
     }
@@ -135,7 +135,7 @@ public class ContattoTest {
     public void testSetGetNumero4() {
         NumeroTelefono[] n = new NumeroTelefono[3];
         Prefisso p1 = new Prefisso("39");
-        n[0] = new NumeroTelefono(p1, "3333333333");
+        n[0] = new NumeroTelefono(p1, "2222222222");
         Prefisso p2 = new Prefisso("33");
         n[1] = new NumeroTelefono(p2, "444444444");
         Prefisso p3 = new Prefisso("44");
