@@ -104,7 +104,7 @@ public class Rubrica implements FileManager {
      * 
      * Questo metodo permette di caricare una rubrica da un file csv specificato dal nome del file.
      * 
-     * @pre Il nome del file esiste.
+     * @pre Il nome del file esiste ed è un file csv.
      * @post La rubrica è caricata con i contatti provenienti dal file.
      * 
      * @param[in] namefile Il nome del file da cui importare la rubrica.

@@ -1,15 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file CheckAlert.java
+ * @class CheckAlert
+ * @brief Interfaccia per la gestione di alert specifici come validazione e duplicati.
+ * @author gruppo 15
  */
 package Controller;
 
 /**
- *
- * @author scass
+ * @brief Definisce i metodi per mostrare alert di validazione e duplicati.
  */
 public interface CheckAlert {
+    /**
+     * @brief Mostra un alert di validazione.
+     */
     void showValidationAlert();
+
+    /**
+     * @brief Mostra un alert per la gestione di duplicati.
+     */
     void showDuplicateAlert();
 }

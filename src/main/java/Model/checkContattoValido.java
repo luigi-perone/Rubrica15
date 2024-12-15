@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file checkContattoValido.java
+ * @class checkContattoValido
+ * @brief Interfaccia per verificare se un contatto è valido.
+ * @author gruppo 15
  */
 package Model;
 
 /**
- *
- * @author scass
+ * @brief Definisce un metodo per controllare la validità di un contatto.
  */
 public interface checkContattoValido {
+    /**
+     * @brief Controlla se un contatto è valido.
+     * @return true se il contatto è valido, altrimenti false.
+     */
     boolean contattoValido();
 }
+
