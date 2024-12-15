@@ -16,7 +16,7 @@ package Model;
  * 
  */
 
-public class Contatto implements CheckLunghezza, Comparable<Contatto> {
+public class Contatto implements CheckLunghezza, checkContattoValido, Comparable<Contatto> {
 
     private String nome; ///< Nome del contatto.
     private String cognome; ///< Cognome del contatto.
@@ -167,6 +167,7 @@ public class Contatto implements CheckLunghezza, Comparable<Contatto> {
      * 
      * @return @c true se il contatto è valido, @c false altrimenti.
      */
+    @Override
     public boolean contattoValido() {
         if(this.getNome()== null && this.getCognome()== null)
             return false;

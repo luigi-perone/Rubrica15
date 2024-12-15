@@ -42,7 +42,7 @@ import javafx.scene.text.Text;
  * 
  */
 
-public class ModificaController implements Initializable {
+public class ModificaController implements Initializable, CheckAlert {
 
     @FXML
     private Button indietro; ///< Pulsante per tornare indietro alla schermata precedente.
@@ -385,7 +385,8 @@ public class ModificaController implements Initializable {
      /**
      * @brief Mostra un avviso in caso di errori di validazione.
      */
-    private void showValidationAlert() {
+    @Override
+    public void showValidationAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore di Validazione");
         alert.setHeaderText("Campi non validi");
@@ -400,7 +401,8 @@ public class ModificaController implements Initializable {
      /**
      * @brief Mostra un avviso in caso di contatto gia presente.
      */
-    private void showDuplicateAlert() {
+    @Override
+    public void showDuplicateAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore di Validazione");
         alert.setHeaderText("Contatto già presente");

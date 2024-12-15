@@ -42,7 +42,7 @@ import javafx.scene.text.Text;
  * La classe utilizza il pattern MVC e comunica con il modello per salvare i contatti.
  */
 
-public class AggiungiController implements Initializable {
+public class AggiungiController implements Initializable, CheckAlert {
 
     @FXML
     private Button indietro; ///< Pulsante per tornare alla schermata precedente.
@@ -273,7 +273,8 @@ public class AggiungiController implements Initializable {
     /**
      * @brief Mostra un avviso in caso di errori di validazione.
      */
-    private void showValidationAlert() {
+    @Override
+    public void showValidationAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore di Validazione");
         alert.setHeaderText("Campi non validi");
@@ -288,7 +289,8 @@ public class AggiungiController implements Initializable {
      /**
      * @brief Mostra un avviso in caso di contatto gia presente.
      */
-    private void showDuplicateAlert() {
+    @Override
+    public void showDuplicateAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore di Validazione");
         alert.setHeaderText("Contatto già presente");

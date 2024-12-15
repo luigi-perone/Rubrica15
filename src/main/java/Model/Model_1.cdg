@@ -1,171 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ClassDiagram name="Model_1">
+<ClassDiagram name="diagrammaumlrubrica">
   <ClassDiagramComponents>
-    <Class name="Rubrica" package="" visibility="public" xPosition="889.0" yPosition="319.0">
+    <Class name="AggiungiController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="20.0" yPosition="20.0">
       <Fields>
-        <Field name="contatti" type="TreeSet&lt;Contatto&gt;" visibility="private"/>
+        <Field name="indietro" type="Button" visibility="private"/>
+        <Field name="salva" type="Button" visibility="private"/>
+        <Field name="nome" type="TextField" visibility="private"/>
+        <Field name="cognome" type="TextField" visibility="private"/>
+        <Field name="descrizione" type="TextField" visibility="private"/>
+        <Field name="tel1" type="TextField" visibility="private"/>
+        <Field name="tel2" type="TextField" visibility="private"/>
+        <Field name="tel3" type="TextField" visibility="private"/>
+        <Field name="email1" type="TextField" visibility="private"/>
+        <Field name="email2" type="TextField" visibility="private"/>
+        <Field name="email3" type="TextField" visibility="private"/>
+        <Field name="pref1" type="ChoiceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref2" type="ChoiceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref3" type="ChoiceBox&lt;String&gt;" visibility="private"/>
+        <Field name="iniziale" type="Text" visibility="private"/>
+        <Field name="menuBar" type="MenuBar" visibility="private"/>
+        <Field name="NOME_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="EMAIL_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="TELEFONO_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="ricercaContatto" returnType="String" visibility="public">
-          <Argument type="String" name="cognome"/>
-          <Argument type="String" name="nome"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
         </Method>
-        <Method name="eliminaContatto" returnType="Contatto" visibility="public">
-          <Argument type="Contatto" name="c"/>
+        <Method name="indietro_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
         </Method>
-        <Method name="aggiungiContatto" returnType="Contatto" visibility="public">
-          <Argument type="Contatto" name="c"/>
+        <Method name="salva_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
         </Method>
-        <Method name="modificaContatto" returnType="Email[]" visibility="public">
-          <Argument type="Contatto" name="c"/>
-          <Argument type="String" name="nome"/>
-          <Argument type="String" name="cognome"/>
-          <Argument type="String" name="descrizione"/>
-          <Argument type="NumeroTelfono[]" name="n"/>
-          <Argument type="Email[]" name="e"/>
+        <Method name="addValidationListeners" returnType="void" visibility="private"/>
+        <Method name="validateTextField" returnType="void" visibility="private">
+          <Argument type="TextField" name="textField"/>
+          <Argument type="String" name="newValue"/>
+          <Argument type="Pattern" name="pattern"/>
+          <Argument type="int" name="maxLength"/>
+          <Argument type="boolean" name="isRequired"/>
         </Method>
+        <Method name="isValidInput" returnType="boolean" visibility="private">
+          <Argument type="TextField" name="textField"/>
+          <Argument type="Pattern" name="pattern"/>
+          <Argument type="boolean" name="isRequired"/>
+        </Method>
+        <Method name="validateFinalInput" returnType="boolean" visibility="private"/>
+        <Method name="showValidationAlert" returnType="void" visibility="private"/>
+        <Method name="showDuplicateAlert" returnType="void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="NumeroTelefono" package="" visibility="public" xPosition="546.0" yPosition="663.0">
+    <Class name="HomePageController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="320.0" yPosition="20.0">
       <Fields>
-        <Field name="prefisso" type="Prefisso" visibility="private"/>
-        <Field name="numero" type="String" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="setNumero" returnType="String" visibility="public">
-          <Argument type="String" name="numero"/>
-        </Method>
-        <Method name="getNumeroTelefono" returnType="String" visibility="public"/>
-        <Method name="toString" returnType="String" visibility="public"/>
-        <Method name="setPrefisso" returnType="Prefisso" visibility="public">
-          <Argument type="Prefisso" name="p"/>
-        </Method>
-        <Method name="getPrefisso" returnType="Prefisso" visibility="public"/>
-      </Methods>
-    </Class>
-    <Class name="Prefisso" package="" visibility="public" xPosition="817.0" yPosition="673.0">
-      <Fields>
-        <Field name="valore" type="String" visibility="private"/>
-        <Field name="lunghezzaNumero" type="int" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="getValore" returnType="String" visibility="public"/>
-        <Method name="getLunghezzaNumero" returnType="int" visibility="public"/>
-        <Method name="setValore" returnType="String" visibility="public">
-          <Argument type="String" name="valore"/>
-        </Method>
-        <Method name="toString" returnType="String" visibility="public"/>
-      </Methods>
-    </Class>
-    <Class name="Email" package="" visibility="public" xPosition="23.0" yPosition="391.0">
-      <Fields>
-        <Field name="email" type="String" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="setEmail" returnType="void" visibility="public"/>
-        <Method name="getEmail" returnType="String" visibility="public"/>
-      </Methods>
-    </Class>
-    <Class name="Contatto" package="" visibility="public" xPosition="464.0" yPosition="215.0">
-      <Fields>
-        <Field name="nome" type="String" visibility="private"/>
-        <Field name="cognome" type="String" visibility="private"/>
-        <Field name="descrizione" type="String" visibility="private"/>
-        <Field name="numero" type="NumeroTelefono[]" visibility="private"/>
-        <Field name="email" type="Email[]" visibility="private"/>
-        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="setNome" returnType="String" visibility="public">
-          <Argument type="String" name="nome"/>
-        </Method>
-        <Method name="setCognome" returnType="String" visibility="public">
-          <Argument type="String" name="cognome"/>
-        </Method>
-        <Method name="setDescrizione" returnType="String" visibility="public">
-          <Argument type="String" name="descrizione"/>
-        </Method>
-        <Method name="getNome" returnType="String" visibility="public"/>
-        <Method name="getCognome" returnType="String" visibility="public"/>
-        <Method name="getDescrizione" returnType="String" visibility="public"/>
-        <Method name="getNumero" returnType="int" visibility="public">
-          <Argument type="int" name="idx"/>
-        </Method>
-        <Method name="getEmail" returnType="int" visibility="public">
-          <Argument type="int" name="idx"/>
-        </Method>
-        <Method name="setEmail" returnType="int" visibility="public">
-          <Argument type="Email" name="email"/>
-          <Argument type="int" name="idx"/>
-        </Method>
-        <Method name="setNumeroTelefono" returnType="int" visibility="public">
-          <Argument type="NumeroTelefono" name="numero"/>
-          <Argument type="int" name="idx"/>
-        </Method>
-        <Method name="compareTo" returnType="int" visibility="public">
-          <Argument type="Contatto" name="c"/>
-        </Method>
-      </Methods>
-    </Class>
-    <Class name="HomePageController" package="" visibility="public" xPosition="1034.0" yPosition="7.0">
-      <Fields>
-        <Field name="importa" type="Menu" visibility="private"/>
-        <Field name="esporta" type="Menu" visibility="private"/>
-        <Field name="nuovoContatto" type="Menu" visibility="private"/>
+        <Field name="importa" type="Button" visibility="private"/>
+        <Field name="esporta" type="Button" visibility="private"/>
+        <Field name="nuovoContatto" type="Button" visibility="private"/>
         <Field name="cerca" type="TextField" visibility="private"/>
-        <Field name="ordine" type="Button" visibility="private"/>
-        <Field name="listview" type="ListView&lt;Contatto&gt;" visibility="private"/>
+        <Field name="ordina" type="Button" visibility="private"/>
+        <Field name="listView" type="ListView&lt;Contatto&gt;" visibility="private"/>
+        <Field name="stage" type="Stage" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="importa_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="setStage" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
         </Method>
-        <Method name="esporta_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
         </Method>
-        <Method name="nuovo_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="importa_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
         </Method>
-        <Method name="ordina_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="esporta_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="nuovo_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="ordina_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="AggiungiController" package="" visibility="public" xPosition="1400.0" yPosition="727.0">
+    <Class name="ModificaController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="620.0" yPosition="20.0">
       <Fields>
-        <Field name="indietro" type="Menu" visibility="private"/>
-        <Field name="salva" type="Menu" visibility="private"/>
-        <Field name="nome" type="TextField" visibility="private"/>
-        <Field name="cognome" type="TextField" visibility="private"/>
-        <Field name="tel1" type="TextField" visibility="private"/>
-        <Field name="tel2" type="TextField" visibility="private"/>
-        <Field name="tel3" type="TextField" visibility="private"/>
-        <Field name="email1" type="TextField" visibility="private"/>
-        <Field name="email2" type="TextField" visibility="private"/>
-        <Field name="email3" type="TextField" visibility="private"/>
-        <Field name="pref1" type="ChioceBox&lt;String&gt;" visibility="private"/>
-        <Field name="pref2" type="ChioceBox&lt;String&gt;" visibility="private"/>
-        <Field name="pref3" type="ChioceBox&lt;String&gt;" visibility="private"/>
-        <Field name="descrizione" type="TextField" visibility="private"/>
-        <Field name="iniziale" type="Text" visibility="private"/>
-      </Fields>
-      <Constructors/>
-      <Methods>
-        <Method name="indietro_f" returnType="void" visibility="public"/>
-        <Method name="salva_f" returnType="void" visibility="public"/>
-      </Methods>
-    </Class>
-    <Class name="ModificaController" package="" visibility="public" xPosition="1670.0" yPosition="602.0">
-      <Fields>
-        <Field name="indietro" type="Menu" visibility="private"/>
-        <Field name="salva" type="Menu" visibility="private"/>
+        <Field name="indietro" type="Button" visibility="private"/>
+        <Field name="salva" type="Button" visibility="private"/>
         <Field name="nome" type="TextField" visibility="private"/>
         <Field name="cognome" type="TextField" visibility="private"/>
         <Field name="descrizione" type="TextField" visibility="private"/>
@@ -175,32 +100,57 @@
         <Field name="email1" type="TextField" visibility="private"/>
         <Field name="email2" type="TextField" visibility="private"/>
         <Field name="email3" type="TextField" visibility="private"/>
-        <Field name="pref1" type="ChioceBox&lt;String&gt;" visibility="private"/>
-        <Field name="pref2" type="ChioceBox&lt;String&gt;" visibility="private"/>
-        <Field name="pref3" type="ChioceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref1" type="ChoiceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref2" type="ChoiceBox&lt;String&gt;" visibility="private"/>
+        <Field name="pref3" type="ChoiceBox&lt;String&gt;" visibility="private"/>
         <Field name="iniziale" type="Text" visibility="private"/>
+        <Field name="MAX_LENGTH" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="NOME_COGNOME_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="EMAIL_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="NOME_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="TELEFONO_PATTERN" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="indietro_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
         </Method>
-        <Method name="salva_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="initializePrefissi" returnType="void" visibility="private">
+          <Argument type="ChoiceBox&lt;String&gt;" name="prefBox"/>
         </Method>
+        <Method name="indietro_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="salva_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="validateFinalInput" returnType="boolean" visibility="private"/>
+        <Method name="loadContactData" returnType="void" visibility="private">
+          <Argument type="Contatto" name="contatto"/>
+        </Method>
+        <Method name="addValidationListeners" returnType="void" visibility="private"/>
+        <Method name="validateTextField" returnType="void" visibility="private">
+          <Argument type="TextField" name="textField"/>
+          <Argument type="String" name="newValue"/>
+          <Argument type="Pattern" name="pattern"/>
+          <Argument type="int" name="maxLength"/>
+          <Argument type="boolean" name="isRequired"/>
+        </Method>
+        <Method name="showValidationAlert" returnType="void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="VisualizzaController" package="" visibility="public" xPosition="1637.0" yPosition="24.0">
+    <Class name="VisualizzaController" package="diagrammaumlrubrica.Controller" visibility="public" xPosition="920.0" yPosition="20.0">
       <Fields>
-        <Field name="indietro" type="Menu" visibility="private"/>
-        <Field name="modifica" type="Menu" visibility="private"/>
-        <Field name="elmina" type="Menu" visibility="private"/>
+        <Field name="indietro" type="Button" visibility="private"/>
+        <Field name="modifica" type="Button" visibility="private"/>
+        <Field name="elimina" type="Button" visibility="private"/>
         <Field name="nome" type="Label" visibility="private"/>
         <Field name="cognome" type="Label" visibility="private"/>
         <Field name="descrizione" type="Label" visibility="private"/>
         <Field name="tel1" type="Label" visibility="private"/>
         <Field name="tel2" type="Label" visibility="private"/>
-        <Field name="telf3" type="Label" visibility="private"/>
+        <Field name="tel3" type="Label" visibility="private"/>
         <Field name="email1" type="Label" visibility="private"/>
         <Field name="email2" type="Label" visibility="private"/>
         <Field name="email3" type="Label" visibility="private"/>
@@ -211,71 +161,247 @@
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="indietro_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
         </Method>
-        <Method name="modifica_f" returnType="Action" visibility="public">
-          <Argument type="Action" name="event"/>
+        <Method name="indietro_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
         </Method>
-        <Method name="elimina_f" returnType="Acition" visibility="public">
-          <Argument type="Acition" name="event"/>
+        <Method name="modifica_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="elimina_f" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
         </Method>
       </Methods>
     </Class>
-    <Interface name="FileManager" package="" visibility="public" xPosition="1023.0" yPosition="663.0">
+    <Class name="Main" package="diagrammaumlrubrica" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="scene" type="Scene" visibility="private" isStatic="true"/>
+        <Field name="selectedItem" type="Contatto" visibility="private" isStatic="true"/>
+        <Field name="r" type="Rubrica" visibility="public" isStatic="true"/>
+        <Field name="alfabetico" type="boolean" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
       <Methods>
-        <Method name="importaFile" returnType="String" visibility="public">
-          <Argument type="String" name="namefile"/>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
         </Method>
-        <Method name="esportaRubrica" returnType="String" visibility="public">
-          <Argument type="String" name="namefile"/>
+        <Method name="setRoot" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="fxml"/>
         </Method>
-        <Method name="checkFileName" returnType="String" visibility="public">
-          <Argument type="String" name="namefile"/>
+        <Method name="loadFXML" returnType="Parent" visibility="private" isStatic="true">
+          <Argument type="String" name="fxml"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="getSelectedItem" returnType="Contatto" visibility="public" isStatic="true"/>
+        <Method name="setSelectedItem" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Contatto" name="selectedItem"/>
         </Method>
       </Methods>
-    </Interface>
-    <Interface name="CheckLunghezza" package="" visibility="public" xPosition="23.0" yPosition="237.0">
+    </Class>
+    <Interface name="CheckEmail" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1520.0" yPosition="20.0">
       <Methods>
-        <Method name="checkLunghezza" returnType="int" visibility="public">
+        <Method name="checkEmail" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="CheckLunghezza" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Methods>
+        <Method name="checkLunghezza" returnType="boolean" visibility="public">
           <Argument type="String" name="s"/>
           <Argument type="int" name="lungMax"/>
         </Method>
       </Methods>
     </Interface>
-    <Interface name="ContattoValido" package="" visibility="public" xPosition="535.0" yPosition="50.0">
+    <Interface name="CheckNumeroTelefono" package="diagrammaumlrubrica.Model" visibility="public" xPosition="2120.0" yPosition="20.0">
       <Methods>
+        <Method name="checkNumeroTelefono" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Contatto" package="diagrammaumlrubrica.Model" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="descrizione" type="String" visibility="private"/>
+        <Field name="numero" type="NumeroTelefono[]" visibility="private"/>
+        <Field name="email" type="Email[]" visibility="private"/>
+        <Field name="MAX" type="int" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="descrizione"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="setCognome" returnType="void" visibility="public">
+          <Argument type="String" name="cognome"/>
+        </Method>
+        <Method name="getDescrizione" returnType="String" visibility="public"/>
+        <Method name="setDescrizione" returnType="void" visibility="public">
+          <Argument type="String" name="descrizione"/>
+        </Method>
+        <Method name="getNumero" returnType="NumeroTelefono" visibility="public">
+          <Argument type="int" name="idx"/>
+        </Method>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="NumeroTelefono" name="numero"/>
+          <Argument type="int" name="idx"/>
+        </Method>
+        <Method name="getEmail" returnType="Email" visibility="public">
+          <Argument type="int" name="idx"/>
+        </Method>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="Email" name="email"/>
+          <Argument type="int" name="idx"/>
+        </Method>
+        <Method name="checkLunghezza" returnType="boolean" visibility="public">
+          <Argument type="String" name="s"/>
+          <Argument type="int" name="lungMax"/>
+        </Method>
         <Method name="contattoValido" returnType="boolean" visibility="public"/>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Contatto" name="o"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
-    </Interface>
-    <Interface name="CheckEmail" package="" visibility="public" xPosition="4.0" yPosition="636.0">
+    </Class>
+    <Class name="Email" package="diagrammaumlrubrica.Model" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
       <Methods>
-        <Method name="checkEmail" returnType="Email" visibility="public">
-          <Argument type="Email" name="e"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="checkEmail" returnType="boolean" visibility="public"/>
+        <Method name="checkLunghezza" returnType="boolean" visibility="public">
+          <Argument type="String" name="s"/>
+          <Argument type="int" name="lungMax"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="FileManager" package="diagrammaumlrubrica.Model" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Methods>
+        <Method name="importaFile" returnType="Rubrica" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+        <Method name="esportaRubrica" returnType="void" visibility="public">
+          <Argument type="String" name="namefile"/>
         </Method>
       </Methods>
     </Interface>
-    <Interface name="CheckNumeroTelefono" package="" visibility="public" xPosition="490.0" yPosition="948.0">
+    <Class name="NumeroTelefono" package="diagrammaumlrubrica.Model" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="prefisso" type="Prefisso" visibility="private"/>
+        <Field name="numero" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Prefisso" name="prefisso"/>
+          <Argument type="String" name="numero"/>
+        </Constructor>
+      </Constructors>
       <Methods>
-        <Method name="checkNumeroTelefono" returnType="NumeroTelefono" visibility="public">
-          <Argument type="NumeroTelefono" name="n"/>
+        <Method name="getPrefisso" returnType="Prefisso" visibility="public"/>
+        <Method name="setPrefisso" returnType="void" visibility="public">
+          <Argument type="Prefisso" name="prefisso"/>
         </Method>
+        <Method name="getNumero" returnType="String" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="String" name="numero"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="checkNumeroTelefono" returnType="boolean" visibility="public"/>
       </Methods>
-    </Interface>
+    </Class>
+    <Class name="Prefisso" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="valore" type="String" visibility="private"/>
+        <Field name="lunghezzaNumero" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="valore"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValore" returnType="String" visibility="public"/>
+        <Method name="setValore" returnType="void" visibility="public">
+          <Argument type="String" name="valore"/>
+        </Method>
+        <Method name="getLunghezzaNumero" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Rubrica" package="diagrammaumlrubrica.Model" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="contatti" type="TreeSet&lt;Contatto&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="eliminaContatto" returnType="void" visibility="public">
+          <Argument type="Contatto" name="c"/>
+        </Method>
+        <Method name="aggiungiContatto" returnType="void" visibility="public">
+          <Argument type="Contatto" name="c"/>
+        </Method>
+        <Method name="modificaContatto" returnType="Contatto" visibility="public">
+          <Argument type="Contatto" name="c"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="descrizione"/>
+          <Argument type="Email[]" name="email"/>
+          <Argument type="NumeroTelefono[]" name="num"/>
+        </Method>
+        <Method name="importaFile" returnType="Rubrica" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+        <Method name="esportaRubrica" returnType="void" visibility="public">
+          <Argument type="String" name="namefile"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTree" returnType="TreeSet&lt;Contatto&gt;" visibility="public"/>
+      </Methods>
+    </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="Prefisso" source="NumeroTelefono" target="Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
-    <UseRelation name="" source="VisualizzaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Rubrica" target="FileManager"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NumeroTelefono" target="CheckNumeroTelefono"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="ContattoValido"/>
-    <HasRelation name="numeroDiTelefono" source="Contatto" target="NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <UseRelation name="" source="HomePageController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="contatto" source="Rubrica" target="Contatto" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="email" source="Contatto" target="Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Email" target="CheckEmail"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Contatto" target="CheckLunghezza"/>
-    <UseRelation name="" source="ModificaController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation name="" source="AggiungiController" target="Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.CheckNumeroTelefono"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.Email" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="prefisso" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.Prefisso" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.Prefisso" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Model.FileManager" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.NumeroTelefono" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Main" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.CheckLunghezza"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.FileManager"/>
+    <HasRelation name="r" source="diagrammaumlrubrica.Main" target="diagrammaumlrubrica.Model.Rubrica" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listView" source="diagrammaumlrubrica.Controller.HomePageController" target="diagrammaumlrubrica.Model.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListView&lt;Contatto&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Email" target="diagrammaumlrubrica.Model.CheckLunghezza"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.NumeroTelefono" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contatti" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="TreeSet&lt;Contatto&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Email" target="diagrammaumlrubrica.Model.CheckEmail"/>
+    <HasRelation name="selectedItem" source="diagrammaumlrubrica.Main" target="diagrammaumlrubrica.Model.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
