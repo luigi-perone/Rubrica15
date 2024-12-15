@@ -79,9 +79,10 @@ public class Main extends Application {
             // Gestisce eventuali errori durante il caricamento dell'interfaccia
         }
     }
-
+     
     /**
      * Imposta la radice della scena principale.
+     * 
      * 
      * @param[in] fxml il nome del file FXML da caricare
      */
