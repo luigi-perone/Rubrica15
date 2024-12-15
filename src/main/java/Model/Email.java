@@ -27,12 +27,13 @@ public class Email implements CheckEmail {
      * 
      * Inizializza un oggetto @c Email con un indirizzo email specificato.
      * 
-     * @pre Valori passati diversi da null
-     * @post Oggetto creato
+     * @pre Valore passato diverso da null
+     * @post Oggetto creato con attributo inizializzato al valore passato
      * 
      * @param[in] email L'indirizzo email da associare all'oggetto.
      */
     public Email(String email) {
+        assert(email != null);
         this.email = email;
     }
     
@@ -47,7 +48,9 @@ public class Email implements CheckEmail {
      * @param[in] email L'indirizzo email da impostare.
      */
     public void setEmail(String email) {
+        assert(email != null);
         this.email = email;
+
     }
 
     /**
@@ -68,10 +71,12 @@ public class Email implements CheckEmail {
      * 
      * Implementazione del metodo definito nell'interfaccia @c CheckEmail. Questo metodo 
      * verifica se l'email è valida seguendo una semplice espressione regolare per controllare
-     * la presenza di una "@" nell'indirizzo email.
+     * la presenza di una "@" nell'indirizzo email e dalla successiva presenza di un dominio,
+     * ossia un punto seguito da almeno 2 caratteri.
      * 
-     * @pre email passata diversa da null
-     * @post Verifica se l'email è valida.
+     * @pre Email esiste
+     * @post Verifica se l'email è valida in base alla presenza della @ seguito da un dominio, 
+     * punto seguito da almeno 2 caratteri.
      * 
      * @param[in] e L'oggetto @c Email da verificare.
      * @return @c true se l'email è valida, @c false altrimenti.
@@ -79,6 +84,7 @@ public class Email implements CheckEmail {
      */
     @Override
     public boolean checkEmail() {
+        assert(this != null);
         if (this.getEmail() == null||this.getEmail().length() == 0) {
             return false; // Email non valida se l'oggetto o l'indirizzo è null o vuoto
         }

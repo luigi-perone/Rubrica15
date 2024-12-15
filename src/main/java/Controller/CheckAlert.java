@@ -10,6 +10,20 @@ package Controller;
  * @author scass
  */
 public interface CheckAlert {
+         /**
+     * @brief Mostra un avviso in caso di errori di validazione.
+     * 
+     * @post Viene mostrato un Alert
+     * 
+     */
+
     void showValidationAlert();
+     /**
+     * @brief Mostra un avviso in caso di errori di validazione.
+     * 
+     * @post Viene mostrato un Alert
+     * 
+     */
+
     void showDuplicateAlert();
 }

@@ -98,6 +98,8 @@ public class ModificaController implements Initializable, CheckAlert {
      * @brief Metodo di inizializzazione chiamato all'avvio della vista.
      * Configura i componenti dell'interfaccia utente e carica i dati del contatto selezionato.
      *
+     * @post I campi dell'interfaccia utente vengono inizializzati con i dati del contatto selezionato.     * 
+     * 
      * @param[in] url URL utilizzato per caricare la vista (non utilizzato in questo caso).
      * @param rb[in] Risorse per il bundle di lingua (non utilizzato in questo caso).
      */
@@ -137,6 +139,9 @@ public class ModificaController implements Initializable, CheckAlert {
     /**
      * @brief Gestisce l'azione del pulsante "Indietro".
      *
+     * @pre L'utente ha cliccato sul pulsante "Indietro".
+     * @post La scena viene cambiata per visualizzare la schermata "visualizza".
+     * 
      * @param[in] event Evento che rappresenta l'azione.
      */
     @FXML
@@ -147,6 +152,10 @@ public class ModificaController implements Initializable, CheckAlert {
     /**
      * @brief Gestisce l'azione del pulsante "Salva".
      *
+     * @pre L'utente ha cliccato sul pulsante "Salva".
+     * @post La scena viene cambiata per visualizzare la schermata "homePage 
+     * e il contatto viene modificato, nel caso in cui gli input sono validi altrimenti viene mostrato un Alert.
+     * 
      * @param[in] event Evento che rappresenta l'azione.
      */
     @FXML
@@ -194,6 +203,8 @@ public class ModificaController implements Initializable, CheckAlert {
     /**
      * @brief Esegue una validazione finale prima del salvataggio.
      *
+     *  @post Ritorna true se tutti i campi sono validi, altrimenti false.
+     * 
      * @return[in] true se tutti i campi sono validi, altrimenti false.
      */
     private boolean validateFinalInput() {
@@ -272,6 +283,9 @@ public class ModificaController implements Initializable, CheckAlert {
     /**
     * Carica i dati del contatto selezionato.
     *
+    * @post I campi dell'interfaccia utente vengono popolati con i dati del contatto
+    * 
+    * 
     * @param contatto Contatto da caricare.
     */
    private void loadContactData(Contatto contatto) {
@@ -316,6 +330,9 @@ public class ModificaController implements Initializable, CheckAlert {
     }
     /**
      * @brief Aggiunge listener per la validazione dei campi di input.
+     * 
+     * @post Aggiunge listener a tutti i campi di input per validare automaticamente i dati inseriti dall'utente.
+     * 
      */
     private void addValidationListeners() {
         nome.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -350,6 +367,11 @@ public class ModificaController implements Initializable, CheckAlert {
      /**
      * @brief Valida un campo di testo.
      * 
+     * 
+     * @pre parametri pattern e textField diverso da null
+     * @post Il campo di testo viene validato. Se il valore è valido,il pulsante "Salva" viene abilitato 
+     * il pulsante "Salva" viene disabilitato .
+     * 
      * @param[in] textField Campo di testo da validare.
      * @param[in] newValue Nuovo valore del campo.
      * @param[in] pattern Pattern regex per la validazione.
@@ -359,7 +381,7 @@ public class ModificaController implements Initializable, CheckAlert {
     private void validateTextField(TextField textField, String newValue, 
                                     Pattern pattern, int maxLength, boolean isRequired) {
         salva.setDisable(false);
-        
+                
         if (newValue.length() > maxLength) {
             textField.setText(newValue.substring(0, maxLength));
             return;
@@ -384,6 +406,9 @@ public class ModificaController implements Initializable, CheckAlert {
     
      /**
      * @brief Mostra un avviso in caso di errori di validazione.
+     * 
+     * @post Viene mostrato un Alert
+     * 
      */
     @Override
     public void showValidationAlert() {
@@ -400,8 +425,11 @@ public class ModificaController implements Initializable, CheckAlert {
     
      /**
      * @brief Mostra un avviso in caso di contatto gia presente.
+     * 
+     * @post Viene mostrato un Alert
+     * 
      */
-    @Override
+     @Override
     public void showDuplicateAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore di Validazione");

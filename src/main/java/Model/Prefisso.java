@@ -25,12 +25,13 @@ public class Prefisso {
      * Inizializza un oggetto @c Prefisso con il valore del prefisso e calcola
      * la lunghezza del numero associato in base al prefisso.
      * 
-     * @pre Il valore del prefisso passato è valido.
-     * @post Oggetto creato con il prefisso e la lunghezza del numero associato.
+     * @pre Il valore del prefisso passato diverso da null.
+     * @post Oggetto creato con il prefisso associato.
      * 
      * @param[in] valore Il valore del prefisso telefonico da associare.
      */
     public Prefisso(String valore) {
+        assert valore != null;
         this.valore = valore;
         switch (valore) {
             case "39": // Italia
@@ -55,6 +56,8 @@ public class Prefisso {
                 lunghezzaNumero = -1; // Valore di default per prefissi sconosciuti
                 break;
         }
+        assert(this != null);
+        assert(this.valore == valore);
     }
 
     /**
@@ -77,12 +80,12 @@ public class Prefisso {
      * associato a questo prefisso.
      * 
      * @pre Il valore passato in input è diverso da null.
-     * @post Viene assegnato all'attributo valore il valore passato e, se necessario, 
-     *       aggiorna la lunghezza del numero associato.
+     * @post Viene assegnato all'attributo valore il valore passato. 
      * 
      * @param[in] valore Il valore del prefisso da impostare.
      */
     public void setValore(String valore) {
+        assert(valore != null);
         this.valore = valore;
         switch (valore) {
             case "39": // Italia
@@ -129,11 +132,13 @@ public class Prefisso {
      * Questo metodo restituisce una rappresentazione stringa del prefisso, preceduto dal simbolo "+".
      * 
      * @pre Prefisso esiste.
+     * @post Restituisce un formato stringa del prefisso
      * 
      * @return La rappresentazione del prefisso come stringa (es. "+39").
      */
     @Override
     public String toString() {
+        assert(this != null);
         return "+" + valore;
     }
 }

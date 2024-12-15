@@ -97,6 +97,8 @@ public class AggiungiController implements Initializable, CheckAlert {
     /**
      * @brief Inizializza la vista impostando i valori iniziali dei componenti.
      * 
+     * @post i valori inizali sono impostati
+     * 
      * @param[in] url URL utilizzato per caricare la vista.
      * @param[in] rb Risorse per il bundle di lingua.
      */
@@ -116,6 +118,9 @@ public class AggiungiController implements Initializable, CheckAlert {
     /**
      * @brief Torna alla schermata precedente.
      * 
+     * @pre L'utente preme il pulsante "Indietro"
+     * @post La scena viene cambiata per visualizzare la schermata "visualizza".
+     * 
      * @param[in] event Evento associato al pulsante "Indietro".
      */
     @FXML
@@ -125,6 +130,10 @@ public class AggiungiController implements Initializable, CheckAlert {
 
     /**
      * @brief Salva il contatto inserito dopo aver effettuato la validazione.
+     * 
+     * @pre L'utente preme il pulsante "Salva"
+     * @post Nel caso di dati validi, il contatto viene aggiunto nella rubrica 
+     * e si passa alla scena per visualizzare la scheamata "homePage", altrimenti viene visualizzato un Alert.
      * 
      * @param[in] event Evento associato al pulsante "Salva".
      */
@@ -161,6 +170,9 @@ public class AggiungiController implements Initializable, CheckAlert {
 
     /**
      * @brief Aggiunge listener per la validazione dei campi di input.
+     * 
+     * @post Aggiunge listener a tutti i campi di input per validare automaticamente i dati inseriti dall'utente.
+     * 
      */
     private void addValidationListeners() {
         nome.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -194,6 +206,9 @@ public class AggiungiController implements Initializable, CheckAlert {
 
     /**
      * @brief Valida un campo di testo.
+     * 
+     * @post Il campo di testo viene validato. Se il valore è valido,il pulsante "Salva" viene abilitato 
+     * il pulsante "Salva" viene disabilitato .
      * 
      * @param[in] textField Campo di testo da validare.
      * @param[in] newValue Nuovo valore del campo.
@@ -229,6 +244,9 @@ public class AggiungiController implements Initializable, CheckAlert {
     /**
      * @brief Convalida un singolo campo di input.
      * 
+     * @pre textField diverso da null
+     * @post verifica che i dati inseriti seguono il pattern
+     * 
      * @param[in] textField Campo di testo da validare.
      * @param[in] pattern Pattern regex per la validazione.
      * @param[in] isRequired Indica se il campo è obbligatorio.
@@ -251,6 +269,8 @@ public class AggiungiController implements Initializable, CheckAlert {
     /**
      * @brief Valida l'input finale prima del salvataggio.
      * 
+     *  @post Ritorna true se tutti i campi sono validi, altrimenti false.
+     * 
      * @return true se tutti i campi sono validi, false altrimenti.
      */
     private boolean validateFinalInput() {
@@ -272,6 +292,9 @@ public class AggiungiController implements Initializable, CheckAlert {
 
     /**
      * @brief Mostra un avviso in caso di errori di validazione.
+     * 
+     * @post Viene mostrato un Alert
+     * 
      */
     @Override
     public void showValidationAlert() {
@@ -288,6 +311,9 @@ public class AggiungiController implements Initializable, CheckAlert {
     
      /**
      * @brief Mostra un avviso in caso di contatto gia presente.
+     * 
+     * @post Viene mostrato un Alert
+     * 
      */
     @Override
     public void showDuplicateAlert() {

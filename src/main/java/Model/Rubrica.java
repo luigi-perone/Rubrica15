@@ -30,6 +30,8 @@ public class Rubrica implements FileManager {
     /**
      * @brief Costruttore della classe @c Rubrica.
      * 
+     * @post creato un albero di contatti
+     * 
      * Inizializza la rubrica con un @c TreeSet vuoto di contatti.
      */
     public Rubrica() {
@@ -47,7 +49,9 @@ public class Rubrica implements FileManager {
      * @param[in] c Il contatto da eliminare.
      */
     public void eliminaContatto(Contatto c) {
+        assert(c != null);
         contatti.remove(c);
+        assert(!contatti.contains(c));
     }
 
     /**
@@ -61,7 +65,10 @@ public class Rubrica implements FileManager {
      * @param[in] c Il contatto da aggiungere.
      */
     public void aggiungiContatto(Contatto c) {
+        assert(c != null);
+        assert(c.contattoValido());
         contatti.add(c);
+        assert(contatti.contains(c));
     }
 
     /**
@@ -81,6 +88,12 @@ public class Rubrica implements FileManager {
      * @return Il contatto modificato.
      */
     public Contatto modificaContatto(Contatto c, String cognome, String nome, String descrizione, Email[] email, NumeroTelefono[] num) {
+        assert(c != null);
+        assert(cognome != null);
+        assert(nome != null);
+        assert(descrizione != null);
+        assert(email != null);
+        assert(num != null);
         Contatto c1 = new Contatto(nome, cognome, descrizione);
         int i = 0;
         for (Email e : email) {
@@ -97,6 +110,8 @@ public class Rubrica implements FileManager {
         this.eliminaContatto(c);
         this.aggiungiContatto(c1);
         
+        assert(!contatti.contains(c));
+        assert(contatti.contains(c1));
         return c1;
     }
     /**
@@ -112,6 +127,7 @@ public class Rubrica implements FileManager {
      */
     @Override
     public Rubrica importaFile(String namefile) {
+        assert(namefile != null);
         Rubrica rubrica = new Rubrica();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(namefile))) {
@@ -202,6 +218,7 @@ public class Rubrica implements FileManager {
      */
     @Override
     public void esportaRubrica(String namefile) {
+        assert(this != null);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(namefile))) {
             // Scrivi l'intestazione del file CSV
             writer.write("Nome,Cognome,Descrizione,Prefisso1,Numero1,Email1,Prefisso2,Numero2,Email2,Prefisso3,Numero3,Email3");
@@ -247,10 +264,14 @@ public class Rubrica implements FileManager {
      * Questo metodo restituisce una rappresentazione stringa della rubrica, 
      * concatenando tutte le informazioni sui contatti.
      * 
+     * @pre rubrica esiste
+     * @post resituisce un formato stringa dell'insieme dei contatti
+     * 
      * @return La rappresentazione della rubrica come stringa.
      */
     @Override
     public String toString() {
+        assert(this != null);
         StringBuffer s = new StringBuffer();
         for (Contatto c : contatti)
             s = s.append(c.toString()).append("\n");
@@ -263,9 +284,13 @@ public class Rubrica implements FileManager {
      * Questo metodo restituisce la struttura dati che contiene tutti i contatti 
      * della rubrica.
      * 
+     * @pre rubrica esiste
+     * @post restituisce il riferimento alla radice dell'albero
+     * 
      * @return Il set di contatti nella rubrica.
      */
     public TreeSet<Contatto> getTree() {
+        assert(this != null);
         return contatti;
     }
 }

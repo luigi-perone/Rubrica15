@@ -25,14 +25,17 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * Inizializza un oggetto @c NumeroTelefono con il prefisso e il numero specificati.
      * 
      * @pre I valori passati devono essere diversi da null.
-     * @post Oggetto creato con successo.
+     * @post Oggetto creato con gli attributi inizializzati ai valori passati.
      * 
      * @param[in] prefisso Prefisso associato al numero di telefono.
      * @param[in] numero Numero di telefono da associare al prefisso.
      */
     public NumeroTelefono(Prefisso prefisso, String numero) {
+        assert(prefisso != null);
+        assert(numero != null);
         this.prefisso = prefisso;
         this.numero = numero;
+
     }
     
     /**
@@ -59,6 +62,7 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * @param[in] prefisso Il nuovo prefisso da associare al numero di telefono.
      */
     public void setPrefisso(Prefisso prefisso) {
+        assert(prefisso != null);
         this.prefisso = prefisso;
     }
 
@@ -67,7 +71,7 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * 
      * Questo metodo restituisce il numero di telefono dell'oggetto @c NumeroTelefono.
      * 
-     * @pre Il numero deve esistere.
+     * @post Restituisce il contenuto dell'attributo numero.
      * 
      * @return Il numero di telefono dell'oggetto.
      */
@@ -86,7 +90,9 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * @param[in] numero Il nuovo numero di telefono da impostare.
      */
     public void setNumero(String numero) {
+        assert(numero != null);
         this.numero = numero;
+
     }
 
     /**
@@ -101,6 +107,7 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      */
     @Override
     public String toString(){
+        assert(this != null);
         return prefisso.toString() + " " + numero;
     }
 
@@ -110,7 +117,7 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      * Questo metodo verifica se un numero di telefono è valido. La validità dipende 
      * dal fatto che il numero contenga solo cifre e segua il formato corretto.
      * 
-     * @pre Il numero e il prefisso non devono essere null.
+     * @pre l'oggetto numero deve esistere.
      * @post Verifica se il numero è valido in base alla lunghezza e al formato.
      * 
      * @param[in] n Oggetto @c NumeroTelefono da verificare.
@@ -119,8 +126,9 @@ public class NumeroTelefono implements CheckNumeroTelefono {
      */
     @Override
     public boolean checkNumeroTelefono() {
-        if (this == null || this.getPrefisso() == null||this.getNumero().length() == 0||this.getPrefisso().getValore().length() == 0) {
-            return false; // L'oggetto o i suoi attributi non devono essere null o vuoti.
+        assert(this != null);
+        if (this.getPrefisso() == null||this.getNumero().length() == 0||this.getPrefisso().getValore().length() == 0) {
+            return false; // I suoi attributi non devono essere null o vuoti.
         }
         
         String numero = this.getNumero();

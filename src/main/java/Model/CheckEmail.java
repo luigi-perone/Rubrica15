@@ -22,6 +22,10 @@ public interface CheckEmail {
     /**
      * @brief Controlla la validità di un'email.
      * 
+     * @pre Email esiste
+     * @post Verifica se l'email è valida in base alla presenza della @ seguito da un dominio, 
+     * punto seguito da almeno 2 caratteri.
+     * 
      * Questo metodo deve essere implementato per verificare se un oggetto 
      * di tipo @c Email rispetta determinati criteri di validità.
      * 

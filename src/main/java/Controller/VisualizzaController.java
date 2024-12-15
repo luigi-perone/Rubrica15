@@ -137,6 +137,9 @@ public class VisualizzaController implements Initializable {
     /**
      * @brief Metodo di inizializzazione chiamato all'avvio della vista.
      * 
+     * @pre La vista è stata caricata correttamente.
+     * @post Le etichette vengono aggiornate con i dati del contatto selezionato.
+     * 
      * @param[in] url URL utilizzato per caricare la vista (non utilizzato in questo caso).
      * @param[in] rb Risorse per il bundle di lingua (non utilizzato in questo caso).
      */
@@ -177,6 +180,9 @@ public class VisualizzaController implements Initializable {
     /**
      * @brief Gestisce l'azione del bottone "Indietro" per tornare alla schermata precedente.
      * 
+     * @pre L'utente ha cliccato sul pulsante "Indietro".
+     * @post La scena viene cambiata per visualizzare la schermata "homePage".
+     * 
      * @param[in] event Evento che rappresenta l'azione del bottone.
      */
     @FXML
@@ -186,6 +192,9 @@ public class VisualizzaController implements Initializable {
 
     /**
      * @brief Gestisce l'azione del bottone "Modifica" per modificare il contatto visualizzato.
+     * 
+     * @pre L'utente ha cliccato sul pulsante "Modifica".
+     * @post La scena viene cambiata per visualizzare la schermata "modifica".
      * 
      * @param[in] event Evento che rappresenta l'azione del bottone.
      */
@@ -198,6 +207,11 @@ public class VisualizzaController implements Initializable {
      * @brief Gestisce l'azione del bottone "Elimina" per eliminare il contatto visualizzato.
      * 
      * Mostra un'alert di conferma prima di procedere con l'eliminazione.
+     * 
+     * @pre L'utente ha cliccato sul pulsante "Elimina".
+     * @post Se l'utente conferma l'eliminazione, il contatto viene eliminato e 
+     * la scena cambia per visualizzare la schermata "homePage" altrimenti la scena rimane non cambia e il contatto non viene eliminato.
+     * 
      * 
      * @param[in] event Evento che rappresenta l'azione del bottone.
      */

@@ -24,7 +24,11 @@ public interface CheckLunghezza {
      * @brief Controlla la lunghezza di una stringa.
      * 
      * Questo metodo verifica se una stringa non supera una lunghezza massima specificata.
-     *
+     * 
+     * @pre stringa passata diversa da null e lungMax >= 0
+     * @post verifica se la lunghezza della stringa passata è minore 
+     * della lunghezza massima consentita
+     
      * @param s[in] La stringa da verificare.
      * @param lungMax[in] La lunghezza massima consentita per la stringa.
      */

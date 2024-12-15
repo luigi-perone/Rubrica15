@@ -73,6 +73,8 @@ public class HomePageController implements Initializable {
     /**
      * @brief Imposta lo stage principale per il file chooser.
      * 
+     * @post viene assegnato allo stage principale il valore del parametro
+     * 
      * @param stage Lo stage principale dell'applicazione.
      */
     public void setStage(Stage stage) {
@@ -84,6 +86,8 @@ public class HomePageController implements Initializable {
     * Imposta i listener per la ricerca, la gestione del doppio clic e 
     * inizializza la vista basandosi sull'ordinamento alfabetico.
     *
+    * @post imposta i listener e inizializza la visita basandosi sull'ordinamento alfabetico
+    * 
     * @param[in] url URL utilizzato per risolvere percorsi relativi del file FXML
     * @param[in] rb ResourceBundle contenente le risorse localizzate per il controller
     */
@@ -148,6 +152,10 @@ public class HomePageController implements Initializable {
 
     /**
      * @brief Gestisce l'importazione di una rubrica da un file CSV.
+     * 
+     * @pre L'utente preme il pulsante "Importa"
+     * @post La rubrica viene caricata dei contatti del file se questo è corretto
+     * 
      * @param[in] event L'evento associato al pulsante "Importa".
      */
     @FXML
@@ -174,6 +182,10 @@ public class HomePageController implements Initializable {
 
     /**
      * @brief Gestisce l'esportazione della rubrica in un file CSV.
+     * 
+     * @pre L'utente preme il pulsante "Esporta"
+     * @post La rubrica viene esportata sul file indicato.
+     * 
      * @param[in] event L'evento associato al pulsante "Esporta".
      */
     @FXML
@@ -195,6 +207,10 @@ public class HomePageController implements Initializable {
 
     /**
      * @brief Gestisce l'azione per creare un nuovo contatto.
+     * 
+     * @pre L'utente preme il pulsante "Nuovo Contatto"
+     * @post La scena viene cambiata per visualizzare la schermata "aggiungi".
+     * 
      * @param[in] event L'evento associato al pulsante "Nuovo Contatto".
      */
     @FXML
@@ -204,6 +220,10 @@ public class HomePageController implements Initializable {
 
     /**
      * @brief Alterna l'ordinamento tra A-Z e Z-A per la lista dei contatti.
+     * 
+     * @pre L'utente preme il pulsante per  l'ordinamento
+     * @post La rubrica viene invertita rispetto l'ordine precedente
+     * 
      * @param[in] event L'evento associato al pulsante "Ordina".
      */
     @FXML

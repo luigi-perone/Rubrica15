@@ -23,6 +23,9 @@ public interface CheckNumeroTelefono {
     /**
      * @brief Controlla la validità di un numero di telefono.
      * 
+     * @pre l'oggetto numero deve esistere.
+     * @post Verifica se il numero è valido in base alla lunghezza e al formato.
+     * 
      * Questo metodo verifica se un oggetto di tipo @c NumeroTelefono rappresenta 
      * un numero di telefono valido.
      * 
