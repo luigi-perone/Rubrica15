@@ -331,7 +331,7 @@
     </Interface>
     <Interface name="CheckLunghezza" package="diagrammaumlrubrica.Model" visibility="public" xPosition="899.0" yPosition="243.0">
       <Methods>
-        <Method name="checkLunghezza" returnType="boolean" visibility="public">
+        <Method name="checkLunghezza" returnType="int" visibility="public">
           <Argument type="String" name="s"/>
           <Argument type="int" name="lungMax"/>
         </Method>
@@ -357,26 +357,39 @@
         <Method name="contattoValido" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
+    <Class name="UntitledClass" package="" visibility="public" xPosition="2650.0" yPosition="1272.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="CheckAlert" package="" visibility="public" xPosition="2233.0" yPosition="1979.0">
+      <Methods>
+        <Method name="showValidationAlert" returnType="void" visibility="public"/>
+        <Method name="showDuplicateAlert" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="numeroTelefono" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="prefisso" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.CheckLunghezza"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Controller.ModificaController" target="CheckAlert"/>
     <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.NumeroTelefono" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Email" target="diagrammaumlrubrica.Model.CheckEmail"/>
-    <HasRelation name="contatto" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="email" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Controller.VisualizzaController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.FileManager"/>
     <HasRelation name="listView" source="diagrammaumlrubrica.Controller.HomePageController" target="diagrammaumlrubrica.Model.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListView&lt;Contatto&gt;"/>
-    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Email" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Controller.AggiungiController" target="CheckAlert"/>
     <UseRelation source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.CheckNumeroTelefono"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="checkContattoValido"/>
-    <UseRelation name="" source="diagrammaumlrubrica.Controller.AggiungiController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="numeroTelefono" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.NumeroTelefono" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Email" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Email" target="diagrammaumlrubrica.Model.CheckEmail"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.FileManager"/>
+    <HasRelation name="contatto" source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Contatto" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.ModificaController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.CheckNumeroTelefono"/>
+    <HasRelation name="prefisso" source="diagrammaumlrubrica.Model.NumeroTelefono" target="diagrammaumlrubrica.Model.Prefisso" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <UseRelation name="" source="diagrammaumlrubrica.Controller.HomePageController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.VisualizzaController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.CheckLunghezza"/>
     <UseRelation name="" source="diagrammaumlrubrica.Controller.AggiungiController" target="diagrammaumlrubrica.Model.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="email" source="diagrammaumlrubrica.Model.Contatto" target="diagrammaumlrubrica.Model.Email" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation source="diagrammaumlrubrica.Model.Rubrica" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="diagrammaumlrubrica.Controller.AggiungiController" target="diagrammaumlrubrica.Model.Rubrica" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
