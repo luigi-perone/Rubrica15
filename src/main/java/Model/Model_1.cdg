@@ -331,7 +331,7 @@
     </Interface>
     <Interface name="CheckLunghezza" package="diagrammaumlrubrica.Model" visibility="public" xPosition="899.0" yPosition="243.0">
       <Methods>
-        <Method name="checkLunghezza" returnType="int" visibility="public">
+        <Method name="checkLunghezza" returnType="boolean" visibility="public">
           <Argument type="String" name="s"/>
           <Argument type="int" name="lungMax"/>
         </Method>
@@ -357,11 +357,6 @@
         <Method name="contattoValido" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
-    <Class name="UntitledClass" package="" visibility="public" xPosition="2650.0" yPosition="1272.0">
-      <Fields/>
-      <Constructors/>
-      <Methods/>
-    </Class>
     <Interface name="CheckAlert" package="" visibility="public" xPosition="2233.0" yPosition="1979.0">
       <Methods>
         <Method name="showValidationAlert" returnType="void" visibility="public"/>
